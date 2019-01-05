@@ -1,0 +1,238 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[color]
+white = #fff
+base = #efebe0
+brown = #666
+orange = #fbb253
+orange2 = #ef7922
+purple = #e58a95
+red = #f1383d
+pink = #f26262
+pink2 = #f64d64
+blue = #19aed3
+cyan = #00bcd4
+adapta = #263238
+
+[bar/mybar]
+monitor = GPU-0.HDMI-0
+override-redirect = false
+bottom = false
+fixed-center = true
+
+font-0 = "Noto Sans:size=11;1"
+font-1 = "Font Awesome5Free:style=Solid:pixelsize=10:antialias;3:"
+font-2 = "Font Awesome5Brands:style=Solid:pixelsize=10:antialias;3:"
+
+background = ${color.adapta}
+
+line-color = ${color.cyan}
+underline-size = 0
+overline-size = 0
+
+border-bottom-size = 2
+border-bottom-color = ${color.cyan}
+
+padding-left = 2
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+tray-position = right
+tray-padding = 0
+tray-maxsize = 16
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+########## MODULES LOCATIONS ##########
+modules-left = i3 temperature filesystem
+modules-center = xwindow
+modules-right = date pulseaudio powermenu
+
+########## MODULES ##########
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label = %title%
+label-maxlen = 75
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+wrapping-scroll = false
+
+label-focused =%name%
+label-focused-foreground = ${color.cyan}
+label-focused-background = ${color.adapta}
+label-focused-padding = 1
+
+label-unfocused =%name%
+label-unfocused-padding = 1
+
+label-visible =%name%
+label-visible-padding = 1
+
+label-urgent =%name%
+label-urgent-background = ${color.adapta}
+label-urgent-foreground = ${color.red}
+label-urgent-padding = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted =  muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %date% %time%
+time =  %H:%M
+date =  %Y-%m-%d
+
+[module/temperature]
+type = internal/temperature
+
+# Seconds to sleep between updates
+# Default: 1
+interval = 0.5
+
+# Thermal zone to use
+# To list all the zone types, run 
+# $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+# Default: 0
+thermal-zone = 0
+
+# Full path of temperature sysfs path
+# Use `sensors` to find preferred temperature source, then run
+# $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+# to find path to desired file
+# Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+
+# Threshold temperature to display warning label (in degrees celsius)
+# Default: 80
+#warn-temperature = 80
+
+# Whether or not to show units next to the temperature tokens (°C, °F)
+# Default: true
+#units = false
+
+# Available tags:
+#   <label> (default)
+#;   <ramp>
+format = <ramp> <label>
+
+# Available tags:
+#   <label-warn> (default)
+#   <ramp>
+format-warn = <ramp> <label-warn>
+
+# Available tokens:
+#   %temperature% (deprecated)
+#   %temperature-c%   (default, temperature in °C)
+#   %temperature-f%   (temperature in °F)
+label = CPU: %temperature-c%
+
+# Available tokens:
+#   %temperature% (deprecated)
+#   %temperature-c%   (default, temperature in °C)
+#   %temperature-f%   (temperature in °F)
+label-warn = CPU: %temperature-c%
+label-warn-foreground = #ff0000
+
+# Requires the <ramp> tag
+# The icon selection will range from 0 to `warn-temperature`
+# with the current temperature as index.
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-0-foreground = #ffffff
+ramp-1-foreground = #00ffff
+ramp-2-foreground = #00ff00
+ramp-3-foreground = #ffff00
+ramp-4-foreground = #ff7800
+ramp-5-foreground = #ff0000
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /data
+
+label-mounted =  %free%
+format-mounted-padding = 1
+;format-mounted-background = ${color.cyan}
+;format-mounted-underline = ${color.cyan}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${color.cyan}
+label-close =  cancel
+label-close-foreground = ${color.cyan}
+label-separator = |
+label-separator-foreground = ${color.cyan}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
