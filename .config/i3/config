@@ -198,9 +198,6 @@ exec_always --no-startup-id compton -b -f
 # enable Numlock
 exec_always --no-startup-id numlockx on
 
-# Start Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # Set Wallpaper
 exec_always --no-startup-id feh --randomize --bg-fill ~/wallpaper/Wallpaper/*
 
@@ -217,6 +214,9 @@ exec_always --no-startup-id source ~/.fehbg
 
 # Key Led Lights
 exec_always --no-startup-id keyledsd
+
+# Start Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ##### TODO #####
 # 01 - Add Music Config
