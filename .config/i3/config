@@ -136,7 +136,7 @@ bindsym $mod+Ctrl+r exec --no-startup-id urxvt -e ranger
 bindsym $mod+Ctrl+t exec --no-startup-id "sh -c 'sleep 1; exec qbittorrent'"
 bindsym $mod+Ctrl+u exec --no-startup-id sh -x /opt/ums/UMS.sh
 bindsym $mod+Shift+l exec betterlockscreen --lock dim
-bindsym Print exec echo --no-startup-id urxvt -e ranger
+bindsym Print exec --no-startup-id scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 
 # rolfi Start
