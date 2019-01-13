@@ -193,6 +193,9 @@ workspace 4 output GPU-1.HDMI-0
 workspace 5 output GPU-1.HDMI-0
 workspace 6 output GPU-1.HDMI-0
 
+# Update Hardware Clock
+exec --no-startup-id "hwclock --systohc"
+
 # Start Compositor
 exec_always --no-startup-id compton -b -f
 
@@ -221,6 +224,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start udisks2
 exec --no-startup-id udiskie
+
 
 ##### TODO #####
 # 01 - Add Music Config
