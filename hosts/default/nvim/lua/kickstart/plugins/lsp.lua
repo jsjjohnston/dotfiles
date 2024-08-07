@@ -169,7 +169,7 @@ return { -- LSP Configuration & Plugins
         -- tsserver = {},
         -- eslint = {},
         --
-        powershell_es = {},
+        -- powershell_es = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -200,8 +200,8 @@ return { -- LSP Configuration & Plugins
       'stylua', -- Used to format Lua code
       'prettierd',
       'prettier',
-      'ast_grep',
-      'powershell_es',
+      -- 'ast_grep',
+      -- 'powershell_es',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
