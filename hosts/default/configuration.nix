@@ -22,6 +22,7 @@
       "esphome"
       "met"
       "radio_browser"
+      "home_connect"
     ];
     config = {
       # Includes dependencies for a basic setup
