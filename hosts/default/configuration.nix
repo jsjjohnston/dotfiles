@@ -127,6 +127,7 @@ home-manager = {
   users = {
     "jay" = import ./home.nix;
   };
+  backupFileExtension = "backup";
 };
 
   # Enable automatic login for the user.
