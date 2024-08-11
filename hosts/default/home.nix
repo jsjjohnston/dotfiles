@@ -53,7 +53,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim".source = ./nvim;
-    "test.txt".source = dotfiles/test.txt;
+    # "test.txt".source = dotfiles/test.txt;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose

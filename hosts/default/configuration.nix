@@ -153,6 +153,7 @@ home-manager = {
      git
      gh
      zig
+     google-chrome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
