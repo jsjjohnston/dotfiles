@@ -13,6 +13,14 @@
   # Enable Flakes 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+    openFirewall = true;
+    loadModels = ["llama3.1"];
+    host = "0.0.0.0";
+  };
+
   services.openssh.enable = true;
 
     services.home-assistant = {
@@ -57,7 +65,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [8123];  
+  networking.firewall.allowedTCPPorts = [8123]; 
 
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";

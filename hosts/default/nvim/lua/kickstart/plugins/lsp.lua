@@ -200,6 +200,7 @@ return { -- LSP Configuration & Plugins
       'stylua', -- Used to format Lua code
       'prettierd',
       'prettier',
+      'rnix-lsp',
       -- 'ast_grep',
       -- 'powershell_es',
     })
