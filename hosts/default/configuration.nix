@@ -31,11 +31,12 @@
       "met"
       "radio_browser"
       "home_connect"
+      "ovo_energy"
     ];
     config = {
       # Includes dependencies for a basic setup
       # https://www.home-assistant.io/integrations/default_config/
-      #default_config = {};
+      default_config = {};
       homeassistant = {
           name = "Alda Row";
           latitude = -37.8629;
@@ -57,11 +58,20 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos-server"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.domain = "alda-row.home"; # Domain name
+  # networking.wireless.enable = true;  # Enables wireless support vinga wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "03:45" ];
+
+  nix.gc = {
+   automatic = true;
+   dates = "weekly";
+   options = "--delete-older-than 30d";
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
