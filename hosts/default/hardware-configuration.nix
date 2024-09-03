@@ -23,7 +23,9 @@
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
-
+  
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
