@@ -156,6 +156,11 @@ return { -- LSP Configuration & Plugins
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers =
       {
+      nix = {
+        command = "nil",
+        filetypes = ["nix"],
+        rootPatterns = ["flake.nix"],
+      },
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -201,6 +206,7 @@ return { -- LSP Configuration & Plugins
       'prettierd',
       'prettier',
       'rnix-lsp',
+      'nil'
       -- 'ast_grep',
       -- 'powershell_es',
     })
