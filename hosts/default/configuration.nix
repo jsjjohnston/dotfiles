@@ -52,6 +52,10 @@
        # feedreader.urls = [ "https://nixos.org/blogs.xml" ];
       
     };
+    ovo_energy = {
+        user_name = "rosiejstn@gmail.com";
+        password = "rB35ThQZvtxDgU!";
+    };
   };
 
   # Bootloader.

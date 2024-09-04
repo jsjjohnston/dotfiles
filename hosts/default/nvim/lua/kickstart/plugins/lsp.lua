@@ -158,8 +158,8 @@ return { -- LSP Configuration & Plugins
       {
       nix = {
         command = "nil",
-        filetypes = ["nix"],
-        rootPatterns = ["flake.nix"],
+        filetypes = {"nix"},
+        rootPatterns = {"flake.nix"},
       },
         -- clangd = {},
         -- gopls = {},
