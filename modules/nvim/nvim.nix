@@ -1,4 +1,4 @@
-{ lib, config, pkg };
+{ lib, config, pkgs, ... }:
 
 {
 
@@ -6,10 +6,9 @@ options = {
 nvim.enable = lib.mkEnableOption "enable nvim module";
 };
 
-config = lib.mkif config.nvim.enable {
+config = lib.mkIf config.nvim.enable {
 programs.neovim = {
      enable = true;
-		#extraConfig = lib.fileContents ./nvim/init.lua;
      defaultEditor = true;
      viAlias = true;
      vimAlias = true;
