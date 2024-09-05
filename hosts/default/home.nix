@@ -1,10 +1,15 @@
 { config, pkgs, lib, ... }:
 
 {
+imports = [
+	../../modules/nvim/nvim.nix
+];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jay";
   home.homeDirectory = "/home/jay";
+
+  nvim.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -15,16 +20,7 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  programs.neovim = {
-     enable = true;
-     extraConfig = lib.fileContents ./nvim/init.lua;
-     defaultEditor = true;
-     viAlias = true;
-     vimAlias = true;
-     vimdiffAlias = true;
-  };
-
-  # The home.packages option allows you to install Nix packages into your
+ # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
@@ -52,7 +48,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/nvim".source = ./nvim;
+    #".config/nvim".source = ./nvim;
     # "test.txt".source = dotfiles/test.txt;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

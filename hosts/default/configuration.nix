@@ -12,6 +12,10 @@
 
   # Enable Flakes 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
 
   services.ollama = {
     enable = true;
@@ -22,39 +26,15 @@
   };
 
   services.openssh.enable = true;
-
-    services.home-assistant = {
-    enable = true;
-    extraComponents = [
-      # Components required to complete the onboarding
-      "esphome"
-      "met"
-      "radio_browser"
-      "home_connect"
-      "ovo_energy"
-    ];
-    config = {
-      # Includes dependencies for a basic setup
-      # https://www.home-assistant.io/integrations/default_config/
-      default_config = {};
-      homeassistant = {
-          name = "Alda Row";
-          latitude = -37.8629;
-          longitude = 144.7165;
-          elevation = 20;
-          unit_system = "metric";
-          time_zone = "Australia/Melbourne";
-        };
-        frontend = {
-         themes = "!include_dir_merge_named themes";
-        };
-        http = {};
-       # feedreader.urls = [ "https://nixos.org/blogs.xml" ];
-      
-    };
-    ovo_energy = {
-        user_name = "rosiejstn@gmail.com";
-        password = "rB35ThQZvtxDgU!";
+ virtualisation.oci-containers = {
+    backend = "podman";
+    containers.homeassistant = {
+      volumes = [ "home-assistant:/config" ];
+      environment.TZ = "Australia/Melbourne";
+      image = "ghcr.io/home-assistant/home-assistant:latest"; # Warning: if the tag does not change, the image will not be updated
+      extraOptions = [ 
+        "--network=host" 
+      ];
     };
   };
 
@@ -184,7 +164,17 @@ home-manager = {
   };
   backupFileExtension = "backup";
 };
-
+system.autoUpgrade = {
+  enable = true;
+  flake = inputs.self.outPath;
+  flags = [
+    "--update-input"
+    "nixpkgs"
+    "-L" # print build logs
+  ];
+  dates = "02:00";
+  randomizedDelaySec = "45min";
+};
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "jay";
