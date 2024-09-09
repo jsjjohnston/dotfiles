@@ -45,6 +45,26 @@
 	];
 
 };
+	nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+	specialArgs = {inherit inputs; inherit nixvim;};
+	modules = [
+		./hosts/laptop/configuration.nix
+		inputs.home-manager.nixosModules.default
+
+	 home-manager.nixosModules.home-manager {
+		home-manager = 
+		{
+			extraSpecialArgs = {inherit inputs;};
+			sharedModules = [ nixvim.homeManagerModules.nixvim ];
+			users = 
+			{
+				"jay" = import ./hosts/laptop/home.nix;
+			};
+			backupFileExtension = "backup";
+		};
+	}
+	];
+};
 };
 
 }
