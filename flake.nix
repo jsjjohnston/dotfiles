@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager = {
+   
+   home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -15,19 +15,36 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: 
 	let 
 		system = "x86_64-linux";
-		pkgs = nixpkgs.legacyPackages.${system};
+		pkgs = import nixpkgs;
 	in
     {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs; inherit nixvim;};
       modules = [
-        ./hosts/default/configuration.nix
-         inputs.home-manager.nixosModules.default
-         ../../modules/nixvim
-      ];
-    };
-  };
+ 	       ./hosts/default/configuration.nix
+        	 inputs.home-manager.nixosModules.default
+	 
+	home-manager.nixosModules.home-manager
+        {
+		home-manager = 
+		{
+			extraSpecialArgs = {inherit inputs;};
+                	sharedModules = [ nixvim.homeManagerModules.nixvim ];
+			users = 
+			{
+				"jay" =	import ./hosts/default/home.nix;
+                        };
+			backupFileExtension = "backup";
+              	};
+	}
+
+
+	];
+
+};
+};
+
 }

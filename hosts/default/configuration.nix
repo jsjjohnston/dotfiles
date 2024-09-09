@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixvim, ... }:
 
 {
   imports =
@@ -156,14 +156,6 @@
     ];
   };
 
-home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "jay" = import ./home.nix;
-  };
-  backupFileExtension = "backup";
-};
 system.autoUpgrade = {
   enable = true;
   flake = inputs.self.outPath;
