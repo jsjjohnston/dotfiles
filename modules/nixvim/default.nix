@@ -1,4 +1,10 @@
 {lib, pkgs, ...}: {
+  imports = [
+	./plugins/neo-tree.nix
+	./plugins/lsp.nix
+	./plugins/colorschemes/cyberdream.nix
+  ];
+
   home.shellAliases.v = "nvim";
 
   programs.nixvim = {
@@ -15,15 +21,8 @@
       };
       byteCompileLua.enable = true;
     };
-
-    plugins = {
-	lsp = {enable = true;
-
-		servers = 
-		{
-			nil-ls = {enable = true;};
-		};
-	};
+        plugins = {
+	
 	conform-nvim = {enable = true;
 	settings = {
 		formatters_by_ft = {
