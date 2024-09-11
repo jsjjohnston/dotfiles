@@ -47,11 +47,13 @@
 	{
 		event = ["TextYankPost"];
 		desc = "Highlight when yanking (copying) text";
-		group = "highlight-yank"; #TODO fix yank group
+		group = "highlight-yank";
 		callback = {__raw="function() vim.highlight.on_yank() end";};
 	}
 
     ];
+
+    autoGroups.highlight-yank.clear = true;
 
     keymaps = [
 	{
