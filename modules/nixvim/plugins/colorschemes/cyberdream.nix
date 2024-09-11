@@ -10,6 +10,13 @@
 				italic_comments = true;
 			};
 		};
-
+		keymaps = [
+			{
+				mode = ["n"];
+				key = "<leader>tt";
+				action = ":CyberdreamToggleMode<CR>";
+				options = {desc = "";};
+			}
+		];
 	};
 }

@@ -10,6 +10,15 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+    enableMan = true;
+
+    globals = {
+	mapleader = " ";
+	maplocalleader = " ";
+	have_nerd_font = true;
+
+	NERDTreeShowHidden = 1;
+    };
 
     performance = {
       combinePlugins = {
