@@ -34,7 +34,8 @@
       relativenumber = true;
       mouse = "a";
       showmode = false;
-      clipboard = "unnamedplus";
+      clipboard.register = "unnamedplus";
+      # clipboard.providers.xclip.enable = true;
       breakindent = true;
       undofile = true;
       ignorecase = true;

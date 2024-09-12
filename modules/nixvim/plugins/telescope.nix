@@ -7,15 +7,15 @@
           ui-select = {enable = true;};
           fzf-native = {enable = true;};
         };
+        keymaps = {
+          "<leader>sh" = {
+            action = "help_tags";
+            options = {desc = "[S]earch [H]elp";};
+            mode = "n";
+          };
+          "<leader>sg" = "live_grep";
+        };
       };
     };
-    keymaps = [
-      {
-        mode = ["n"];
-        key = "<leader>sh";
-        action = {__raw = "require('telescope').builtin.help_tags";};
-        options = {desc = "[S]earch Help";};
-      }
-    ];
   };
 }
