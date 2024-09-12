@@ -1,9 +1,12 @@
-{ config, pkgs, lib, ... }:
-
 {
-imports = [
-	../../modules/nixvim
-];
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ../../modules/nixvim
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jay";
@@ -20,7 +23,7 @@ imports = [
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
- # The home.packages option allows you to install Nix packages into your
+  # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     alejandra

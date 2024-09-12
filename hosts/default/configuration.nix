@@ -1,18 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, nixvim, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  # Enable Flakes 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  # Enable Flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
   ];
@@ -26,14 +28,14 @@
   };
 
   services.openssh.enable = true;
- virtualisation.oci-containers = {
+  virtualisation.oci-containers = {
     backend = "podman";
     containers.homeassistant = {
-      volumes = [ "home-assistant:/config" ];
+      volumes = ["home-assistant:/config"];
       environment.TZ = "Australia/Melbourne";
       image = "ghcr.io/home-assistant/home-assistant:latest"; # Warning: if the tag does not change, the image will not be updated
-      extraOptions = [ 
-        "--network=host" 
+      extraOptions = [
+        "--network=host"
       ];
     };
   };
@@ -50,17 +52,17 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   nix.optimise.automatic = true;
-  nix.optimise.dates = [ "03:45" ];
+  nix.optimise.dates = ["03:45"];
 
   nix.gc = {
-   automatic = true;
-   dates = "weekly";
-   options = "--delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [8123]; 
+  networking.firewall.allowedTCPPorts = [8123];
 
   # Set your time zone.
   time.timeZone = "Australia/Melbourne";
@@ -100,7 +102,7 @@
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
     powerManagement.enable = false;
 
@@ -110,15 +112,15 @@
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
     open = false;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
@@ -150,23 +152,23 @@
   users.users.jay = {
     isNormalUser = true;
     description = "Jay Johnston";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
-system.autoUpgrade = {
-  enable = true;
-  flake = inputs.self.outPath;
-  flags = [
-    "--update-input"
-    "nixpkgs"
-    "-L" # print build logs
-  ];
-  dates = "02:00";
-  randomizedDelaySec = "45min";
-};
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # print build logs
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "45min";
+  };
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "jay";
@@ -184,12 +186,12 @@ system.autoUpgrade = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-     git
-     gh
-     zig
-     google-chrome
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    git
+    gh
+    zig
+    google-chrome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -218,5 +220,4 @@ system.autoUpgrade = {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
