@@ -3,6 +3,7 @@
 	./plugins/neo-tree.nix
 	./plugins/lsp.nix
 	./plugins/colorschemes/cyberdream.nix
+	./plugins/which-key.nix
   ];
 
   home.shellAliases.v = "nvim";

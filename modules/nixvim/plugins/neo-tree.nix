@@ -1,9 +1,10 @@
 {...}:{
-	programs.nixvim.plugins = {
-		neo-tree = {enable = true;};
-	};
-	programs.nixvim = 
-	{
+	programs.nixvim = {
+		plugins = {
+			neo-tree = {enable = true;};
+		};
+	 
+	
 		keymaps = [
 			{
 				mode = ["n"];
