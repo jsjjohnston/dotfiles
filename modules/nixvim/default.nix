@@ -36,7 +36,7 @@
 	splitright = true;
 	splitbelow = true;
 	list = true;
-	listchars = {tab = "> "; trail = "."; nbsp ="_";}; #Fix chars
+	listchars = {tab = "» "; trail = "·"; nbsp = "␣";};
 	inccommand = "split";
 	cursorline = true;
 	scrolloff = 10;
