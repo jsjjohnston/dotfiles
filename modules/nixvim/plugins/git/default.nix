@@ -7,7 +7,7 @@
       {
         mode = ["n"];
         key = "<leader>gs";
-        action = "vim.cmd.Git";
+        action = ":Git<CR>";
         options = {desc = "Git [S]tatus";};
       }
     ];

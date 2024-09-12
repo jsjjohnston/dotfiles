@@ -10,6 +10,7 @@
     ./plugins/which-key.nix
     ./plugins/autoformat/conform.nix
     ./plugins/autocompletion/cmp.nix
+    ./plugins/telescope.nix
     ./plugins/git
   ];
 
@@ -148,21 +149,7 @@
       };
       byteCompileLua.enable = true;
     };
-    plugins = {
-      conform-nvim = {
-        enable = true;
-        settings = {
-          formatters_by_ft = {
-            nix = ["alejandra"];
-          };
-          formatters = {
-            alejandra = {
-              command = "${lib.getExe pkgs.alejandra}";
-            };
-          };
-        };
-      };
-    };
+
     viAlias = true;
     vimAlias = true;
 
