@@ -9,7 +9,8 @@
     ./plugins/colorschemes/cyberdream.nix
     ./plugins/which-key.nix
     ./plugins/autoformat/conform.nix
-    ./plugins/autocompletions/cmp.nix
+    ./plugins/autocompletion/cmp.nix
+    ./plugins/git
   ];
 
   home.shellAliases.v = "nvim";
