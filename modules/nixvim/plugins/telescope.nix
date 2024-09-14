@@ -64,16 +64,6 @@
             mode = "n";
             options = {desc = "[ ] Find existing buffers";};
           };
-
-          "<leader>sn" = {
-            action = ''
-              function()
-              	telescope.builtin.find_files({ cwd = '~/dotfiles' })
-              end
-            '';
-            mode = "n";
-            options = {desc = "[S]earch [C]onfig files";};
-          };
         };
       };
     };
