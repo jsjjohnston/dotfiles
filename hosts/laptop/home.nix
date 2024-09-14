@@ -26,13 +26,18 @@
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
+      "$menu" = "rofi -show drun";
+      "$fileManager" = "dolphin";
+      monitor = ",preferred,auto,auto";
 
       bind = [
         "$mod, q, exec, $terminal"
         "$mod, m, exit"
-        "$mod, r, exec, rofi -show drun"
-        "$mod, e, exec, dolphin"
+        "$mod, r, exec, $menu"
+        "$mod, e, exec, $fileManager"
+        "$mod, c, killactive"
       ];
+      exec-once = "$terminal";
     };
   };
   home.stateVersion = "24.05"; # Please read the comment before changing.
