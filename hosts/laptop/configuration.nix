@@ -88,6 +88,8 @@
     bluetooth.enable = true;
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -120,6 +122,8 @@
       sway
       cliphist
       wl-clip-persist
+      gnome-keyring
+      git
     ];
   };
 

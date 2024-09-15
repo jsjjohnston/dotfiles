@@ -18,13 +18,19 @@
 
   programs.gh = {
     enable = true;
-    gitCredentialHelper.enable = true;
+    gitCredentialHelper = {
+      enable = true;
+      hosts = [
+        "https://github.com"
+        "https://gist.github.com"
+      ];
+    };
   };
 
-  programs.git-credential-oauth = {
-    enable = true;
-  };
-
+  # programs.git-credential-oauth = {
+  #   enable = true;
+  # };
+  #
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
@@ -32,7 +38,6 @@
     lfs.enable = true;
     extraConfig = {
       push = {autoSetupRemote = true;};
-      credential.helper = "oauth";
     };
   };
 
@@ -45,6 +50,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
+    gitAndTools.gh
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
