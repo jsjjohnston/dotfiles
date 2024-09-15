@@ -52,6 +52,13 @@
   };
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
+
+  programs.git-credential-oauth.enable = true;
+
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
