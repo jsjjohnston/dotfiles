@@ -32,6 +32,7 @@
     lfs.enable = true;
     extraConfig = {
       push = {autoSetupRemote = true;};
+      credential.helper = "oauth";
     };
   };
 
