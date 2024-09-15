@@ -57,7 +57,12 @@
     gitCredentialHelper.enable = true;
   };
 
-  programs.git-credential-oauth.enable = true;
+  programs.git-credential-oauth = {
+    hosts = [
+      "https://github.com"
+    ];
+    enable = true;
+  };
 
   programs.git = {
     enable = true;
