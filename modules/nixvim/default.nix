@@ -12,6 +12,7 @@
     ./plugins/autocompletion/cmp.nix
     ./plugins/telescope.nix
     ./plugins/git
+    ./plugins/bufferline.nix
   ];
 
   home.shellAliases.v = "nvim";

@@ -8,6 +8,11 @@
     ./hardware-configuration.nix
   ];
 
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
+  ];
+
   time.hardwareClockInLocalTime = true;
 
   boot.loader.systemd-boot.enable = true;
@@ -83,8 +88,6 @@
       libnotify
       swww
       rofi-wayland
-      git
-      gh
       google-chrome
       alejandra
       ripgrep

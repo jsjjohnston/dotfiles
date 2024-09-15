@@ -32,15 +32,35 @@
 
       bind = [
         "$mod, q, exec, $terminal"
-        "$mod, m, exit"
-        "$mod, r, exec, $menu"
-        "$mod, e, exec, $fileManager"
         "$mod, c, killactive"
+        "$mod, m, exit"
+        "$mod, e, exec, $fileManager"
+        "$mod, v, togglefloating"
+        "$mod, r, exec, $menu"
+        "$mod, p, exec, pseudo"
+        "$mod, j, togglesplit"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
       ];
-      exec-once = "$terminal";
+      exec-once = [
+        "$terminal"
+        "waybar"
+      ];
     };
   };
   home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  programs.git = {
+    enable = true;
+    userName = "Jay Johnston";
+    userEmail = "jsjjohnston@gmail.com";
+    lfs.enable = true;
+    extraConfig = {
+      push = {autoSetupRemote = true;};
+    };
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
