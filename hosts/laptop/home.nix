@@ -2,54 +2,18 @@
   config,
   pkgs,
   lib,
+  nixpkgs,
   ...
 }: {
   imports = [
     ../../modules/nixvim
+    ../../modules/window-managers/hyprland.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "jay";
   home.homeDirectory = "/home/jay";
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      decoration = {
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
-      };
-
-      input = {
-        kb_layout = "us";
-      };
-
-      "$mod" = "SUPER";
-      "$terminal" = "kitty";
-      "$menu" = "rofi -show drun";
-      "$fileManager" = "dolphin";
-      monitor = ",preferred,auto,auto";
-
-      bind = [
-        "$mod, q, exec, $terminal"
-        "$mod, c, killactive"
-        "$mod, m, exit"
-        "$mod, e, exec, $fileManager"
-        "$mod, v, togglefloating"
-        "$mod, r, exec, $menu"
-        "$mod, p, exec, pseudo"
-        "$mod, j, togglesplit"
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-      ];
-      exec-once = [
-        "$terminal"
-        "waybar"
-      ];
-    };
-  };
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   programs.gh = {
@@ -58,9 +22,6 @@
   };
 
   programs.git-credential-oauth = {
-    hosts = [
-      "https://github.com"
-    ];
     enable = true;
   };
 
@@ -73,6 +34,8 @@
       push = {autoSetupRemote = true;};
     };
   };
+
+  programs.firefox.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.

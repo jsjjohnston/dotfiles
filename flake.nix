@@ -15,6 +15,16 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -22,6 +32,7 @@
     nixpkgs,
     home-manager,
     nixvim,
+    sddm-sugar-candy-nix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -32,6 +43,7 @@
         inherit inputs;
         inherit nixvim;
       };
+      system = system;
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
@@ -57,6 +69,15 @@
       modules = [
         ./hosts/laptop/configuration.nix
         inputs.home-manager.nixosModules.default
+        sddm-sugar-candy-nix.nixosModules.default
+
+        {
+          nixpkgs = {
+            overlays = [
+              sddm-sugar-candy-nix.overlays.default
+            ];
+          };
+        }
 
         home-manager.nixosModules.home-manager
         {

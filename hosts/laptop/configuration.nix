@@ -1,7 +1,6 @@
 {
-  lib,
   pkgs,
-  inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -43,18 +42,41 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    sugarCandyNix = {
+      enable = true;
+      settings = {
+        Background = lib.cleanSource ../../images/sddm.jpg;
+        PartialBlur = true;
+      };
+    };
+    # extraPackages = with pkgs; [where-is-my-sddm-theme];
+    # settings = {
+    #   theme = {
+    #     current = "where-is-my-sddm-theme";
+    #   };
+    # };
+  };
 
-  services.xserver.xkb = {
-    layout = "au";
-    variant = "";
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["gtk" "hyprland"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   programs = {
     hyprland = {
       enable = true;
+      xwayland.enable = true;
     };
   };
 
@@ -93,6 +115,11 @@
       ripgrep
       kitty
       dolphin
+      dunst
+      mako
+      sway
+      cliphist
+      wl-clip-persist
     ];
   };
 

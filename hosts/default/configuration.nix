@@ -52,12 +52,12 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   nix.optimise.automatic = true;
-  nix.optimise.dates = ["03:45"];
+  nix.optimise.dates = ["09:00"];
 
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 3d";
   };
 
   # Enable networking
