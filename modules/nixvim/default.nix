@@ -13,6 +13,7 @@
     ./plugins/telescope.nix
     ./plugins/git
     ./plugins/bufferline.nix
+    ./plugins/treesitter.nix
   ];
 
   home.shellAliases.v = "nvim";
