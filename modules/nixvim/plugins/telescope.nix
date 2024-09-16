@@ -5,6 +5,12 @@
         enable = true;
         settings = {
           pickers = {find_files = {hidden = true;};};
+          defaults = {
+            file_ignore_patterns = [
+              ".git"
+            ];
+            # sorting_strategy = "ascending";
+          };
         };
         extensions = {
           ui-select = {enable = true;};
@@ -67,5 +73,17 @@
         };
       };
     };
+    keymaps = [
+      {
+        key = "<leader>sn";
+        action.__raw = ''
+          	function()
+                   require('telescope.builtin').find_files({ cwd = '~/dotfiles' })
+          end
+        '';
+        mode = "n";
+        options = {desc = "stuff";};
+      }
+    ];
   };
 }

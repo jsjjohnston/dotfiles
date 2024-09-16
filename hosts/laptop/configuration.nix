@@ -50,6 +50,8 @@
       settings = {
         Background = lib.cleanSource ../../images/sddm.jpg;
         PartialBlur = true;
+        AccentColor = "#123456";
+        HeaderText = "All Thing Shall Pass";
       };
     };
     # extraPackages = with pkgs; [where-is-my-sddm-theme];
