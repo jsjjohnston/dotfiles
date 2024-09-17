@@ -1,6 +1,11 @@
 {...}: {
   programs.nixvim = {
     plugins = {
+      cmp-buffer.enable = true;
+      cmp-path.enable = true;
+      cmp-cmdline.enable = true;
+      cmp-nvim-lsp.enable = true;
+      cmp-treesitter.enable = true;
       cmp = {
         enable = true;
         autoEnableSources = true;

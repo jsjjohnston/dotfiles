@@ -17,6 +17,9 @@
     # ./plugins/mini/mini-status.nix
     ./plugins/todo-comments.nix
     ./plugins/neo-tree.nix
+    ./plugins/indent-blankline.nix
+    ./plugins/lint.nix
+    ./plugins/airline.nix
   ];
 
   home.shellAliases.v = "nvim";
