@@ -16,6 +16,7 @@
     ./plugins/treesitter.nix
     # ./plugins/mini/mini-status.nix
     ./plugins/todo-comments.nix
+    ./plugins/neo-tree.nix
   ];
 
   home.shellAliases.v = "nvim";
