@@ -14,6 +14,7 @@
     ./plugins/git
     ./plugins/bufferline.nix
     ./plugins/treesitter.nix
+    ./plugins/mini/mini-status.nix
   ];
 
   home.shellAliases.v = "nvim";
