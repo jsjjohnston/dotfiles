@@ -3,6 +3,7 @@
     ../../modules/nixvim
     ../../modules/window-managers/hyprland.nix
     ../../modules/terminals/kitty
+    ../../modules/git
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
@@ -17,16 +18,6 @@
         "https://github.com"
         "https://gist.github.com"
       ];
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "Jay Johnston";
-    userEmail = "jsjjohnston@gmail.com";
-    lfs.enable = true;
-    extraConfig = {
-      push = {autoSetupRemote = true;};
     };
   };
 
