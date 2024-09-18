@@ -1,7 +1,16 @@
 {...}: {
   programs.nixvim = {
     plugins = {
-      neo-tree = {enable = true;};
+      neo-tree = {
+        enable = true;
+        eventHandlers = {
+          file_open_requested = ''
+            function()
+            	require('neo-tree.command').execute({action = 'close'})
+            end
+          '';
+        };
+      };
     };
 
     keymaps = [
