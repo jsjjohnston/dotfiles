@@ -1,7 +1,7 @@
 {...}: {
   programs.kitty = {
     enable = true;
-    theme = "Wizzy Bright";
+    theme = "Dot Gov";
     settings = {
       font_family = "monospace";
       bold_dont = "auto";
