@@ -54,12 +54,6 @@
         HeaderText = "All Thing Shall Pass";
       };
     };
-    # extraPackages = with pkgs; [where-is-my-sddm-theme];
-    # settings = {
-    #   theme = {
-    #     current = "where-is-my-sddm-theme";
-    #   };
-    # };
   };
 
   xdg.portal = {
@@ -126,6 +120,9 @@
       wl-clip-persist
       gnome-keyring
       git
+      rofi-emoji
+      rofi-calc
+      rofi-systemd
     ];
   };
 

@@ -97,6 +97,7 @@ in {
         "$mod, 2, workspace, 2"
       ];
       exec-once = ''${startupScript}/bin/start'';
+      windowrulev2 = "float, class:(drun)";
       # [
       #   "$terminal"
       #   "waybar"
