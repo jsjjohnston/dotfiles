@@ -25,6 +25,11 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -70,7 +75,6 @@
         ./hosts/laptop/configuration.nix
         inputs.home-manager.nixosModules.default
         sddm-sugar-candy-nix.nixosModules.default
-
         {
           nixpkgs = {
             overlays = [
@@ -83,7 +87,10 @@
         {
           home-manager = {
             extraSpecialArgs = {inherit inputs;};
-            sharedModules = [nixvim.homeManagerModules.nixvim];
+            sharedModules = [
+              nixvim.homeManagerModules.nixvim
+              inputs.anyrun.homeManagerModules.default
+            ];
             users = {
               "jay" = import ./hosts/laptop/home.nix;
             };
