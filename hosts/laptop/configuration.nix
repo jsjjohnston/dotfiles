@@ -107,7 +107,7 @@
       waybar
       libnotify
       swww
-      rofi-wayland
+      # rofi-wayland
       google-chrome
       alejandra
       ripgrep
@@ -120,9 +120,10 @@
       wl-clip-persist
       gnome-keyring
       git
-      rofi-emoji
-      rofi-calc
-      rofi-systemd
+      # rofi-emoji
+      # rofi-calc
+      # rofi-systemd
+      rustup
     ];
   };
 
