@@ -73,7 +73,7 @@ in {
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$menu" = "rofi -show drun";
+      "$menu" = "anyrun";
       "$fileManager" = "dolphin";
 
       monitor = ",2256x1504,0x0,1";
