@@ -9,9 +9,6 @@
         text = [
           "vale"
         ];
-        nix = [
-          "statix"
-        ];
       };
     };
   };

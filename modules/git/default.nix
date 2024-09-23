@@ -10,6 +10,11 @@
       pull = {rebase = true;};
       rerere = {enable = true;};
       gc = {worktreePruneExpire = "now";};
+      merge = {conflictstyle = "zdiff3";};
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+      };
     };
   };
 }

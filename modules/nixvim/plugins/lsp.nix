@@ -11,7 +11,7 @@
               autoEvalInputs = true;
               autoArchive = true;
             };
-            maxMemoryMB = 40960;
+            maxMemoryMB = 10240;
           };
         };
         tsserver = {enable = true;};
