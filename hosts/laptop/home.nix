@@ -11,6 +11,7 @@
     ../../modules/zoxide
     ../../modules/fzf
     ../../modules/shell/bash
+    ../../modules/oh-my-posh
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";

@@ -49,6 +49,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    fd
     bat
     zig
     google-chrome
