@@ -4,10 +4,10 @@
       telescope = {
         enable = true;
         settings = {
-          pickers = {find_files = {hidden = true;};};
+          pickers = {find_files = {hidden = false;};};
           defaults = {
             file_ignore_patterns = [
-              ".git"
+              "node_modules"
             ];
             # sorting_strategy = "ascending";
           };
