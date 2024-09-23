@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"blocks": [
+		{
+			"alignment": "left",
+			"newline": true,
+			"segments": [
+				{
+					"foreground": "#0366FC",
+					"properties": {
+						"time_format": "Mon 3:04PM"
+					},
+					"style": "diamond",
+					"template": " {{ .CurrentDate | date .Format }} ",
+					"type": "time"
+				}
+			],
+			"type": "prompt"
+		}
+	],
+	"console_title_template": "{{ .Folder }}",
+	"transient_prompt": {
+		"background": "transparent",
+		"foreground": "#FEF5ED",
+		"template": "\ue285 "
+	},
+	"version": 2
+}

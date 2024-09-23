@@ -3,7 +3,7 @@
     enable = true;
     theme = "Dot Gov";
     settings = {
-      # font_family = "monospace";
+      #font_family = "monospace";
       font_family = "Fira Code";
       bold_dont = "auto";
       italic_font = "auto";

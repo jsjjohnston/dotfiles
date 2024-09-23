@@ -47,21 +47,21 @@
       enable = true;
       xwayland.enable = true;
     };
-
-    environment.systemPackages = with pkgs; [
-      swww
-      kitty
-      dolphin
-      dunst
-      mako
-      sway
-      cliphist
-      wl-clip-persist
-      gnome-keyring
-      rustup
-      hyprpicker
-      blueberry
-      nm-applet
-    ];
   };
+
+  environment.systemPackages = with pkgs; [
+    swww
+    kitty
+    dolphin
+    dunst
+    mako
+    sway
+    cliphist
+    wl-clip-persist
+    gnome-keyring
+    rustup
+    hyprpicker
+    blueberry
+    # nm-applet
+  ];
 }

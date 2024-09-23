@@ -16,6 +16,7 @@
         };
         tsserver = {enable = true;};
         eslint = {enable = true;};
+        jsonls = {enable = true;};
       };
     };
   };
