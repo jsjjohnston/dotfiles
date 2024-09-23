@@ -19,7 +19,7 @@
 
   nix.gc = {
     automatic = true;
-    dates = "daily";
+    dates = "19:00";
     options = "--delete-older-than 3d";
   };
 
@@ -119,7 +119,6 @@
       waybar
       libnotify
       swww
-      # rofi-wayland
       google-chrome
       alejandra
       ripgrep
@@ -132,21 +131,9 @@
       wl-clip-persist
       gnome-keyring
       git
-      # rofi-emoji
-      # rofi-calc
-      # rofi-systemd
       rustup
     ];
   };
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
