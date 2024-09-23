@@ -19,5 +19,8 @@
         # inputs.anyrun.packages.${pkgs.system}.websearch
       ];
     };
+    extraCss = [
+      "#main { background: transparant;}"
+    ];
   };
 }
