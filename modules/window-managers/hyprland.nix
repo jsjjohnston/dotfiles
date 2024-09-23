@@ -15,13 +15,9 @@ in {
       general = {
         gaps_in = 2;
         gaps_out = 0;
-
         border_size = 1;
-
         resize_on_border = false;
-
         allow_tearing = false;
-
         layout = "master";
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -42,7 +38,6 @@ in {
           enabled = true;
           size = 1;
           passes = 1;
-
           vibrancy = 0.1696;
         };
       };
@@ -50,11 +45,6 @@ in {
       animations = {
         enabled = true;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-      };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
       };
 
       master = {
@@ -74,7 +64,7 @@ in {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$menu" = "anyrun";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "yazi";
 
       monitor = ",2256x1504,0x0,1";
 
@@ -92,18 +82,12 @@ in {
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-        # "$mod, S, swapwithmaster, master"
+        "$mod, S, layoutmsg, swapwithmaster"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
       ];
       exec-once = ''${startupScript}/bin/start'';
       windowrulev2 = "float, class:(drun)";
-      # [
-      #   "$terminal"
-      #   "waybar"
-      #   "wl-paste --type text --watch cliphist store"
-      #   "wl-paste --type image --watch cliphist store"
-      # ];
     };
   };
 }

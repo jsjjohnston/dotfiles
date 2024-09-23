@@ -2,6 +2,7 @@
   imports = [
     ../../modules/nixvim
     ../../modules/git
+    ../../modules/terminals/kitty
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";

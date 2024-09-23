@@ -43,11 +43,6 @@
     };
   };
 
-  home.packages = with pkgs; [
-    zig
-    gitAndTools.gh
-  ];
-
   home.file = {
   };
 
