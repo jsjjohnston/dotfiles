@@ -8,6 +8,9 @@
     ../../modules/window-managers/hyprland.nix
     ../../modules/terminals/kitty
     ../../modules/git
+    ../../modules/zoxide
+    ../../modules/fzf
+    ../../modules/shell/bash
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";

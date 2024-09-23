@@ -1,16 +1,18 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../modules/nixvim
     ../../modules/git
     ../../modules/terminals/kitty
+    ../../modules/zoxide
+    ../../modules/fzf
+    ../../modules/shell/bash
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
-    alejandra
+  home.packages = [
   ];
 
   home.file = {

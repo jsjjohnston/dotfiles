@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  environment.pathsToLink = ["/share/bash-completion"];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -48,6 +49,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    bat
     zig
     google-chrome
     fzf
@@ -61,5 +63,6 @@
     gh
     rustup
     yazi
+    zoxide
   ];
 }
