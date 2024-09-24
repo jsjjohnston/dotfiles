@@ -35,14 +35,6 @@
 					}
 				},
 				{
-					"type": "session",
-					"powerline_symbol": "",
-					"style": "powerline",
-					"foreground": "#ffffff",
-					"background": "#c386f1",
-					"template": "{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }}{{else}}{{ .UserName }}{{ end }}"
-				},
-				{
 					"background": "#800080",
 					"foreground": "#0366FC",
 					"powerline_symbol": "",
@@ -52,6 +44,14 @@
 					"style": "powerline",
 					"template": " {{ .CurrentDate | date .Format }} ",
 					"type": "time"
+				},
+				{
+					"type": "session",
+					"powerline_symbol": "",
+					"style": "powerline",
+					"foreground": "#ffffff",
+					"background": "#c386f1",
+					"template": "{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }}{{else}}{{ .UserName }}{{ end }}"
 				},
 				{
 					"type": "project",
@@ -178,14 +178,14 @@
 				},
 				{
 					"type": "status",
-					"style": "diamond",
+					"style": "powerline",
 					"foreground": "#ffffff",
 					"background": "#00897B",
 					"background_templates": [
 						"{{ if .Error }}#e91e63{{ end }}"
 					],
-					"trailing_diamond": "",
-					"template": "<#193549></>  ",
+					"powerline_symbol": " ",
+					"template": "<#193549>",
 					"properties": {
 						"always_enabled": true
 					}
