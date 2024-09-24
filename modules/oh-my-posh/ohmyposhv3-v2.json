@@ -10,7 +10,7 @@
 					"powerline_symbol": "",
 					"foreground": "#ffffff",
 					"background": "#ED4337",
-					"template": "{{ if gt .PhysicalPercentUsed 60 }}  {{ round .PhysicalPercentUsed .Precision }}%{{ end }} ",
+					"template": "{{ if gt .PhysicalPercentUsed 60 }}📺{{ round .PhysicalPercentUsed .Precision }}%{{ end }} ",
 					"properties": {
 						"precision": 0
 					},
@@ -29,9 +29,9 @@
 					],
 					"template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} ",
 					"properties": {
-						"discharging_icon": " ",
-						"charging_icon": " ",
-						"charged_icon": " "
+						"discharging_icon": "☠️ ",
+						"charging_icon": "⚡",
+						"charged_icon": "🪴 "
 					}
 				},
 				{
@@ -78,7 +78,7 @@
 					"properties": {
 						"style": "folder",
 						"mapped_locations": {
-							"~/dotfiles": ""
+							"~/dotfiles": "⚙️"
 						}
 					}
 				},
@@ -94,7 +94,7 @@
 						"{{ if gt .Ahead 0 }}#B388FF{{ end }}",
 						"{{ if gt .Behind 0 }}#B388FB{{ end }}"
 					],
-					"template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+					"template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 💾 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 📖 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} 🙈 {{ .StashCount }}{{ end }}",
 					"properties": {
 						"fetch_status": true,
 						"fetch_upstream_icon": true,
@@ -103,9 +103,10 @@
 						},
 						"source": "cli",
 						"mapped_branches": {
-							"main": "main",
-							"feat/*": "🚀 ",
-							"bug/*": "🐛 "
+							"main": "🔥",
+							"feat/*": "🚀",
+							"feature/*": "🚀",
+							"bug/*": "🐞"
 						}
 					}
 				},
@@ -231,7 +232,7 @@
 					"powerline_symbol": "",
 					"foreground": "#ffffff",
 					"background": "#00897B",
-					"template": "{{ .StatusIcon }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }}{{ url .Recipe.Name .URL }} {{ printf \"%.1f\" .MeasuredAbv }}%{{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
+					"template": "🍺{{ .StatusIcon }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }}{{ url .Recipe.Name .URL }} {{ printf \"%.1f\" .MeasuredAbv }}%{{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
 					"properties": {
 						"user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
 						"api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
