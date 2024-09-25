@@ -80,6 +80,7 @@
       };
       system = system;
       modules = [
+        ./settings/flakes.nix
         ./hosts/laptop/configuration.nix
         ./settings/system-packages.nix
         inputs.home-manager.nixosModules.default
@@ -95,6 +96,8 @@
         home-manager.nixosModules.home-manager
         {
           home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
             extraSpecialArgs = {inherit inputs;};
             sharedModules = [
               nixvim.homeManagerModules.nixvim

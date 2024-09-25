@@ -13,6 +13,7 @@
     ../../modules/shell/bash
     ../../modules/oh-my-posh
     ../../modules/app-launchers/anyrun.nix
+    ../../modules/dconf
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
