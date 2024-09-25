@@ -34,6 +34,7 @@ return { -- Autoformat
       typescript = { { 'prettierd', 'prettier' } },
       powershell = { { 'prettierd', 'prettier' } },
       typescriptreact = { { 'prettierd', 'prettier' } },
+      json = { { 'jq' } }
     },
   },
 }

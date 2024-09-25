@@ -10,5 +10,6 @@
     ripgrep
     kitty
     rustup
+    jq
   ];
 }

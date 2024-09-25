@@ -2,51 +2,80 @@
 	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
 	"blocks": [
 		{
+			"type": "prompt",
 			"alignment": "left",
+			"overflow": "hide",
 			"newline": true,
 			"segments": [
 				{
-					"type": "status",
-					"style": "powerline",
+					"type": "brewfather",
+					"style": "diamond",
 					"foreground": "#ffffff",
 					"background": "#00897B",
-					"background_templates": [
-						"{{ if .Error }}#e91e63{{ end }}"
-					],
-					"powerline_symbol": " ",
-					"template": "<#193549>",
+					"template": "{{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }} {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
 					"properties": {
-						"always_enabled": true
+						"user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
+						"api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
+						"batch_id": "GOW9W9Kzc4TnKlv1eYFPWTeDZwbtTe",
+						"http_timeout": 1000,
+						"cache_timeout": 60,
+						"planning_status_icon": "📅",
+						"fermenting_status_icon": "🫧",
+						"brewing_status_icon": "🫖",
+						"conditioning_status_icon": "🍶",
+						"completed_status_icon": "🙌",
+						"archived_status_icon": "🗃️",
+						"flat_icon": "→",
+						"doubleup_icon": "⏫",
+						"singleup_icon": "🔼",
+						"singledown_icon": "🔽",
+						"doubledown_icon": "⏬",
+						"fortyfiveup_icon": "↗️",
+						"fortyfivedown_icon": "↘️",
+						"day_icon": "d"
 					}
 				},
+				{
+					"type": "ytm",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"foreground": "#ffffff",
+					"background": "#FF0000",
+					"properties": {
+						"playing_icon": " ",
+						"paused_icon": " ",
+						"stopped_icon": " "
+					},
+					"template": "{{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }}-{{ .Track }}{{ end }}"
+				},
+				{
+					"type": "owm",
+					"style": "powerline",
+					"powerline_symbol": "",
+					"foreground": "#ffffff",
+					"background": "#FF0000",
+					"template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
+					"properties": {
+						"api_key": "0fcecd73687a62ded000b3a015c4dec5",
+						"location": "Hoppers Crossing,AU",
+						"units": "metric",
+						"http_timeout": 1000,
+						"cache_timeout": 30
+					}
+				}
+			]
+		},
+		{
+			"alignment": "left",
+			"newline": true,
+			"segments": [
 				{
 					"type": "sysinfo",
 					"powerline_symbol": "",
 					"foreground": "#ffffff",
 					"background": "#ED4337",
-					"template": "{{ if gt .PhysicalPercentUsed 60 }}📺{{ round .PhysicalPercentUsed .Precision }}%{{ end }} ",
-					"properties": {
-						"precision": 0
-					},
+					"template": "{{ if gt .PhysicalAvailableMemory 60.00 }}📺{{ .PhysicalAvailableMemory }}%{{ end }}",
 					"style": "powerline"
-				},
-				{
-					"type": "battery",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#193549",
-					"background": "#ffeb3b",
-					"background_templates": [
-						"{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-						"{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-						"{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-					],
-					"template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} ",
-					"properties": {
-						"discharging_icon": "☠️ ",
-						"charging_icon": "⚡",
-						"charged_icon": "🪴 "
-					}
 				},
 				{
 					"background": "#800080",
@@ -138,13 +167,6 @@
 					}
 				},
 				{
-					"type": "nix-shell",
-					"style": "powerline",
-					"foreground": "blue",
-					"background": "transparent",
-					"template": "(nix-{{ .Type }})"
-				},
-				{
 					"type": "npm",
 					"style": "powerline",
 					"powerline_symbol": "",
@@ -196,66 +218,21 @@
 		},
 		{
 			"type": "prompt",
-			"alignment": "right",
-			"overflow": "hide",
-			"newline": false,
-			"leading_diamond": "",
-			"trailing_diamond": "",
+			"newline": true,
+			"alignment": "left",
 			"segments": [
 				{
-					"type": "ytm",
+					"type": "status",
 					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#FF0000",
-					"properties": {
-						"playing_icon": " ",
-						"paused_icon": " ",
-						"stopped_icon": " "
-					},
-					"template": "{{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }}-{{ .Track }}{{ end }}"
-				},
-				{
-					"type": "owm",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#FF0000",
-					"template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
-					"properties": {
-						"api_key": "0fcecd73687a62ded000b3a015c4dec5",
-						"location": "Hoppers Crossing,AU",
-						"units": "metric",
-						"http_timeout": 1000,
-						"cache_timeout": 25
-					}
-				},
-				{
-					"type": "brewfather",
-					"style": "diamond",
 					"foreground": "#ffffff",
 					"background": "#00897B",
-					"template": "{{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }}{{ printf \"%.1f\" .MeasuredAbv }}% {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
+					"background_templates": [
+						"{{ if .Error }}#e91e63{{ end }}"
+					],
+					"powerline_symbol": " ",
+					"template": "<#193549>",
 					"properties": {
-						"user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
-						"api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
-						"batch_id": "GOW9W9Kzc4TnKlv1eYFPWTeDZwbtTe",
-						"http_timeout": 1000,
-						"cache_timeout": 60,
-						"planning_status_icon": "📅",
-						"fermenting_status_icon": "🫧",
-						"brewing_status_icon": "🫖",
-						"conditioning_status_icon": "🍶",
-						"completed_status_icon": "🙌",
-						"archived_status_icon": "🗃️",
-						"flat_icon": "→",
-						"doubleup_icon": "⏫",
-						"singleup_icon": "🔼",
-						"singledown_icon": "🔽",
-						"doubledown_icon": "⏬",
-						"fortyfiveup_icon": "↗️",
-						"fortyfivedown_icon": "↘️",
-						"day_icon": "d"
+						"always_enabled": true
 					}
 				}
 			]
