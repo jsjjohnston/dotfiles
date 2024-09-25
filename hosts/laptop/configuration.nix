@@ -1,15 +1,44 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
-    ../../settings
-    ../../modules/desktopManagers/hyprland.nix
-    ../../users
+  ];
+
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
   ];
 
   time.hardwareClockInLocalTime = true;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "19:00";
+    options = "--delete-older-than 3d";
+  };
+
+  nix.settings = {
+    builders-use-substitutes = true;
+    # extra substituters to add
+    extra-substituters = [
+      "https://anyrun.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+    ];
+  };
+
   networking.hostName = "jay-nixos";
   networking.networkmanager.enable = true;
+
+  time.timeZone = "Australia/Melbourne";
 
   i18n.defaultLocale = "en_AU.UTF-8";
 
@@ -23,6 +52,40 @@
     LC_PAPER = "en_AU.UTF-8";
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    sugarCandyNix = {
+      enable = true;
+      settings = {
+        Background = lib.cleanSource ../../images/sddm.jpg;
+        PartialBlur = true;
+        AccentColor = "#123456";
+        HeaderText = "All Thing Shall Pass";
+      };
+    };
+  };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["gtk" "hyprland"];
+    };
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+  };
+
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
   };
 
   services.printing.enable = true;
@@ -41,6 +104,35 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  users.users.jay = {
+    isNormalUser = true;
+    description = "Jay";
+    extraGroups = ["networkmanager" "wheel"];
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  environment = {
+    systemPackages = with pkgs; [
+      waybar
+      libnotify
+      swww
+      google-chrome
+      alejandra
+      ripgrep
+      kitty
+      dolphin
+      dunst
+      mako
+      sway
+      cliphist
+      wl-clip-persist
+      gnome-keyring
+      git
+      rustup
+    ];
   };
 
   # This value determines the NixOS release from which the default

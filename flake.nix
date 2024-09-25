@@ -51,6 +51,7 @@
       system = system;
       modules = [
         ./hosts/default/configuration.nix
+        ./settings/flakes.nix
         inputs.home-manager.nixosModules.default
 
         home-manager.nixosModules.home-manager
@@ -71,6 +72,7 @@
         inherit inputs;
         inherit nixvim;
       };
+      system = system;
       modules = [
         ./hosts/laptop/configuration.nix
         inputs.home-manager.nixosModules.default
