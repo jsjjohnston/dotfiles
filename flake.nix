@@ -43,14 +43,14 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs;
   in {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
         inherit nixvim;
       };
       system = system;
       modules = [
-        ./hosts/default/configuration.nix
+        ./hosts/server/configuration.nix
         ./settings/flakes.nix
         ./settings/system-packages.nix
         # ./services/ollama
@@ -63,7 +63,7 @@
             extraSpecialArgs = {inherit inputs;};
             sharedModules = [nixvim.homeManagerModules.nixvim];
             users = {
-              "jay" = import ./hosts/default/home.nix;
+              "jay" = import ./hosts/server/home.nix;
             };
             backupFileExtension = "backup";
           };
