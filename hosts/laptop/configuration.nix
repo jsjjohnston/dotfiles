@@ -119,10 +119,6 @@
       waybar
       libnotify
       swww
-      google-chrome
-      alejandra
-      ripgrep
-      kitty
       dolphin
       dunst
       mako
@@ -130,8 +126,6 @@
       cliphist
       wl-clip-persist
       gnome-keyring
-      git
-      rustup
     ];
   };
 

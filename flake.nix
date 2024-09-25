@@ -52,6 +52,7 @@
       modules = [
         ./hosts/default/configuration.nix
         ./settings/flakes.nix
+        ./settings/system-packages.nix
         inputs.home-manager.nixosModules.default
 
         home-manager.nixosModules.home-manager
@@ -75,6 +76,7 @@
       system = system;
       modules = [
         ./hosts/laptop/configuration.nix
+        ./settings/system-packages.nix
         inputs.home-manager.nixosModules.default
         sddm-sugar-candy-nix.nixosModules.default
         {
