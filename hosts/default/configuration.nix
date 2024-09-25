@@ -16,32 +16,11 @@
     "openssl-1.1.1w"
   ];
 
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-    openFirewall = true;
-    loadModels = ["llama3.1"];
-    host = "0.0.0.0";
-  };
-
-  services.openssh.enable = true;
-  virtualisation.oci-containers = {
-    backend = "podman";
-    containers.homeassistant = {
-      volumes = ["home-assistant:/config"];
-      environment.TZ = "Australia/Melbourne";
-      image = "ghcr.io/home-assistant/home-assistant:latest"; # Warning: if the tag does not change, the image will not be updated
-      extraOptions = [
-        "--network=host"
-      ];
-    };
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-server"; # Define your hostname.
+  networking.hostName = "server"; # Define your hostname.
   networking.domain = "alda-row.home"; # Domain name
   # networking.wireless.enable = true;  # Enables wireless support vinga wpa_supplicant.
 

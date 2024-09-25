@@ -53,6 +53,8 @@
         ./hosts/default/configuration.nix
         ./settings/flakes.nix
         ./settings/system-packages.nix
+        # ./services/ollama
+        ./services/openssh
         inputs.home-manager.nixosModules.default
 
         home-manager.nixosModules.home-manager
