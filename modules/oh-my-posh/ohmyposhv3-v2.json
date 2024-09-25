@@ -6,6 +6,20 @@
 			"newline": true,
 			"segments": [
 				{
+					"type": "status",
+					"style": "powerline",
+					"foreground": "#ffffff",
+					"background": "#00897B",
+					"background_templates": [
+						"{{ if .Error }}#e91e63{{ end }}"
+					],
+					"powerline_symbol": " ",
+					"template": "<#193549>",
+					"properties": {
+						"always_enabled": true
+					}
+				},
+				{
 					"type": "sysinfo",
 					"powerline_symbol": "",
 					"foreground": "#ffffff",
@@ -176,20 +190,6 @@
 					"foreground": "#ffffff",
 					"background": "#6CA35E",
 					"template": "  {{ .Full }} "
-				},
-				{
-					"type": "status",
-					"style": "powerline",
-					"foreground": "#ffffff",
-					"background": "#00897B",
-					"background_templates": [
-						"{{ if .Error }}#e91e63{{ end }}"
-					],
-					"powerline_symbol": " ",
-					"template": "<#193549>",
-					"properties": {
-						"always_enabled": true
-					}
 				}
 			],
 			"type": "prompt"
@@ -197,6 +197,10 @@
 		{
 			"type": "prompt",
 			"alignment": "right",
+			"overflow": "hide",
+			"newline": false,
+			"leading_diamond": "",
+			"trailing_diamond": "",
 			"segments": [
 				{
 					"type": "ytm",
@@ -228,27 +232,35 @@
 				},
 				{
 					"type": "brewfather",
-					"style": "powerline",
-					"powerline_symbol": "",
+					"style": "diamond",
 					"foreground": "#ffffff",
 					"background": "#00897B",
-					"template": "🍺{{ .StatusIcon }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }}{{ url .Recipe.Name .URL }} {{ printf \"%.1f\" .MeasuredAbv }}%{{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
+					"template": "{{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }}{{ printf \"%.1f\" .MeasuredAbv }}% {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
 					"properties": {
 						"user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
 						"api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
 						"batch_id": "GOW9W9Kzc4TnKlv1eYFPWTeDZwbtTe",
 						"http_timeout": 1000,
-						"cache_timeout": 60
+						"cache_timeout": 60,
+						"planning_status_icon": "📅",
+						"fermenting_status_icon": "🫧",
+						"brewing_status_icon": "🫖",
+						"conditioning_status_icon": "🍶",
+						"completed_status_icon": "🙌",
+						"archived_status_icon": "🗃️",
+						"flat_icon": "→",
+						"doubleup_icon": "⏫",
+						"singleup_icon": "🔼",
+						"singledown_icon": "🔽",
+						"doubledown_icon": "⏬",
+						"fortyfiveup_icon": "↗️",
+						"fortyfivedown_icon": "↘️",
+						"day_icon": "d"
 					}
 				}
 			]
 		}
 	],
-	"debug_prompt": {
-		"background": "transparent",
-		"foreground": "#ffffff",
-		"template": "Debugging "
-	},
 	"console_title_template": "{{.UserName}}@{{.HostName}} in {{.PWD}}",
 	"transient_prompt": {
 		"background": "transparent",

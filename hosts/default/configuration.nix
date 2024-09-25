@@ -88,8 +88,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "au";
-    xkbVariant = "";
+    xkb = {
+      layout = "au";
+      variant = "";
+    };
     videoDrivers = ["nvidia"];
   };
 
@@ -167,8 +169,10 @@
     randomizedDelaySec = "45min";
   };
 
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "jay";
+  services.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "jay";
+  };
 
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
