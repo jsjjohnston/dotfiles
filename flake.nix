@@ -55,11 +55,14 @@
         ./settings/system-packages.nix
         # ./services/ollama
         ./services/openssh
+        ./virtualisation/home-assistant
         inputs.home-manager.nixosModules.default
 
         home-manager.nixosModules.home-manager
         {
           home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
             extraSpecialArgs = {inherit inputs;};
             sharedModules = [nixvim.homeManagerModules.nixvim];
             users = {
