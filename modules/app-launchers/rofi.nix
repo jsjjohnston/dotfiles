@@ -7,8 +7,8 @@
   rofi = config.home-manager.users.${config.user}.programs.rofi.finalPackage;
 in {
   imports = [
-    ./rofi/power.nix
-    ./rofi/brightness.nix
+    # ./rofi/power.nix
+    # ./rofi/brightness.nix
   ];
 
   config = lib.mkIf (pkgs.stdenv.isLinux && config.services.xserver.enable) {

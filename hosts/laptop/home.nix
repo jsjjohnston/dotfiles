@@ -14,7 +14,7 @@
     ../../modules/oh-my-posh
     # ../../modules/app-launchers/anyrun.nix
     ../../modules/dconf
-    ../../modules/app-launchers/rofi.nix
+    # ../../modules/app-launchers/rofi.nix
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
