@@ -43,6 +43,12 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs;
   in {
+    darwinConfigurations.work-laptop = nixpkgs.lib.nixosSystem {
+    system = "aarch64-darwin";
+    modules = [
+    ./hosts/work-laptop/configurations.nix
+    ];
+    };
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
