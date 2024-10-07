@@ -32,9 +32,12 @@
     };
 
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-  };
+    
+    nix-darwin ={
+	url = "github:LnL7/nix-darwin";
+    	inputs.nixpkgs-darwin.follows = "nixpkgs-darwin";
+    };  
+    };
 
   outputs = {
     self,
@@ -43,16 +46,22 @@
     nixvim,
     sddm-sugar-candy-nix,
     nix-darwin,
+    nixpkgs-darwin,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs;
   in {
     darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
+       specialArgs = {
+        inherit inputs;
+        inherit nixvim;
+      };
     system = "aarch64-darwin";
     modules = [
     ./hosts/work-laptop/configuration.nix
-    home-manager.nixosModules.home-manager
+
+    home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -60,7 +69,7 @@
             extraSpecialArgs = {inherit inputs;};
             sharedModules = [nixvim.homeManagerModules.nixvim];
             users = {
-              "jay" = import ./hosts/server/home.nix;
+              "jay" = import ./hosts/work-laptop/home.nix;
             };
             backupFileExtension = "backup";
           };
