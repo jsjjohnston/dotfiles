@@ -30,6 +30,10 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -38,15 +42,29 @@
     home-manager,
     nixvim,
     sddm-sugar-candy-nix,
+    nix-darwin,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs;
   in {
-    darwinConfigurations.work-laptop = nixpkgs.lib.nixosSystem {
+    darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
     system = "aarch64-darwin";
     modules = [
-    ./hosts/work-laptop/configurations.nix
+    ./hosts/work-laptop/configuration.nix
+    home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs;};
+            sharedModules = [nixvim.homeManagerModules.nixvim];
+            users = {
+              "jay" = import ./hosts/server/home.nix;
+            };
+            backupFileExtension = "backup";
+          };
+        }
     ];
     };
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
