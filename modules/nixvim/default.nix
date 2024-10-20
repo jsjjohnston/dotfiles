@@ -5,20 +5,20 @@
 }: {
   imports = [
     ./plugins/neo-tree.nix
-    #./plugins/lsp.nix
-    #./plugins/colorschemes/cyberdream.nix
-    #./plugins/which-key.nix
-    #./plugins/autoformat/conform.nix
-    #./plugins/autocompletion/cmp.nix
-    #./plugins/telescope.nix
-    #./plugins/git
-    #./plugins/bufferline.nix
-    #./plugins/treesitter.nix
-    #./plugins/mini/mini-status.nix
-    #./plugins/todo-comments.nix
-   #./plugins/indent-blankline.nix
-    #./plugins/lint.nix
-    # ./plugins/airline.nix
+    ./plugins/lsp.nix
+    ./plugins/colorschemes/cyberdream.nix
+    ./plugins/which-key.nix
+    ./plugins/autoformat/conform.nix
+    ./plugins/autocompletion/cmp.nix
+    ./plugins/telescope.nix
+    ./plugins/git
+    ./plugins/bufferline.nix
+    ./plugins/treesitter.nix
+    ./plugins/mini/mini-status.nix
+    ./plugins/todo-comments.nix
+   ./plugins/indent-blankline.nix
+    ./plugins/lint.nix
+     ./plugins/airline.nix
   ];
 
   home.shellAliases.v = "nvim";
