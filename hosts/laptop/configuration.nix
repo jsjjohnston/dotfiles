@@ -91,7 +91,11 @@
   services.printing.enable = true;
 
   hardware = {
-    pulseaudio.enable = false;
+    pulseaudio = {
+      enable = false;
+      package = pkgs.pulseaudioFull;
+    };
+
     graphics.enable = true;
     bluetooth = {
       enable = true;
@@ -100,7 +104,6 @@
   };
 
   services.blueman.enable = true;
-
   services.gnome.gnome-keyring.enable = true;
 
   security.rtkit.enable = true;
