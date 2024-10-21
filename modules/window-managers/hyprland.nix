@@ -74,7 +74,7 @@ in {
         "$mod, M, exit"
         "$mod, E, exec, $fileManager"
         "$mod, V, togglefloating"
-        "$mod, R, exec, $menu"
+        "$mod, SPACE, exec, $menu"
         "$mod, P, exec, pseudo"
         "$mod, J, togglesplit"
         "$mod, left, movefocus, l"

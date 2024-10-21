@@ -93,8 +93,13 @@
   hardware = {
     pulseaudio.enable = false;
     graphics.enable = true;
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
+
+  services.blueman.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
 

@@ -1,6 +1,6 @@
 {
-  lib,
-  pkgs,
+  # lib,
+  # pkgs,
   ...
 }: {
   imports = [
@@ -16,9 +16,9 @@
     ./plugins/treesitter.nix
     ./plugins/mini/mini-status.nix
     ./plugins/todo-comments.nix
-   ./plugins/indent-blankline.nix
+    ./plugins/indent-blankline.nix
     ./plugins/lint.nix
-     ./plugins/airline.nix
+    ./plugins/airline.nix
   ];
 
   home.shellAliases.v = "nvim";

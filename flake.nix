@@ -32,12 +32,12 @@
     };
 
     nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
-    
-    nix-darwin ={
-	url = "github:LnL7/nix-darwin";
-    	inputs.nixpkgs-darwin.follows = "nixpkgs-darwin";
-    };  
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs-darwin.follows = "nixpkgs-darwin";
     };
+  };
 
   outputs = {
     self,
@@ -50,18 +50,18 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs;
+    # pkgs = import nixpkgs;
   in {
     darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
-       specialArgs = {
+      specialArgs = {
         inherit inputs;
         inherit nixvim;
       };
-    system = "aarch64-darwin";
-    modules = [
-    ./hosts/work-laptop/configuration.nix
+      system = "aarch64-darwin";
+      modules = [
+        ./hosts/work-laptop/configuration.nix
 
-    home-manager.darwinModules.home-manager
+        home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -74,8 +74,9 @@
             backupFileExtension = "backup";
           };
         }
-    ];
+      ];
     };
+
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
@@ -106,6 +107,7 @@
         }
       ];
     };
+
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
