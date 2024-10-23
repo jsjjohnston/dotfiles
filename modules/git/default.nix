@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
-    userEmail = "jsjjohnston@gmail.com";
+    # userEmail = "jsjjohnston@gmail.com";
     lfs.enable = true;
     extraConfig = {
       core = {

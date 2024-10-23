@@ -35,6 +35,9 @@ return { -- Autoformat
       powershell = { { 'prettierd', 'prettier' } },
       typescriptreact = { { 'prettierd', 'prettier' } },
       json = { { 'jq' } }
+      terraform = { "terraform_fmt" },
+      tf = { "terraform_fmt" },
+      ["terraform-vars"] = { "terraform_fmt" },
     },
   },
 }

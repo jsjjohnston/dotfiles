@@ -23,6 +23,9 @@
             squeeze_blanks = {
               command = lib.getExe' pkgs.coreutils "cat";
             };
+            terraform_fmt = {
+              command = lib.getExe pkgs.terraform;
+            };
           };
           notify_on_error = false;
           format_on_save =
@@ -45,6 +48,9 @@
               "trim_whitespace"
               "trim_newlines"
             ];
+            terraform = ["terraform_fmt"];
+            tf = ["terraform_fmt"];
+            terraform-vars = ["terraform_fmt"];
           };
         };
       };

@@ -1,10 +1,10 @@
 {...}: {
   imports = [
     ../../modules/nixvim
-    # ../../modules/git
+    ../../modules/git
     ../../modules/terminals/kitty
-    # ../../modules/zoxide
-    # ../../modules/fzf
+    ../../modules/zoxide
+    ../../modules/fzf
     # ../../modules/shell/bash
     ../../modules/oh-my-posh
   ];
