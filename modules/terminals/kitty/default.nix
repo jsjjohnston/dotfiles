@@ -1,9 +1,8 @@
 {...}: {
   programs.kitty = {
     enable = true;
-    themeFile = "Dot Gov";
+    theme = "Dot Gov";
     settings = {
-      #font_family = "monospace";
       font_family = "Fira Code";
       bold_dont = "auto";
       italic_font = "auto";
