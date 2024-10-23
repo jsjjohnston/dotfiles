@@ -1,2 +1,4 @@
 # dotfiles
 Jays dotfiles
+
+Nix
