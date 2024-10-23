@@ -21,7 +21,7 @@
   home.homeDirectory = "/home/jay";
 
   home.stateVersion = "24.05";
-
+  programs.git.userEmail = "jsjjohnston@gmail.com";
   programs.gh = {
     enable = true;
     gitCredentialHelper = {
