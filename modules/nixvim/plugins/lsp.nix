@@ -4,7 +4,7 @@
       enable = true;
 
       servers = {
-        nil-ls = {
+        nil_ls = {
           enable = true;
           settings.nix = {
             flake = {
@@ -14,7 +14,7 @@
             maxMemoryMB = 10240;
           };
         };
-        tsserver = {enable = true;};
+        ts_ls = {enable = true;};
         eslint = {enable = true;};
         jsonls = {enable = true;};
       };
