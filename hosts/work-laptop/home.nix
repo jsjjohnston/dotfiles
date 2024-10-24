@@ -1,12 +1,12 @@
 {...}: {
   imports = [
     ../../modules/nixvim
-    ../../modules/git
-    ../../modules/terminals/kitty
-    ../../modules/zoxide
+    #../../modules/git
+    #../../modules/terminals/kitty
+    #../../modules/zoxide
     ../../modules/fzf
     # ../../modules/shell/bash
-    ../../modules/oh-my-posh
+    #../../modules/oh-my-posh
   ];
 
   home.username = "jay";
