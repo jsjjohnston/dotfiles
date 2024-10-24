@@ -6,17 +6,13 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    pkgs.vim
     pkgs.terraform
+    pkgs.awscli2
   ];
-
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   users.users.jay = {
     home = "/Users/jay";
-  #  shell = pkgs.bash;
+    #  shell = pkgs.bash;
   };
 
   nixpkgs.config.allowUnfree = true;
