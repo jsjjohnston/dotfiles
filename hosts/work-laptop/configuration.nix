@@ -8,6 +8,8 @@
   environment.systemPackages = [
     pkgs.terraform
     pkgs.awscli2
+    pkgs.aws-vault
+    pkgs.nodejs_18
   ];
 
   users.users.jay = {
