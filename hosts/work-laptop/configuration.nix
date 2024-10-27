@@ -26,6 +26,16 @@
   homebrew.enable = true;
   nixpkgs.config.allowUnfree = true;
 
+  nix.gc = {
+    automatic = true;
+    interval = {
+      Hour = 13;
+      Minute = 15;
+      Weekday = 3;
+    };
+    options = "--max-freed $((64 * 1024**3))";
+  };
+
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
