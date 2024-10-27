@@ -1,19 +1,17 @@
 {
-  description = "Jays Nixos Config";
+  description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprland-plugins = {
@@ -41,32 +39,39 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    # pkgs = import nixpkgs;
   in {
-    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;
         inherit nixvim;
       };
       system = system;
       modules = [
-        ./hosts/server/configuration.nix
-        ./settings/flakes.nix
-        ./settings/system-packages.nix
-        # ./services/ollama
-        ./services/openssh
-        ./virtualisation/home-assistant
+        ../../settings/flakes.nix
+        ./configuration.nix
+        ../../settings/system-packages.nix
         inputs.home-manager.nixosModules.default
+        sddm-sugar-candy-nix.nixosModules.default
+        {
+          nixpkgs = {
+            overlays = [
+              sddm-sugar-candy-nix.overlays.default
+            ];
+          };
+        }
 
         home-manager.nixosModules.home-manager
         {
           home-manager = {
-            useGlobalPkgs = true;
             useUserPackages = true;
+            useGlobalPkgs = true;
             extraSpecialArgs = {inherit inputs;};
-            sharedModules = [nixvim.homeManagerModules.nixvim];
+            sharedModules = [
+              nixvim.homeManagerModules.nixvim
+              inputs.anyrun.homeManagerModules.default
+            ];
             users = {
-              "jay" = import ./hosts/server/home.nix;
+              "jay" = import ./home.nix;
             };
             backupFileExtension = "backup";
           };
