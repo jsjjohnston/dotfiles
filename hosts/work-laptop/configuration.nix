@@ -3,16 +3,21 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = [
-    pkgs.terraform
-    pkgs.awscli2
-    pkgs.aws-vault
-    pkgs.nodejs_18
-    pkgs.bat
-    pkgs.yarn
-    pkgs.docker
-    pkgs.podman
+  environment.systemPackages = with pkgs; [
+    terraform
+    awscli2
+    aws-vault
+    nodejs_18
+    bat
+    yarn
+    docker
+    podman
+    jq
   ];
+
+  environment.shellAliases = {
+    ll = "ls -la";
+  };
 
   users.users.jay = {
     home = "/Users/jay";
