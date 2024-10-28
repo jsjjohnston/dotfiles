@@ -17,6 +17,7 @@
 
   environment.shellAliases = {
     ll = "ls -la";
+    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
   };
 
   users.users.jay = {
