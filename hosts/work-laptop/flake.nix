@@ -17,10 +17,17 @@
     };
   };
 
-  outputs = inputs@{ self,    home-manager, nixvim, nix-darwin, nixpkgs }: {
+  outputs = inputs @ {
+    self,
+    home-manager,
+    nixvim,
+    nix-darwin,
+    nixpkgs,
+  }: {
     darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
-system = "aarch64-darwin";     
- modules = [ ./configuration.nix 
+      system = "aarch64-darwin";
+      modules = [
+        ./configuration.nix
 
         home-manager.darwinModules.home-manager
         {
@@ -35,7 +42,7 @@ system = "aarch64-darwin";
             backupFileExtension = "backup";
           };
         }
-];
+      ];
     };
-};
+  };
 }

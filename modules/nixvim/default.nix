@@ -25,6 +25,10 @@
 
   programs.nixvim = {
     enable = true;
+
+    # Use this for now untill mini-status builds
+    plugins.web-devicons.enable = true;
+
     defaultEditor = true;
     enableMan = true;
 
@@ -62,6 +66,7 @@
       cursorline = true;
       scrolloff = 10;
       hlsearch = true;
+      expandtab = true;
     };
 
     autoCmd = [
