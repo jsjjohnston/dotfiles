@@ -150,6 +150,13 @@
         action = "<C-w><C-k>";
         options = {desc = "Move focus to the upper window";};
       }
+
+      {
+        mode = ["n" "x"];
+        key = "<leader>ca";
+        action = "vim.lsp.buf.code_action";
+        options = {desc = "code Act";};
+      }
     ];
 
     performance = {

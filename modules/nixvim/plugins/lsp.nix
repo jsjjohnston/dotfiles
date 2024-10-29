@@ -14,7 +14,10 @@
             maxMemoryMB = 10240;
           };
         };
-        ts_ls = {enable = true;};
+        ts_ls = {
+          enable = true;
+          autostart = true;
+        };
         eslint = {enable = true;};
         jsonls = {enable = true;};
       };

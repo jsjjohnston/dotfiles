@@ -14,6 +14,7 @@
     podman
     jq
     ripgrep
+    typescript-language-server
   ];
 
   environment.shellAliases = {
@@ -24,6 +25,11 @@
   users.users.jay = {
     home = "/Users/jay";
   };
+
+  nix.settings.ssl-cert-file = "/etc/ssl/certs/zscaler.crt";
+  security.pki.certificates = [
+    "/etc/ssl/certs/zscaler.crt"
+  ];
 
   homebrew.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -49,16 +55,16 @@
 
   nix.settings.auto-optimise-store = true;
 
-  # programs.bash = {
-  #   enable = true;
-  #   completion.enable = true;
-  # };
+  programs.bash = {
+    enable = true;
+    completion.enable = true;
+  };
 
-  # programs.tmux = {
-  #   enable = true;
-  #   enableFzf = true;
-  #   enableVim = true;
-  # };
+  programs.tmux = {
+    enable = true;
+    enableFzf = true;
+    enableVim = true;
+  };
 
   services.aerospace = {
     enable = true;
