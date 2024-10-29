@@ -19,20 +19,26 @@
 
   environment.shellAliases = {
     ll = "ls -la";
-    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop --impure";
+    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
+    cat = "bat";
   };
 
   users.users.jay = {
     home = "/Users/jay";
   };
 
-  nix.settings.ssl-cert-file = "/etc/ssl/certs/zscaler.crt";
+  nix.settings.ssl-cert-file = "/etc/nix/ca_cert.pem";
   security.pki.certificates = [
-    "/etc/ssl/certs/zscaler.crt"
+    "/etc/nix/ca_cert.pem"
   ];
 
   homebrew.enable = true;
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.trusted-users = [
+    "root"
+    "jay"
+  ];
 
   nix.gc = {
     automatic = true;
@@ -42,6 +48,7 @@
       Weekday = 3;
     };
     options = "--max-freed $((64 * 1024**3))";
+    user = "jay";
   };
 
   nix.optimise = {
@@ -51,6 +58,7 @@
       Minute = 15;
       Weekday = 4;
     };
+    user = "jay";
   };
 
   nix.settings.auto-optimise-store = true;
@@ -67,7 +75,7 @@
   };
 
   services.aerospace = {
-    enable = true;
+    enable = false;
   };
 
   services.nix-daemon.enable = true;
