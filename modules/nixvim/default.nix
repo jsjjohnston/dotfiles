@@ -19,6 +19,8 @@
     ./plugins/indent-blankline.nix
     ./plugins/lint.nix
     ./plugins/airline.nix
+    ./plugins/typescript-tools.nix
+    ./plugins/ccc.nix
   ];
 
   home.shellAliases.v = "nvim";
@@ -30,29 +32,6 @@
     plugins.web-devicons.enable = true;
     plugins.none-ls = {
       enable = true;
-    };
-
-    plugins.typescript-tools = {
-      enable = true;
-
-      settings = {
-        exposeAsCodeAction = ["fix_all" "add_missing_imports" "remove_unused" "remove_unused_imports" "organize_imports" "insert_leave"];
-        completeFunctionCalls = true;
-        tsserverMaxMemory = "auto";
-        jsxCloseTag.enable = true;
-        tsserverFilePreferences = {
-          disableSuggestions = false;
-          quotePreference = "auto";
-          includeCompletionsForModuleExports = true;
-          includeCompletionsForImportStatements = true;
-          includeCompletionsWithSnippetText = true;
-          includeCompletionsWithInsertText = true;
-          includeAutomaticOptionalChainCompletions = true;
-          includeInlayParameterNameHints = "all";
-          provideRefactorNotApplicableReason = true;
-          allowRenameOfImportPath = true;
-        };
-      };
     };
 
     defaultEditor = true;
@@ -107,14 +86,19 @@
     autoGroups.highlight-yank.clear = true;
 
     performance = {
-      combinePlugins = {
+      # combinePlugins = {
+      #   enable = true;
+      #   standalonePlugins = [
+      #     "hmts.nvim"
+      #     "nvim-treesitter"
+      #   ];
+      # };
+      byteCompileLua = {
         enable = true;
-        standalonePlugins = [
-          "hmts.nvim"
-          "nvim-treesitter"
-        ];
+        nvimRuntime = true;
+        configs = true;
+        plugins = true;
       };
-      byteCompileLua.enable = true;
     };
 
     viAlias = true;
