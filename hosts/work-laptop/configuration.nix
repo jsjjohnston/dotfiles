@@ -15,6 +15,7 @@
     jq
     ripgrep
     typescript-language-server
+    # vscode-langservers-extracted
   ];
 
   environment.shellAliases = {

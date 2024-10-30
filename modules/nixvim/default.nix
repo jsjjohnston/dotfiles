@@ -28,6 +28,32 @@
 
     # Use this for now untill mini-status builds
     plugins.web-devicons.enable = true;
+    plugins.none-ls = {
+      enable = true;
+    };
+
+    plugins.typescript-tools = {
+      enable = true;
+
+      settings = {
+        exposeAsCodeAction = ["fix_all" "add_missing_imports" "remove_unused" "remove_unused_imports" "organize_imports" "insert_leave"];
+        completeFunctionCalls = true;
+        tsserverMaxMemory = "auto";
+        jsxCloseTag.enable = true;
+        tsserverFilePreferences = {
+          disableSuggestions = false;
+          quotePreference = "auto";
+          includeCompletionsForModuleExports = true;
+          includeCompletionsForImportStatements = true;
+          includeCompletionsWithSnippetText = true;
+          includeCompletionsWithInsertText = true;
+          includeAutomaticOptionalChainCompletions = true;
+          includeInlayParameterNameHints = "all";
+          provideRefactorNotApplicableReason = true;
+          allowRenameOfImportPath = true;
+        };
+      };
+    };
 
     defaultEditor = true;
     enableMan = true;
@@ -79,85 +105,6 @@
     ];
 
     autoGroups.highlight-yank.clear = true;
-
-    keymaps = [
-      {
-        mode = ["n"];
-        key = "<Esc>";
-        action = "<cmd>nohlsearch<CR>";
-        options = {desc = "Escape";};
-      }
-
-      {
-        mode = ["n"];
-        key = "[d";
-        action = "vim.diagnostic.goto_prev";
-        options = {desc = "Go to previous [D]iagnostic message";};
-      }
-
-      {
-        mode = ["n"];
-        key = "]d";
-        action = "vim.diagnostic.goto_next";
-        options = {desc = "Go to next [D]iagnostic message";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<leader>e";
-        action = "vim.diagnostic.open_float";
-        options = {desc = "Show diagnostic [E]rror messages";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<leader>q";
-        action = "vim.diagnostic.setloclist";
-        options = {desc = "Open diagnostic [Q]uickfix list";};
-      }
-
-      {
-        mode = ["t"];
-        key = "<Esc><Esc>";
-        action = "<C-\\><C-n>";
-        options = {desc = "Exit terminal mode";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<C-h>";
-        action = "<C-w><C-h>";
-        options = {desc = "Move focus to the left window";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<C-l>";
-        action = "<C-w><C-l>";
-        options = {desc = "Move focus to the right window";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<C-j>";
-        action = "<C-w><C-j>";
-        options = {desc = "Move focus to the lower window";};
-      }
-
-      {
-        mode = ["n"];
-        key = "<C-k>";
-        action = "<C-w><C-k>";
-        options = {desc = "Move focus to the upper window";};
-      }
-
-      {
-        mode = ["n" "x"];
-        key = "<leader>ca";
-        action = "vim.lsp.buf.code_action";
-        options = {desc = "code Act";};
-      }
-    ];
 
     performance = {
       combinePlugins = {
