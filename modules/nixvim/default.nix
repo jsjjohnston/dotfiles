@@ -21,6 +21,8 @@
     ./plugins/airline.nix
     ./plugins/typescript-tools.nix
     ./plugins/ccc.nix
+    ./plugins/codesnap.nix
+    ./plugins/colorizer.nix
   ];
 
   home.shellAliases.v = "nvim";
