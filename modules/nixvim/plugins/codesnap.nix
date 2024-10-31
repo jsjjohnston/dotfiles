@@ -21,7 +21,7 @@
       };
     };
 
-    which-key.settings.spec = lib.optionals config.program.nixvim.plugins.codesnap.enable [
+    which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.codesnap.enable [
       {
         __unkeyed = "<leader>c";
         mode = "v";
@@ -31,7 +31,7 @@
     ];
   };
 
-  program.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.codesnap.enable [
+  programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.codesnap.enable [
     {
       mode = "v";
       key = "<leader>cc";

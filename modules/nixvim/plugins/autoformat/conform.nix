@@ -51,6 +51,7 @@
             terraform = ["terraform_fmt"];
             tf = ["terraform_fmt"];
             terraform-vars = ["terraform_fmt"];
+            typescript = ["prettier"];
           };
         };
       };

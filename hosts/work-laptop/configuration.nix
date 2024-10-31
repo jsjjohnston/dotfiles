@@ -22,6 +22,7 @@
     ll = "ls -la";
     build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
     cat = "bat";
+    gh-deploy = "gh workflow run `git branch --show-current`";
   };
 
   users.users.jay = {

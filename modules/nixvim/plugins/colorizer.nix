@@ -9,7 +9,7 @@
     };
   };
 
-  keymaps = lib.mkIf config.nixvim.plugins.nvim-colorizer.enable [
+  programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.nvim-colorizer.enable [
     {
       mode = "n";
       key = "<leader>uC";

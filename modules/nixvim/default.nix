@@ -23,6 +23,7 @@
     ./plugins/ccc.nix
     ./plugins/codesnap.nix
     ./plugins/colorizer.nix
+    ./plugins/comment-box.nix
   ];
 
   home.shellAliases.v = "nvim";
