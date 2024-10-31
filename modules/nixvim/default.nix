@@ -2,7 +2,8 @@
   # lib,
   # pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./plugins/neo-tree.nix
     ./plugins/lsp.nix
@@ -14,17 +15,33 @@
     ./plugins/git
     ./plugins/bufferline.nix
     ./plugins/treesitter.nix
-    # ./plugins/mini/mini-status.nix
     ./plugins/todo-comments.nix
     ./plugins/indent-blankline.nix
     ./plugins/lint.nix
-    ./plugins/airline.nix
+    # ./plugins/airline.nix
     ./plugins/typescript-tools.nix
     ./plugins/ccc.nix
     ./plugins/codesnap.nix
     ./plugins/colorizer.nix
     ./plugins/comment-box.nix
     ./plugins/complier.nix
+    ./plugins/dap.nix
+    ./plugins/diffview.nix
+    ./plugins/debugprint.nix
+    ./plugins/efm.nix
+    ./plugins/firenvim.nix
+    ./plugins/git-conflict.nix
+    ./plugins/git-worktree.nix
+    ./plugins/gitignore.nix
+    ./plugins/glow.nix
+    ./plugins/hardtime.nix
+    ./plugins/harpoon.nix
+    ./plugins/hop.nix
+    ./plugins/illuminate.nix
+    ./plugins/markdown-preview.nix
+    ./plugins/markview.nix
+    ./plugins/mini.nix
+    ./plugins/mini-buffremove.nix
   ];
 
   home.shellAliases.v = "nvim";
@@ -80,10 +97,12 @@
 
     autoCmd = [
       {
-        event = ["TextYankPost"];
+        event = [ "TextYankPost" ];
         desc = "Highlight when yanking (copying) text";
         group = "highlight-yank";
-        callback = {__raw = "function() vim.highlight.on_yank() end";};
+        callback = {
+          __raw = "function() vim.highlight.on_yank() end";
+        };
       }
     ];
 
