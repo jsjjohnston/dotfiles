@@ -43,6 +43,7 @@
     ./plugins/mini.nix
     ./plugins/mini-buffremove.nix
     ./plugins/mini-comment.nix
+    ./plugins/mini-diff.nix
   ];
 
   home.shellAliases.v = "nvim";
