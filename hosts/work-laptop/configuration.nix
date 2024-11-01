@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   environment.systemPackages = with pkgs; [
     terraform
     awscli2
@@ -16,6 +17,7 @@
     ripgrep
     typescript-language-server
     # vscode-langservers-extracted
+    nodePackages_latest.aws-cdk
   ];
 
   environment.shellAliases = {

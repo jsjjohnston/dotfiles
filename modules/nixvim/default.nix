@@ -42,6 +42,7 @@
     ./plugins/markview.nix
     ./plugins/mini.nix
     ./plugins/mini-buffremove.nix
+    ./plugins/mini-comment.nix
   ];
 
   home.shellAliases.v = "nvim";
