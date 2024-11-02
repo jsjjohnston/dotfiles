@@ -8,9 +8,9 @@
     terraform
     awscli2
     aws-vault
-    nodejs_18
+    # nodejs_18
     bat
-    yarn
+    # yarn
     docker
     podman
     jq
