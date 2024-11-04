@@ -1,9 +1,17 @@
-{...}: {
+{ ... }:
+{
   programs.nixvim.plugins.typescript-tools = {
     enable = true;
 
     settings = {
-      exposeAsCodeAction = ["fix_all" "add_missing_imports" "remove_unused" "remove_unused_imports" "organize_imports" "insert_leave"];
+      exposeAsCodeAction = [
+        "fix_all"
+        "add_missing_imports"
+        "remove_unused"
+        "remove_unused_imports"
+        "organize_imports"
+        "insert_leave"
+      ];
       completeFunctionCalls = true;
       tsserverMaxMemory = "auto";
       jsxCloseTag.enable = true;
