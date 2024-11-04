@@ -47,6 +47,9 @@
     ./plugins/mini-files.nix
     ./plugins/mini-fuzzy.nix
     ./plugins/lualine.nix
+    ./plugins/mini-starter.nix
+    ./plugins/mini-hipatterns.nix
+    ./plugins/mini-buffremove.nix
   ];
 
   home.shellAliases.v = "nvim";
