@@ -99,7 +99,6 @@
     };
 
     opts = {
-      cursorline = true;
       number = true;
       relativenumber = true;
       mouse = "a";
