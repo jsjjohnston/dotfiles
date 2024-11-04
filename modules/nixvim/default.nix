@@ -61,6 +61,7 @@
     ./plugins/refactoring.nix
     ./plugins/rest.nix
     ./plugins/toggleterm.nix
+    ./plugins/trouble.nix
   ];
 
   home.shellAliases.v = "nvim";
