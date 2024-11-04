@@ -59,6 +59,7 @@
     ./plugins/package-info.nix
     ./plugins/precognition.nix
     ./plugins/refactoring.nix
+    ./plugins/rest.nix
   ];
 
   home.shellAliases.v = "nvim";
