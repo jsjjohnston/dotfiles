@@ -64,6 +64,7 @@
     ./plugins/trouble.nix
     ./plugins/ts-comments.nix
     ./plugins/undotree.nix
+    ./plugins/wakatime.nix
   ];
 
   home.shellAliases.v = "nvim";
