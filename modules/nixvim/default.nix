@@ -18,7 +18,6 @@
     ./plugins/todo-comments.nix
     ./plugins/indent-blankline.nix
     ./plugins/lint.nix
-    # ./plugins/airline.nix
     ./plugins/typescript-tools.nix
     ./plugins/ccc.nix
     ./plugins/codesnap.nix
@@ -50,6 +49,7 @@
     ./plugins/mini-starter.nix
     ./plugins/mini-hipatterns.nix
     ./plugins/mini-buffremove.nix
+    ./plugins/mini-surround.nix
   ];
 
   home.shellAliases.v = "nvim";
