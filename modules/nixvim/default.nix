@@ -52,6 +52,7 @@
     ./plugins/mini-surround.nix
     ./plugins/navic.nix
     ./plugins/neotest.nix
+    ./plugins/nix.nix
   ];
 
   home.shellAliases.v = "nvim";
