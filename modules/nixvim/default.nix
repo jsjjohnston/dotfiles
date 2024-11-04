@@ -116,7 +116,6 @@
           };
         };
       };
-      # clipboard.providers.xclip.enable = true;
       breakindent = true;
       undofile = true;
       ignorecase = true;
@@ -138,6 +137,20 @@
       scrolloff = 10;
       hlsearch = true;
       expandtab = true;
+      swapfile = false;
+      modeline = true;
+      modelines = 100;
+      undofle = true;
+      incsearch = true;
+      laststatus = 3;
+      termguicolors = true;
+      wrap = false;
+
+      tabstop = 2;
+      shiftwidth = 2;
+      softtabstop = 0;
+      autoindent = true;
+
     };
 
     autoCmd = [
