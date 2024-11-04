@@ -50,6 +50,7 @@
     ./plugins/mini-hipatterns.nix
     ./plugins/mini-buffremove.nix
     ./plugins/mini-surround.nix
+    ./plugins/navic.nix
   ];
 
   home.shellAliases.v = "nvim";
