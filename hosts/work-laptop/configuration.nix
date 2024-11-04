@@ -8,7 +8,7 @@
     terraform
     awscli2
     aws-vault
-    # nodejs_18
+    nodejs_20
     bat
     # yarn
     docker
