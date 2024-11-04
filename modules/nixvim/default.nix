@@ -62,6 +62,7 @@
     ./plugins/rest.nix
     ./plugins/toggleterm.nix
     ./plugins/trouble.nix
+    ./plugins/ts-comments.nix
   ];
 
   home.shellAliases.v = "nvim";
