@@ -53,6 +53,7 @@
     ./plugins/navic.nix
     ./plugins/neotest.nix
     ./plugins/nix.nix
+    ./plugins/noice.nix
   ];
 
   home.shellAliases.v = "nvim";
