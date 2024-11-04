@@ -8,7 +8,6 @@
     terraform
     awscli2
     aws-vault
-    nodejs_20
     bat
     # yarn
     docker
@@ -18,6 +17,7 @@
     typescript-language-server
     # vscode-langservers-extracted
     nodePackages_latest.aws-cdk
+    yazi
   ];
 
   environment.shellAliases = {

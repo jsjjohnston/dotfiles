@@ -1,6 +1,6 @@
 {
   # lib,
-  # pkgs,
+  pkgs,
   ...
 }:
 {
@@ -89,21 +89,42 @@
       have_nerd_font = true;
 
       NERDTreeShowHidden = 1;
+      # Custom for toggles
+      disable_diagnostics = false;
+      disable_hardtime = false;
+      disable_autoformat = false;
+      spell_enabled = true;
+      colorizing_enabled = 1;
+      first_buffer_opened = false;
     };
 
     opts = {
+      cursorline = true;
       number = true;
       relativenumber = true;
       mouse = "a";
+      mousemodel = "extend";
       showmode = false;
-      clipboard.register = "unnamedplus";
+      spell = true;
+      spelllang = "en_au";
+      clipboard = {
+        register = "unnamedplus";
+
+        providers = {
+          wl-copy = {
+            enable = true;
+            package = pkgs.wl-clipboard;
+          };
+        };
+      };
       # clipboard.providers.xclip.enable = true;
       breakindent = true;
       undofile = true;
       ignorecase = true;
       smartcase = true;
       signcolumn = "yes";
-      updatetime = 250;
+      updatetime = 100;
+      hidden = true;
       timeoutlen = 300;
       splitright = true;
       splitbelow = true;
