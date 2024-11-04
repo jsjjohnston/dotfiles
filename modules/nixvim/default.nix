@@ -66,6 +66,7 @@
     ./plugins/undotree.nix
     ./plugins/wakatime.nix
     ./plugins/yanky.nix
+    ./plugins/yazi.nix
   ];
 
   home.shellAliases.v = "nvim";
