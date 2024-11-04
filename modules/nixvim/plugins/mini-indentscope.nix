@@ -30,9 +30,9 @@
         }
       ];
 
-  programs.nixvim.plugins = {
+  plugins = {
     mini = {
-      enable = true;
+      enable = false;
 
       modules = {
         indentscope = { };
