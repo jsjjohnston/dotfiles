@@ -56,6 +56,7 @@
     ./plugins/noice.nix
     ./plugins/otter.nix
     ./plugins/overseer.nix
+    ./plugins/package-info.nix
   ];
 
   home.shellAliases.v = "nvim";
