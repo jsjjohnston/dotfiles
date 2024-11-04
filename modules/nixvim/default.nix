@@ -67,6 +67,7 @@
     ./plugins/wakatime.nix
     ./plugins/yanky.nix
     ./plugins/yazi.nix
+    ./keymaps.nix
   ];
 
   home.shellAliases.v = "nvim";
@@ -74,7 +75,7 @@
   programs.nixvim = {
     enable = true;
 
-    # Use this for now untill mini-status builds
+    # Use this for now until mini-status builds
     plugins.web-devicons.enable = true;
     plugins.none-ls = {
       enable = true;
@@ -117,7 +118,6 @@
         };
       };
       breakindent = true;
-      undofile = true;
       ignorecase = true;
       smartcase = true;
       signcolumn = "yes";
@@ -140,7 +140,7 @@
       swapfile = false;
       modeline = true;
       modelines = 100;
-      undofle = true;
+      undofile = true;
       incsearch = true;
       laststatus = 3;
       termguicolors = true;
