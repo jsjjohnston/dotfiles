@@ -18,6 +18,7 @@
     # vscode-langservers-extracted
     nodePackages_latest.aws-cdk
     yazi
+    lazygit
   ];
 
   environment.shellAliases = {

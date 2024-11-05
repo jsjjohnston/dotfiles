@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.nixvim = {
     extraConfigLuaPre = ''
       vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticError", linehl = "", numhl = "" })
@@ -108,7 +109,10 @@
           "<leader>ld" = "definition";
           "<leader>lD" = "references";
           "<leader>lf" = "format";
-          "<leader>K" = "hover";
+          "K" = {
+            action = "hover";
+            desc = "Hover";
+          };
           "<leader>li" = "implementation";
           "<leader>cr" = "rename";
           "<leader>lt" = "type_definition";
@@ -140,7 +144,7 @@
         # TODO: see what further configuration might be needed
         cmake = {
           enable = true;
-          filetypes = ["cmake"];
+          filetypes = [ "cmake" ];
         };
 
         # clangd = {
@@ -169,7 +173,7 @@
 
         dockerls = {
           enable = true;
-          filetypes = ["dockerfile"];
+          filetypes = [ "dockerfile" ];
         };
 
         eslint = {
@@ -219,7 +223,7 @@
 
         html = {
           enable = true;
-          filetypes = ["html"];
+          filetypes = [ "html" ];
         };
 
         # java_language_server = {
@@ -242,22 +246,22 @@
 
         lua_ls = {
           enable = true;
-          filetypes = ["lua"];
+          filetypes = [ "lua" ];
         };
 
         marksman = {
           enable = true;
-          filetypes = ["markdown"];
+          filetypes = [ "markdown" ];
         };
 
         nil_ls = {
           # FIXME: when nixd works again
           # enable = !config.plugins.lsp.servers.nixd.enable;
           enable = true;
-          filetypes = ["nix"];
+          filetypes = [ "nix" ];
           settings = {
             formatting = {
-              command = ["${lib.getExe pkgs.nixfmt-rfc-style}"];
+              command = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
             };
             nix = {
               flake = {
@@ -269,10 +273,10 @@
 
         nixd = {
           enable = !config.programs.nixvim.plugins.lsp.servers.nil_ls.enable;
-          filetypes = ["nix"];
+          filetypes = [ "nix" ];
           settings = {
             formatting = {
-              command = ["${lib.getExe pkgs.nixfmt-rfc-style}"];
+              command = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
             };
           };
         };
@@ -294,7 +298,7 @@
 
         rust_analyzer = {
           enable = !config.programs.nixvim.plugins.rustaceanvim.enable;
-          filetypes = ["rust"];
+          filetypes = [ "rust" ];
           installCargo = true;
           installRustc = true;
 
@@ -331,7 +335,7 @@
 
         sqls = {
           enable = true;
-          filetypes = ["sql"];
+          filetypes = [ "sql" ];
         };
 
         # tailwindcss = {
@@ -356,7 +360,7 @@
 
         yamlls = {
           enable = true;
-          filetypes = ["yaml"];
+          filetypes = [ "yaml" ];
         };
       };
     };

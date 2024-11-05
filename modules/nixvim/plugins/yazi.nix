@@ -5,14 +5,14 @@
   programs.nixvim.keymaps = lib.optionals config.programs.nixvim.plugins.yazi.enable [
     {
       mode = "n";
-      key = "<leader>e";
+      key = "<leader>ty";
       action.__raw = ''
         function()
           require('yazi').yazi()
         end
       '';
       options = {
-        desc = "Yazi toggle";
+        desc = "[Y]azi";
         silent = true;
       };
     }
