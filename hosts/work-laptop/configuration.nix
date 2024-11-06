@@ -15,7 +15,7 @@
     jq
     ripgrep
     typescript-language-server
-    # vscode-langservers-extracted
+    vscode-langservers-extracted
     nodePackages_latest.aws-cdk
     yazi
     lazygit

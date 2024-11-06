@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.nixvim.extraConfigLuaPre = ''
     local slow_format_filetypes = {}
 
@@ -94,41 +95,42 @@
             "shellharden"
             "shfmt"
           ];
-          bicep = ["bicep"];
-          c = ["clang_format"];
-          cmake = ["cmake-format"];
-          cpp = ["clang_format"];
-          cs = ["csharpier"];
-          css = ["stylelint"];
-          fish = ["fish_indent"];
-          fsharp = ["fantomas"];
-          gdscript = ["gdformat"];
-          java = ["google-java-format"];
+          bicep = [ "bicep" ];
+          c = [ "clang_format" ];
+          cmake = [ "cmake-format" ];
+          cpp = [ "clang_format" ];
+          cs = [ "csharpier" ];
+          css = [ "stylelint" ];
+          fish = [ "fish_indent" ];
+          fsharp = [ "fantomas" ];
+          gdscript = [ "gdformat" ];
+          java = [ "google-java-format" ];
           javascript = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
             timeout_ms = 2000;
             stop_after_first = true;
           };
-          json = ["jq"];
-          lua = ["stylua"];
-          markdown = ["deno_fmt"];
-          nix = ["nixfmt"];
+          json = [ "jq" ];
+          lua = [ "stylua" ];
+          markdown = [ "deno_fmt" ];
+          nix = [ "nixfmt" ];
           python = [
             "isort"
             "ruff"
           ];
-          rust = ["rustfmt"];
+          rust = [ "rustfmt" ];
           sh = [
             "shellcheck"
             "shellharden"
             "shfmt"
           ];
-          sql = ["sqlfluff"];
+          sql = [ "sqlfluff" ];
           # FIXME: broken nixpkgs
           # swift = [ "swift_format" ];
-          terraform = ["terraform_fmt"];
-          toml = ["taplo"];
+          terraform = [ "terraform_fmt" ];
+          terraform-vars = [ "terraform_fmt" ];
+          toml = [ "taplo" ];
           typescript = {
             __unkeyed-1 = "prettierd";
             __unkeyed-2 = "prettier";
@@ -139,8 +141,8 @@
             "xmlformat"
             "xmllint"
           ];
-          yaml = ["yamlfmt"];
-          zig = ["zigfmt"];
+          yaml = [ "yamlfmt" ];
+          zig = [ "zigfmt" ];
           "_" = [
             "squeeze_blanks"
             "trim_whitespace"
