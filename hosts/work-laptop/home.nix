@@ -1,27 +1,34 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ../../modules/nixvim
     #../../modules/git
-    #../../modules/terminals/kitty
-    #../../modules/zoxide
+    ../../modules/terminals/kitty
+    ../../modules/zoxide
     ../../modules/fzf
-    # ../../modules/shell/bash
-    #../../modules/oh-my-posh
+    ../../modules/oh-my-posh
+    ../../modules/shell/bash
   ];
 
   home.username = "jay";
   home.homeDirectory = "/Users/jay";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  home.packages = [
-  ];
+  home.packages =
+    [
+    ];
 
-  home.file = {
+  home.file =
+    {
+    };
+
+  home.sessionVariables =
+    {
+    };
+
+  programs.lazygit = {
+    enable = true;
   };
-
-  home.sessionVariables = {
-  };
-
   programs.home-manager.enable = true;
 }

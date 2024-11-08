@@ -9,7 +9,6 @@
     awscli2
     aws-vault
     bat
-    # yarn
     docker
     podman
     jq
@@ -19,6 +18,7 @@
     nodePackages_latest.aws-cdk
     yazi
     lazygit
+    terraform-ls
   ];
 
   environment.shellAliases = {
@@ -27,6 +27,8 @@
     cat = "bat";
     gh-deploy = "gh workflow run `git branch --show-current`";
   };
+
+  # programs.bash.enable = true;
 
   users.users.jay = {
     home = "/Users/jay";
@@ -37,7 +39,9 @@
     "/etc/nix/ca_cert.pem"
   ];
 
-  homebrew.enable = true;
+  homebrew = {
+    enable = true;
+  };
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.trusted-users = [
@@ -68,16 +72,11 @@
 
   nix.settings.auto-optimise-store = true;
 
-  programs.bash = {
-    enable = true;
-    completion.enable = true;
-  };
-
-  programs.tmux = {
-    enable = true;
-    enableFzf = true;
-    enableVim = true;
-  };
+  # programs.tmux = {
+  #   enable = true;
+  #   enableFzf = true;
+  #   enableVim = true;
+  # };
 
   services.aerospace = {
     enable = false;
