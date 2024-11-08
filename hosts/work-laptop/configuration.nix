@@ -19,6 +19,7 @@
     yazi
     lazygit
     terraform-ls
+    delta
   ];
 
   environment.shellAliases = {
