@@ -152,6 +152,7 @@
           action = "<cmd>Telescope noice<CR>";
           options = {
             desc = "Find notifications";
+            # TODO: Update Keymaps
           };
         }
       ];

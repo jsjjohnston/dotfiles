@@ -2,7 +2,8 @@
   config,
   lib,
   ...
-}: {
+}:
+{
   programs.nixvim.plugins = {
     nvim-colorizer = {
       enable = false;
@@ -22,6 +23,7 @@
       '';
       options = {
         desc = "Colorizing toggle";
+        # TODO:Update Key Maps
         silent = true;
       };
     }

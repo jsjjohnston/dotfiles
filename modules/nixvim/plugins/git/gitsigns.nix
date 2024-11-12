@@ -1,199 +1,128 @@
-{ config, lib, ... }:
-let
-  inherit (builtins) toJSON;
-in
+{ ... }:
 {
-  programs.nixvim.plugins = {
-    gitsigns = {
+  programs.nixvim = {
+    plugins.gitsigns = {
       enable = true;
-
-      settings = {
-        current_line_blame = true;
-
-        current_line_blame_opts = {
-          delay = 500;
-
-          ignore_blank_lines = true;
-          ignore_whitespace = true;
-          virt_text = true;
-          virt_text_pos = "eol";
-        };
-
-        signcolumn = false;
-      };
     };
-
-    which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.gitsigns.enable [
+    keymaps = [
       {
-        __unkeyed = "<leader>gh";
-        group = "Hunks";
-        icon = " ";
+        mode = [ "n" ];
+        key = "]c";
+        action.__raw = ''
+          function()
+            if vim.wo.diff then
+              vim.cmd.normal { ']c', bang = true}
+            else
+             require('gitsigns').nav_hunk 'next'
+            end
+           end
+        '';
+        options = {
+          desc = "Jump to next git [c]hange";
+          # TODO: # TODO: update keymaps
+        };
       }
       {
-        __unkeyed = "<leader>ug";
-        group = "Git";
+        mode = [ "n" ];
+        key = "<leader>hs";
+        action.__raw = ''require('gitsigns').stage_hunk'';
+        options = {
+          desc = "git [s]tage hunk";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hr";
+        action.__raw = ''require('gitsigns').reset_hunk'';
+        options = {
+          desc = "git [r]eset hunk";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hS";
+        action.__raw = ''require('gitsigns').stage_buffer'';
+        options = {
+          desc = "git [S]tage buffer";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hu";
+        action.__raw = ''require('gitsigns').undo_stage_hunk'';
+        options = {
+          desc = "git [u]ndo stage hunk";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hR";
+        action.__raw = ''require('gitsigns').reset_hunk'';
+        options = {
+          desc = "git [R]eset Buffer";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hp";
+        action.__raw = ''require('gitsigns').preview_hunk'';
+        options = {
+          desc = "git [p]review hunk";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hb";
+        action.__raw = ''require('gitsigns').blame_line'';
+        options = {
+          desc = "git [b]lame line";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hd";
+        action.__raw = ''require('gitsigns').diffthis'';
+        options = {
+          desc = "git [d]iff against index";
+          # TODO: update keymaps
+        };
+      }
+      {
+        mode = [ "n" ];
+        key = "<leader>hD";
+        action.__raw = ''function() require('gitsigns').diffthis '@' end'';
+        options = {
+          desc = "git [D]iff against last commit";
+          # TODO: update keymaps
+        };
+      }
+
+      {
+        mode = [ "n" ];
+        key = "<leader>tb";
+        action.__raw = ''require('gitsigns').toggle_current_line_blame'';
+        options = {
+          desc = "[t]oggle git show [b]lame line";
+          # TODO: update keymaps
+        };
+      }
+
+      {
+        mode = [ "n" ];
+        key = "<leader>tD";
+        action.__raw = ''require('gitsigns').toggle_deleted'';
+        options = {
+          desc = "[t]oggle git show [D]eleted";
+          # TODO: update keymaps
+        };
       }
     ];
   };
-
-  programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.gitsigns.enable [
-    # UI binds
-    {
-      mode = "n";
-      key = "<leader>ugb";
-      action = "<cmd>Gitsigns toggle_current_line_blame<CR>";
-      options = {
-        desc = "Git Blame toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ugd";
-      action = "<cmd>Gitsigns toggle_deleted<CR>";
-      options = {
-        desc = "Deleted toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ugl";
-      action = "<cmd>Gitsigns toggle_linehl<CR>";
-      options = {
-        desc = "Line Highlight toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ugh";
-      action = "<cmd>Gitsigns toggle_numhl<CR>";
-      options = {
-        desc = "Number Highlight toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ugw";
-      action = "<cmd>Gitsigns toggle_word_diff<CR>";
-      options = {
-        desc = "Word Diff toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ugs";
-      action = "<cmd>Gitsigns toggle_signs<CR>";
-      options = {
-        desc = "Signs toggle";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>gb";
-      action.__raw = ''
-        function() require("gitsigns").blame_line{full=true} end
-      '';
-      options = {
-        desc = "Git Blame toggle";
-        silent = true;
-      };
-    }
-    # Hunk binds
-    {
-      mode = "n";
-      key = "<leader>ghp";
-      action.__raw = ''
-        function()
-          if vim.wo.diff then return ${toJSON "<leader>gp"} end
-
-          vim.schedule(function() require("gitsigns").prev_hunk() end)
-
-          return '<Ignore>'
-        end
-      '';
-      options = {
-        desc = "Previous hunk";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ghn";
-      action.__raw = ''
-        function()
-          if vim.wo.diff then return ${toJSON "<leader>gn"} end
-
-          vim.schedule(function() require("gitsigns").next_hunk() end)
-
-          return '<Ignore>'
-        end
-      '';
-      options = {
-        desc = "Next hunk";
-        silent = true;
-      };
-    }
-    {
-      mode = [
-        "n"
-        "v"
-      ];
-      key = "<leader>ghs";
-      action = "<cmd>Gitsigns stage_hunk<CR>";
-      options = {
-        desc = "Stage hunk";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ghu";
-      action = "<cmd>Gitsigns undo_stage_hunk<CR>";
-      options = {
-        desc = "Undo stage hunk";
-      };
-    }
-    {
-      mode = [
-        "n"
-        "v"
-      ];
-      key = "<leader>ghr";
-      action = "<cmd>Gitsigns reset_hunk<CR>";
-      options = {
-        desc = "Reset hunk";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>ghP";
-      action = "<cmd>Gitsigns preview_hunk<CR>";
-      options = {
-        desc = "Preview hunk";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>gh<C-p>";
-      action = "<cmd>Gitsigns preview_hunk_inline<CR>";
-      options = {
-        desc = "Preview hunk inline";
-      };
-    }
-    # Buffer binds
-    {
-      mode = "n";
-      key = "<leader>gS";
-      action = "<cmd>Gitsigns stage_buffer<CR>";
-      options = {
-        desc = "Stage buffer";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>gR";
-      action = "<cmd>Gitsigns reset_buffer<CR>";
-      options = {
-        desc = "Reset buffer";
-      };
-    }
-  ];
 }

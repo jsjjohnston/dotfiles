@@ -15,11 +15,11 @@
     ripgrep
     typescript-language-server
     vscode-langservers-extracted
-    nodePackages_latest.aws-cdk
     yazi
     lazygit
     terraform-ls
     delta
+    jira-cli-go
   ];
 
   environment.shellAliases = {
@@ -42,6 +42,9 @@
 
   homebrew = {
     enable = true;
+    brews =
+      [
+      ];
   };
   nixpkgs.config.allowUnfree = true;
 
@@ -81,6 +84,16 @@
 
   services.aerospace = {
     enable = false;
+  };
+  services.yabai = {
+    enable = true;
+    config = {
+      layout = "bsp";
+      auto_balance = true;
+      window_opacity = true;
+      active_window_opacity = 1.0;
+      normal_window_opacity = 0.5;
+    };
   };
 
   services.nix-daemon.enable = true;

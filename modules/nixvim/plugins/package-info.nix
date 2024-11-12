@@ -18,6 +18,7 @@
           action = "<cmd>Telescope package_info<CR>";
           options = {
             desc = "Find package info";
+            # TODO: Update keymaps
           };
         }
       ];

@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   programs.nixvim.plugins = {
     ccc = {
       enable = true;
@@ -12,7 +13,7 @@
           auto_enable = true;
           max_byte = 2 * 1024 * 1024;
           lsp = true;
-          filetypes = ["colorPickerFts"];
+          filetypes = [ "colorPickerFts" ];
         };
         pickers = [
           # Lua
@@ -31,7 +32,7 @@
         recognize = {
           output = true;
         };
-        inputs = ["require('ccc').input.hsl"];
+        inputs = [ "require('ccc').input.hsl" ];
         outputs = [
           # Lua
           "require('ccc').output.css_hsl"
@@ -76,6 +77,7 @@
       action = "<cmd>CccPick<CR>";
       options = {
         desc = "Color Picker toggle";
+        # TODO: update keymaps
       };
     }
   ];

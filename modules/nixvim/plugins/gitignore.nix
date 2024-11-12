@@ -16,6 +16,7 @@ in
       action.__raw = ''require('gitignore').generate'';
       options = {
         desc = "Gitignore generate";
+        # TODO: Update keymaps
         silent = true;
       };
     }

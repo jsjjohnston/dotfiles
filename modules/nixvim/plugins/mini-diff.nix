@@ -27,6 +27,7 @@
           action.__raw = "MiniDiff.toggle_overlay";
           options = {
             desc = "Git Overlay toggle";
+            # # TODO: update keymaps
             silent = true;
           };
         }

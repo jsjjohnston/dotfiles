@@ -1,248 +1,240 @@
 {
-	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-	"blocks": [
-		{
-			"type": "prompt",
-			"alignment": "left",
-			"overflow": "hide",
-			"newline": true,
-			"segments": [
-				{
-					"type": "brewfather",
-					"style": "diamond",
-					"foreground": "#ffffff",
-					"background": "#00897B",
-					"template": "{{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }} {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}\u00b0 {{ .TemperatureTrendIcon }}{{ end }}",
-					"properties": {
-						"user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
-						"api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
-						"batch_id": "GOW9W9Kzc4TnKlv1eYFPWTeDZwbtTe",
-						"http_timeout": 1000,
-						"cache_timeout": 60,
-						"planning_status_icon": "📅",
-						"fermenting_status_icon": "🫧",
-						"brewing_status_icon": "🫖",
-						"conditioning_status_icon": "🍶",
-						"completed_status_icon": "🙌",
-						"archived_status_icon": "🗃️",
-						"flat_icon": "→",
-						"doubleup_icon": "⏫",
-						"singleup_icon": "🔼",
-						"singledown_icon": "🔽",
-						"doubledown_icon": "⏬",
-						"fortyfiveup_icon": "↗️",
-						"fortyfivedown_icon": "↘️",
-						"day_icon": "d"
-					}
-				},
-				{
-					"type": "ytm",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#FF0000",
-					"properties": {
-						"playing_icon": " ",
-						"paused_icon": " ",
-						"stopped_icon": " "
-					},
-					"template": "{{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }}-{{ .Track }}{{ end }}"
-				},
-				{
-					"type": "owm",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#FF0000",
-					"template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
-					"properties": {
-						"api_key": "0fcecd73687a62ded000b3a015c4dec5",
-						"location": "Hoppers Crossing,AU",
-						"units": "metric",
-						"http_timeout": 1000,
-						"cache_timeout": 30
-					}
-				}
-			]
-		},
-		{
-			"alignment": "left",
-			"newline": true,
-			"segments": [
-				{
-					"type": "sysinfo",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#ED4337",
-					"template": "{{ if gt .PhysicalAvailableMemory 60.00 }}📺{{ .PhysicalAvailableMemory }}%{{ end }}",
-					"style": "powerline"
-				},
-				{
-					"background": "#800080",
-					"foreground": "#0366FC",
-					"powerline_symbol": "",
-					"properties": {
-						"time_format": "Mon 3:04PM"
-					},
-					"style": "powerline",
-					"template": " {{ .CurrentDate | date .Format }} ",
-					"type": "time"
-				},
-				{
-					"type": "session",
-					"powerline_symbol": "",
-					"style": "powerline",
-					"foreground": "#ffffff",
-					"background": "#c386f1",
-					"template": "{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }}{{else}}{{ .UserName }}{{ end }}"
-				},
-				{
-					"type": "project",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#193549",
-					"background": "#ffeb3b",
-					"template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
-				},
-				{
-					"type": "docker",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#000000",
-					"background": "#0B59E7",
-					"template": "  {{ .Context }} "
-				},
-				{
-					"type": "path",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#61AFEF",
-					"properties": {
-						"style": "folder",
-						"mapped_locations": {
-							"~/dotfiles": "⚙️"
-						}
-					}
-				},
-				{
-					"type": "git",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#193549",
-					"background": "#ffeb3b",
-					"background_templates": [
-						"{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
-						"{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-						"{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-						"{{ if gt .Behind 0 }}#B388FB{{ end }}"
-					],
-					"template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 💾 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 📖 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} 🙈 {{ .StashCount }}{{ end }}",
-					"properties": {
-						"fetch_status": true,
-						"fetch_upstream_icon": true,
-						"untracked_modes": {
-							"/Users/user/Projects/oh-my-posh/": "no"
-						},
-						"source": "cli",
-						"mapped_branches": {
-							"main": "🔥",
-							"feat/*": "🚀",
-							"feature/*": "🚀",
-							"bug/*": "🐞"
-						}
-					}
-				},
-				{
-					"type": "kubectl",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#000000",
-					"background": "#ebcc34",
-					"template": " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
-					"properties": {
-						"context_aliases": {
-							"arn:aws:eks:eu-west-1:1234567890:cluster/posh": "posh"
-						}
-					}
-				},
-				{
-					"type": "npm",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#193549",
-					"background": "#ffeb3b",
-					"template": " {{ .Full }} "
-				},
-				{
-					"type": "pnpm",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#000000",
-					"background": "#F9AD00",
-					"template": " 󰋁 {{ .Full }} "
-				},
-				{
-					"type": "react",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#81a1c1",
-					"template": "  {{ .Full }} "
-				},
-				{
-					"type": "terraform",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#000000",
-					"background": "#ebcc34",
-					"template": "{{.WorkspaceName}}"
-				},
-				{
-					"type": "lua",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "white",
-					"background": "blue",
-					"template": "  {{ .Full }} "
-				},
-				{
-					"type": "node",
-					"style": "powerline",
-					"powerline_symbol": "",
-					"foreground": "#ffffff",
-					"background": "#6CA35E",
-					"template": "  {{ .Full }} "
-				}
-			],
-			"type": "prompt"
-		},
-		{
-			"type": "prompt",
-			"newline": true,
-			"alignment": "left",
-			"segments": [
-				{
-					"type": "status",
-					"style": "powerline",
-					"foreground": "#ffffff",
-					"background": "#00897B",
-					"background_templates": [
-						"{{ if .Error }}#e91e63{{ end }}"
-					],
-					"powerline_symbol": " ",
-					"template": "<#193549>",
-					"properties": {
-						"always_enabled": true
-					}
-				}
-			]
-		}
-	],
-	"console_title_template": "{{.UserName}}@{{.HostName}} in {{.PWD}}",
-	"transient_prompt": {
-		"background": "transparent",
-		"foreground": "#FEF5ED",
-		"template": "\ue285 "
-	},
-	"version": 2
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "overflow": "hide",
+      "newline": true,
+      "segments": [
+        {
+          "type": "brewfather",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#00897B",
+          "template": "{{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }} {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}° {{ .TemperatureTrendIcon }}{{ end }}",
+          "properties": {
+            "user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
+            "api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
+            "batch_id": "eUpwFSgSHYoXc2NKCrcczuW5hArJB3",
+            "http_timeout": 1000,
+            "cache_timeout": 60,
+            "planning_status_icon": "📅",
+            "fermenting_status_icon": "🫧",
+            "brewing_status_icon": "🫖",
+            "conditioning_status_icon": "🍶",
+            "completed_status_icon": "🙌",
+            "archived_status_icon": "🗃️",
+            "flat_icon": "→",
+            "doubleup_icon": "⏫",
+            "singleup_icon": "🔼",
+            "singledown_icon": "🔽",
+            "doubledown_icon": "⏬",
+            "fortyfiveup_icon": "↗️",
+            "fortyfivedown_icon": "↘️",
+            "day_icon": "d"
+          }
+        },
+        {
+          "type": "ytm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#FF0000",
+          "properties": {
+            "playing_icon": " ",
+            "paused_icon": " ",
+            "stopped_icon": " "
+          },
+          "template": "{{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }}-{{ .Track }}{{ end }}"
+        },
+        {
+          "type": "owm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#FF0000",
+          "template": "{{.Weather}} ({{.Temperature}}{{.UnitIcon}})",
+          "properties": {
+            "api_key": "0fcecd73687a62ded000b3a015c4dec5",
+            "location": "Hoppers Crossing,AU",
+            "units": "metric",
+            "http_timeout": 1000,
+            "cache_timeout": 30
+          }
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "sysinfo",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#ED4337",
+          "template": "{{ if gt .PhysicalAvailableMemory 60.00 }}📺{{ .PhysicalAvailableMemory }}%{{ end }}",
+          "style": "powerline"
+        },
+        {
+          "background": "#800080",
+          "foreground": "#0366FC",
+          "powerline_symbol": "",
+          "properties": {
+            "time_format": "Mon 3:04PM"
+          },
+          "style": "powerline",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "type": "session",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "foreground": "#ffffff",
+          "background": "#c386f1",
+          "template": "{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }}{{else}}{{ .UserName }}{{ end }}"
+        },
+        {
+          "type": "project",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#61AFEF",
+          "properties": {
+            "style": "folder",
+            "mapped_locations": {
+              "~/dotfiles": "⚙️"
+            }
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
+          ],
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 💾 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 📖 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} 🙈 {{ .StashCount }}{{ end }}",
+          "properties": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "untracked_modes": {
+              "/Users/user/Projects/oh-my-posh/": "no"
+            },
+            "source": "cli",
+            "mapped_branches": {
+              "main": "🔥",
+              "feat/*": "🚀",
+              "feature/*": "🚀",
+              "bug/*": "🐞"
+            }
+          }
+        },
+        {
+          "type": "kubectl",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#000000",
+          "background": "#ebcc34",
+          "template": " ﴱ {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
+          "properties": {
+            "context_aliases": {
+              "arn:aws:eks:eu-west-1:1234567890:cluster/posh": "posh"
+            }
+          }
+        },
+        {
+          "type": "npm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "template": " {{ .Full }} "
+        },
+        {
+          "type": "pnpm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#000000",
+          "background": "#F9AD00",
+          "template": " 󰋁 {{ .Full }} "
+        },
+        {
+          "type": "react",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#81a1c1",
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "terraform",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#000000",
+          "background": "#ebcc34",
+          "template": "{{.WorkspaceName}}"
+        },
+        {
+          "type": "lua",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "white",
+          "background": "blue",
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#6CA35E",
+          "template": "  {{ .Full }} "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "type": "prompt",
+      "newline": true,
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "status",
+          "style": "powerline",
+          "foreground": "#ffffff",
+          "background": "#00897B",
+          "background_templates": [
+            "{{ if .Error }}#e91e63{{ end }}"
+          ],
+          "powerline_symbol": " ",
+          "template": "<#193549>",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ]
+    }
+  ],
+  "console_title_template": "{{.UserName}}@{{.HostName}} in {{.PWD}}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": " "
+  },
+  "version": 2
 }

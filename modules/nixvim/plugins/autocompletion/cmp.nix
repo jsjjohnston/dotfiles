@@ -1,4 +1,5 @@
-_: let
+_:
+let
   get_bufnrs.__raw = ''
     function()
       local buf_size_limit = 1024 * 1024 -- 1MB size limit
@@ -12,7 +13,8 @@ _: let
       return valid_bufs
     end
   '';
-in {
+in
+{
   programs.nixvim.opts.completeopt = [
     "menu"
     "menuone"
@@ -26,9 +28,7 @@ in {
 
       settings = {
         mapping = {
-          "<C-d>" =
-            # Lua
-            "cmp.mapping.scroll_docs(-4)";
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" =
             # Lua
             "cmp.mapping.scroll_docs(4)";
@@ -145,7 +145,7 @@ in {
             name = "emoji";
             priority = 100;
           }
-          {name = "nixpkgs_maintainers";}
+          { name = "nixpkgs_maintainers"; }
         ];
 
         window = {

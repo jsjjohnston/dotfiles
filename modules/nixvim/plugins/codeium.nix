@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.nixvim.plugins = {
     codeium-nvim = {
       enable = true;
@@ -28,6 +29,7 @@
       action = "<cmd>Codeium Chat<CR>";
       options = {
         desc = "Codeium Chat";
+        # TODO: Update Keymaps
       };
     }
   ];

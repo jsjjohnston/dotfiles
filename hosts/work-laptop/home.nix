@@ -30,5 +30,6 @@
   programs.lazygit = {
     enable = true;
   };
+  programs.gh.enable = true;
   programs.home-manager.enable = true;
 }

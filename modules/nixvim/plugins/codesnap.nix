@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   programs.nixvim.plugins = {
     codesnap = {
       enable = true;
@@ -38,6 +39,7 @@
       action = "<cmd>CodeSnap<CR>";
       options = {
         desc = "Copy";
+        # TODO: Update keymaps
       };
     }
     {
@@ -46,6 +48,7 @@
       action = "<cmd>CodeSnapSave<CR>";
       options = {
         desc = "Save";
+        # TODO: update keymaps
       };
     }
     {
@@ -54,6 +57,7 @@
       action = "<cmd>CodeSnapHighlight<CR>";
       options = {
         desc = "Highlight";
+        # TODO: update keymaps
       };
     }
     {
@@ -62,6 +66,7 @@
       action = "<cmd>CodeSnapSaveHighlight<CR>";
       options = {
         desc = "Save Highlight";
+        # TODO: update keymaps
       };
     }
   ];
