@@ -5,7 +5,7 @@
       enable = true;
     };
   };
-
+  # TODO: Update description for these mappings
   programs.nixvim.keymaps = lib.optionals config.programs.nixvim.plugins.hop.enable [
     {
       key = "f";

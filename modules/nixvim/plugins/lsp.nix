@@ -57,6 +57,7 @@
     lsp = {
       enable = true;
 
+      # # TODO: Update description for these mappings 
       keymaps = {
         silent = true;
         diagnostic = {

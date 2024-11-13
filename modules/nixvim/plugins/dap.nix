@@ -282,7 +282,7 @@ in
             end
           '';
           options = {
-            desc = "Breakpoint toggle";
+            desc = "Breakpoint toggle"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -295,7 +295,7 @@ in
             end
           '';
           options = {
-            desc = "Continue Debugging (Start)";
+            desc = "Continue Debugging (Start)"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -306,7 +306,7 @@ in
             function() require("dapui").eval() end
           '';
           options = {
-            desc = "Evaluate Input";
+            desc = "Evaluate Input"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -332,7 +332,7 @@ in
             function() require("dap.ui.widgets").hover() end
           '';
           options = {
-            desc = "Debugger Hover";
+            desc = "Debugger Hover"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -345,7 +345,7 @@ in
             end
           '';
           options = {
-            desc = "Step Out";
+            desc = "Step Out"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -358,7 +358,7 @@ in
             end
           '';
           options = {
-            desc = "Step Over";
+            desc = "Step Over"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -371,7 +371,7 @@ in
             end
           '';
           options = {
-            desc = "Step Into";
+            desc = "Step Into"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -382,7 +382,7 @@ in
             function() require("dap").terminate() end
           '';
           options = {
-            desc = "Terminate Debugging";
+            desc = "Terminate Debugging"; # TODO: Update keymap Description
             silent = true;
           };
         }
@@ -396,7 +396,7 @@ in
             end
           '';
           options = {
-            desc = "Toggle Debugger UI";
+            desc = "Toggle Debugger UI"; # TODO: Update keymap Description
             silent = true;
           };
         }

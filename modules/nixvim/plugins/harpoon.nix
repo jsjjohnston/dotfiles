@@ -19,6 +19,7 @@
     };
 
     which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.harpoon.enable [
+      # TODO: # TODO: update kepmap
       {
         __unkeyed = "<leader>h";
         group = "Harpoon";

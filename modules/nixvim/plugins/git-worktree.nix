@@ -24,7 +24,7 @@ in
       key = "<leader>fg";
       action = "<cmd>Telescope git_worktree<CR>";
       options = {
-        desc = "Git Worktree";
+        desc = "Git Worktree"; # # TODO: Update description for these mappings
       };
     }
     {
@@ -36,7 +36,7 @@ in
         end
       '';
       options = {
-        desc = "Create worktree";
+        desc = "Create worktree"; # TODO: # TODO:Update Key Maps Description
         silent = true;
       };
     }
@@ -49,7 +49,7 @@ in
         end
       '';
       options = {
-        desc = "Switch / Delete worktree";
+        desc = "Switch / Delete worktree"; # TODO: # TODO:Update Key Maps Description
         silent = true;
       };
     }

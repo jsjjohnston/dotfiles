@@ -27,6 +27,7 @@ in
       autoEnableSources = true;
 
       settings = {
+        # TODO: Update description for these mappings 
         mapping = {
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" =

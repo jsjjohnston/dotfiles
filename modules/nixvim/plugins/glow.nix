@@ -39,7 +39,7 @@ in
       key = "<leader>pg";
       action = "<cmd>Glow<CR>";
       options = {
-        desc = "Glow (Markdown)";
+        desc = "Glow (Markdown)"; # TODO: # TODO:Update Key Maps Description
       };
     }
   ];

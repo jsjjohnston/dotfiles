@@ -22,7 +22,7 @@
           key = "<leader>c";
           action.__raw = ''require("mini.bufremove").delete'';
           options = {
-            desc = "Close buffer";
+            desc = "Close buffer"; # # TODO: Update description for these mappings
             silent = true;
           };
         }
@@ -31,7 +31,7 @@
           key = "<C-w>";
           action.__raw = ''require("mini.bufremove").delete'';
           options = {
-            desc = "Close buffer";
+            desc = "Close buffer"; # TODO: Update description for these mappings
             silent = true;
           };
         }
@@ -56,7 +56,7 @@
             end
           '';
           options = {
-            desc = "Close all buffers but current";
+            desc = "Close all buffers but current"; # # TODO: Update description for these mappings
           };
         }
       ];

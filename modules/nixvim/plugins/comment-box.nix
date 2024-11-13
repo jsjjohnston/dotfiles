@@ -2,13 +2,14 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   programs.nixvim.plugins = {
     comment-box = {
       enable = true;
 
       settings = {
-        # TODO: customize
+        # TODO: customize comment box
         #   borders = {
         #     bottom_left = "X";
         #     bottom_right = "X";
@@ -42,7 +43,7 @@
       key = "<leader>lcd";
       action = "<cmd>CBd<cr>";
       options = {
-        desc = "Delete a box";
+        desc = "Delete a box"; # # TODO: Update description for these mappings
       };
     }
     {
@@ -50,7 +51,7 @@
       key = "<leader>lcb";
       action = "<cmd>CBccbox<cr>";
       options = {
-        desc = "Box Title";
+        desc = "Box Title"; # # TODO: Update description for these mappings
       };
     }
     {
@@ -58,7 +59,7 @@
       key = "<leader>lct";
       action = "<cmd>CBllline<cr>";
       options = {
-        desc = "Titled Line";
+        desc = "Titled Line"; # TODO: Update Key Map Description
       };
     }
     {
@@ -66,7 +67,7 @@
       key = "<leader>lcl";
       action = "<cmd>CBline<cr>";
       options = {
-        desc = "Simple Line";
+        desc = "Simple Line"; # TODO: Update Key Map Description
       };
     }
   ];

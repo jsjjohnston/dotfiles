@@ -39,7 +39,7 @@ in
         end
       '';
       options = {
-        desc = "Hardtime toggle";
+        desc = "Hardtime toggle"; # TODO: # TODO:Update Key Maps Description
         silent = true;
       };
     }

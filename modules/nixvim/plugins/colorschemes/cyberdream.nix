@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.nixvim = {
     colorschemes.cyberdream = {
       enable = true;
@@ -11,10 +12,13 @@
     };
     keymaps = [
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "<leader>tt";
         action = ":CyberdreamToggleMode<CR>";
-        options = {desc = "";};
+        # TODO: # TODO: Update description for these mappings 
+        options = {
+          desc = "";
+        };
       }
     ];
   };

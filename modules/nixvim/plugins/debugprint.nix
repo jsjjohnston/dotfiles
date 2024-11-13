@@ -12,6 +12,7 @@
         display_counter = true;
         display_snippet = true;
 
+        # TODO:# TODO: Update description for these mappings 
         keymaps = {
           normal = {
             plain_below = "g?p";
