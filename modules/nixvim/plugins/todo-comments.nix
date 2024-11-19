@@ -6,7 +6,10 @@
     keymaps = {
       todoTrouble.key = lib.mkIf config.programs.nixvim.plugins.trouble.enable "<leader>xq";
       todoTelescope = lib.mkIf config.programs.nixvim.plugins.telescope.enable {
-        key = "<leader>ft";
+        key = "<leader>st";
+        options = {
+          desc = "[S]earch [T]odo";
+        };
         keywords = [
           "TODO"
           "FIX"

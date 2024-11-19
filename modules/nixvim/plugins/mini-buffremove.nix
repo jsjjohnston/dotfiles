@@ -56,7 +56,7 @@
             end
           '';
           options = {
-            desc = "Close all buffers but current"; # # TODO: Update description for these mappings
+            desc = "[C]lose all buffers but current";
           };
         }
       ];

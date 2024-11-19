@@ -94,7 +94,6 @@
         severity.__raw = "vim.diagnostic.severity.WARN";
       };
     };
-
     globals = {
       mapleader = " ";
       maplocalleader = " ";

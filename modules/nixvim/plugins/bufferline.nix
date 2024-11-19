@@ -128,27 +128,19 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.bufferline.enable [
     {
       mode = "n";
-      key = "<leader>bP";
+      key = "<leader>bp";
       action = "<cmd>BufferLineTogglePin<cr>";
       options = {
-        desc = "Pin buffer toggle";
-        # TODO: update kepmap
+        desc = "[P]in buffer toggle";
       };
     }
-    # {
-    #   mode = "n";
-    #   key = "<leader>bp";
-    #   options = {
-    #     desc = "Pick Buffer";
-    #   };
-    # }
+
     {
       mode = "n";
       key = "<leader>bsd";
       action = "<cmd>BufferLineSortByDirectory<cr>";
       options = {
-        desc = "Sort By Directory";
-        # TODO: update keymaps
+        desc = "Sort By [D]irectory";
       };
     }
     {
@@ -156,8 +148,7 @@
       key = "<leader>bse";
       action = "<cmd>BufferLineSortByExtension<cr>";
       options = {
-        desc = "Sort By Extension";
-        # TODO: update keymaps
+        desc = "Sort By [E]xtension";
       };
     }
     {
@@ -165,8 +156,7 @@
       key = "<leader>bsr";
       action = "<cmd>BufferLineSortByRelativeDirectory<cr>";
       options = {
-        desc = "Sort By Relative Directory";
-        # TODO: update keymaps
+        desc = "Sort By Relative [D]irectory";
       };
     }
   ];

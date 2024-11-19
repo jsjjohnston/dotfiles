@@ -14,8 +14,8 @@
       key = "<leader>tt";
       action = "<cmd>ToggleTerm<CR>";
       options = {
-        desc = "Open Terminal";
-        # TODO: Update Key Maps
+        desc = "Open [T]erminal";
+        # FIXME: Fix Key Bind to Close
       };
     }
     {
@@ -30,7 +30,6 @@
       '';
       options = {
         desc = "Open Lazy[G]it";
-        # TODO: Update Key Maps
         silent = true;
       };
     }

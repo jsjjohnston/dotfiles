@@ -21,10 +21,10 @@ in
   programs.nixvim.keymaps = lib.mkIf cfg.enableTelescope [
     {
       mode = "n";
-      key = "<leader>fg";
+      key = "<leader>sgw";
       action = "<cmd>Telescope git_worktree<CR>";
       options = {
-        desc = "Git Worktree"; # # TODO: Update description for these mappings
+        desc = "Git [W]orktree"; # # TODO: Update description for these mappings
       };
     }
     {

@@ -89,12 +89,11 @@
             };
           };
 
-          "<leader>sg" = {
+          "<leader>fg" = {
             action = "live_grep";
             mode = "n";
             options = {
-              desc = "[S]earch by [G]rep";
-              # TODO: Update Key map Desk
+              desc = "[F]ind by [G]rep";
             };
           };
 
