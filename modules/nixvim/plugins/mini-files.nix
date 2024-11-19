@@ -13,6 +13,7 @@
           action.__raw = "MiniFiles.open()";
           options = {
             desc = "Mini Files";
+            # TODO: Description Update
           };
         }
       ];

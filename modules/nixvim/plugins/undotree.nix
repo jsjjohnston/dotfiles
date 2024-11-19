@@ -33,6 +33,7 @@
       action = "<cmd>UndotreeToggle<CR>";
       options = {
         desc = "Undotree toggle";
+        # TODO: Update # TODO: Update Description
       };
     }
   ];

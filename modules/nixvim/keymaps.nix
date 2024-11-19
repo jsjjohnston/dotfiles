@@ -6,6 +6,7 @@
       mode = "n";
       key = "<esc>";
       action = "<cmd>nohc<CR>";
+      # TODO: Update keymap desc
     }
     {
       mode = "n";
@@ -30,6 +31,7 @@
       action = "<C-w>h";
       options = {
         desc = "Left window";
+        # TODO: Update Description
       };
     }
     {
@@ -38,6 +40,7 @@
       action = "<C-w>l";
       options = {
         desc = "Right window";
+        # TODO: Update Description
       };
     }
     {
@@ -46,6 +49,7 @@
       action = "<C-w>k";
       options = {
         desc = "Down window";
+        # TODO: Update Description
       };
     }
     {
@@ -54,6 +58,7 @@
       action = "<C-w>k";
       options = {
         desc = "Up window";
+        # TODO: Update Description
       };
     }
     {

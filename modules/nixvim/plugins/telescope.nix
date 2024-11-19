@@ -1,10 +1,15 @@
-{...}: {
+{ ... }:
+{
   programs.nixvim = {
     plugins = {
       telescope = {
         enable = true;
         settings = {
-          pickers = {find_files = {hidden = false;};};
+          pickers = {
+            find_files = {
+              hidden = false;
+            };
+          };
           defaults = {
             file_ignore_patterns = [
               "node_modules"
@@ -13,62 +18,93 @@
           };
         };
         extensions = {
-          ui-select = {enable = true;};
-          fzf-native = {enable = true;};
+          ui-select = {
+            enable = true;
+          };
+          fzf-native = {
+            enable = true;
+          };
         };
         keymaps = {
           "<leader>sh" = {
             action = "help_tags";
-            options = {desc = "[S]earch [H]elp";};
+            options = {
+              desc = "[S]earch [H]elp";
+            };
+            # TODO: Update Keymap desc
             mode = "n";
           };
 
           "<leader>sl" = {
             action = "keymaps";
             mode = "n";
-            options = {desc = "[S]earch [K]eymaps";};
+            options = {
+              desc = "[S]earch [K]eymaps";
+            };
+            # TODO: Update Keymap desc
           };
 
           "<leader>sf" = {
             action = "find_files";
             mode = "n";
-            options = {desc = "[S]earch [F]iles";};
+            options = {
+              desc = "[S]earch [F]iles";
+            };
           };
+          # TODO: Update Keymap desc
 
           "<leader>ss" = {
             action = "builtin";
             mode = "n";
-            options = {desc = "[S]earch [S]elect Telescope";};
+            options = {
+              desc = "[S]earch [S]elect Telescope";
+            };
+            # TODO: Update Keymap desc
           };
 
           "<leader>sd" = {
             action = "diagnostics";
             mode = "n";
-            options = {desc = "[S]earch [D]iagnostics";};
+            options = {
+              desc = "[S]earch [D]iagnostics";
+            };
+            # TODO: Update Keymap desc
           };
 
           "<leader>sr" = {
             action = "resume";
             mode = "n";
-            options = {desc = "[S]earch [R]esume";};
+            options = {
+              desc = "[S]earch [R]esume";
+              # TODO: Update Key map Desk
+            };
           };
 
           "<leader>s." = {
             action = "oldfiles";
             mode = "n";
-            options = {desc = "[S]earch Recent Files";};
+            options = {
+              desc = "[S]earch Recent Files";
+              # TODO: Update Key map Desk
+            };
           };
 
           "<leader>sg" = {
             action = "live_grep";
             mode = "n";
-            options = {desc = "[S]earch by [G]rep";};
+            options = {
+              desc = "[S]earch by [G]rep";
+              # TODO: Update Key map Desk
+            };
           };
 
           "<leader><leader>" = {
             action = "buffers";
             mode = "n";
-            options = {desc = "[ ] Find existing buffers";};
+            options = {
+              desc = "[ ] Find existing buffers";
+              # TODO: Update Key map Desk
+            };
           };
         };
       };
@@ -82,7 +118,10 @@
           end
         '';
         mode = "n";
-        options = {desc = "stuff";};
+        options = {
+          desc = "stuff";
+        };
+        # TODO: Update Keymap desc
       }
     ];
   };

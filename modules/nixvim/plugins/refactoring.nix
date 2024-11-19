@@ -24,6 +24,7 @@
         action = "<cmd>Refactor extract<cr>";
         options = {
           desc = "Extract";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -32,6 +33,7 @@
         action = "<cmd>Refactor extract_to_file<cr>";
         options = {
           desc = "Extract to file";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -40,6 +42,7 @@
         action = "cmd>Refactor extract_var<cr>";
         options = {
           desc = "Extract var";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -48,6 +51,7 @@
         action = "<cmd>Refactor inline_var<CR>";
         options = {
           desc = "Inline var";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -56,6 +60,7 @@
         action = "<cmd>Refactor inline_func<CR>";
         options = {
           desc = "Inline Func";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -64,6 +69,7 @@
         action = "<cmd>Refactor extract_block<CR>";
         options = {
           desc = "Extract block";
+          # TODO: Update Keymap desc
         };
       }
       {
@@ -72,6 +78,7 @@
         action = "<cmd>Refactor extract_block_to_file<CR>";
         options = {
           desc = "Extract block to file";
+          # TODO: Update Keymap desc
         };
       }
     ]
@@ -90,6 +97,7 @@
           '';
           options = {
             desc = "Refactoring";
+            # TODO: Update Keymap desc
             silent = true;
           };
         }

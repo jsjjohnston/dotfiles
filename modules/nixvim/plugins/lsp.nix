@@ -85,6 +85,7 @@
             key = "<leader>lf";
             options = {
               desc = "Format selection";
+              # TODO: Update Description
             };
           }
           {
@@ -93,6 +94,7 @@
             key = "<leader>lp";
             options = {
               desc = "Preview definition";
+              # TODO: Update Description
             };
           }
           {
@@ -101,22 +103,31 @@
             key = "<leader>lP";
             options = {
               desc = "Preview type definition";
+              # TODO: Update Description
             };
           }
         ];
 
         lspBuf = {
           "<leader>la" = "code_action";
+          # TODO: Update Description
           "<leader>ld" = "definition";
+          # TODO: Update Description
           "<leader>lD" = "references";
+          # TODO: Update Description
           "<leader>lf" = "format";
+          # TODO: Update Description
           "K" = {
             action = "hover";
             desc = "Hover";
+            # TODO: Update Description
           };
           "<leader>li" = "implementation";
+          # TODO: Update Description
           "<leader>cr" = "rename";
+          # TODO: Update Description
           "<leader>lt" = "type_definition";
+          # TODO: Update Description
         };
       };
 
@@ -130,47 +141,11 @@
           ];
         };
 
-        # ccls = {
-        #   enable = true;
-        #   filetypes = [
-        #     "c"
-        #     "cpp"
-        #     "objc"
-        #     "objcpp"
-        #   ];
-        #
-        #   initOptions.compilationDatabaseDirectory = "build";
-        # };
-
         # TODO: see what further configuration might be needed
         cmake = {
           enable = true;
           filetypes = [ "cmake" ];
         };
-
-        # clangd = {
-        #   enable = true;
-        #   filetypes = [
-        #     "c"
-        #     "cpp"
-        #     "objc"
-        #     "objcpp"
-        #   ];
-        # };
-
-        # csharp_ls = {
-        #   enable = true;
-        #   filetypes = ["cs"];
-        # };
-        #
-        # cssls = {
-        #   enable = true;
-        #   filetypes = [
-        #     "css"
-        #     "less"
-        #     "scss"
-        #   ];
-        # };
 
         dockerls = {
           enable = true;
@@ -186,36 +161,6 @@
             "typescriptreact"
           ];
         };
-
-        # fsautocomplete = {
-        #   enable = true;
-        #   filetypes = ["fsharp"];
-        # };
-
-        # gdscript = {
-        #   enable = true;
-        #   package = pkgs.gdtoolkit_4;
-        #   filetypes = [
-        #     "gd"
-        #     "gdscript"
-        #     "gdscript3"
-        #   ];
-        # };
-
-        # harper_ls = {
-        #   enable = true;
-        #   settings = {
-        #     "harper-ls" = {
-        #       linters = {
-        #         linking_verbs = true;
-        #         wrong_quotes = true;
-        #       };
-        #       codeActions = {
-        #         forceStable = true;
-        #       };
-        #     };
-        #   };
-        # };
 
         # helm_ls = {
         #   enable = true;

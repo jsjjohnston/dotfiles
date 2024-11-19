@@ -13,6 +13,7 @@
       '';
       options = {
         desc = "[Y]azi";
+        # TODO: Update Descrip
         silent = true;
       };
     }

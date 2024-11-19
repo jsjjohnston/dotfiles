@@ -86,7 +86,7 @@
     enable = false;
   };
   services.yabai = {
-    enable = true;
+    enable = false;
     config = {
       layout = "bsp";
       auto_balance = true;

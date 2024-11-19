@@ -18,6 +18,7 @@
           action = "<cmd>Telescope projects<CR>";
           options = {
             desc = "Find projects";
+            # TODO: Update Keymap desc
           };
         }
       ];

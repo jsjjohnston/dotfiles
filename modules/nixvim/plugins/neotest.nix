@@ -67,6 +67,7 @@
       '';
       options = {
         desc = "Neotest Debug";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -75,6 +76,7 @@
       action = "<CMD>Neotest attach<CR>";
       options = {
         desc = "Attach";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -87,6 +89,7 @@
       '';
       options = {
         desc = "Debug";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -95,6 +98,7 @@
       action = "<CMD>Neotest output<CR>";
       options = {
         desc = "Output";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -103,6 +107,7 @@
       action = "<CMD>Neotest output-panel<CR>";
       options = {
         desc = "Output Panel toggle";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -111,6 +116,7 @@
       action = "<CMD>Neotest run<CR>";
       options = {
         desc = "Run (Nearest Test)";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -123,6 +129,7 @@
       '';
       options = {
         desc = "Run (File)";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -131,6 +138,7 @@
       action = "<CMD>Neotest stop<CR>";
       options = {
         desc = "Stop";
+        # # TODO: Update Keymap desc
       };
     }
     {
@@ -139,6 +147,7 @@
       action = "<CMD>Neotest summary<CR>";
       options = {
         desc = "Summary toggle";
+        # # TODO: Update Keymap desc
       };
     }
   ];

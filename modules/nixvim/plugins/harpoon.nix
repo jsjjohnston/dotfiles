@@ -28,26 +28,32 @@
       {
         __unkeyed = "<leader>ha";
         desc = "Add";
+        # # TODO: Update Description
       }
       {
         __unkeyed = "<leader>he";
         desc = "QuickMenu";
+        # # TODO: Update Description
       }
       {
         __unkeyed = "<leader>hj";
         desc = "1";
+        # # TODO: Update Description
       }
       {
         __unkeyed = "<leader>hk";
         desc = "2";
+        # # TODO: Update Description
       }
       {
         __unkeyed = "<leader>hl";
         desc = "3";
+        # # TODO: Update Description
       }
       {
         __unkeyed = "<leader>hm";
         desc = "4";
+        # # TODO: Update Description
       }
     ];
   };

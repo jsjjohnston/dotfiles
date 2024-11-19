@@ -16,7 +16,7 @@
       key = "<leader>ui";
       action = "<cmd>IBLToggle<CR>";
       options = {
-        desc = "Indent-Blankline toggle"; # # TODO: Update description for these mappings 
+        desc = "Indent-Blankline toggle"; # # TODO: Update description for these mappings
       };
     }
     {
@@ -24,7 +24,7 @@
       key = "<leader>uI";
       action = "<cmd>IBLToggleScope<CR>";
       options = {
-        desc = "Indent-Blankline Scope toggle"; $ # TODO: Update description for these mappings i
+        desc = "Indent-Blankline Scope toggle"; # TODO: Update description for these mappings i
       };
     }
   ];

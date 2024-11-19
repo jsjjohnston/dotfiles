@@ -59,6 +59,7 @@
       action = "<cmd>Trouble preview_split toggle<cr>";
       options = {
         desc = "Diagnostics toggle";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -67,6 +68,7 @@
       action = "<cmd>Trouble preview_split toggle filter.buf=0<cr>";
       options = {
         desc = "Buffer Diagnostics toggle";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -75,6 +77,7 @@
       action = "<cmd>Trouble symbols toggle focus=false<cr>";
       options = {
         desc = "Symbols toggle";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -83,6 +86,7 @@
       action = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>";
       options = {
         desc = "LSP Definitions / references / ... toggle";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -91,6 +95,7 @@
       action = "<cmd>Trouble loclist toggle<cr>";
       options = {
         desc = "Location List toggle";
+        # TODO: Update Keymap desc
       };
     }
     {
@@ -99,6 +104,7 @@
       action = "<cmd>Trouble qflist toggle<cr>";
       options = {
         desc = "Quickfix List toggle";
+        # TODO: Update Keymap desc
       };
     }
   ];

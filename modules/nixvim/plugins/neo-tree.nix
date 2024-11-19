@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   programs.nixvim = {
     plugins = {
       neo-tree = {
@@ -18,10 +19,13 @@
 
     keymaps = [
       {
-        mode = ["n"];
+        mode = [ "n" ];
         key = "\\";
         action = "<cmd>Neotree toggle<cr>";
-        options = {desc = "Open/Close Neotree";};
+        options = {
+          desc = "Open/Close Neotree";
+        };
+        # TODO: Update keymap desc
       }
     ];
   };

@@ -265,6 +265,7 @@ in
             __unkeyed = "<leader>d";
             mode = "n";
             desc = "Debug";
+            # TODO: Update keymap desc
             # icon = " ";
           }
         ];
@@ -322,6 +323,7 @@ in
           '';
           options = {
             desc = "Evaluate Input";
+            # # TODO: Update Keymap desc
             silent = true;
           };
         }
