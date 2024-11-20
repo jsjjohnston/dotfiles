@@ -24,103 +24,92 @@
       }
       {
         mode = [ "n" ];
-        key = "<leader>hs";
+        key = "<leader>ghs";
         action.__raw = ''require('gitsigns').stage_hunk'';
         options = {
-          desc = "git [s]tage hunk";
-          # TODO: update keymaps
+          desc = "Git [S]tage hunk";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hr";
+        key = "<leader>ghr";
         action.__raw = ''require('gitsigns').reset_hunk'';
         options = {
-          desc = "git [r]eset hunk";
-          # TODO: update keymaps
+          desc = "Git [R]eset hunk";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hS";
+        key = "<leader>ghs";
         action.__raw = ''require('gitsigns').stage_buffer'';
         options = {
-          desc = "git [S]tage buffer";
-          # TODO: update keymaps
+          desc = "Git hunk [S]tage buffer";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hu";
+        key = "<leader>ghu";
         action.__raw = ''require('gitsigns').undo_stage_hunk'';
         options = {
-          desc = "git [u]ndo stage hunk";
-          # TODO: update keymaps
+          desc = "Git [U]ndo stage hunk";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hR";
+        key = "<leader>ghr";
         action.__raw = ''require('gitsigns').reset_hunk'';
         options = {
-          desc = "git [R]eset Buffer";
-          # TODO: update keymaps
+          desc = "Git Hunk [R]eset Buffer";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hp";
+        key = "<leader>ghp";
         action.__raw = ''require('gitsigns').preview_hunk'';
         options = {
-          desc = "git [p]review hunk";
-          # TODO: update keymaps
+          desc = "Git [P]review hunk";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hb";
+        key = "<leader>ghb";
         action.__raw = ''require('gitsigns').blame_line'';
         options = {
-          desc = "git [b]lame line";
-          # TODO: update keymaps
+          desc = "Git [B]lame line";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hd";
+        key = "<leader>ghd";
         action.__raw = ''require('gitsigns').diffthis'';
         options = {
-          desc = "git [d]iff against index";
-          # TODO: update keymaps
+          desc = "Git [d]iff against index";
         };
       }
       {
         mode = [ "n" ];
-        key = "<leader>hD";
+        key = "<leader>ghD";
         action.__raw = ''function() require('gitsigns').diffthis '@' end'';
         options = {
-          desc = "git [D]iff against last commit";
-          # TODO: update keymaps
+          desc = "Git [D]iff against last commit";
         };
       }
 
       {
         mode = [ "n" ];
-        key = "<leader>tb";
+        key = "<leader>gtb";
         action.__raw = ''require('gitsigns').toggle_current_line_blame'';
         options = {
-          desc = "[t]oggle git show [b]lame line";
-          # TODO: update keymaps
+          desc = "Toggle Git Show [B]lame Line";
         };
       }
 
       {
         mode = [ "n" ];
-        key = "<leader>tD";
+        key = "<leader>gtd";
         action.__raw = ''require('gitsigns').toggle_deleted'';
         options = {
-          desc = "[t]oggle git show [D]eleted";
-          # TODO: update keymaps
+          desc = "Git Toggle Git Show [D]eleted";
         };
       }
     ];

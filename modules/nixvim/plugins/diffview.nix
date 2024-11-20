@@ -21,7 +21,7 @@
         end
       '';
       options = {
-        desc = "Git Diff toggle"; # # TODO: Update description for these mappings
+        desc = "Git [D]iff toggle";
         silent = true;
       };
     }

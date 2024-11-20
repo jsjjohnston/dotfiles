@@ -10,7 +10,7 @@
       {
         __unkeyed = "<leader>r";
         mode = "x";
-        group = "Refactor";
+        group = "[R]efactor";
         icon = " ";
       }
     ];

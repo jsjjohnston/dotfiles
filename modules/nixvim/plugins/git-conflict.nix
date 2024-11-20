@@ -20,7 +20,7 @@
     which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.git-conflict.enable [
       {
         __unkeyed = "<leader>gc";
-        group = "Conflicts";
+        group = "[C]onflicts";
         icon = "";
       }
     ];
@@ -48,7 +48,7 @@
       key = "<leader>gcr";
       action = "<cmd>GitConflictRefresh<CR>";
       options = {
-        desc = "Refresh"; # # TODO: Update description for these mappings
+        desc = "Git Conflict [R]efresh";
       };
     }
     {
@@ -56,7 +56,7 @@
       key = "<leader>gcb";
       action = "<cmd>GitConflictChooseBase<CR>";
       options = {
-        desc = "Choose Base"; # # TODO: Update description for these mappings
+        desc = "Git Conflict Choose [b]ase";
       };
     }
     {
@@ -64,7 +64,7 @@
       key = "<leader>gcB";
       action = "<cmd>GitConflictChooseBoth<CR>";
       options = {
-        desc = "Choose Both"; # # TODO: Update description for these mappings
+        desc = "Git Conflict Choose [B]oth";
       };
     }
     {
@@ -72,7 +72,7 @@
       key = "<leader>gct";
       action = "<cmd>GitConflictChooseTheirs<CR>";
       options = {
-        desc = "Choose Theirs"; # # TODO: Update description for these mappings
+        desc = "Git Conflict Choose [T]heirs";
       };
     }
     {
@@ -80,7 +80,7 @@
       key = "<leader>gco";
       action = "<cmd>GitConflictChooseOurs<CR>";
       options = {
-        desc = "Choose Ours"; # # TODO: Update description for these mappings
+        desc = "Git Conflict Choose [O]urs";
       };
     }
     {
@@ -88,7 +88,7 @@
       key = "<leader>gcn";
       action = "<cmd>GitConflictChooseNone<CR>";
       options = {
-        desc = "Choose None"; # # TODO: Update description for these mappings
+        desc = "Git Conflict Choose [N]one";
       };
     }
     {
@@ -96,7 +96,7 @@
       key = "<leader>gcl";
       action = "<cmd>GitConflictListQf<CR>";
       options = {
-        desc = "List"; # # TODO: Update description for these mappings
+        desc = "Git Conflict [L]ist";
       };
     }
   ];

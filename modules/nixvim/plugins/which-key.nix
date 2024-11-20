@@ -8,12 +8,24 @@
           preset = "modern";
           spec = [
             {
+              __unkeyed-1 = "<leader>gt";
+              desc = "[T]oggle";
+            }
+            {
+              __unkeyed-1 = "<leader>g";
+              desc = "[G]it";
+            }
+            {
               __unkeyed-1 = "<leader>f";
               desc = "[F]ind";
             }
             {
               __unkeyed-1 = "<leader>sg";
               desc = "[G]it";
+            }
+            {
+              __unkeyed-1 = "<leader>gh";
+              desc = "Git [H]unk";
             }
             {
               __unkeyed-1 = "<leader>bp";
@@ -38,7 +50,7 @@
 
             {
               __unkeyed-1 = "<leader>r";
-              desc = "[R]ename";
+              desc = "[R]efactor";
             }
             {
               __unkeyed-1 = "<leader>s";

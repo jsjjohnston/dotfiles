@@ -15,8 +15,7 @@ in
       key = "<leader>gi";
       action.__raw = ''require('gitignore').generate'';
       options = {
-        desc = "Gitignore generate";
-        # TODO: Update keymaps
+        desc = "Git[I]gnore generate";
         silent = true;
       };
     }
