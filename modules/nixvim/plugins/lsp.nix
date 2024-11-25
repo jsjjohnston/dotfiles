@@ -57,18 +57,80 @@
     lsp = {
       enable = true;
 
-      # # TODO: Update description for these mappings 
       keymaps = {
         silent = true;
         diagnostic = {
           # Navigate in diagnostics
-          "<leader>l[" = "goto_prev";
-          "<leader>l]" = "goto_next";
-          # TODO: fix theme of float
-          "<leader>lH" = "open_float";
+          "[d" = {
+            action = "goto_prev";
+            desc = "Go to previous [D]iagnostic message";
+          };
+          "]d" = {
+            #mode = "n";
+            action = "goto_next";
+            desc = "Go to next [D]iagnostic message";
+          };
+          "<leader>e" = {
+            #mode = "n";
+            action = "open_float";
+            desc = "Show diagnostic [E]rror messages";
+          };
+          "<leader>q" = {
+            #mode = "n";
+            action = "setloclist";
+            desc = "Open diagnostic [Q]uickfix list";
+          };
         };
 
         extra = [
+          {
+            mode = "n";
+            key = "gd";
+            action.__raw = "require('telescope.builtin').lsp_definitions";
+            options = {
+              desc = "LSP: [G]oto [D]efinition";
+            };
+          }
+          # Find references for the word under your cursor.
+          {
+            mode = "n";
+            key = "gr";
+            action.__raw = "require('telescope.builtin').lsp_references";
+            options = {
+              desc = "LSP: [G]oto [R]eferences";
+            };
+          }
+          # Jump to the implementation of the word under your cursor.
+          #  Useful when your language has ways of declaring types without an actual implementation.
+          {
+            mode = "n";
+            key = "gI";
+            action.__raw = "require('telescope.builtin').lsp_implementations";
+            options = {
+              desc = "LSP: [G]oto [I]mplementation";
+            };
+          }
+          # Jump to the type of the word under your cursor.
+          #  Useful when you're not sure what type a variable is and you want to see
+          #  the definition of its *type*, not where it was *defined*.
+          {
+            mode = "n";
+            key = "<leader>D";
+            action.__raw = "require('telescope.builtin').lsp_type_definitions";
+            options = {
+              desc = "LSP: Type [D]efinition";
+            };
+          }
+          # Fuzzy find all the symbols in your current document.
+          #  Symbols are things like variables, functions, types, etc.
+          {
+            mode = "n";
+            key = "<leader>ds";
+            action.__raw = "require('telescope.builtin').lsp_document_symbols";
+            options = {
+              desc = "LSP: [D]ocument [S]ymbols";
+            };
+          }
           {
             action.__raw = ''
               function()
@@ -82,52 +144,47 @@
               end
             '';
             mode = "v";
-            key = "<leader>lf";
+            key = "<leader>fs";
             options = {
-              desc = "Format selection";
-              # TODO: Update Description
+              desc = "Format [S]election";
             };
           }
           {
             action.__raw = "peek_definition";
             mode = "n";
-            key = "<leader>lp";
+            key = "<leader>pd";
             options = {
-              desc = "Preview definition";
-              # TODO: Update Description
+              desc = "Peek [D]efinition";
             };
           }
           {
             action.__raw = "peek_type_definition";
             mode = "n";
-            key = "<leader>lP";
+            key = "<leader>ptd";
             options = {
-              desc = "Preview type definition";
-              # TODO: Update Description
+              desc = "[P]eek [T]ype [D]efinition";
             };
           }
         ];
 
         lspBuf = {
-          "<leader>la" = "code_action";
-          # TODO: Update Description
-          "<leader>ld" = "definition";
-          # TODO: Update Description
-          "<leader>lD" = "references";
-          # TODO: Update Description
-          "<leader>lf" = "format";
-          # TODO: Update Description
+          "<leader>la" = {
+            action = "code_action";
+            desc = "Code [A]ction";
+          };
           "K" = {
             action = "hover";
-            desc = "Hover";
-            # TODO: Update Description
+            desc = "LSP: Hover Documentation";
           };
           "<leader>li" = "implementation";
-          # TODO: Update Description
-          "<leader>cr" = "rename";
-          # TODO: Update Description
-          "<leader>lt" = "type_definition";
-          # TODO: Update Description
+          "<leader>rn" = {
+            action = "rename";
+            desc = "LSP: [R]e[n]ame";
+          };
+          "gD" = {
+            action = "declaration";
+            desc = "LSP: [G]oto [D]eclaration";
+          };
         };
       };
 
@@ -162,33 +219,10 @@
           ];
         };
 
-        # helm_ls = {
-        #   enable = true;
-        #   filetypes = ["helm"];
-        # };
-
         html = {
           enable = true;
           filetypes = [ "html" ];
         };
-
-        # java_language_server = {
-        #   enable = !config.programs.nixvim.plugins.nvim-jdtls.enable;
-        #   filetypes = ["java"];
-        # };
-
-        # jdtls = {
-        #   enable = !config.programs.nixvim.plugins.nvim-jdtls.enable;
-        #   filetypes = ["java"];
-        # };
-
-        # jsonls = {
-        #   enable = true;
-        #   filetypes = [
-        #     "json"
-        #     "jsonc"
-        #   ];
-        # };
 
         lua_ls = {
           enable = true;
@@ -226,21 +260,6 @@
             };
           };
         };
-
-        # nushell = {
-        #   enable = true;
-        #   filetypes = ["nu"];
-        # };
-
-        # pyright = {
-        #   enable = true;
-        #   filetypes = ["python"];
-        # };
-
-        # ruff = {
-        #   enable = true;
-        #   filetypes = ["python"];
-        # };
 
         rust_analyzer = {
           enable = !config.programs.nixvim.plugins.rustaceanvim.enable;
@@ -283,16 +302,6 @@
           enable = true;
           filetypes = [ "sql" ];
         };
-
-        # tailwindcss = {
-        #   enable = true;
-        #   filetypes = [ "css" ];
-        # };
-
-        # taplo = {
-        #   enable = true;
-        #   filetypes = ["toml"];
-        # };
 
         ts_ls = {
           enable = !config.programs.nixvim.plugins.typescript-tools.enable;

@@ -8,6 +8,10 @@
           preset = "modern";
           spec = [
             {
+              __unkeyed-1 = "<leader>l";
+              desc = "[L]sp";
+            }
+            {
               __unkeyed-1 = "<leader>gt";
               desc = "[T]oggle";
             }

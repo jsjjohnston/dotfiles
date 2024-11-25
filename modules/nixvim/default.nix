@@ -20,7 +20,7 @@
     ./plugins/lint.nix
     ./plugins/typescript-tools.nix
     ./plugins/ccc.nix
-    ./plugins/codesnap.nix
+    # ./plugins/codesnap.nix
     ./plugins/colorizer.nix
     ./plugins/comment-box.nix
     ./plugins/complier.nix

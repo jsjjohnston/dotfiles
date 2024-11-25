@@ -30,8 +30,8 @@
 
     which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.comment-box.enable [
       {
-        __unkeyed = "<leader>lc";
-        group = "Comment-box";
+        __unkeyed = "<leader>cb";
+        group = "Comment-[B]ox";
         icon = " ";
       }
     ];
@@ -40,34 +40,34 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.comment-box.enable [
     {
       mode = "n";
-      key = "<leader>lcd";
+      key = "<leader>cbd";
       action = "<cmd>CBd<cr>";
       options = {
-        desc = "Delete a box"; # # TODO: Update description for these mappings
+        desc = "[D]elete a Comment-box";
       };
     }
     {
       mode = "n";
-      key = "<leader>lcb";
+      key = "<leader>cbb";
       action = "<cmd>CBccbox<cr>";
       options = {
-        desc = "Box Title"; # # TODO: Update description for these mappings
+        desc = "Comment-box [B]ox Title";
       };
     }
     {
       mode = "n";
-      key = "<leader>lct";
+      key = "<leader>cbt";
       action = "<cmd>CBllline<cr>";
       options = {
-        desc = "Titled Line"; # TODO: Update Key Map Description
+        desc = "Comment-box [T]itle Line";
       };
     }
     {
       mode = "n";
-      key = "<leader>lcl";
+      key = "<leader>cbl";
       action = "<cmd>CBline<cr>";
       options = {
-        desc = "Simple Line"; # TODO: Update Key Map Description
+        desc = "comment-box Simple [L]ine";
       };
     }
   ];
