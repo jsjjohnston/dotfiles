@@ -77,14 +77,6 @@
               desc = "[T]oggle";
             }
 
-            {
-              __unkeyed-1 = "<leader>h";
-              desc = "Git [H]unk";
-              mode = [
-                "n"
-                "v"
-              ];
-            }
           ];
         };
       };

@@ -14,11 +14,10 @@
       [
         {
           mode = "n";
-          key = "<leader>fP";
+          key = "<leader>fpi";
           action = "<cmd>Telescope package_info<CR>";
           options = {
-            desc = "Find package info";
-            # TODO: Update keymaps
+            desc = "Find [P]ackage [I]nfo";
           };
         }
       ];

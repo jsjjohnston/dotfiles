@@ -18,8 +18,7 @@
            end
         '';
         options = {
-          desc = "Jump to next git [c]hange";
-          # TODO: # TODO: update keymaps
+          desc = "Jump To Next Git [C]hange";
         };
       }
       {
@@ -27,7 +26,7 @@
         key = "<leader>ghs";
         action.__raw = ''require('gitsigns').stage_hunk'';
         options = {
-          desc = "Git [S]tage hunk";
+          desc = "Git Hunk [S]tage ";
         };
       }
       {
@@ -35,7 +34,7 @@
         key = "<leader>ghr";
         action.__raw = ''require('gitsigns').reset_hunk'';
         options = {
-          desc = "Git [R]eset hunk";
+          desc = "Git Hunk [R]eset ";
         };
       }
       {
@@ -43,7 +42,7 @@
         key = "<leader>ghs";
         action.__raw = ''require('gitsigns').stage_buffer'';
         options = {
-          desc = "Git hunk [S]tage buffer";
+          desc = "Git [S]tage Hunk Buffer";
         };
       }
       {
@@ -51,7 +50,7 @@
         key = "<leader>ghu";
         action.__raw = ''require('gitsigns').undo_stage_hunk'';
         options = {
-          desc = "Git [U]ndo stage hunk";
+          desc = "Git [U]ndo Stage Hunk";
         };
       }
       {
@@ -67,7 +66,7 @@
         key = "<leader>ghp";
         action.__raw = ''require('gitsigns').preview_hunk'';
         options = {
-          desc = "Git [P]review hunk";
+          desc = "Git [P]review Hunk";
         };
       }
       {
@@ -75,7 +74,7 @@
         key = "<leader>ghb";
         action.__raw = ''require('gitsigns').blame_line'';
         options = {
-          desc = "Git [B]lame line";
+          desc = "Git [B]lame Line";
         };
       }
       {
@@ -83,7 +82,7 @@
         key = "<leader>ghd";
         action.__raw = ''require('gitsigns').diffthis'';
         options = {
-          desc = "Git [d]iff against index";
+          desc = "Git [d]iff Against Index";
         };
       }
       {
@@ -91,7 +90,7 @@
         key = "<leader>ghD";
         action.__raw = ''function() require('gitsigns').diffthis '@' end'';
         options = {
-          desc = "Git [D]iff against last commit";
+          desc = "Git [D]iff Against Last Commit";
         };
       }
 

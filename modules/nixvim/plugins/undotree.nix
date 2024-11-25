@@ -29,11 +29,10 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.undotree.enable [
     {
       mode = "n";
-      key = "<leader>uu";
+      key = "<leader>tu";
       action = "<cmd>UndotreeToggle<CR>";
       options = {
-        desc = "Undotree toggle";
-        # TODO: Update # TODO: Update Description
+        desc = "Toggle [U]ndotree";
       };
     }
   ];

@@ -8,52 +8,46 @@
 
       keymaps = {
         addFile = "<leader>ha";
-        toggleQuickMenu = "<leader>he";
+        toggleQuickMenu = "<leader>hm";
         navFile = {
-          "1" = "<leader>hj";
-          "2" = "<leader>hk";
-          "3" = "<leader>hl";
-          "4" = "<leader>hm";
+          "1" = "<leader>h1";
+          "2" = "<leader>h2";
+          "3" = "<leader>h3";
+          "4" = "<leader>h4";
         };
       };
     };
 
     which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.harpoon.enable [
-      # TODO: # TODO: update kepmap
       {
         __unkeyed = "<leader>h";
         group = "Harpoon";
+        desc = "[H]arpoon";
         icon = "󱡀 ";
       }
       {
         __unkeyed = "<leader>ha";
-        desc = "Add";
-        # # TODO: Update Description
-      }
-      {
-        __unkeyed = "<leader>he";
-        desc = "QuickMenu";
-        # # TODO: Update Description
-      }
-      {
-        __unkeyed = "<leader>hj";
-        desc = "1";
-        # # TODO: Update Description
-      }
-      {
-        __unkeyed = "<leader>hk";
-        desc = "2";
-        # # TODO: Update Description
-      }
-      {
-        __unkeyed = "<leader>hl";
-        desc = "3";
-        # # TODO: Update Description
+        desc = "[A]dd";
       }
       {
         __unkeyed = "<leader>hm";
+        desc = "Quick [M]enu";
+      }
+      {
+        __unkeyed = "<leader>h1";
+        desc = "1";
+      }
+      {
+        __unkeyed = "<leader>h2";
+        desc = "2";
+      }
+      {
+        __unkeyed = "<leader>h3";
+        desc = "3";
+      }
+      {
+        __unkeyed = "<leader>h4";
         desc = "4";
-        # # TODO: Update Description
       }
     ];
   };

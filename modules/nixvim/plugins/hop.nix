@@ -5,7 +5,6 @@
       enable = true;
     };
   };
-  # TODO: Update description for these mappings
   programs.nixvim.keymaps = lib.optionals config.programs.nixvim.plugins.hop.enable [
     {
       key = "f";
@@ -16,7 +15,10 @@
           })
         end
       '';
-      options.remap = true;
+      options = {
+        remap = true;
+        desc = "Hop [f]orward";
+      };
     }
     {
       key = "F";
@@ -27,7 +29,10 @@
           })
         end
       '';
-      options.remap = true;
+      options = {
+        remap = true;
+        desc = "Hop Back [F]orward";
+      };
     }
     {
       key = "t";
@@ -39,7 +44,10 @@
           })
         end
       '';
-      options.remap = true;
+      options = {
+        remap = true;
+        desc = "Hop [t]oward";
+      };
     }
     {
       key = "T";
@@ -51,7 +59,10 @@
           })
         end
       '';
-      options.remap = true;
+      options = {
+        remap = true;
+        desc = "Hop Back [T]oward";
+      };
     }
   ];
 }

@@ -23,11 +23,10 @@
       [
         {
           mode = "n";
-          key = "<leader>ugo";
+          key = "<leader>gto";
           action.__raw = "MiniDiff.toggle_overlay";
           options = {
-            desc = "Git Overlay toggle";
-            # # TODO: update keymaps
+            desc = "[T]oggle Git Diff Overlay";
             silent = true;
           };
         }

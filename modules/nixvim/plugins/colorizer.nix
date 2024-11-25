@@ -13,7 +13,7 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.nvim-colorizer.enable [
     {
       mode = "n";
-      key = "<leader>uC";
+      key = "<leader>tc";
       action.__raw = ''
         function ()
          vim.g.colorizing_enabled = not vim.g.colorizing_enabled
@@ -22,8 +22,7 @@
         end
       '';
       options = {
-        desc = "Colorizing toggle";
-        # TODO:Update Key Maps
+        desc = "Toggle [C]olorizing";
         silent = true;
       };
     }

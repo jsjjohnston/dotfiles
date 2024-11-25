@@ -168,7 +168,7 @@
         ];
 
         lspBuf = {
-          "<leader>la" = {
+          "<leader>ca" = {
             action = "code_action";
             desc = "Code [A]ction";
           };

@@ -6,7 +6,7 @@
       mode = "n";
       key = "<esc>";
       action = "<cmd>nohc<CR>";
-      # TODO: Update keymap desc
+      #TODO: Update keymap desc
     }
     {
       mode = "n";

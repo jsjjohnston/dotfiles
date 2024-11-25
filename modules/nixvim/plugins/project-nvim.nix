@@ -14,11 +14,10 @@
       [
         {
           mode = "n";
-          key = "<leader>fp";
+          key = "<leader>fpj";
           action = "<cmd>Telescope projects<CR>";
           options = {
-            desc = "Find projects";
-            # TODO: Update Keymap desc
+            desc = "Find [P]ro[J]ects";
           };
         }
       ];

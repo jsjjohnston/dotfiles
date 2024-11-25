@@ -24,32 +24,32 @@ in
       key = "<leader>sgw";
       action = "<cmd>Telescope git_worktree<CR>";
       options = {
-        desc = "Git [W]orktree"; # # TODO: Update description for these mappings
+        desc = "Git [W]orktree";
       };
     }
     {
       mode = "n";
-      key = "<leader>gWc";
+      key = "<leader>gwc";
       action.__raw = ''
         function()
           require('telescope').extensions.git_worktree.create_git_worktree()
         end
       '';
       options = {
-        desc = "Create worktree"; # TODO: # TODO:Update Key Maps Description
+        desc = "[W]orktree [C]reate";
         silent = true;
       };
     }
     {
       mode = "n";
-      key = "<leader>gWs";
+      key = "<leader>gws";
       action.__raw = ''
         function()
           require('telescope').extensions.git_worktree.git_worktrees()
         end
       '';
       options = {
-        desc = "Switch / Delete worktree"; # TODO: # TODO:Update Key Maps Description
+        desc = "[S]witch / Delete worktree";
         silent = true;
       };
     }

@@ -1,6 +1,7 @@
 {
   programs.nixvim.plugins = {
     debugprint = {
+      # TODO: What is this plugin for?
       enable = true;
 
       settings = {
