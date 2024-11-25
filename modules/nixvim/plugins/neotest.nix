@@ -50,35 +50,13 @@
     which-key.settings.spec = lib.optionals config.programs.nixvim.plugins.neotest.enable [
       {
         __unkeyed = "<leader>n";
-        group = "Neotest";
+        group = "[N]eotest";
         icon = "󰙨";
       }
     ];
   };
 
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.neotest.enable [
-    {
-      mode = "n";
-      key = "<leader>dn";
-      action.__raw = ''
-        function()
-          require("neotest").run.run({strategy = "dap"})
-        end
-      '';
-      options = {
-        desc = "Neotest Debug";
-        # TODO: Update Keymap desc
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>na";
-      action = "<CMD>Neotest attach<CR>";
-      options = {
-        desc = "Attach";
-        # # TODO: Update Keymap desc
-      };
-    }
     {
       mode = "n";
       key = "<leader>nd";
@@ -88,10 +66,18 @@
         end
       '';
       options = {
-        desc = "Debug";
-        # # TODO: Update Keymap desc
+        desc = "Neotest [D]ebug";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>na";
+      action = "<CMD>Neotest attach<CR>";
+      options = {
+        desc = "Neotest [A]ttach";
+      };
+    }
+
     {
       mode = "n";
       key = "<leader>nh";

@@ -31,7 +31,6 @@
             options = {
               desc = "[S]earch [H]elp";
             };
-            # TODO: Update Keymap desc
             mode = "n";
           };
 
@@ -41,7 +40,6 @@
             options = {
               desc = "[S]earch [K]eymaps";
             };
-            # TODO: Update Keymap desc
           };
 
           "<leader>sf" = {
@@ -51,7 +49,6 @@
               desc = "[S]earch [F]iles";
             };
           };
-          # TODO: Update Keymap desc
 
           "<leader>ss" = {
             action = "builtin";
@@ -59,7 +56,6 @@
             options = {
               desc = "[S]earch [S]elect Telescope";
             };
-            # TODO: Update Keymap desc
           };
 
           "<leader>sd" = {
@@ -68,7 +64,6 @@
             options = {
               desc = "[S]earch [D]iagnostics";
             };
-            # TODO: Update Keymap desc
           };
 
           "<leader>sr" = {
@@ -76,7 +71,6 @@
             mode = "n";
             options = {
               desc = "[S]earch [R]esume";
-              # TODO: Update Key map Desk
             };
           };
 
@@ -85,7 +79,6 @@
             mode = "n";
             options = {
               desc = "[S]earch Recent Files";
-              # TODO: Update Key map Desk
             };
           };
 
@@ -102,7 +95,6 @@
             mode = "n";
             options = {
               desc = "[ ] Find existing buffers";
-              # TODO: Update Key map Desk
             };
           };
         };
@@ -120,7 +112,6 @@
         options = {
           desc = "stuff";
         };
-        # TODO: Update Keymap desc
       }
     ];
   };

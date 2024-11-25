@@ -10,7 +10,7 @@
       enable = true;
 
       settings = {
-        enable_chat = true;
+        enable_chat = false;
 
         tools = {
           curl = lib.getExe pkgs.curl;
@@ -29,7 +29,6 @@
       action = "<cmd>Codeium Chat<CR>";
       options = {
         desc = "Codeium Chat";
-        # TODO: Update Keymaps
       };
     }
   ];

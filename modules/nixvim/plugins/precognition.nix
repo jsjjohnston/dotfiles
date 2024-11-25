@@ -16,19 +16,9 @@
       '';
 
       options = {
-        desc = "Precognition Toggle";
+        desc = "[P]recognition Toggle";
         silent = true;
       };
     }
   ];
-
-  # TODO: set when module is available
-  # plugins.which-key.settings.spec = lib.optionals config.plugins.hardtime.enable [
-  #   {
-  #     __unkeyed = "<leader>H";
-  #     mode = "n";
-  #     desc = "Hardtime";
-  #     icon = "󰖵";
-  #   }
-  # ];
 }

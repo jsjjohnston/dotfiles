@@ -25,7 +25,6 @@
         options = {
           desc = "Open/Close Neotree";
         };
-        # TODO: Update keymap desc
       }
     ];
   };
