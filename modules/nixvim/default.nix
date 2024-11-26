@@ -5,30 +5,22 @@
 }:
 {
   imports = [
-    ./plugins/neo-tree.nix
-    ./plugins/lsp.nix
-    ./plugins/colorschemes/cyberdream.nix
-    ./plugins/which-key.nix
-    ./plugins/autoformat/conform.nix
-    ./plugins/autocompletion/cmp.nix
-    ./plugins/telescope.nix
-    ./plugins/git
-    ./plugins/bufferline.nix
-    ./plugins/treesitter.nix
-    ./plugins/todo-comments.nix
-    ./plugins/indent-blankline.nix
-    ./plugins/lint.nix
-    ./plugins/typescript-tools.nix
-    ./plugins/ccc.nix
     # ./plugins/codesnap.nix
+    ./keymaps.nix
+    ./plugins/autocompletion/cmp.nix
+    ./plugins/autoformat/conform.nix
+    ./plugins/bufferline.nix
+    ./plugins/ccc.nix
     ./plugins/colorizer.nix
+    ./plugins/colorschemes/cyberdream.nix
     ./plugins/comment-box.nix
     ./plugins/complier.nix
     ./plugins/dap.nix
-    ./plugins/diffview.nix
     ./plugins/debugprint.nix
+    ./plugins/diffview.nix
     ./plugins/efm.nix
     ./plugins/firenvim.nix
+    ./plugins/git
     ./plugins/git-conflict.nix
     ./plugins/git-worktree.nix
     ./plugins/gitignore.nix
@@ -37,20 +29,24 @@
     ./plugins/harpoon.nix
     ./plugins/hop.nix
     ./plugins/illuminate.nix
+    ./plugins/indent-blankline.nix
+    ./plugins/lint.nix
+    ./plugins/lsp.nix
+    ./plugins/lualine.nix
     ./plugins/markdown-preview.nix
     ./plugins/markview.nix
-    ./plugins/mini.nix
+    ./plugins/mini-buffremove.nix
     ./plugins/mini-buffremove.nix
     ./plugins/mini-comment.nix
     ./plugins/mini-diff.nix
     ./plugins/mini-files.nix
     ./plugins/mini-fuzzy.nix
-    ./plugins/lualine.nix
-    ./plugins/mini-starter.nix
     ./plugins/mini-hipatterns.nix
-    ./plugins/mini-buffremove.nix
+    ./plugins/mini-starter.nix
     ./plugins/mini-surround.nix
+    ./plugins/mini.nix
     ./plugins/navic.nix
+    ./plugins/neo-tree.nix
     ./plugins/neotest.nix
     ./plugins/nix.nix
     ./plugins/noice.nix
@@ -60,14 +56,18 @@
     ./plugins/precognition.nix
     ./plugins/refactoring.nix
     ./plugins/rest.nix
+    ./plugins/telescope.nix
+    ./plugins/todo-comments.nix
     ./plugins/toggleterm.nix
+    ./plugins/treesitter.nix
     ./plugins/trouble.nix
     ./plugins/ts-comments.nix
+    ./plugins/typescript-tools.nix
     ./plugins/undotree.nix
     ./plugins/wakatime.nix
+    ./plugins/which-key.nix
     ./plugins/yanky.nix
     ./plugins/yazi.nix
-    ./keymaps.nix
   ];
 
   home.shellAliases.v = "nvim";
@@ -177,13 +177,14 @@
     autoGroups.highlight-yank.clear = true;
 
     performance = {
-      # combinePlugins = {
-      #   enable = true;
-      #   standalonePlugins = [
-      #     "hmts.nvim"
-      #     "nvim-treesitter"
-      #   ];
-      # };
+      combinePlugins = {
+        enable = true;
+        standalonePlugins = [
+          "hmts.nvim"
+          "nvim-treesitter"
+          "firenvim"
+        ];
+      };
       byteCompileLua = {
         enable = true;
         nvimRuntime = true;

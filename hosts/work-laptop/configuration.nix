@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -20,16 +19,16 @@
     terraform-ls
     delta
     jira-cli-go
+    vscode-langservers-extracted
+    eslint_d
   ];
 
   environment.shellAliases = {
     ll = "ls -la";
-    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
+    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop --update-all";
     cat = "bat";
     gh-deploy = "gh workflow run `git branch --show-current`";
   };
-
-  # programs.bash.enable = true;
 
   users.users.jay = {
     home = "/Users/jay";
