@@ -21,6 +21,8 @@
     jira-cli-go
     vscode-langservers-extracted
     eslint_d
+    typescript-language-server
+
   ];
 
   environment.shellAliases = {
@@ -72,8 +74,6 @@
     };
     user = "jay";
   };
-
-  nix.settings.auto-optimise-store = true;
 
   # programs.tmux = {
   #   enable = true;

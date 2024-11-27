@@ -209,15 +209,16 @@
           filetypes = [ "dockerfile" ];
         };
 
-        eslint = {
-          enable = true;
-          filetypes = [
-            "javascript"
-            "javascriptreact"
-            "typescript"
-            "typescriptreact"
-          ];
-        };
+        # FIX: fix exlint errors /nix/store/xwz3xij6krvkckv3ywmys7vc3zjzas7k-vscode-langservers-extracted-4.10.0/bin/vscode-eslint-language-server -v 
+        # eslint = {
+        #   enable = true;
+        #   filetypes = [
+        #     "javascript"
+        #     "javascriptreact"
+        #     "typescript"
+        #     "typescriptreact"
+        #   ];
+        # };
 
         html = {
           enable = true;

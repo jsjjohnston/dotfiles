@@ -13,7 +13,7 @@
   home.username = "jay";
   home.homeDirectory = "/Users/jay";
 
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   home.packages =
     [

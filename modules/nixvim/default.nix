@@ -9,12 +9,12 @@
     ./keymaps.nix
     ./plugins/autocompletion/cmp.nix
     ./plugins/autoformat/conform.nix
-    ./plugins/bufferline.nix
+    # ./plugins/bufferline.nix
     ./plugins/ccc.nix
     ./plugins/colorizer.nix
     ./plugins/colorschemes/cyberdream.nix
-    ./plugins/comment-box.nix
-    ./plugins/complier.nix
+    # ./plugins/comment-box.nix
+    # ./plugins/complier.nix
     ./plugins/dap.nix
     ./plugins/debugprint.nix
     ./plugins/diffview.nix
@@ -84,16 +84,16 @@
     defaultEditor = true;
     enableMan = true;
 
-    diagnostics = {
-      update_in_insert = true;
-      severity_sort = true;
-      float = {
-        border = "rounded";
-      };
-      jump = {
-        severity.__raw = "vim.diagnostic.severity.WARN";
-      };
-    };
+    # diagnostics = {
+    #   update_in_insert = true;
+    #   severity_sort = true;
+    #   float = {
+    #     border = "rounded";
+    #   };
+    #   jump = {
+    #     severity.__raw = "vim.diagnostic.severity.WARN";
+    #   };
+    # };
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -176,22 +176,22 @@
 
     autoGroups.highlight-yank.clear = true;
 
-    performance = {
-      combinePlugins = {
-        enable = true;
-        standalonePlugins = [
-          "hmts.nvim"
-          "nvim-treesitter"
-          "firenvim"
-        ];
-      };
-      byteCompileLua = {
-        enable = true;
-        nvimRuntime = true;
-        configs = true;
-        plugins = true;
-      };
-    };
+    # performance = {
+    #   # combinePlugins = {
+    #   #   enable = true;
+    #   #   standalonePlugins = [
+    #   #     "hmts.nvim"
+    #   #     "nvim-treesitter"
+    #   #     "firenvim"
+    #   #   ];
+    #   # };
+    #   byteCompileLua = {
+    #     enable = true;
+    #     nvimRuntime = true;
+    #     configs = true;
+    #     plugins = true;
+    #   };
+    # };
 
     viAlias = true;
     vimAlias = true;

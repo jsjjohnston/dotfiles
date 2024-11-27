@@ -5,7 +5,7 @@
       enable = true;
 
       # Hides the title above noice boxes
-      cmdline = {
+      settings.cmdline = {
         format = {
           cmdline = {
             pattern = "^:";
@@ -56,13 +56,13 @@
         };
       };
 
-      messages = {
+      settings.messages = {
         view = "mini";
         viewError = "mini";
         viewWarn = "mini";
       };
 
-      lsp = {
+      settings.lsp = {
         override = {
           "vim.lsp.util.convert_input_to_markdown_lines" = true;
           "vim.lsp.util.stylize_markdown" = true;
@@ -73,11 +73,11 @@
         signature.enabled = !config.programs.nixvim.plugins.lsp-signature.enable;
       };
 
-      popupmenu.backend = "nui";
+      settings.popupmenu.backend = "nui";
       # Doesn't support the standard cmdline completions
       # popupmenu.backend = "cmp";
 
-      presets = {
+      settings.presets = {
         bottom_search = false;
         command_palette = true;
         long_message_to_split = true;
@@ -85,7 +85,7 @@
         lsp_doc_border = true;
       };
 
-      routes = [
+      settings.routes = [
         {
           filter = {
             event = "msg_show";
@@ -119,7 +119,7 @@
         }
       ];
 
-      views = {
+      settings.views = {
         cmdline_popup = {
           border = {
             style = "single";

@@ -12,9 +12,11 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/update/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # nix-ld.url = "github:Mic92/nix-ld";
+    # nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -24,6 +26,7 @@
       nixvim,
       nix-darwin,
       nixpkgs,
+    # nix-ld,
     }:
     {
       darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
@@ -39,7 +42,10 @@
               extraSpecialArgs = {
                 inherit inputs;
               };
-              sharedModules = [ nixvim.homeManagerModules.nixvim ];
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+                # nix-ld.nixosModules.nix-ld
+              ];
               users = {
                 "jay" = import ./home.nix;
               };

@@ -2,7 +2,8 @@
   # pkgs,
   # inputs,
   ...
-}: {
+}:
+{
   imports = [
     ../../modules/nixvim
     ../../modules/window-managers/hyprland.nix
@@ -20,7 +21,7 @@
   home.username = "jay";
   home.homeDirectory = "/home/jay";
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
   programs.git.userEmail = "jsjjohnston@gmail.com";
   programs.gh = {
     enable = true;
@@ -33,8 +34,9 @@
     };
   };
 
-  home.file = {
-  };
+  home.file =
+    {
+    };
 
   home.sessionVariables = {
     EDITOR = "nvim";
