@@ -19,15 +19,13 @@
     terraform-ls
     delta
     jira-cli-go
-    vscode-langservers-extracted
     eslint_d
-    typescript-language-server
-
+    typescript
   ];
 
   environment.shellAliases = {
     ll = "ls -la";
-    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop --update-all";
+    build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
     cat = "bat";
     gh-deploy = "gh workflow run `git branch --show-current`";
   };
