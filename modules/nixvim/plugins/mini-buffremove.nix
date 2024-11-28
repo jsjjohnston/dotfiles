@@ -17,15 +17,7 @@
         && lib.hasAttr "bufremove" config.programs.nixvim.plugins.mini.modules
       )
       [
-        {
-          mode = "n";
-          key = "<leader>c";
-          action.__raw = ''require("mini.bufremove").delete'';
-          options = {
-            desc = "Close buffer"; # # TODO: Update description for these mappings
-            silent = true;
-          };
-        }
+
         {
           mode = "n";
           key = "<C-w>";
