@@ -73,11 +73,10 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.ccc.enable [
     {
       mode = "n";
-      key = "<leader>up";
+      key = "<leader>tcp";
       action = "<cmd>CccPick<CR>";
       options = {
-        desc = "Color Picker toggle";
-        # TODO: update keymaps
+        desc = "[T]oggle [C]olor [P]icker ";
       };
     }
   ];

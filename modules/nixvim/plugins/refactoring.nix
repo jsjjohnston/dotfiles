@@ -23,17 +23,15 @@
         key = "<leader>re";
         action = "<cmd>Refactor extract<cr>";
         options = {
-          desc = "Extract";
-          # TODO: Update Keymap desc
+          desc = "[E]xtract";
         };
       }
       {
         mode = "x";
-        key = "<leader>rE";
+        key = "<leader>rf";
         action = "<cmd>Refactor extract_to_file<cr>";
         options = {
-          desc = "Extract to file";
-          # TODO: Update Keymap desc
+          desc = "Extract to [F]ile";
         };
       }
       {

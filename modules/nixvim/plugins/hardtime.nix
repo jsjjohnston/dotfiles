@@ -26,7 +26,7 @@ in
   programs.nixvim.keymaps = lib.mkIf cfg.enable [
     {
       mode = "n";
-      key = "<leader>vh";
+      key = "<leader>th";
       action.__raw = ''
         function ()
           vim.g.disable_hardtime = not vim.g.disable_hardtime
@@ -39,7 +39,7 @@ in
         end
       '';
       options = {
-        desc = "Hardtime toggle"; # TODO: # TODO:Update Key Maps Description
+        desc = "[T]oggle [H]ardtime";
         silent = true;
       };
     }

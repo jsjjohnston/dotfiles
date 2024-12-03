@@ -15,7 +15,7 @@
       key = "<leader>pm";
       action = "<cmd>MarkdownPreview<cr>";
       options = {
-        desc = "Markdown Preview"; # TODO: Update description for these mappings
+        desc = "[M]arkdown Preview";
       };
     }
   ];

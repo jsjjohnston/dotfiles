@@ -63,11 +63,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
-{
-    "scottmckendry/cyberdream.nvim",
+  {
+    'scottmckendry/cyberdream.nvim',
     lazy = false,
     priority = 1000,
-},
+  },
   require 'kickstart.plugins.fugitive',
   require 'kickstart.plugins.telescope',
   require 'kickstart.plugins.lsp',
