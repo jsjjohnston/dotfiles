@@ -21,6 +21,9 @@
     jira-cli-go
     eslint_d
     typescript
+    google-cloud-sdk
+    python39
+    terraform
   ];
 
   environment.shellAliases = {
@@ -44,6 +47,19 @@
     brews =
       [
       ];
+  };
+  power = {
+    restartAfterFreeze = true;
+    restartAfterPowerFailure = true;
+    sleep = {
+      computer = 30;
+      display = 20;
+      harddisk = 25;
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
   };
   nixpkgs.config.allowUnfree = true;
 
@@ -73,11 +89,12 @@
     user = "jay";
   };
 
-  # programs.tmux = {
-  #   enable = true;
-  #   enableFzf = true;
-  #   enableVim = true;
-  # };
+  programs.tmux = {
+    enable = true;
+    enableFzf = true;
+    enableVim = true;
+    enableSensible = true;
+  };
 
   services.aerospace = {
     enable = false;
@@ -87,16 +104,26 @@
     config = {
       layout = "bsp";
       auto_balance = true;
-      window_opacity = true;
+      window_opacity = "on";
       active_window_opacity = 1.0;
       normal_window_opacity = 0.5;
+      window_placement = "second_child";
+      window_gap = 10;
     };
   };
+  services.skhd = {
+    enable = false;
+    skhdConfig = ''
+      alt - j : yabai -m window --focus stack.next
+      alt - k : yabai -m window --focus stack.prev
+      cmd + shift - s : open /System/Applications/Utilities/Screenshot.app
+    '';
 
+  };
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
-  programs.zsh.enable = true; # default shell on catalina
+  programs.zsh.enable = false; # default shell on catalina
 
   system.stateVersion = 5;
 }
