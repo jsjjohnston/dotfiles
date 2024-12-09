@@ -12,7 +12,7 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/main";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # nix-ld.url = "github:Mic92/nix-ld";

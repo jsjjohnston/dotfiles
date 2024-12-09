@@ -2,6 +2,17 @@
   pkgs,
   ...
 }:
+let
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (
+    with pkgs.google-cloud-sdk.components;
+    [
+      gke-gcloud-auth-plugin
+      config-connector
+      beta
+    ]
+  );
+
+in
 {
   environment.systemPackages = with pkgs; [
     terraform
@@ -21,9 +32,9 @@
     jira-cli-go
     eslint_d
     typescript
-    google-cloud-sdk
     python39
     terraform
+    # gdk
   ];
 
   environment.shellAliases = {
@@ -47,6 +58,12 @@
     brews =
       [
       ];
+    casks = [
+      {
+        name = "lookaway";
+        greedy = true;
+      }
+    ];
   };
   power = {
     restartAfterFreeze = true;

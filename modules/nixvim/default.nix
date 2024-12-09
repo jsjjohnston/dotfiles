@@ -55,7 +55,6 @@
     ./plugins/package-info.nix
     ./plugins/precognition.nix
     ./plugins/refactoring.nix
-    ./plugins/rest.nix
     ./plugins/telescope.nix
     ./plugins/todo-comments.nix
     ./plugins/toggleterm.nix

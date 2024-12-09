@@ -40,10 +40,10 @@
   programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.comment-box.enable [
     {
       mode = "n";
-      key = "<leader>lcd";
+      key = "<leader>mdb";
       action = "<cmd>CBd<cr>";
       options = {
-        desc = "Delete a box"; # TODO: Update Key Map Description
+        desc = "[M]arkdown [D]elete a [B]ox";
       };
     }
     {
