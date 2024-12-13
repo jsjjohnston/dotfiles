@@ -7,8 +7,8 @@ let
     with pkgs.google-cloud-sdk.components;
     [
       gke-gcloud-auth-plugin
-      config-connector
-      beta
+      # config-connector
+      # beta
     ]
   );
 
@@ -34,7 +34,9 @@ in
     typescript
     python39
     terraform
-    # gdk
+    gdk
+    bruno
+    bruno-cli
   ];
 
   environment.shellAliases = {
@@ -106,8 +108,9 @@ in
     user = "jay";
   };
 
+  # TODO: Learn Tmux
   programs.tmux = {
-    enable = true;
+    enable = false;
     enableFzf = true;
     enableVim = true;
     enableSensible = true;

@@ -52,6 +52,7 @@
     lspkind.enable = true;
     lsp-lines.enable = true;
     lsp-format.enable = lib.mkIf (!config.programs.nixvim.plugins.conform-nvim.enable) true;
+    schemastore.enable = true;
     lsp-signature.enable = true;
 
     lsp = {
@@ -210,15 +211,15 @@
         };
 
         # FIX: fix exlint errors /nix/store/xwz3xij6krvkckv3ywmys7vc3zjzas7k-vscode-langservers-extracted-4.10.0/bin/vscode-eslint-language-server -v 
-        eslint = {
-          enable = true;
-          filetypes = [
-            "javascript"
-            "javascriptreact"
-            "typescript"
-            "typescriptreact"
-          ];
-        };
+        # eslint = {
+        #   enable = true;
+        #   filetypes = [
+        #     "javascript"
+        #     "javascriptreact"
+        #     "typescript"
+        #     "typescriptreact"
+        #   ];
+        # };
 
         html = {
           enable = true;
@@ -321,6 +322,14 @@
             "https://json.schemastore.org/github-workflow.json" = "/.github/workflows/*";
           };
 
+        };
+
+        jsonls = {
+          enable = true;
+          filetypes = [ "json" ];
+          settings = {
+            # schemas.__raw = ''require("schemastore").json.schemas()'';
+          };
         };
       };
     };

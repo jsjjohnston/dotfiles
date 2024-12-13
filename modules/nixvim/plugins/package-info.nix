@@ -4,7 +4,7 @@
     enable = true;
     enableTelescope = true;
   };
-
+  # FIX: Annoying Notification that never goes away
   programs.nixvim.keymaps =
     lib.mkIf
       (

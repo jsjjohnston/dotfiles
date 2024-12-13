@@ -2,7 +2,6 @@
 {
   programs.nixvim.plugins.typescript-tools = {
     enable = true;
-
     settings = {
       expose_as_code_action = [
         "fix_all"

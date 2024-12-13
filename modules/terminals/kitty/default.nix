@@ -30,5 +30,8 @@
       editor = "vim";
       allow_remote_control = "yes";
     };
+    keybindings = {
+      "ctrl+shift+t" = "new_tab new_tab_with_cwd";
+    };
   };
 }
