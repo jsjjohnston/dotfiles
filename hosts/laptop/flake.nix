@@ -30,53 +30,52 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nixvim,
-    sddm-sugar-candy-nix,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
-        inherit nixvim;
-      };
-      system = system;
-      modules = [
-        ../../settings/flakes.nix
-        ./configuration.nix
-        ../../settings/system-packages.nix
-        inputs.home-manager.nixosModules.default
-        sddm-sugar-candy-nix.nixosModules.default
-        {
-          nixpkgs = {
-            overlays = [
-              sddm-sugar-candy-nix.overlays.default
-            ];
-          };
-        }
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixvim,
+      sddm-sugar-candy-nix,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useUserPackages = true;
-            useGlobalPkgs = true;
-            extraSpecialArgs = {inherit inputs;};
-            sharedModules = [
-              nixvim.homeManagerModules.nixvim
-              inputs.anyrun.homeManagerModules.default
-            ];
-            users = {
-              "jay" = import ./home.nix;
+        system = system;
+        modules = [
+          ./configuration.nix
+          sddm-sugar-candy-nix.nixosModules.default
+          {
+            nixpkgs = {
+              overlays = [
+                sddm-sugar-candy-nix.overlays.default
+              ];
             };
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+          }
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useUserPackages = true;
+              useGlobalPkgs = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+                inputs.anyrun.homeManagerModules.default
+              ];
+              users = {
+                "jay" = import ./home.nix;
+              };
+              backupFileExtension = "backup";
+            };
+          }
+        ];
+      };
     };
-  };
 }

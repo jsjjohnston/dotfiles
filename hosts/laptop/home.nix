@@ -21,7 +21,7 @@
   home.username = "jay";
   home.homeDirectory = "/home/jay";
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   programs.git.userEmail = "jsjjohnston@gmail.com";
   programs.gh = {
     enable = true;
