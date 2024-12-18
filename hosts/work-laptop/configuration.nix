@@ -65,6 +65,13 @@ in
         name = "lookaway";
         greedy = true;
       }
+      {
+        name = "1password";
+      }
+      {
+        name = "1password-cli";
+      }
+
     ];
   };
   power = {
