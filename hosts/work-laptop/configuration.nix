@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -37,6 +38,7 @@ in
     gdk
     bruno
     bruno-cli
+    nixd
   ];
 
   environment.shellAliases = {
