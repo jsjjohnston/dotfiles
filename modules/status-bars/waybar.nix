@@ -22,10 +22,14 @@
           "clock"
         ];
 
-        "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
-        };
+    #     "hyprland/window": {
+    # "format": "👉 {}",
+    # "rewrite": {
+    #     "(.*) — Mozilla Firefox": "🌎 $1",
+    #     "(.*) - fish": "> [$1]"
+    # },
+    separate-outputs= true
+};
         "hyprland/workspaces" = {
           format = "<sub>{icon}</sub>{windows}";
           window-rewrite-default = "";
