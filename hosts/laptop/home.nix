@@ -15,6 +15,7 @@
     ../../modules/dconf
     ../../modules/app-launchers/rofi.nix
     ../../modules/browsers/firefox.nix
+    ../../modules/status-bars/waybar.nix
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
