@@ -11,6 +11,8 @@
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
+    nerd-fonts.caskaydia-mono
+    nerd-fonts.caskaydia-cove
   ];
 
   time.hardwareClockInLocalTime = true;
@@ -123,6 +125,8 @@
       gnome-keyring
       kitty
       sddm-sugar-dark
+      google-chrome
+      lazygit
     ];
   };
 
