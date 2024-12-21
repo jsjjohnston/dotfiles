@@ -124,6 +124,8 @@
       sddm-sugar-dark
       google-chrome
       lazygit
+      nixd
+      killall
     ];
   };
 
