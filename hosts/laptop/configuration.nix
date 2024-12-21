@@ -64,6 +64,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    theme = "sddm-sugar-dark";
   };
 
   services.printing.enable = true;
@@ -92,7 +93,11 @@
     pulse.enable = true;
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
   users.users.jay = {
     isNormalUser = true;
     description = "Jay";

@@ -5,14 +5,14 @@
 }:
 {
   imports = [
-   ../../modules/nixvim
+    ../../modules/nixvim
     ../../modules/window-managers/hyprland.nix
-    #../../modules/git
-    #../../modules/zoxide
-    #../../modules/fzf
-    #../../modules/shell/bash
-    #../../modules/oh-my-posh
-    #../../modules/dconf
+    ../../modules/git
+    ../../modules/zoxide
+    ../../modules/fzf
+    ../../modules/shell/bash
+    ../../modules/oh-my-posh
+    ../../modules/dconf
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
@@ -30,11 +30,13 @@
     };
   };
 
-  programs.rofi.enable = true;
-  programs.git.enable = true;
-  programs.kitty.enable = true;
-  programs.firefox.enable = true;
-  
+  # programs.rofi.enable = true;
+  # programs.git.enable = true;
+  # programs.kitty.enable = true;
+  # programs.firefox.enable = true;
+  #
+  # programs.waybar.enable = true;
+
   xdg = {
     userDirs = {
       enable = true;
@@ -42,9 +44,8 @@
     };
   };
 
-  home.file =
-    {
-    };
+  home.file = {
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
