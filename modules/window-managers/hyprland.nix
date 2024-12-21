@@ -29,13 +29,6 @@ in
         rounding = 1;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        # drop_shadow = true;
-        # shadow_range = 1;
-        # shadow_render_power = 1;
-        # shadow_offset = "0 5";
-
-        # "col.shadow" = "rgba(1a1a1aee)";
-
         blur = {
           enabled = true;
           size = 1;
@@ -65,13 +58,15 @@ in
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$menu" = "rofi";
+      "$menu" = "rofi -show run";
       "$fileManager" = "yazi";
+      "$browser" = "firefox";
 
       monitor = ",2256x1504,0x0,1";
 
       bind = [
         "$mod, Q, exec, $terminal"
+        "$mod, F, exec, $browser"
         "$mod, C, killactive"
         "$mod, M, exit"
         "$mod, E, exec, $fileManager"

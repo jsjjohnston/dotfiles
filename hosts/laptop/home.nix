@@ -13,6 +13,8 @@
     ../../modules/shell/bash
     ../../modules/oh-my-posh
     ../../modules/dconf
+    ../../modules/app-launchers/rofi.nix
+    ../../modules/browsers/firefox.nix
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
@@ -29,13 +31,6 @@
       ];
     };
   };
-
-  # programs.rofi.enable = true;
-  # programs.git.enable = true;
-  # programs.kitty.enable = true;
-  # programs.firefox.enable = true;
-  #
-  # programs.waybar.enable = true;
 
   xdg = {
     userDirs = {
