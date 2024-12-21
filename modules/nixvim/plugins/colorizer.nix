@@ -5,12 +5,12 @@
 }:
 {
   programs.nixvim.plugins = {
-    nvim-colorizer = {
+    colorizer = {
       enable = false;
     };
   };
 
-  programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.nvim-colorizer.enable [
+  programs.nixvim.keymaps = lib.mkIf config.programs.nixvim.plugins.colorizer.enable [
     {
       mode = "n";
       key = "<leader>tc";

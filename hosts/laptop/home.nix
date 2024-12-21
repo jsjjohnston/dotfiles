@@ -5,18 +5,14 @@
 }:
 {
   imports = [
-    ../../modules/nixvim
+   ../../modules/nixvim
     ../../modules/window-managers/hyprland.nix
-    ../../modules/terminals/kitty
-    ../../modules/git
-    ../../modules/zoxide
-    ../../modules/fzf
-    ../../modules/shell/bash
-    ../../modules/oh-my-posh
-    # ../../modules/app-launchers/anyrun.nix
-    ../../modules/dconf
-    # ../../modules/app-launchers/rofi.nix
-    ../../modules/app-launchers/anyrun.nix
+    #../../modules/git
+    #../../modules/zoxide
+    #../../modules/fzf
+    #../../modules/shell/bash
+    #../../modules/oh-my-posh
+    #../../modules/dconf
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
@@ -31,6 +27,18 @@
         "https://github.com"
         "https://gist.github.com"
       ];
+    };
+  };
+
+  programs.rofi.enable = true;
+  programs.git.enable = true;
+  programs.kitty.enable = true;
+  programs.firefox.enable = true;
+  
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
     };
   };
 

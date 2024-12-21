@@ -19,10 +19,10 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    sddm-sugar-candy-nix = {
-      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # sddm-sugar-candy-nix = {
+    #   url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     anyrun = {
       url = "github:anyrun-org/anyrun";
@@ -36,7 +36,8 @@
       nixpkgs,
       home-manager,
       nixvim,
-      sddm-sugar-candy-nix,
+      # sddm-sugar-candy-nix,
+      hyprland,
       ...
     }@inputs:
     let
@@ -48,14 +49,14 @@
         system = system;
         modules = [
           ./configuration.nix
-          sddm-sugar-candy-nix.nixosModules.default
-          {
-            nixpkgs = {
-              overlays = [
-                sddm-sugar-candy-nix.overlays.default
-              ];
-            };
-          }
+          # sddm-sugar-candy-nix.nixosModules.default
+          # {
+          #   nixpkgs = {
+          #     overlays = [
+          #       sddm-sugar-candy-nix.overlays.default
+          #     ];
+          #   };
+          # }
 
           home-manager.nixosModules.home-manager
           {

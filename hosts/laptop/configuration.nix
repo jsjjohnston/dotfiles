@@ -21,7 +21,7 @@
   nix.gc = {
     automatic = true;
     dates = "19:00";
-    options = "--delete-older-than 3d";
+    options = "--delete-older-than 30d";
   };
 
   nix.settings = {
@@ -59,41 +59,11 @@
     "nix-command"
     "flakes"
   ];
+
+  # services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    sugarCandyNix = {
-      enable = true;
-      settings = {
-        Background = lib.cleanSource ../../images/sddm.jpg;
-        PartialBlur = true;
-        AccentColor = "#123456";
-        HeaderText = "All Thing Shall Pass";
-      };
-    };
-  };
-
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common.default = [ "gtk" ];
-      hyprland.default = [
-        "gtk"
-        "hyprland"
-      ];
-    };
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-    ];
-  };
-
-  programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
   };
 
   services.printing.enable = true;
@@ -122,6 +92,7 @@
     pulse.enable = true;
   };
 
+  programs.hyprland.enable = true;
   users.users.jay = {
     isNormalUser = true;
     description = "Jay";
@@ -145,6 +116,8 @@
       cliphist
       wl-clip-persist
       gnome-keyring
+      kitty
+      sddm-sugar-dark
     ];
   };
 
