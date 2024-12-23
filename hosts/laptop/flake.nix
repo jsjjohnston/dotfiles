@@ -18,9 +18,7 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    inputs = {
-      neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # sddm-sugar-candy-nix = {
     #   url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";

@@ -13,6 +13,8 @@
     fira-code-symbols
     nerd-fonts.caskaydia-mono
     nerd-fonts.caskaydia-cove
+    nerd-fonts.hack
+    font-awesome_5
   ];
 
   time.hardwareClockInLocalTime = true;
@@ -23,7 +25,7 @@
   nix.gc = {
     automatic = true;
     dates = "19:00";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 14d";
   };
 
   nix.settings = {
@@ -126,6 +128,7 @@
       lazygit
       nixd
       killall
+      nil
     ];
   };
 
