@@ -1,6 +1,7 @@
 {
   # lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -67,14 +68,16 @@
     ./plugins/which-key.nix
     ./plugins/yanky.nix
     ./plugins/yazi.nix
+    ./plugins/nvim-snippets.nix
   ];
 
   home.shellAliases.v = "nvim";
 
   programs.nixvim = {
     enable = true;
-
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     # Use this for now until mini-status builds
+
     plugins.web-devicons.enable = true;
     plugins.none-ls = {
       enable = true;

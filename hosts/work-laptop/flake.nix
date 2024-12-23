@@ -17,6 +17,7 @@
     };
     # nix-ld.url = "github:Mic92/nix-ld";
     # nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -26,6 +27,7 @@
       nixvim,
       nix-darwin,
       nixpkgs,
+      neovim-nightly-overlay,
     # nix-ld,
     }:
     {
@@ -44,7 +46,9 @@
               };
               sharedModules = [
                 nixvim.homeManagerModules.nixvim
-                # nix-ld.nixosModules.nix-ld
+                {
+                  nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
+                } # nix-ld.nixosModules.nix-ld
               ];
               users = {
                 "jay" = import ./home.nix;

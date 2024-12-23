@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../../modules/nixvim
@@ -15,10 +15,6 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  home.packages =
-    [
-    ];
-
   home.file =
     {
     };
@@ -30,6 +26,9 @@
   programs.lazygit = {
     enable = true;
   };
+  home.packages = with pkgs; [
+    prettierd
+  ];
   programs.gh.enable = true;
   programs.home-manager.enable = true;
 }

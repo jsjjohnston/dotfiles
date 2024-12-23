@@ -18,6 +18,9 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    inputs = {
+      neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    };
 
     # sddm-sugar-candy-nix = {
     #   url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
@@ -41,6 +44,9 @@
       ...
     }@inputs:
     let
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
       system = "x86_64-linux";
     in
     {
@@ -69,6 +75,9 @@
               sharedModules = [
                 nixvim.homeManagerModules.nixvim
                 inputs.anyrun.homeManagerModules.default
+                {
+                  nixpkgs.overlays = overlays;
+                }
               ];
               users = {
                 "jay" = import ./home.nix;

@@ -39,11 +39,13 @@ in
     bruno
     bruno-cli
     nixd
+    nil
   ];
 
   environment.shellAliases = {
     ll = "ls -la";
     build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
+    update = "nix flake update --flake ~/dotfiles/hosts/work-laptop/";
     cat = "bat";
     gh-deploy = "gh workflow run `git branch --show-current`";
   };

@@ -1,8 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nixvim.plugins.typescript-tools = {
     enable = true;
     settings = {
+      tsserver_path = pkgs.typescript;
       expose_as_code_action = [
         "fix_all"
         "add_missing_imports"
