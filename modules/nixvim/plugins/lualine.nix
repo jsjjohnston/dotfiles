@@ -50,7 +50,7 @@ in
               function()
                   local msg = ""
                   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-                  local clients = vim.lsp.get_active_clients()
+                  local clients = vim.lsp.active_clients()
                   if next(clients) == nil then
                       return msg
                   end
