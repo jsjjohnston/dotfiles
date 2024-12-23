@@ -69,15 +69,18 @@ in
         name = "lookaway";
         greedy = true;
       }
-      {
-        name = "1password";
-      }
-      {
-        name = "1password-cli";
-      }
+      # {
+      #   name = "1password";
+      #   greedy = true;
+      # }
+      # {
+      #   name = "1password-cli";
+      #   greedy = true;
+      # }
 
     ];
   };
+
   power = {
     restartAfterFreeze = true;
     restartAfterPowerFailure = true;
