@@ -17,6 +17,7 @@
     };
     # nix-ld.url = "github:Mic92/nix-ld";
     # nix-ld.inputs.nixpkgs.follows = "nixpkgs";
+    # one-password-shell-plugins.url = "github:1Password/shell-plugins";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
@@ -28,8 +29,11 @@
       nix-darwin,
       nixpkgs,
       neovim-nightly-overlay,
-    # nix-ld,
+    # one-password-shell-plugins,
     }:
+    let
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
+    in
     {
       darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -49,6 +53,7 @@
                 {
                   nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
                 } # nix-ld.nixosModules.nix-ld
+                # one-password-shell-plugins.hmModules.default
               ];
               users = {
                 "jay" = import ./home.nix;
@@ -56,6 +61,11 @@
               backupFileExtension = "backup";
             };
           }
+        ];
+      };
+      devShells."aarch64-darwin".default = pkgs.mkShell {
+        packages = with pkgs; [
+          yarn
         ];
       };
     };

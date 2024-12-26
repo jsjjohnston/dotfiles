@@ -18,7 +18,15 @@
   home.file =
     {
     };
+  # programs._1password-shell-plugins = {
+  #   enable = false;
+  #   plugins = with pkgs; [
+  #     gh
+  #     awscli
+  #   ];
+  # };
 
+  programs.java.enable = true;
   home.sessionVariables =
     {
     };
@@ -28,6 +36,13 @@
   };
   home.packages = with pkgs; [
     prettierd
+    _1password-cli
+    # yarn
+    # nodePackages.cdktf-cli
+    # nodejs_18
+    # typescript
+    # typescript-language-server
+    # vscode-langservers-extracted
   ];
   programs.gh.enable = true;
   programs.home-manager.enable = true;

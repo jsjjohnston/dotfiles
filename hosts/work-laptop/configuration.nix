@@ -124,7 +124,7 @@ in
 
   # TODO: Learn Tmux
   programs.tmux = {
-    enable = false;
+    enable = true;
     enableFzf = true;
     enableVim = true;
     enableSensible = true;
