@@ -6,16 +6,16 @@
 }:
 {
   imports = [
+    # ./plugins/bufferline.nix
     # ./plugins/codesnap.nix
+    # ./plugins/comment-box.nix
+    # ./plugins/complier.nix
     ./keymaps.nix
     ./plugins/autocompletion/cmp.nix
     ./plugins/autoformat/conform.nix
-    # ./plugins/bufferline.nix
     ./plugins/ccc.nix
     ./plugins/colorizer.nix
     ./plugins/colorschemes/cyberdream.nix
-    # ./plugins/comment-box.nix
-    # ./plugins/complier.nix
     ./plugins/dap.nix
     ./plugins/debugprint.nix
     ./plugins/diffview.nix
@@ -51,12 +51,14 @@
     ./plugins/neotest.nix
     ./plugins/nix.nix
     ./plugins/noice.nix
+    ./plugins/nvim-snippets.nix
     ./plugins/otter.nix
     ./plugins/overseer.nix
     ./plugins/package-info.nix
     ./plugins/precognition.nix
     ./plugins/refactoring.nix
     ./plugins/telescope.nix
+    ./plugins/tmux-navigator.nix
     ./plugins/todo-comments.nix
     ./plugins/toggleterm.nix
     ./plugins/treesitter.nix
@@ -68,7 +70,6 @@
     ./plugins/which-key.nix
     ./plugins/yanky.nix
     ./plugins/yazi.nix
-    ./plugins/nvim-snippets.nix
   ];
 
   home.shellAliases.v = "nvim";

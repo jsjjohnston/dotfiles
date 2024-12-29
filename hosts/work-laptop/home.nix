@@ -18,13 +18,6 @@
   home.file =
     {
     };
-  # programs._1password-shell-plugins = {
-  #   enable = false;
-  #   plugins = with pkgs; [
-  #     gh
-  #     awscli
-  #   ];
-  # };
 
   programs.java.enable = true;
   home.sessionVariables =
@@ -37,13 +30,13 @@
   home.packages = with pkgs; [
     prettierd
     _1password-cli
-    # yarn
-    # nodePackages.cdktf-cli
-    # nodejs_18
-    # typescript
-    # typescript-language-server
-    # vscode-langservers-extracted
   ];
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs; [
+      tmuxPlugins.vim-tmux-navigator
+    ];
+  };
   programs.gh.enable = true;
   programs.home-manager.enable = true;
 }
