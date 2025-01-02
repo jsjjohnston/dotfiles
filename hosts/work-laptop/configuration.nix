@@ -134,12 +134,12 @@ in
   };
 
   # TODO: Learn Tmux
-  programs.tmux = {
-    enable = true;
-    enableFzf = true;
-    enableVim = true;
-    enableSensible = true;
-  };
+  # programs.tmux = {
+  #   enable = true;
+  #   enableFzf = true;
+  #   enableVim = true;
+  #   enableSensible = true;
+  # };
 
   services.aerospace = {
     enable = false;

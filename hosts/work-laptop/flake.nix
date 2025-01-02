@@ -5,6 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # catppuccin = {
+    #   url = "github:catppuccin/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,7 +33,7 @@
       nix-darwin,
       nixpkgs,
       neovim-nightly-overlay,
-    # one-password-shell-plugins,
+    # catppuccin,
     }:
     let
       pkgs = nixpkgs.legacyPackages."aarch64-darwin";
@@ -39,7 +43,6 @@
         system = "aarch64-darwin";
         modules = [
           ./configuration.nix
-
           home-manager.darwinModules.home-manager
           {
             home-manager = {
@@ -49,6 +52,7 @@
                 inherit inputs;
               };
               sharedModules = [
+                # catppuccin.homeManagerModules.catppuccin
                 nixvim.homeManagerModules.nixvim
                 {
                   nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
