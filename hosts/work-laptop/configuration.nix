@@ -61,6 +61,11 @@ in
 
   homebrew = {
     enable = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "uninstall";
+      upgrade = true;
+    };
     brews =
       [
       ];
@@ -68,6 +73,12 @@ in
       {
         name = "lookaway";
         greedy = true;
+      }
+      {
+        name = "ghostty";
+      }
+      {
+        name = "docker";
       }
       # {
       #   name = "1password";
