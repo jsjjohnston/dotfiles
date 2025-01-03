@@ -43,7 +43,14 @@
     mouse = true;
     prefix = "C-Space";
     shell = "${pkgs.bash}/bin/bash";
-    terminal = "screen-256color";
+    extraConfig = ''
+      unbind C-Space
+      set -g prefix C-Space
+      bind C-Space send-prefix
+      set -g base-index 1
+    '';
+    # terminal = "screen-256color";
+    sensibleOnTop = true;
     # catppuccin = {
     #   enable = true;
     #   extraConfig = ''
@@ -76,6 +83,8 @@
   };
 
   programs.gh.enable = true;
+
+  programs.zsh.enable = true;
 
   programs.home-manager.enable = true;
 }

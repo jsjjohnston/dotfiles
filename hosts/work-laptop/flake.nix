@@ -23,6 +23,9 @@
     # nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     # one-password-shell-plugins.url = "github:1Password/shell-plugins";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    mac-app-util.url = "github:hraban/mac-app-util";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+
   };
 
   outputs =
@@ -33,6 +36,8 @@
       nix-darwin,
       nixpkgs,
       neovim-nightly-overlay,
+      mac-app-util,
+      determinate,
     # catppuccin,
     }:
     let
@@ -42,6 +47,9 @@
       darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
+          mac-app-util.darwinModules.default
+          determinate.darwinModules.default
+
           ./configuration.nix
           home-manager.darwinModules.home-manager
           {
@@ -60,13 +68,19 @@
                 # one-password-shell-plugins.hmModules.default
               ];
               users = {
-                "jay" = import ./home.nix;
+                jay = {
+                  imports = [
+                    mac-app-util.homeManagerModules.default
+                    ./home.nix
+                  ];
+                };
               };
               backupFileExtension = "backup";
             };
           }
         ];
       };
+      # TODO: Work out dev shell
       devShells."aarch64-darwin".default = pkgs.mkShell {
         packages = with pkgs; [
           yarn

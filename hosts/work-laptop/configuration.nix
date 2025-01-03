@@ -166,9 +166,10 @@ in
 
   };
   services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
+  # nix.package = pkgs.nix;
 
-  programs.zsh.enable = false; # default shell on catalina
+  programs.zsh.enable = true; # default shell on catalina
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
-  system.stateVersion = 5;
+  system.stateVersion = 4;
 }
