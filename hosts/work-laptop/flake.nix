@@ -5,10 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    # catppuccin = {
-    #   url = "github:catppuccin/nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -36,23 +36,25 @@
       nixpkgs,
       neovim-nightly-overlay,
       mac-app-util,
-    # catppuccin,
+      catppuccin,
     }:
-	let
-		gitHash = {...}: {
-		system.configurationRevision = self.rev or self.dirtyRev or null;
-	};
-in
+    let
+      gitHash =
+        { ... }:
+        {
+          system.configurationRevision = self.rev or self.dirtyRev or null;
+        };
+    in
     {
       darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           mac-app-util.darwinModules.default
-	  gitHash
+          gitHash
           ./configuration.nix
           home-manager.darwinModules.home-manager
           {
-	    users.users.jay.home = "/Users/jay";
+            users.users.jay.home = "/Users/jay";
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -60,7 +62,7 @@ in
                 inherit inputs;
               };
               sharedModules = [
-                # catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeManagerModules.catppuccin
                 nixvim.homeManagerModules.nixvim
                 {
                   nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
@@ -81,10 +83,10 @@ in
         ];
       };
       # TODO: Work out dev shell
-     # devShells."aarch64-darwin".default = pkgs.mkShell {
-     #   packages = with pkgs; [
-     #     yarn
-     #   ];
-     # };
+      # devShells."aarch64-darwin".default = pkgs.mkShell {
+      #   packages = with pkgs; [
+      #     yarn
+      #   ];
+      # };
     };
 }
