@@ -50,11 +50,23 @@ in
     gh-deploy = "gh workflow run `git branch --show-current`";
   };
 
-  users.users.jay = {
-    home = "/Users/jay";
-  };
+  system.activationScripts."ssl-ca-cert-fix".text = ''
+    if [ ! -f /etc/nix/ca_cert.pem ]; then
+      security export -t certs -f pemseq -k /Library/Keychains/System.keychain -o /tmp/certs-system.pem
+      security export -t certs -f pemseq -k /System/Library/Keychains/SystemRootCertificates.keychain -o /tmp/certs-root.pem
+      cat /tmp/certs-root.pem /tmp/certs-system.pem > /tmp/ca_cert.pem
+      sudo mv /tmp/ca_cert.pem /etc/nix/
+    fi
+  '';
 
-  nix.settings.ssl-cert-file = "/etc/nix/ca_cert.pem";
+  system.activationScripts."bashshell".text = ''
+    chsh -s ${pkgs.bash}/bin/zsh
+  '';
+
+  # This is the main part
+  nix.settings = {
+    ssl-cert-file = "/etc/nix/ca_cert.pem";
+  };
   security.pki.certificates = [
     "/etc/nix/ca_cert.pem"
   ];
@@ -66,9 +78,8 @@ in
       cleanup = "uninstall";
       upgrade = true;
     };
-    brews =
-      [
-      ];
+    brews = [
+    ];
     casks = [
       {
         name = "lookaway";
@@ -92,15 +103,15 @@ in
     ];
   };
 
-  power = {
-    restartAfterFreeze = true;
-    restartAfterPowerFailure = true;
-    sleep = {
-      computer = 30;
-      display = 20;
-      harddisk = 25;
-    };
-  };
+  # power = {
+  #   restartAfterFreeze = true;
+  #   restartAfterPowerFailure = true;
+  #   sleep = {
+  #     computer = 30;
+  #     display = 20;
+  #     harddisk = 25;
+  #   };
+  # };
 
   programs.direnv = {
     enable = true;
@@ -110,6 +121,7 @@ in
   nix.settings.trusted-users = [
     "root"
     "jay"
+    "@wheel"
   ];
 
   nix.gc = {
@@ -166,10 +178,10 @@ in
 
   };
   services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  nix.package = pkgs.nix;
 
   programs.zsh.enable = true; # default shell on catalina
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 }
