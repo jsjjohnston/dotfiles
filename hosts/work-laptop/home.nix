@@ -37,8 +37,9 @@
     enable = true;
     mouse = true;
     prefix = "C-Space";
-    terminal = "screen-256color";
-    sensibleOnTop = true;
+    # terminal = "screen-256color";
+    shell = "/etc/profiles/per-user/jay/bin/bash";
+    # sensibleOnTop = true;
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
     ];

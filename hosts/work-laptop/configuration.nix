@@ -40,6 +40,7 @@ in
     bruno-cli
     nixd
     nil
+    bash
   ];
 
   environment.shellAliases = {
@@ -181,6 +182,11 @@ in
   nix.package = pkgs.nix;
 
   programs.zsh.enable = true; # default shell on catalina
+
+  # programs.bash = {
+  #
+  #   enable = true;
+  # };
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   system.stateVersion = 5;
