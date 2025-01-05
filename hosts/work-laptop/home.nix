@@ -3,7 +3,7 @@
   imports = [
     ../../modules/nixvim
     ../../modules/git
-    ../../modules/terminals/kitty
+    # ../../modules/terminals/kitty
     ../../modules/zoxide
     ../../modules/fzf
     ../../modules/oh-my-posh
@@ -52,6 +52,7 @@
 
   catppuccin = {
     flavor = "mocha";
+    accent = "blue";
     enable = true;
   };
 
