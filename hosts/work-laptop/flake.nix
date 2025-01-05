@@ -19,9 +19,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nix-ld.url = "github:Mic92/nix-ld";
-    # nix-ld.inputs.nixpkgs.follows = "nixpkgs";
-    # one-password-shell-plugins.url = "github:1Password/shell-plugins";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mac-app-util.url = "github:hraban/mac-app-util";
 
@@ -33,8 +30,6 @@
       home-manager,
       nixvim,
       nix-darwin,
-      nixpkgs,
-      neovim-nightly-overlay,
       mac-app-util,
       catppuccin,
     }:
@@ -66,8 +61,7 @@
                 nixvim.homeManagerModules.nixvim
                 {
                   nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
-                } # nix-ld.nixosModules.nix-ld
-                # one-password-shell-plugins.hmModules.default
+                }
               ];
               users = {
                 jay = {

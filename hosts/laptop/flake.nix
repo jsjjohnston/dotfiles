@@ -20,25 +20,27 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    # sddm-sugar-candy-nix = {
-    #   url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix/";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     anyrun = {
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    stylix.url = "github:danth/stylix";
+
   };
 
   outputs =
     {
-      self,
+      hyprland-qtutils,
+      stylix,
       nixpkgs,
+      catppuccin,
       home-manager,
       nixvim,
-      # sddm-sugar-candy-nix,
-      hyprland,
       ...
     }@inputs:
     let
@@ -53,17 +55,9 @@
         system = system;
         modules = [
           ./configuration.nix
-          # sddm-sugar-candy-nix.nixosModules.default
-          # {
-          #   nixpkgs = {
-          #     overlays = [
-          #       sddm-sugar-candy-nix.overlays.default
-          #     ];
-          #   };
-          # }
-
           home-manager.nixosModules.home-manager
           {
+            users.users.jay.home = "/home/jay";
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = true;
@@ -71,6 +65,8 @@
                 inherit inputs;
               };
               sharedModules = [
+                stylix.homeManagerModules.stylix
+                catppuccin.homeManagerModules.catppuccin
                 nixvim.homeManagerModules.nixvim
                 inputs.anyrun.homeManagerModules.default
                 {

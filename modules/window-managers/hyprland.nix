@@ -2,11 +2,6 @@
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
-    ${pkgs.swww}/bin/swww init &
-
-    sleep 1
-
-    ${pkgs.swww}/bin/swww img ${../../images/background.jpg} &
   '';
 in
 {
@@ -21,8 +16,8 @@ in
         resize_on_border = false;
         allow_tearing = false;
         layout = "master";
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        # "col.inactive_border" = "rgba(595959aa)";
       };
 
       decoration = {

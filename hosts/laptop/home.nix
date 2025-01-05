@@ -1,6 +1,6 @@
 {
-  # pkgs,
-  # inputs,
+  pkgs,
+  inputs,
   ...
 }:
 {
@@ -16,11 +16,12 @@
     ../../modules/app-launchers/rofi.nix
     ../../modules/browsers/firefox.nix
     ../../modules/status-bars/waybar.nix
+    ../../modules/terminals/kitty
   ];
   home.username = "jay";
   home.homeDirectory = "/home/jay";
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.11";
   programs.git.userEmail = "jsjjohnston@gmail.com";
   programs.gh = {
     enable = true;
@@ -39,7 +40,37 @@
       createDirectories = true;
     };
   };
+  programs.tmux = {
+    enable = true;
+    mouse = true;
+    prefix = "C-Space";
+    terminal = "screen-256color";
+    # shell = "/etc/profiles/per-user/jay/bin/bash";
+    baseIndex = 1;
+    escapeTime = 0;
+    keyMode = "vi";
+    historyLimit = 50000;
+    aggressiveResize = true;
+    focusEvents = true;
+    plugins = with pkgs; [
+      tmuxPlugins.vim-tmux-navigator
+    ];
+  };
 
+  dconf.enable = false;
+  stylix = {
+    enable = true;
+    image = ./../../images/background.jpg;
+    polarity = "dark";
+  };
+
+  home.packages = [ inputs.hyprland-qtutils.packages.x86_64-linux.default ];
+  # catppuccin = {
+  #   flavor = "mocha";
+  #   accent = "blue";
+  #   enable = true;
+  # };
+  #
   home.file = {
   };
 

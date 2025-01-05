@@ -65,7 +65,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "sddm-sugar-dark";
+    # theme = "sddm-sugar-dark";
   };
 
   services.printing.enable = true;
@@ -99,6 +99,7 @@
     withUWSM = true;
     xwayland.enable = true;
   };
+
   users.users.jay = {
     isNormalUser = true;
     description = "Jay";
@@ -118,11 +119,11 @@
       dolphin
       dunst
       mako
-      sway
+      # sway
       cliphist
       wl-clip-persist
       gnome-keyring
-      kitty
+      # kitty
       sddm-sugar-dark
       google-chrome
       lazygit
