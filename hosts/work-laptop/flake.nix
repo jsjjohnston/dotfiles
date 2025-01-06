@@ -26,12 +26,14 @@
 
   outputs =
     inputs@{
-      self,
-      home-manager,
-      nixvim,
-      nix-darwin,
-      mac-app-util,
       catppuccin,
+      home-manager,
+      mac-app-util,
+      neovim-nightly-overlay,
+      nix-darwin,
+      nixpkgs,
+      nixvim,
+      self,
     }:
     let
       gitHash =

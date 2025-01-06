@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -8,8 +7,6 @@ let
     with pkgs.google-cloud-sdk.components;
     [
       gke-gcloud-auth-plugin
-      # config-connector
-      # beta
     ]
   );
 
@@ -34,7 +31,6 @@ in
     eslint_d
     typescript
     python39
-    terraform
     gdk
     bruno
     bruno-cli
@@ -48,7 +44,7 @@ in
     build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
     update = "nix flake update --flake ~/dotfiles/hosts/work-laptop/";
     cat = "bat";
-    gh-deploy = "gh workflow run `git branch --show-current`";
+    gh-deploy = "gh workflow run --ref=`git branch --show-current`";
   };
 
   system.activationScripts."ssl-ca-cert-fix".text = ''
@@ -60,11 +56,6 @@ in
     fi
   '';
 
-  system.activationScripts."bashshell".text = ''
-    chsh -s ${pkgs.bash}/bin/zsh
-  '';
-
-  # This is the main part
   nix.settings = {
     ssl-cert-file = "/etc/nix/ca_cert.pem";
   };
@@ -104,16 +95,6 @@ in
     ];
   };
 
-  # power = {
-  #   restartAfterFreeze = true;
-  #   restartAfterPowerFailure = true;
-  #   sleep = {
-  #     computer = 30;
-  #     display = 20;
-  #     harddisk = 25;
-  #   };
-  # };
-
   programs.direnv = {
     enable = true;
   };
@@ -146,7 +127,6 @@ in
     user = "jay";
   };
 
-  # TODO: Learn Tmux
   programs.tmux = {
     enable = true;
     enableFzf = true;
@@ -154,23 +134,43 @@ in
     enableSensible = true;
   };
 
-  services.aerospace = {
-    enable = false;
-  };
   services.yabai = {
-    enable = false;
+    enable = true;
     config = {
-      layout = "bsp";
-      auto_balance = true;
-      window_opacity = "on";
-      active_window_opacity = 1.0;
-      normal_window_opacity = 0.5;
+      menubar_opacity = 1.0;
+      mouse_follows_focus = false;
+      focus_follows_mouse = false;
+      display_arrangement_order = "default";
+      window_origin_display = "default";
       window_placement = "second_child";
-      window_gap = 10;
+      window_insertion_point = "focused";
+      window_animation_duration = 0.0;
+      window_animation_easing = "ease_out_circ";
+      window_opacity_duration = 0.0;
+      active_window_opacity = 1.0;
+      normal_window_opacity = 0.9;
+      window_opacity = true;
+      insert_feedback_color = "0xffd75f5f";
+      split_ratio = 0.50;
+      split_type = "auto";
+      auto_balance = true;
+      top_padding = 12;
+      bottom_padding = 12;
+      left_padding = 12;
+      right_padding = 12;
+
+      window_gap = 6;
+      mouse_modifier = "fn";
+      mouse_action1 = "move";
+      mouse_action2 = "resize";
+      mouse_drop_action = "swap";
+      window_zoom_persist = true;
+      window_shadow = true;
+      layout = "bsp";
     };
   };
   services.skhd = {
-    enable = false;
+    enable = true;
     skhdConfig = ''
       alt - j : yabai -m window --focus stack.next
       alt - k : yabai -m window --focus stack.prev
