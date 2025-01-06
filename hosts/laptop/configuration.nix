@@ -130,6 +130,7 @@
       nixd
       killall
       nil
+      xarchiver
     ];
   };
 
