@@ -1,4 +1,5 @@
 {
+  # TODO: explore https://notashelf.github.io/nvf/index.xhtml#ch-standalone-hm
   description = "A very basic flake";
 
   inputs = {
