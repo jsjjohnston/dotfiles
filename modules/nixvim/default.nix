@@ -15,8 +15,8 @@
     ./plugins/autoformat/conform.nix
     ./plugins/ccc.nix
     ./plugins/colorizer.nix
-    # ./plugins/colorschemes/cyberdream.nix
-    ./plugins/colorschemes/catppuccin.nix
+    ./plugins/colorschemes/cyberdream.nix
+    # ./plugins/colorschemes/catppuccin.nix
     ./plugins/dap.nix
     ./plugins/debugprint.nix
     ./plugins/diffview.nix
