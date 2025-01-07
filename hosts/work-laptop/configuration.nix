@@ -127,12 +127,12 @@ in
     user = "jay";
   };
 
-  programs.tmux = {
-    enable = true;
-    enableFzf = true;
-    enableVim = true;
-    enableSensible = true;
-  };
+  # programs.tmux = {
+  #   enable = true;
+  #   enableFzf = true;
+  #   enableVim = true;
+  #   enableSensible = true;
+  # };
 
   services.yabai = {
     enable = true;

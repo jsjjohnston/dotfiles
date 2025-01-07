@@ -8,6 +8,7 @@
     ../../modules/fzf
     ../../modules/oh-my-posh
     ../../modules/shell/bash
+    ../../modules/tmux
   ];
 
   home.username = "jay";
@@ -16,6 +17,10 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.file = {
+    "cyberdream.tmuxtheme" = {
+      source = ../../modules/tmux/themes/catppuccin_cyberdream.tmuxtheme;
+      target = "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme";
+    };
   };
 
   programs.java.enable = true;
@@ -23,38 +28,18 @@
   home.sessionVariables = {
   };
 
-  programs.lazygit = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     prettierd
     _1password-cli
   ];
 
-  # programs.ghostty.enable = true;
-  programs.tmux = {
+  programs.lazygit = {
+    # TODO: finish theme config https://github.com/scottmckendry/cyberdream.nvim/blob/main/extras/lazygit/cyberdream.yml
     enable = true;
-    mouse = true;
-    prefix = "C-Space";
-    terminal = "screen-256color";
-    shell = "/etc/profiles/per-user/jay/bin/bash";
-    baseIndex = 1;
-    escapeTime = 0;
-    keyMode = "vi";
-    historyLimit = 50000;
-    aggressiveResize = true;
-    focusEvents = true;
-    plugins = with pkgs; [
-      tmuxPlugins.vim-tmux-navigator
-    ];
+    settings = {
+      gui.theme = { };
+    };
   };
-
-  catppuccin = {
-    flavor = "mocha";
-    enable = true;
-  };
-
   programs.gh.enable = true;
 
   programs.zsh.enable = true;
