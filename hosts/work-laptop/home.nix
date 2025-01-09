@@ -13,6 +13,9 @@
 
   home.username = "jay";
   home.homeDirectory = "/Users/jay";
+  home.sessionPath = [
+    "/opt/homebrew/bin"
+  ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 

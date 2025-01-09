@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 let
@@ -17,8 +18,6 @@ in
     awscli2
     aws-vault
     bat
-    docker
-    podman
     jq
     ripgrep
     typescript-language-server
@@ -94,6 +93,18 @@ in
 
     ];
   };
+  nix.linux-builder.enable = true;
+
+  # TODO: Review default mac settings
+  # system.defaults = {
+  #   dock.autohide = true;
+  #   dock.mru-spaces = false;
+  #   finder.AppleShowAllExtensions = true;
+  #   finder.FXPreferredViewStyle = "clmv";
+  #   loginwindow.LoginwindowText = "nixcademy.com";
+  #   screencapture.location = "~/Pictures/screenshots";
+  #   screensaver.askForPasswordDelay = 10;
+  # };
 
   programs.direnv = {
     enable = true;
