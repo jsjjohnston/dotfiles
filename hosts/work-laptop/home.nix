@@ -43,7 +43,23 @@
       gui.theme = { };
     };
   };
-  programs.gh.enable = true;
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+      hosts = [
+        "https://github.com"
+        "https://gist.github.com"
+      ];
+    };
+    settings = {
+      git_protocol = "ssh";
+
+      prompt = "enabled";
+      editor = "nvim";
+
+    };
+  };
 
   programs.zsh.enable = true;
 

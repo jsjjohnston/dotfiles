@@ -1,26 +1,40 @@
-{...}: {
+{ ... }:
+{
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
     # userEmail = "jsjjohnston@gmail.com";
+    userEmail = "jay.j@montu.com.au";
     lfs.enable = true;
     extraConfig = {
       core = {
         editor = "nvim";
         pager = "delta";
       };
-      push = {autoSetupRemote = true;};
-      pull = {rebase = true;};
-      rerere = {enable = true;};
-      gc = {worktreePruneExpire = "now";};
-      merge = {conflictstyle = "zdiff3";};
+      push = {
+        autoSetupRemote = true;
+      };
+      pull = {
+        rebase = true;
+      };
+      rerere = {
+        enable = true;
+      };
+      gc = {
+        worktreePruneExpire = "now";
+      };
+      merge = {
+        conflictstyle = "zdiff3";
+      };
       rebase = {
         autoSquash = true;
         autoStash = true;
         missingCommitsCheck = "error";
         updateRefs = true;
       };
-      init = {defaultBranch = "main";};
+      init = {
+        defaultBranch = "main";
+      };
       commit.verbose = true;
       help.autoCorrect = 10;
       diff = {
