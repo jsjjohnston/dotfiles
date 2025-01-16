@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   imports = [
     ../../modules/nixvim
@@ -31,7 +31,7 @@
   home.sessionVariables = {
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     prettierd
     _1password-cli
   ];
@@ -61,7 +61,7 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs.zsh.enable = false;
 
   programs.home-manager.enable = true;
 }

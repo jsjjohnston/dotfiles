@@ -2,6 +2,10 @@
   description = "Jays system flake";
 
   inputs = {
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/release-24.11";
+    };
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -31,8 +35,9 @@
       mac-app-util,
       neovim-nightly-overlay,
       nix-darwin,
-      nixpkgs,
+      nixpkgs-stable,
       nixvim,
+      nixpkgs,
       self,
     }:
     let
@@ -41,10 +46,26 @@
         {
           system.configurationRevision = self.rev or self.dirtyRev or null;
         };
+      system = "aarch64-darwin";
+
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
+      pkgs-unstable = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
     in
     {
       darwinConfigurations.work-laptop = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
+        specialArgs = {
+          inherit pkgs-unstable pkgs-stable inputs;
+        };
         modules = [
           mac-app-util.darwinModules.default
           gitHash
@@ -56,7 +77,8 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {
-                inherit inputs;
+                inherit pkgs-stable pkgs-unstable inputs;
+
               };
               sharedModules = [
                 catppuccin.homeManagerModules.catppuccin

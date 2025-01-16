@@ -7,6 +7,7 @@
     terminal = "screen-256color";
     shell = "/etc/profiles/per-user/jay/bin/bash";
     baseIndex = 1;
+    sensibleOnTop = false;
     escapeTime = 0;
     keyMode = "vi";
     historyLimit = 50000;

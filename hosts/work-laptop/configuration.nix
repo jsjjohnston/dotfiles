@@ -1,6 +1,10 @@
 {
   pkgs,
   config,
+
+  pkgs-stable,
+  pkgs-unstable,
+
   ...
 }:
 let
@@ -39,10 +43,9 @@ in
     google-chrome
     slack-cli
     slack
-    podman
-    podman-tui
-    podman-desktop
-    podman-compose
+    youtube-music
+    yarn
+    pkgs-stable.nodejs_22
   ];
 
   fonts.packages = with pkgs; [
@@ -105,17 +108,6 @@ in
       {
         name = "ghostty";
       }
-      # {
-      #   name = "docker";
-      # }
-      # {
-      #   name = "1password";
-      #   greedy = true;
-      # }
-      # {
-      #   name = "1password-cli";
-      #   greedy = true;
-      # }
       {
         name = "docker";
       }
