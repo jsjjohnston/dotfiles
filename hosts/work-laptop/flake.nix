@@ -9,11 +9,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +25,6 @@
 
   outputs =
     inputs@{
-      catppuccin,
       home-manager,
       mac-app-util,
       neovim-nightly-overlay,
@@ -81,10 +75,9 @@
 
               };
               sharedModules = [
-                catppuccin.homeManagerModules.catppuccin
                 nixvim.homeManagerModules.nixvim
                 {
-                  nixpkgs.overlays = inputs.neovim-nightly-overlay.overlays.default;
+                  nixpkgs.overlays = neovim-nightly-overlay.overlays.default;
                 }
               ];
               users = {
@@ -100,11 +93,5 @@
           }
         ];
       };
-      # TODO: Work out dev shell
-      # devShells."aarch64-darwin".default = pkgs.mkShell {
-      #   packages = with pkgs; [
-      #     yarn
-      #   ];
-      # };
     };
 }
