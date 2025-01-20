@@ -1,4 +1,9 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  nixpkgs,
+  ...
+}:
 {
   imports = [
     ../../modules/nixvim

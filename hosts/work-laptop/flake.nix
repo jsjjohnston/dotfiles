@@ -77,7 +77,7 @@
               sharedModules = [
                 nixvim.homeManagerModules.nixvim
                 {
-                  nixpkgs.overlays = neovim-nightly-overlay.overlays.default;
+                  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
                 }
               ];
               users = {

@@ -27,7 +27,7 @@ in
       autoEnableSources = true;
 
       settings = {
-        # TODO: Update description for these mappings 
+        # TODO: Update description for these mappings
         mapping = {
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" =
@@ -90,10 +90,6 @@ in
           {
             name = "luasnip";
             priority = 750;
-          }
-          {
-            name = "codeium";
-            priority = 600;
           }
           {
             name = "buffer";
@@ -169,7 +165,6 @@ in
           buffer = "";
           calc = "";
           cmdline = "";
-          codeium = "󱜙";
           emoji = "󰞅";
           git = "";
           luasnip = "󰩫";

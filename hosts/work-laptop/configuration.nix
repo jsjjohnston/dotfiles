@@ -4,6 +4,7 @@
 
   pkgs-stable,
   pkgs-unstable,
+  nixpkgs,
 
   ...
 }:
@@ -17,6 +18,7 @@ let
 
 in
 {
+
   environment.systemPackages = with pkgs; [
     terraform
     awscli2
