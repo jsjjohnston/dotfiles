@@ -7,6 +7,9 @@
     userEmail = "jay.j@montu.com.au";
     lfs.enable = true;
     extraConfig = {
+      advice = {
+        skippedCherryPicks = false;
+      };
       core = {
         editor = "nvim";
         pager = "delta";
