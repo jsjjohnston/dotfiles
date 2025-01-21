@@ -175,7 +175,7 @@ in
       "com.apple.trackpad.enableSecondaryClick" = true;
       "com.apple.trackpad.forceClick" = true;
       "com.apple.trackpad.scaling" = 0.5;
-      "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
+      "com.apple.trackpad.trackpadCornerClickBehavior" = 2;
 
     };
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
@@ -263,6 +263,10 @@ in
     };
     trackpad = {
       TrackpadRightClick = true;
+      # NOTE: To enable "Secondary Click" as "Click in bottom-right corner" through the UI:
+      # 1. Open "System Settings" from the Apple menu .
+      # 2. Navigate to "Trackpad" settings.
+      # 3. In the "Point & Click" tab, enable "Secondary click" and select "Click in bottom-right corner".
     };
     # TODO: Complete https://daiderd.com/nix-darwin/manual/index.html#opt-system.defaults.alf.allowdownloadsignedenabled
   };
