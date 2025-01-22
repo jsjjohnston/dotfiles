@@ -48,6 +48,9 @@ in
     youtube-music
     yarn
     pkgs-stable.nodejs_22
+    podman-tui
+    podman-compose
+    podman-desktop
   ];
 
   fonts.packages = with pkgs; [
@@ -101,6 +104,7 @@ in
       upgrade = true;
     };
     brews = [
+      "podman"
     ];
     casks = [
       {
@@ -175,7 +179,7 @@ in
       "com.apple.trackpad.enableSecondaryClick" = true;
       "com.apple.trackpad.forceClick" = true;
       "com.apple.trackpad.scaling" = 0.5;
-      "com.apple.trackpad.trackpadCornerClickBehavior" = 2;
+      "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
 
     };
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
