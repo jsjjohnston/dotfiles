@@ -20,7 +20,6 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mac-app-util.url = "github:hraban/mac-app-util";
-
   };
 
   outputs =
@@ -93,5 +92,28 @@
           }
         ];
       };
+
+      devShells.aarch64-darwin.montu-group-services = pkgs-unstable.mkShell {
+        name = "montu-group-services";
+
+        buildInputs = [
+          pkgs-unstable.jq
+          pkgs-unstable.python3
+          (pkgs-unstable.yarn.overrideAttrs (oldAttrs: {
+            buildInputs = pkgs-unstable.nodejs_18;
+          }))
+          pkgs-unstable.nodePackages_latest.aws-cdk
+          pkgs-unstable.cacert
+          pkgs-unstable.nodejs_18
+        ];
+
+        shellHook = ''
+          echo "Welcome to the montu-group-services dev environment!"
+          echo "Node version: $(node -v)"
+          echo "Yarn version: $(yarn -v)"
+          export PATH=$(echo "$PATH" | tr ':' '\n' | awk '!seen[$0]++' | tr '\n' ':' | sed 's/:$//')
+        '';
+      };
+
     };
 }

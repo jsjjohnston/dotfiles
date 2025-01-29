@@ -142,6 +142,13 @@ in
   };
 
   programs.nixvim.plugins = {
+    dap-ui = {
+      enable = true;
+    };
+
+    dap-virtual-text = {
+      enable = true;
+    };
     dap = {
       enable = true;
 
@@ -222,16 +229,6 @@ in
           ];
 
         sh = lib.optionals pkgs.stdenv.isLinux [ sh-config ];
-      };
-
-      extensions = {
-        dap-ui = {
-          enable = true;
-        };
-
-        dap-virtual-text = {
-          enable = true;
-        };
       };
 
       signs = {

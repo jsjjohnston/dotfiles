@@ -46,8 +46,9 @@ in
     slack-cli
     slack
     youtube-music
-    yarn
-    pkgs-stable.nodejs_22
+    # yarn
+    # pkgs-stable.nodejs_22
+    # nodejs_18
     podman-tui
     podman-compose
     podman-desktop
