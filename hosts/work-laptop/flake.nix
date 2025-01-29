@@ -20,6 +20,8 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mac-app-util.url = "github:hraban/mac-app-util";
+    nvf.url = "github:notashelf/nvf";
+
   };
 
   outputs =
@@ -31,6 +33,7 @@
       nixpkgs-stable,
       nixvim,
       nixpkgs,
+      nvf,
       self,
     }:
     let
@@ -74,6 +77,8 @@
 
               };
               sharedModules = [
+                nvf.homeManagerModules.default # <- this imports the home-manager module that provides the options
+
                 nixvim.homeManagerModules.nixvim
                 {
                   nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];

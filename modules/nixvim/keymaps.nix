@@ -2,12 +2,6 @@
 {
 
   programs.nixvim.keymaps = [
-    # {
-    #   mode = "n";
-    #   key = "<esc>";
-    #   action = "<cmd>nohc<CR>";
-    #   #TODO: Update keymap desc
-    # }
     {
       mode = "n";
       key = "<BS>";
@@ -25,24 +19,6 @@
       action = "<cmd>b#<CR>";
       # TODO: add description
     }
-    # {
-    #   mode = "n";
-    #   key = "<leader>[";
-    #   action = "<C-w>h";
-    #   options = {
-    #     desc = "Left window";
-    #     # TODO: Update Description
-    #   };
-    # }
-    # {
-    #   mode = "n";
-    #   key = "<leader>]";
-    #   action = "<C-w>l";
-    #   options = {
-    #     desc = "Right window";
-    #     # TODO: Update Description
-    #   };
-    # }
     {
       mode = "n";
       key = "<leader>,";
