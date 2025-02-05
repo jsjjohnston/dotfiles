@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    # ../../modules/nixvim
+    ../../modules/nixvim
     ../../modules/git
     # ../../modules/terminals/kitty
     ../../modules/zoxide
@@ -14,7 +14,7 @@
     ../../modules/oh-my-posh
     ../../modules/shell/bash
     ../../modules/tmux
-    ../../modules/nvf
+    #../../modules/nvf
   ];
 
   home.username = "jay";
