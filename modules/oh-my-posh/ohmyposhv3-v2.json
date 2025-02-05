@@ -8,34 +8,6 @@
       "newline": true,
       "segments": [
         {
-          "type": "brewfather",
-          "style": "diamond",
-          "foreground": "#ffffff",
-          "background": "#00897B",
-          "template": "{{.Recipe.Name}} {{ .StatusIcon }} {{ url .Status .URL }} {{ if .DaysBottledOrFermented }}{{ .DaysBottledOrFermented }}{{ .DayIcon }} {{ end }} {{ if and (.Reading) (eq .Status \"Fermenting\") }} {{ printf \"%.3f\" .Reading.Gravity }} {{ .Reading.Temperature }}° {{ .TemperatureTrendIcon }}{{ end }}",
-          "properties": {
-            "user_id": "Bmpk3aBcgVUdhncHH7feykttjsh1",
-            "api_key": "4AQlBh0wfm3pKxujzVKP0Ro6SDxirV1lr8EH8hB5eS3tDQtdgJAONuEA8iXGaazP",
-            "batch_id": "mwU9RakcWqRsWDcovvzrCalGeB71cZ",
-            "http_timeout": 1000,
-            "cache_timeout": 60,
-            "planning_status_icon": "📅",
-            "fermenting_status_icon": "🫧",
-            "brewing_status_icon": "🫖",
-            "conditioning_status_icon": "🍶",
-            "completed_status_icon": "🙌",
-            "archived_status_icon": "🗃️",
-            "flat_icon": "→",
-            "doubleup_icon": "⏫",
-            "singleup_icon": "🔼",
-            "singledown_icon": "🔽",
-            "doubledown_icon": "⏬",
-            "fortyfiveup_icon": "↗️",
-            "fortyfivedown_icon": "↘️",
-            "day_icon": "d"
-          }
-        },
-        {
           "type": "ytm",
           "style": "powerline",
           "powerline_symbol": "",
