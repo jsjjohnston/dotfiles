@@ -122,7 +122,7 @@ in
     ];
   };
   nix.linux-builder.enable = true;
-
+  nix.linux-builder.systems = [ "aarch64-linux" ];
   system.defaults = {
     ActivityMonitor = {
       IconType = 5;
