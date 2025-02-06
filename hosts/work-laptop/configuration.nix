@@ -307,6 +307,10 @@ in
 
   services.yabai = {
     enable = true;
+    extraConfig = "
+      yabai -m rule --add app='System Preferences' manage=off
+
+      ";
     config = {
       menubar_opacity = 1.0;
       mouse_follows_focus = false;
