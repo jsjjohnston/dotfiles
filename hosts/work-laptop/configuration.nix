@@ -46,16 +46,9 @@ in
     slack-cli
     slack
     youtube-music
-    # yarn
-    # pkgs-stable.nodejs_22
-    # nodejs_18
-    podman-tui
-    podman-compose
-    podman-desktop
   ];
 
   fonts.packages = with pkgs; [
-
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka
@@ -70,7 +63,6 @@ in
   nix.settings.experimental-features = "nix-command flakes";
 
   environment.shellAliases = {
-    ll = "ls -la";
     build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
     update = "nix flake update --flake ~/dotfiles/hosts/work-laptop/";
     cat = "bat";
@@ -150,8 +142,8 @@ in
       AppleSpacesSwitchOnActivate = true;
       AppleTemperatureUnit = "Celsius";
       AppleWindowTabbingMode = "fullscreen"; # TODO: Review “manual”, “always”, “fullscreen”
-      InitialKeyRepeat = null;
-      KeyRepeat = null;
+      # InitialKeyRepeat = 2;
+      # KeyRepeat = 2;
       NSAutomaticCapitalizationEnabled = true;
       NSAutomaticDashSubstitutionEnabled = true;
       NSAutomaticInlinePredictionEnabled = true;
@@ -273,23 +265,19 @@ in
       # 2. Navigate to "Trackpad" settings.
       # 3. In the "Point & Click" tab, enable "Secondary click" and select "Click in bottom-right corner".
     };
-    # TODO: Complete https://daiderd.com/nix-darwin/manual/index.html#opt-system.defaults.alf.allowdownloadsignedenabled
   };
+  system.startup.chime = false;
 
-  # TODO: Review default mac settings
-  # system.defaults = {
-  #   dock.autohide = true;
-  #   dock.mru-spaces = false;
-  #   finder.AppleShowAllExtensions = true;
-  #   finder.FXPreferredViewStyle = "clmv";
-  #   loginwindow.LoginwindowText = "nixcademy.com";
-  #   screencapture.location = "~/Pictures/screenshots";
-  #   screensaver.askForPasswordDelay = 10;
-  # };
+  time.timeZone = "Australia/Melbourne";
 
   programs.direnv = {
     enable = true;
   };
+
+  environment = {
+    shells = [ pkgs.bashInteractive ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.trusted-users = [
@@ -303,7 +291,6 @@ in
     interval = {
       Hour = 13;
       Minute = 15;
-      Weekday = 3;
     };
     options = "--max-freed $((64 * 1024**3))";
     user = "jay";
@@ -314,17 +301,9 @@ in
     interval = {
       Hour = 12;
       Minute = 15;
-      Weekday = 4;
     };
     user = "jay";
   };
-
-  # programs.tmux = {
-  #   enable = true;
-  #   enableFzf = true;
-  #   enableVim = true;
-  #   enableSensible = true;
-  # };
 
   services.yabai = {
     enable = true;
