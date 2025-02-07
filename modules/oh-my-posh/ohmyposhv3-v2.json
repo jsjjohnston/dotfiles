@@ -16,7 +16,8 @@
           "properties": {
             "playing_icon": " ",
             "paused_icon": " ",
-            "stopped_icon": " "
+            "stopped_icon": " ",
+            "api_url": "http://localhost:26538"
           },
           "template": "{{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }}-{{ .Track }}{{ end }}"
         },

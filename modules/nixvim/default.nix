@@ -27,7 +27,7 @@
     ./plugins/git-worktree.nix
     ./plugins/gitignore.nix
     ./plugins/glow.nix
-    ./plugins/hardtime.nix
+    # ./plugins/hardtime.nix
     ./plugins/harpoon.nix
     ./plugins/hop.nix
     ./plugins/illuminate.nix

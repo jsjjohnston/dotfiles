@@ -5,7 +5,7 @@ in
 {
   programs.nixvim.plugins = {
     hardtime = {
-      enable = true;
+      enable = false;
 
       settings = {
         enabled = true;
