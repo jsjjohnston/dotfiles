@@ -14,7 +14,8 @@
     ../../modules/oh-my-posh
     ../../modules/shell/bash
     ../../modules/tmux
-    #../../modules/nvf
+    ../../modules/nvf
+    ../../modules/ghostty
   ];
 
   home.username = "jay";
@@ -33,7 +34,6 @@
   };
 
   programs.java.enable = true;
-
 
   home.sessionVariables = {
   };

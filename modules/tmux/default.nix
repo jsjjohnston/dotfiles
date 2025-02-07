@@ -5,7 +5,8 @@
     mouse = true;
     prefix = "C-Space";
     terminal = "screen-256color";
-    shell = "/etc/profiles/per-user/jay/bin/bash";
+    # shell = "/etc/profiles/per-user/jay/bin/bash";
+    # shell = pkgs.bashInteractive;
     baseIndex = 1;
     sensibleOnTop = false;
     escapeTime = 0;

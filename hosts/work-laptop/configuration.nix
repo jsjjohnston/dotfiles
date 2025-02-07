@@ -18,7 +18,10 @@ let
 
 in
 {
-
+  nixpkgs.config = {
+    allowBroken = true; # NOTE: To allow ghostty config until its supported in nixpkgs
+    allowUnfree = true;
+  };
   environment.systemPackages = with pkgs; [
     terraform
     awscli2
@@ -277,8 +280,6 @@ in
   environment = {
     shells = [ pkgs.bashInteractive ];
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   nix.settings.trusted-users = [
     "root"
