@@ -10,10 +10,13 @@
     ../../modules/ghostty
     ../../modules/git
     ../../modules/github
+    ../../modules/java
+    ../../modules/lazygit
     ../../modules/nixvim
     ../../modules/nvf
     ../../modules/oh-my-posh
     ../../modules/shell/bash
+    ../../modules/shell/zsh
     ../../modules/tmux
     ../../modules/zoxide
   ];
@@ -26,8 +29,6 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
-  programs.java.enable = true;
-
   home.sessionVariables = {
   };
 
@@ -35,16 +36,6 @@
     prettierd
     _1password-cli
   ];
-
-  programs.lazygit = {
-    # TODO: finish theme config https://github.com/scottmckendry/cyberdream.nvim/blob/main/extras/lazygit/cyberdream.yml
-    enable = true;
-    settings = {
-      gui.theme = { };
-    };
-  };
-
-  programs.zsh.enable = false;
 
   programs.home-manager.enable = true;
 }
