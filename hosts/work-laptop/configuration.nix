@@ -133,7 +133,7 @@ in
       AppleFontSmoothing = 1;
       AppleICUForce24HourTime = false;
       AppleInterfaceStyle = "Dark"; # ALWAYS DARK MODE
-      AppleInterfaceStyleSwitchesAutomatically = false; # TODO: Review if this should be true or false
+      AppleInterfaceStyleSwitchesAutomatically = false;
       AppleKeyboardUIMode = null;
       AppleMeasurementUnits = "Centimeters";
       AppleMetricUnits = 1;
@@ -144,9 +144,7 @@ in
       AppleShowScrollBars = "Always";
       AppleSpacesSwitchOnActivate = true;
       AppleTemperatureUnit = "Celsius";
-      AppleWindowTabbingMode = "fullscreen"; # TODO: Review “manual”, “always”, “fullscreen”
-      # InitialKeyRepeat = 2;
-      # KeyRepeat = 2;
+      AppleWindowTabbingMode = "fullscreen";
       NSAutomaticCapitalizationEnabled = true;
       NSAutomaticDashSubstitutionEnabled = true;
       NSAutomaticInlinePredictionEnabled = true;
@@ -357,12 +355,8 @@ in
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
-  programs.zsh.enable = true; # default shell on catalina
+  programs.zsh.enable = false; # default shell on catalina
 
-  # programs.bash = {
-  #
-  #   enable = true;
-  # };
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   system.stateVersion = 5;
