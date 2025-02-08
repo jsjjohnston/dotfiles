@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  home.file = {
+    "cyberdream.tmuxtheme" = {
+      source = ../../modules/tmux/themes/catppuccin_cyberdream.tmuxtheme;
+      target = "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme";
+    };
+  };
   programs.tmux = {
     enable = true;
     mouse = true;

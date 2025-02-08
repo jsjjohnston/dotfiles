@@ -6,16 +6,16 @@
 }:
 {
   imports = [
-    ../../modules/nixvim
-    ../../modules/git
-    # ../../modules/terminals/kitty
-    ../../modules/zoxide
     ../../modules/fzf
+    ../../modules/ghostty
+    ../../modules/git
+    ../../modules/github
+    ../../modules/nixvim
+    ../../modules/nvf
     ../../modules/oh-my-posh
     ../../modules/shell/bash
     ../../modules/tmux
-    ../../modules/nvf
-    ../../modules/ghostty
+    ../../modules/zoxide
   ];
 
   home.username = "jay";
@@ -25,13 +25,6 @@
   ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  home.file = {
-    "cyberdream.tmuxtheme" = {
-      source = ../../modules/tmux/themes/catppuccin_cyberdream.tmuxtheme;
-      target = "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme";
-    };
-  };
 
   programs.java.enable = true;
 
@@ -48,23 +41,6 @@
     enable = true;
     settings = {
       gui.theme = { };
-    };
-  };
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper = {
-      enable = true;
-      hosts = [
-        "https://github.com"
-        "https://gist.github.com"
-      ];
-    };
-    settings = {
-      git_protocol = "ssh";
-
-      prompt = "enabled";
-      editor = "nvim";
-
     };
   };
 
