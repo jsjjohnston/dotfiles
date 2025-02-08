@@ -5,8 +5,6 @@
     mouse = true;
     prefix = "C-Space";
     terminal = "screen-256color";
-    # shell = "/etc/profiles/per-user/jay/bin/bash";
-    # shell = pkgs.bashInteractive;
     baseIndex = 1;
     sensibleOnTop = false;
     escapeTime = 0;
@@ -14,6 +12,9 @@
     historyLimit = 50000;
     aggressiveResize = true;
     focusEvents = true;
+    extraConfig = ''
+      not_tmux="ps -o tty= -o state= -o comm= | grep -iqE '^#{s|/dev/||:pane_tty} ^[^TXZ ]+ +(\\S+\\/)?(g?(view|(n|l)?vim?x?)(diff)?|fzf)$'"
+    '';
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
       {
