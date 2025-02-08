@@ -1,10 +1,27 @@
 { ... }:
 {
   programs.lazygit = {
-    # TODO: finish theme config https://github.com/scottmckendry/cyberdream.nvim/blob/main/extras/lazygit/cyberdream.yml
     enable = true;
     settings = {
-      gui.theme = { };
+      gui = {
+        border = "rounded";
+        theme = {
+          activeBorderColor = [ "#5ef1ff" ];
+          inactiveBorderColor = [ "#7b8496" ];
+          searchingActiveBorderColor = [
+            "#ff5ef1"
+          ];
+          optionsTextColor = [ "#3c4048" ];
+          selectedLineBgColor = [ "#3c4048" ];
+          cherryPickedCommitBgColor = [ "#3c4048" ];
+          cherryPickedCommitFgColor = [ "#ff5ea0" ];
+          unstagedChangesColor = [ "#ffbd5e" ];
+          defaultFgColor = [ "#ffffff" ];
+        };
+
+      };
+      showRandomTip = false;
+      nerdFontsVersion = "2";
     };
   };
 }
