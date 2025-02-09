@@ -18,14 +18,12 @@
     historyLimit = 50000;
     aggressiveResize = true;
     focusEvents = true;
-    extraConfig = ''
-      not_tmux="ps -o tty= -o state= -o comm= | grep -iqE '^#{s|/dev/||:pane_tty} ^[^TXZ ]+ +(\\S+\\/)?(g?(view|(n|l)?vim?x?)(diff)?|fzf)$'"
-    '';
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
+          is_vim="ps -o tty= -o state= -o comm= | grep -iqE '^#{s|/dev/||:pane_tty} +[^TXZ ]+ +(\\S+\\/)?g?(view|l?n?vim?x?|fzf)(diff)?$'"
           source-file "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme"
           set -g @catppuccin_flavour "cyberdream"
         '';
