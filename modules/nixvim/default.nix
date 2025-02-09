@@ -49,7 +49,7 @@
     ./plugins/mini.nix
     ./plugins/navic.nix
     ./plugins/neo-tree.nix
-    ./plugins/neotest.nix
+    # ./plugins/neotest.nix
     ./plugins/nix.nix
     ./plugins/noice.nix
     ./plugins/nvim-snippets.nix
@@ -59,7 +59,7 @@
     ./plugins/precognition.nix
     ./plugins/refactoring.nix
     ./plugins/telescope.nix
-    ./plugins/tmux-navigator.nix
+    # ./plugins/tmux-navigator.nix
     ./plugins/todo-comments.nix
     ./plugins/toggleterm.nix
     ./plugins/treesitter.nix
