@@ -15,43 +15,48 @@
     ./settings/vim/theme.nix
     ./settings/vim/treesitter.nix
   ];
+  programs = {
+    nvf = {
+      enable = !config.programs.nixvim.enable;
+      settings = {
+        vim = {
+          withNodeJs = true;
+          bell = "on";
+          comments.comment-nvim.enable = true;
+          startPlugins = ["base16"];
 
-  programs.nvf.enable = !config.programs.nixvim.enable;
-
-  programs.nvf.settings.vim.withNodeJs = true;
-
-  programs.nvf.settings.vim.bell = "on";
-  programs.nvf.settings.vim.comments.comment-nvim.enable = true;
-  programs.nvf.settings.vim.startPlugins = ["base16"];
-
-  programs.nvf.settings.vim.viAlias = true;
-  programs.nvf.settings.vim.vimAlias = true;
-  programs.nvf.settings.vim.spellcheck = {
-    enable = true;
-    languages = ["en"];
-  };
-  programs.nvf.settings.vim.syntaxHighlighting = true;
-  programs.nvf.settings.vim.ui = {
-    breadcrumbs.enable = true;
-    colorizer.enable = true;
-    illuminate.enable = true;
-    modes-nvim.enable = true;
-    noice.enable = true;
-    smartcolumn.enable = true;
-  };
-  programs.nvf.settings.vim.utility = {
-    # ccc.enable = true;
-    icon-picker.enable = true;
-    motion = {
-      hop.enable = true;
-      precognition.enable = true;
+          viAlias = true;
+          vimAlias = true;
+          spellcheck = {
+            enable = true;
+            languages = ["en"];
+          };
+          syntaxHighlighting = true;
+          ui = {
+            breadcrumbs.enable = true;
+            colorizer.enable = true;
+            illuminate.enable = true;
+            modes-nvim.enable = true;
+            noice.enable = true;
+            smartcolumn.enable = true;
+          };
+          utility = {
+            # ccc.enable = true;
+            icon-picker.enable = true;
+            motion = {
+              hop.enable = true;
+              precognition.enable = true;
+            };
+            preview.glow.enable = true;
+          };
+          visuals = {
+            fidget-nvim.enable = true;
+            indent-blankline.enable = true;
+            nvim-web-devicons.enable = true;
+          };
+          undoFile.enable = true;
+        };
+      };
     };
-    preview.glow.enable = true;
   };
-  programs.nvf.settings.vim.visuals = {
-    fidget-nvim.enable = true;
-    indent-blankline.enable = true;
-    nvim-web-devicons.enable = true;
-  };
-  programs.nvf.settings.vim.undoFile.enable = true;
 }
