@@ -40,8 +40,8 @@ in
     typescript
     python39
     gdk
-    bruno
-    bruno-cli
+    # bruno
+    # bruno-cli
     nixd
     nil
     bash
@@ -292,7 +292,6 @@ in
       Minute = 15;
     };
     options = "--max-freed $((64 * 1024**3))";
-    user = "jay";
   };
 
   nix.optimise = {
@@ -301,7 +300,6 @@ in
       Hour = 12;
       Minute = 15;
     };
-    user = "jay";
   };
 
   services.yabai = {
@@ -352,7 +350,6 @@ in
     '';
 
   };
-  services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
 
   programs.zsh.enable = false; # default shell on catalina

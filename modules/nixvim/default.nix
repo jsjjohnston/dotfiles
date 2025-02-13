@@ -76,7 +76,7 @@
   home.shellAliases.v = "nvim";
 
   programs.nixvim = {
-    enable = true;
+    enable = false;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     # Use this for now until mini-status builds
 
