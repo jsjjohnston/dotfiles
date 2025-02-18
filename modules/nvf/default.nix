@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./settings/binds/whichKey.nix
     ./settings/autocomplete/cmp.nix
@@ -14,12 +18,28 @@
     ./settings/vim/telescope.nix
     ./settings/vim/theme.nix
     ./settings/vim/treesitter.nix
+    ./settings/vim/mini.nix
   ];
   programs = {
     nvf = {
       enable = !config.programs.nixvim.enable;
       settings = {
         vim = {
+          formatter.conform-nvim.enable = true;
+          luaConfigRC.yanking =
+            pkgs.lib.mkAfter
+            /*
+            lua
+            */
+            ''
+              vim.api.nvim_create_autocmd('TextYankPost', {
+                desc = 'Highlight when yanking (copying) text',
+                group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+                callback = function()
+                  vim.highlight.on_yank()
+                end,
+              })
+            '';
           withNodeJs = true;
           bell = "on";
           comments.comment-nvim.enable = true;
@@ -41,7 +61,6 @@
             smartcolumn.enable = true;
           };
           utility = {
-            # ccc.enable = true;
             icon-picker.enable = true;
             motion = {
               hop.enable = true;
