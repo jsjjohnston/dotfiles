@@ -1,6 +1,13 @@
 {...}: {
   programs.nvf.settings.vim.dashboard.dashboard-nvim = {
     enable = true;
-    setupOpts = {};
+    setupOpts = {
+      theme = "hyper";
+      config = {
+        week_header = {
+          enable = true;
+        };
+      };
+    };
   };
 }
