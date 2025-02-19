@@ -1,23 +1,17 @@
 {
   pkgs,
   config,
-
   pkgs-stable,
   pkgs-unstable,
   nixpkgs,
-
   ...
-}:
-let
+}: let
   gdk = pkgs.google-cloud-sdk.withExtraComponents (
-    with pkgs.google-cloud-sdk.components;
-    [
+    with pkgs.google-cloud-sdk.components; [
       gke-gcloud-auth-plugin
     ]
   );
-
-in
-{
+in {
   nixpkgs.config = {
     allowBroken = true; # NOTE: To allow ghostty config until its supported in nixpkgs
     allowUnfree = true;
@@ -82,7 +76,6 @@ in
           sudo mv /tmp/ca_cert.pem /etc/nix/
       fi
     '';
-
   };
   nix.settings = {
     ssl-cert-file = "/etc/nix/ca_cert.pem";
@@ -99,9 +92,6 @@ in
       cleanup = "uninstall";
       upgrade = true;
     };
-    brews = [
-      "podman"
-    ];
     casks = [
       {
         name = "lookaway";
@@ -113,11 +103,10 @@ in
       {
         name = "docker";
       }
-
     ];
   };
   nix.linux-builder.enable = true;
-  nix.linux-builder.systems = [ "aarch64-linux" ];
+  nix.linux-builder.systems = ["aarch64-linux"];
   system.defaults = {
     ActivityMonitor = {
       IconType = 5;
@@ -174,7 +163,6 @@ in
       "com.apple.trackpad.forceClick" = true;
       "com.apple.trackpad.scaling" = 0.5;
       "com.apple.trackpad.trackpadCornerClickBehavior" = 1;
-
     };
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     WindowManager = {
@@ -225,7 +213,7 @@ in
         "/Applications/Ghostty.app"
         "/Applications/Nix Apps/Google Chrome.app"
       ];
-      persistent-others = [ ];
+      persistent-others = [];
       scroll-to-open = null;
       show-process-indicators = null;
       show-recents = false;
@@ -276,7 +264,7 @@ in
   };
 
   environment = {
-    shells = [ pkgs.bashInteractive ];
+    shells = [pkgs.bashInteractive];
   };
 
   nix.settings.trusted-users = [
@@ -348,7 +336,6 @@ in
       alt - k : yabai -m window --focus stack.prev
       cmd + shift - s : open /System/Applications/Utilities/Screenshot.app
     '';
-
   };
   nix.package = pkgs.nix;
 
