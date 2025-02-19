@@ -1,6 +1,5 @@
-{...}:
-{
-programs.nvf.settings.vim.mini = {
+{...}: {
+  programs.nvf.settings.vim.mini = {
     align = {
       enable = true;
     };
@@ -17,9 +16,6 @@ programs.nvf.settings.vim.mini = {
       enable = true;
     };
     comment = {
-      enable = true;
-    };
-    completion = {
       enable = true;
     };
     diff = {
@@ -59,12 +55,6 @@ programs.nvf.settings.vim.mini = {
       enable = true;
     };
     sessions = {
-      enable = true;
-    };
-    snippets = {
-      enable = true;
-    };
-    statusline = {
       enable = true;
     };
     surround = {

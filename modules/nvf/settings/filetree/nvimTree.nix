@@ -1,6 +1,6 @@
-{...}: {
+{config, ...}: {
   programs.nvf.settings.vim.filetree.nvimTree = {
-    enable = true;
+    enable = !config.programs.nvf.settings.vim.filetree.neo-tree.enable;
     mappings = {
       toggle = "\\";
     };

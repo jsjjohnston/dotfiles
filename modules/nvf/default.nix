@@ -7,6 +7,7 @@
     ./settings/binds/whichKey.nix
     ./settings/autocomplete/cmp.nix
     ./settings/filetree/nvimTree.nix
+    ./settings/filetree/neo-tree.nix
     ./settings/dashboard/dashboard.nix
     ./settings/vim/fzf.nix
     ./settings/vim/git/gitsigns.nix
@@ -19,6 +20,7 @@
     ./settings/vim/theme.nix
     ./settings/vim/treesitter.nix
     ./settings/vim/mini.nix
+    ./settings/vim/statusline/lualine.nix
   ];
   programs = {
     nvf = {
