@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
@@ -59,6 +58,7 @@
       tag.sort = "taggerdate";
       log.date = "iso";
       merge.tool = "nvim";
+      remote.origin.fetch = "+refs/heads/*:refs/remotes/origin/*";
     };
   };
 }

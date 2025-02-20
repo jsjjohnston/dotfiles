@@ -43,7 +43,7 @@
       # enable = true;
     };
     move = {
-      enable = true;
+      # enable = true;
     };
     notify = {
       enable = true;
