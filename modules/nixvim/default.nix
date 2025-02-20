@@ -3,8 +3,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = [
     # ./plugins/bufferline.nix
     # ./plugins/codesnap.nix
@@ -164,12 +163,11 @@
       shiftwidth = 2;
       softtabstop = 0;
       autoindent = true;
-
     };
 
     autoCmd = [
       {
-        event = [ "TextYankPost" ];
+        event = ["TextYankPost"];
         desc = "Highlight when yanking (copying) text";
         group = "highlight-yank";
         callback = {

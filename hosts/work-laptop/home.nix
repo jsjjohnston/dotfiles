@@ -3,8 +3,7 @@
   pkgs-unstable,
   nixpkgs,
   ...
-}:
-{
+}: {
   imports = [
     ../../modules/fzf
     ../../modules/ghostty
@@ -19,6 +18,7 @@
     ../../modules/shell/zsh
     ../../modules/tmux
     ../../modules/zoxide
+    ../../modules/starship
   ];
 
   home.username = "jay";

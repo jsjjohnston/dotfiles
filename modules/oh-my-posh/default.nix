@@ -1,6 +1,6 @@
-{...}: {
+{config, ...}: {
   programs.oh-my-posh = {
-    enable = true;
+    enable = !config.programs.starship.enable;
     enableBashIntegration = true;
     # useTheme = "rudolfs-dark";
     settings =

@@ -43,6 +43,8 @@ in {
     slack-cli
     slack
     youtube-music
+    vscode
+    vscode-extensions.github.vscode-github-actions
   ];
 
   fonts.packages = with pkgs; [
