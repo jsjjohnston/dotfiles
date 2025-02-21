@@ -1,73 +1,73 @@
 {...}: {
   programs.nvf.settings.vim.mini = {
     align = {
-      enable = true;
+      enable = false;
     };
     basics = {
-      enable = true;
+      enable = false;
     };
     bracketed = {
-      enable = true;
+      enable = false;
     };
     clue = {
-      enable = true;
+      enable = false;
     };
     colors = {
-      enable = true;
+      enable = false;
     };
     comment = {
-      enable = true;
+      enable = false;
     };
     diff = {
-      enable = true;
+      enable = false;
     };
     extra = {
-      enable = true;
+      enable = false;
     };
     git = {
-      enable = true;
+      enable = false;
     };
     hipatterns = {
-      enable = true;
+      enable = false;
     };
     icons = {
-      enable = true;
+      enable = false;
     };
     indentscope = {
-      enable = true;
+      enable = false;
     };
     jump = {
-      # enable = true;
+      # enable = false;
     };
     jump2d = {
-      # enable = true;
+      # enable = false;
     };
     move = {
-      # enable = true;
+      # enable = false;
     };
     notify = {
-      enable = true;
+      enable = false;
     };
     operators = {
-      enable = true;
+      enable = false;
     };
     pairs = {
-      enable = true;
+      enable = false;
     };
     sessions = {
-      enable = true;
+      enable = false;
     };
     surround = {
-      enable = true;
+      enable = false;
     };
     tabline = {
-      enable = true;
+      enable = false;
     };
     trailspace = {
-      # enable = true;
+      # enable = false;
     };
     visits = {
-      enable = true;
+      enable = false;
     };
   };
 }
