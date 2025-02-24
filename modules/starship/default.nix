@@ -21,7 +21,6 @@
         "$localip"
         "$shlvl"
         "$env_var"
-        "$jobs"
         "$sudo"
         "$username"
         "$kubernetes"
@@ -46,50 +45,33 @@
         symbol = "";
         disabled = false;
       };
-      palette = "cyberdream";
 
-      palettes.cyberdream = {
-        base00 = "#16181a";
-        base01 = "#1e2124";
-        base02 = "#3c4048";
-        base03 = "#7b8496";
-        base04 = "#7b8496";
-        base05 = "#ffffff";
-        base06 = "#16181a";
-        base07 = "#ffffff";
-        base08 = "#ff6e5e";
-        base09 = "#ffbd5e";
-        base0A = "#f1ff5e";
-        base0B = "#5eff6c";
-        base0C = "#5ef1ff";
-        base0D = "#5ea1ff";
-        base0E = "#bd5eff";
-        base0F = "#ff5ef1";
-      };
+      palette = "cyberdream";
 
       hostname = {
         ssh_symbol = "";
       };
 
       character = {
-        format = "$symbol";
-        success_symbol = "[ ](bold italic base0F)";
-        error_symbol = "[ ](bold bg:red fg:base0F)";
+        format = "$symbol ";
+        success_symbol = "[  ](bold bg:#5EFF6C fg:#16181A)";
+        error_symbol = "[  ](bold bg:#FF6E5E fg:#16181A)";
       };
 
       env_var.VIMSHELL = {
         format = "[$env_value]($style)";
-        style = "base0E italic";
+        style = "#FF5EF1 italic";
       };
+
       sudo = {
         format = "[$symbol]($style)";
-        style = "bold base0D";
+        style = "bold #FFBD5E";
         symbol = "󰡗";
         disabled = false;
       };
       username = {
-        style_user = "base0C bold italic";
-        style_root = "purple bold italic";
+        style_user = "#5EA1FF bold italic";
+        style_root = "#BD5EFF bold italic";
         format = "[ $user]($style) ";
         disabled = false;
         show_always = false;
@@ -100,18 +82,37 @@
         truncation_symbol = "../";
         read_only = "󰌾";
         use_os_path_sep = true;
-        style = "italic base0E";
+        style = "italic fg:#16181A bg:#FFFFFF";
         format = "[$path]($style)[$read_only]($read_only_style)";
         repo_root_style = "bold base0E";
-        repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [](bold base0C)";
+        repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [](bold bg:#FFFFFF fg:#16181A)";
       };
       cmd_duration = {
-        format = "[◄ $duration](italic base0D)";
+        format = "[◄ $duration](italic fg:#16181A bg:#FFFFFF)";
         show_notifications = true;
+      };
+
+      palettes.cyberdream = {
+        base00 = "#16181A";
+        base01 = "#1E2124";
+        base02 = "#3C4048";
+        base03 = "#7B8496";
+        base04 = "#7B8496";
+        base05 = "#FFFFFF";
+        base06 = "#16181A";
+        base07 = "#FFFFFF";
+        base08 = "#FF6E5E";
+        base09 = "#FFBD5E";
+        base0A = "#F1FF5E";
+        base0B = "#5EFF6C";
+        base0C = "#5EF1FF";
+        base0D = "#5EA1FF";
+        base0E = "#BD5EFF";
+        base0F = "#FF5EF1";
       };
       localip = {
         ssh_only = true;
-        format = "󰩟[$localipv4](bold base0E)";
+        format = "󰩟[$localipv4](bold bg:#F1FF5A fg:#16181A)";
         disabled = false;
       };
       time = {
@@ -120,7 +121,7 @@
         format = "[$time]($style)";
         time_format = "%r";
         utc_time_offset = "local";
-        style = "italic base0F";
+        style = "italic bg:#FFBD5E fg:#16181A";
       };
       os = {
         disabled = false;

@@ -56,7 +56,20 @@
           syntaxHighlighting = true;
           ui = {
             breadcrumbs.enable = true;
-            colorizer.enable = true;
+            colorizer = {
+              enable = true;
+              setupOpts = {
+                filetypes = {
+                  "*" = {
+                    RGB = true;
+                    RRGGBB = true;
+                    always_update = true;
+                    css = true;
+                    mode = "background";
+                  };
+                };
+              };
+            };
             illuminate.enable = true;
             modes-nvim.enable = true;
             # noice.enable = true;
