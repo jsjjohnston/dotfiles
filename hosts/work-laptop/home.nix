@@ -1,9 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  nixpkgs,
-  ...
-}: {
+{pkgs-unstable, ...}: {
   imports = [
     ../../modules/fzf
     ../../modules/ghostty
@@ -20,22 +15,15 @@
     ../../modules/zoxide
     ../../modules/starship
   ];
+  home = {
+    username = "jay";
+    homeDirectory = "/Users/jay";
+    sessionPath = [
+      "/opt/homebrew/bin"
+    ];
 
-  home.username = "jay";
-  home.homeDirectory = "/Users/jay";
-  home.sessionPath = [
-    "/opt/homebrew/bin"
-  ];
-
-  home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  home.sessionVariables = {
+    stateVersion = "24.11"; # Please read the comment before changing.
   };
-
-  home.packages = with pkgs-unstable; [
-    prettierd
-    _1password-cli
-  ];
 
   programs.home-manager.enable = true;
 }
