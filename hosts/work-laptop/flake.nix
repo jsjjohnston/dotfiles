@@ -34,7 +34,7 @@
     nvf,
     self,
   }: let
-    gitHash = {...}: {
+    gitHash = _: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
     };
     system = "aarch64-darwin";

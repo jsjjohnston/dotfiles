@@ -14,6 +14,7 @@
     ../../modules/tmux
     ../../modules/zoxide
     ../../modules/starship
+    ../../modules/yazi
   ];
   home = {
     username = "jay";

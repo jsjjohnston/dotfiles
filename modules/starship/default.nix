@@ -6,7 +6,7 @@
 
     settings = {
       add_newline = true;
-      command_timeout = 1000;
+      command_timeout = 2000;
       format = lib.concatStrings [
         "$os"
         "$shell"
@@ -92,6 +92,31 @@
         show_notifications = true;
       };
 
+      localip = {
+        ssh_only = true;
+        format = "󰩟[$localipv4](bold bg:#F1FF5A fg:#16181A) ";
+        disabled = false;
+      };
+      time = {
+        disabled = false;
+        use_12hr = true;
+        format = "[$time]($style) ";
+        time_format = "%r";
+        utc_time_offset = "local";
+        style = "italic bg:#FFBD5E fg:#16181A";
+      };
+      os = {
+        disabled = false;
+      };
+      git_branch = {
+        format = "[$branch(:$remote_branch)]($style)";
+        symbol = "[](bold italic base0E)";
+        style = "italic base0F";
+        truncation_symbol = "⋯";
+        truncation_length = 11;
+        ignore_branches = [];
+        only_attached = true;
+      };
       palettes.cyberdream = {
         base00 = "#16181A";
         base01 = "#1E2124";
@@ -110,35 +135,10 @@
         base0E = "#BD5EFF";
         base0F = "#FF5EF1";
       };
-      localip = {
-        ssh_only = true;
-        format = "󰩟[$localipv4](bold bg:#F1FF5A fg:#16181A)";
-        disabled = false;
-      };
-      time = {
-        disabled = false;
-        use_12hr = true;
-        format = "[$time]($style)";
-        time_format = "%r";
-        utc_time_offset = "local";
-        style = "italic bg:#FFBD5E fg:#16181A";
-      };
-      os = {
-        disabled = false;
-      };
-      git_branch = {
-        format = "[$branch(:$remote_branch)]($style)";
-        symbol = "[](bold italic base0E)";
-        style = "italic base0F";
-        truncation_symbol = "⋯";
-        truncation_length = 11;
-        ignore_branches = [];
-        only_attached = true;
-      };
       git_metrics = {
         format = " ([$added]($added_style))([$deleted]($deleted_style)) ";
-        added_style = "italic dimmed green";
-        deleted_style = "italic dimmed red";
+        added_style = "italic #5EFF6C";
+        deleted_style = "italic #FF6E5E";
         ignore_submodules = true;
         disabled = false;
       };
@@ -165,7 +165,7 @@
       };
 
       nodejs = {
-        format = "[node: ($version)](bold base0E)";
+        format = "[node: ($version) ](bold #FFFFFF)";
         version_format = "\${raw}";
         detect_files = ["package-lock.json" "yarn.lock"];
         detect_folders = ["node_modules"];
@@ -182,13 +182,13 @@
       package = {
         format = "[pkg](italic dimmed) [$symbol$version]($style)";
         version_format = "\${raw}";
-        symbol = "◨";
+        symbol = "◨ ";
         style = "dimmed base0E italic bold";
       };
 
       aws = {
-        disabled = true;
-        format = "[aws](italic) [$symbol $profile $region]($style)";
+        disabled = false;
+        format = "[aws](italic) [ $symbol $profile $region ]($style)";
         style = "bold base0E";
         symbol = "";
       };
@@ -212,7 +212,7 @@
       };
 
       memory_usage = {
-        symbol = "";
+        symbol = " ";
         format = "Ram[\${ram_pct}( \${swap_pct})]($style)";
         style = "bold base0E";
         disabled = false;
@@ -228,14 +228,14 @@
       };
 
       shell = {
-        bash_indicator = "";
-        fish_indicator = "󰈺";
+        bash_indicator = " ";
+        fish_indicator = "󰈺 ";
         disabled = false;
         style = "bold bg:base0E";
       };
 
       container = {
-        symbol = "󰡨";
+        symbol = "󰡨 ";
         style = "bold base0E";
       };
     };

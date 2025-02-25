@@ -18,7 +18,6 @@ in {
       jq
       ripgrep
       typescript-language-server
-      yazi
       lazygit
       terraform-ls
       delta
