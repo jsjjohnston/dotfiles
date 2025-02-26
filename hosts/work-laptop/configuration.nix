@@ -32,6 +32,8 @@ in {
       slack-cli
       slack
       youtube-music
+      unixtools.watch
+      ffmpeg
     ];
 
     shellAliases = {
