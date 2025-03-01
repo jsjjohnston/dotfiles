@@ -15,6 +15,7 @@
     ../../modules/zoxide
     ../../modules/starship
     ../../modules/yazi
+    ../../services/podman
   ];
   home = {
     username = "jay";

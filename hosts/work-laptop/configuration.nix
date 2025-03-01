@@ -275,9 +275,9 @@ in {
       {
         name = "ghostty";
       }
-      {
-        name = "docker";
-      }
+      # {
+      #   name = "docker";
+      # }
     ];
   };
 
