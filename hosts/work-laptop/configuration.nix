@@ -34,7 +34,10 @@ in {
       youtube-music
       unixtools.watch
       ffmpeg
+      lazycli
+      # colima
     ];
+    pathsToLink = ["/share/bash-completion"];
 
     shellAliases = {
       build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
@@ -275,11 +278,28 @@ in {
       {
         name = "ghostty";
       }
-      # {
-      #   name = "docker";
-      # }
+      {
+        name = "docker";
+      }
     ];
   };
+  # launchd.agents."colima.default" = {
+  #   command = "${pkgs.colima}/bin/colima start --foreground";
+  #   serviceConfig = {
+  #     Label = "com.colima.default";
+  #     RunAtLoad = true;
+  #     KeepAlive = true;
+  #
+  #     # not sure where to put these paths and not reference a hard-coded `$HOME`; `/var/log`?
+  #     StandardOutPath = "/Users/jay/.colima/default/daemon/launchd.stdout.log";
+  #     StandardErrorPath = "/Users/jay/.colima/default/daemon/launchd.stderr.log";
+  #
+  #     # not using launchd.agents.<name>.path because colima needs the system ones as well
+  #     EnvironmentVariables = {
+  #       PATH = "${pkgs.colima}/bin:${pkgs.docker}/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+  #     };
+  #   };
+  # };
 
   time.timeZone = "Australia/Melbourne";
 

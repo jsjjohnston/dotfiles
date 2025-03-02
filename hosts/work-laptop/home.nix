@@ -15,7 +15,6 @@
     ../../modules/zoxide
     ../../modules/starship
     ../../modules/yazi
-    ../../services/podman
   ];
   home = {
     username = "jay";
@@ -24,7 +23,8 @@
       "/opt/homebrew/bin"
     ];
 
-    stateVersion = "24.11"; # Please read the comment before changing.
+    # Please read the comment before changing.
+    stateVersion = "24.11";
   };
 
   programs.home-manager.enable = true;

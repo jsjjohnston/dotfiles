@@ -77,10 +77,10 @@
         show_always = false;
       };
       directory = {
-        home_symbol = "";
+        home_symbol = " ";
         truncation_length = 3;
         truncation_symbol = "../";
-        read_only = "󰌾";
+        read_only = " 󰌾";
         use_os_path_sep = true;
         style = "italic fg:#16181A bg:#FFFFFF";
         format = "[$path]($style)[$read_only]($read_only_style)";
@@ -94,7 +94,7 @@
 
       localip = {
         ssh_only = true;
-        format = "󰩟[$localipv4](bold bg:#F1FF5A fg:#16181A) ";
+        format = " 󰩟[$localipv4](bold bg:#F1FF5A fg:#16181A) ";
         disabled = false;
       };
       time = {
@@ -117,6 +117,89 @@
         ignore_branches = [];
         only_attached = true;
       };
+      git_metrics = {
+        format = " ( [$added]($added_style)) ([$deleted]($deleted_style)) ";
+        added_style = "italic #5EFF6C";
+        deleted_style = "italic #FF6E5E";
+        ignore_submodules = true;
+        disabled = false;
+      };
+      git_status = {
+        style = "bold italic base0E";
+        format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))";
+        conflicted = "[](italic bright-magenta)";
+        ahead = "[│[$count](bold #FFFFFF)│](italic #5EFF6C)";
+        behind = "[│[\${count}](bold #FFFFFF)│](italic #FF6E5E)";
+        diverged = "[[\${ahead_count}](regular #FFFFFF)│┤[\${behind_count}](regular #FFFFFF)│](italic bright-magenta)";
+        untracked = "[](italic bright-yellow)";
+        stashed = "[◃󰊱](italic #FFFFFF)";
+        modified = "[◦](italic #F1FF5E)";
+        staged = "[┤[$count](bold #FFFFFF)│](italic bright-cyan)";
+        renamed = "[󰚚◦](italic bright-blue)";
+        deleted = "[󰗨](italic #FF6E5E)";
+      };
+
+      lua = {
+        format = "[lua](italic) [\${symbol}\${version}]($style)";
+        version_format = "\${raw}";
+        symbol = "⨀";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+      };
+
+      nodejs = {
+        format = "[node: ($version) ](bold bg:#BD5EFF fg:#FFFFFF)";
+        version_format = "\${raw}";
+        detect_files = ["package-lock.json" "yarn.lock"];
+        detect_folders = ["node_modules"];
+        detect_extensions = [];
+      };
+
+      rust = {
+        format = "[rs](italic) [$symbol$version]($style)";
+        symbol = "⊃";
+        version_format = "\${raw}";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+      };
+
+      package = {
+        format = "[pkg](italic dimmed) [$symbol$version]($style)";
+        version_format = "\${raw}";
+        symbol = "◨ ";
+        style = "dimmed bg:#BD5EFF fg:#FFFFFF italic bold";
+      };
+
+      aws = {
+        disabled = false;
+        format = "[aws](italic) [ $symbol $profile $region ]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+        symbol = "";
+      };
+
+      c = {
+        symbol = " ";
+        format = " [$symbol($version(-$name))]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+      };
+
+      docker_context = {
+        symbol = "◧ ";
+        format = " docker [$symbol$context]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+      };
+
+      golang = {
+        symbol = "∩ ";
+        format = " go [$symbol($version )]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+      };
+
+      memory_usage = {
+        symbol = " ";
+        format = "Ram[\${ram_pct}( \${swap_pct})]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
+        disabled = false;
+      };
+
       palettes.cyberdream = {
         base00 = "#16181A";
         base01 = "#1E2124";
@@ -135,108 +218,25 @@
         base0E = "#BD5EFF";
         base0F = "#FF5EF1";
       };
-      git_metrics = {
-        format = " ([$added]($added_style))([$deleted]($deleted_style)) ";
-        added_style = "italic #5EFF6C";
-        deleted_style = "italic #FF6E5E";
-        ignore_submodules = true;
-        disabled = false;
-      };
-      git_status = {
-        style = "bold italic base0E";
-        format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))";
-        conflicted = "[](italic bright-magenta)";
-        ahead = "[│[$count](bold white)│](italic green)";
-        behind = "[│[\${count}](bold white)│](italic red)";
-        diverged = "[[\${ahead_count}](regular white)│┤[\${behind_count}](regular white)│](italic bright-magenta)";
-        untracked = "[](italic bright-yellow)";
-        stashed = "[◃󰊱](italic white)";
-        modified = "[◦](italic yellow)";
-        staged = "[┤[$count](bold white)│](italic bright-cyan)";
-        renamed = "[󰚚◦](italic bright-blue)";
-        deleted = "[󰗨](italic red)";
-      };
-
-      lua = {
-        format = "[lua](italic) [\${symbol}\${version}]($style)";
-        version_format = "\${raw}";
-        symbol = "⨀";
-        style = "bold base0E";
-      };
-
-      nodejs = {
-        format = "[node: ($version) ](bold #FFFFFF)";
-        version_format = "\${raw}";
-        detect_files = ["package-lock.json" "yarn.lock"];
-        detect_folders = ["node_modules"];
-        detect_extensions = [];
-      };
-
-      rust = {
-        format = "[rs](italic) [$symbol$version]($style)";
-        symbol = "⊃";
-        version_format = "\${raw}";
-        style = "bold base0E";
-      };
-
-      package = {
-        format = "[pkg](italic dimmed) [$symbol$version]($style)";
-        version_format = "\${raw}";
-        symbol = "◨ ";
-        style = "dimmed base0E italic bold";
-      };
-
-      aws = {
-        disabled = false;
-        format = "[aws](italic) [ $symbol $profile $region ]($style)";
-        style = "bold base0E";
-        symbol = "";
-      };
-
-      c = {
-        symbol = " ";
-        format = " [$symbol($version(-$name))]($style)";
-        style = "bold base0E";
-      };
-
-      docker_context = {
-        symbol = "◧ ";
-        format = " docker [$symbol$context]($style)";
-        style = "bold base0E";
-      };
-
-      golang = {
-        symbol = "∩ ";
-        format = " go [$symbol($version )]($style)";
-        style = "bold base0E";
-      };
-
-      memory_usage = {
-        symbol = " ";
-        format = "Ram[\${ram_pct}( \${swap_pct})]($style)";
-        style = "bold base0E";
-        disabled = false;
-      };
-
       nix_shell = {
-        style = "bold base0E";
+        style = "bold bg:#FF5EF1 fg:#FFFFFF";
         symbol = "󱄅";
-        format = "[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)";
-        impure_msg = "[󱕼](bold dimmed red)";
-        pure_msg = "[󰿞](bold dimmed green)";
-        unknown_msg = "[](bold dimmed yellow)";
+        format = "[$symbol nix⎪$state⎪]($style) [$name](italic dimmed #FFFFFF)";
+        impure_msg = "[󱕼](bold dimmed #FF6E5E)";
+        pure_msg = "[󰿞](bold dimmed #5EFF6C)";
+        unknown_msg = "[](bold dimmed #F1FF5E)";
       };
 
       shell = {
-        bash_indicator = " ";
-        fish_indicator = "󰈺 ";
+        bash_indicator = "  ";
+        fish_indicator = " 󰈺 ";
         disabled = false;
-        style = "bold bg:base0E";
+        style = "bold bg:#BD5EFF";
       };
 
       container = {
         symbol = "󰡨 ";
-        style = "bold base0E";
+        style = "bold #BD5EFF";
       };
     };
   };

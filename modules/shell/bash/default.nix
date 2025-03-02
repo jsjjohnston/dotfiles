@@ -12,5 +12,12 @@
         NEWPATH=''${NEWPATH/$NIX_PATHS}
       done
     '';
+    historySize = 100000;
+    historyIgnore = [
+      "exit"
+    ];
+    shellOptions = [
+      "vi"
+    ];
   };
 }
