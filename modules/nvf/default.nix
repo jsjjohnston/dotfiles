@@ -4,29 +4,37 @@
   ...
 }: {
   imports = [
-    ./settings/binds/whichKey.nix
+    ./settings/autocomplete/blink-cmp.nix
     ./settings/autocomplete/cmp.nix
-    ./settings/filetree/nvimTree.nix
-    ./settings/filetree/neo-tree.nix
+    ./settings/binds/whichKey.nix
     ./settings/dashboard/dashboard.nix
-    ./settings/vim/fzf.nix
-    ./settings/vim/git/gitsigns.nix
-    ./settings/vim/git/fugitive.nix
-    ./settings/vim/languages
-    ./settings/vim/lsp.nix
+    ./settings/filetree/neo-tree.nix
+    ./settings/filetree/nvimTree.nix
+    ./settings/notes/neorg
     ./settings/snippets/luasnip.nix
-    ./settings/vim/terminal/toggleterm.nix
-    ./settings/vim/telescope.nix
-    ./settings/vim/theme.nix
-    ./settings/vim/treesitter.nix
-    ./settings/vim/mini.nix
-    ./settings/vim/statusline/lualine.nix
+    ./settings/fzf.nix
+    ./settings/git/fugitive.nix
+    ./settings/git/gitsigns.nix
+    ./settings/languages
+    ./settings/lsp.nix
+    ./settings/mini.nix
+    ./settings/statusline/lualine.nix
+    ./settings/telescope.nix
+    ./settings/terminal/toggleterm.nix
+    ./settings/theme.nix
+    ./settings/treesitter.nix
   ];
   programs = {
     nvf = {
       enable = !config.programs.nixvim.enable;
       settings = {
         vim = {
+          notes = {
+            todo-comments.enable = true;
+          };
+
+          autopairs.nvim-autopairs.enable = true;
+
           formatter.conform-nvim.enable = true;
           luaConfigRC.yanking =
             pkgs.lib.mkAfter
@@ -72,7 +80,6 @@
             };
             illuminate.enable = true;
             modes-nvim.enable = true;
-            # noice.enable = true;
             smartcolumn.enable = true;
           };
           utility = {
