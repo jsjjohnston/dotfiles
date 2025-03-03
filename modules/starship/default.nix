@@ -72,12 +72,12 @@
       username = {
         style_user = "#5EA1FF bold italic";
         style_root = "#BD5EFF bold italic";
-        format = "[ $user]($style) ";
+        format = "[ $user ]($style) ";
         disabled = false;
         show_always = false;
       };
       directory = {
-        home_symbol = " ";
+        home_symbol = "";
         truncation_length = 3;
         truncation_symbol = "../";
         read_only = " 󰌾";
@@ -107,6 +107,8 @@
       };
       os = {
         disabled = false;
+        format = "[](bold fg:#BD5EFF bg:none)[$symbol]($style)";
+        style = "bold bg:#BD5EFF fg:#FFFFFF";
       };
       git_branch = {
         format = "[$branch(:$remote_branch)]($style)";

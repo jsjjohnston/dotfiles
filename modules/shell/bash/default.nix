@@ -17,7 +17,11 @@
       "exit"
     ];
     shellOptions = [
-      "vi"
+      "cdspell"
+      "complete_fullquote"
+      "dirspell"
+      "dotglob"
+      "hostcomplete"
     ];
   };
 }
