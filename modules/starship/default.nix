@@ -100,10 +100,10 @@
       time = {
         disabled = false;
         use_12hr = true;
-        format = "[$time]($style) ";
+        format = "[$time ]($style)";
         time_format = "%r";
         utc_time_offset = "local";
-        style = "italic bg:#FFBD5E fg:#16181A";
+        style = "#FFBD5E";
       };
       os = {
         disabled = false;
@@ -233,7 +233,8 @@
         bash_indicator = "  ";
         fish_indicator = " 󰈺 ";
         disabled = false;
-        style = "bold bg:#BD5EFF";
+
+        style = "bold bg:#5EA1FF fg:#16181A";
       };
 
       container = {
