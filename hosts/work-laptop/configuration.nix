@@ -1,10 +1,23 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}: let
   gdk = pkgs.google-cloud-sdk.withExtraComponents (
     with pkgs.google-cloud-sdk.components; [
       gke-gcloud-auth-plugin
     ]
   );
 in {
+  imports = [
+    inputs.sops-nix.darwinModules.sops
+  ];
+  sops = {
+    defaultSopsFile = ../../secrets/secret.yaml;
+    age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
+  };
+
   nixpkgs.config = {
     allowBroken = true; # NOTE: To allow ghostty config until its supported in nixpkgs
     allowUnfree = true;
@@ -21,7 +34,6 @@ in {
       lazygit
       terraform-ls
       delta
-      jira-cli-go
       eslint_d
       typescript
       python39
@@ -29,14 +41,19 @@ in {
       nixd
       nil
       bash
-      slack-cli
       slack
       youtube-music
       unixtools.watch
       ffmpeg
       lazycli
       # colima
+      wtf
+      sops
     ];
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
     pathsToLink = ["/share/bash-completion"];
 
     shellAliases = {
@@ -283,75 +300,60 @@ in {
       }
     ];
   };
-  # launchd.agents."colima.default" = {
-  #   command = "${pkgs.colima}/bin/colima start --foreground";
-  #   serviceConfig = {
-  #     Label = "com.colima.default";
-  #     RunAtLoad = true;
-  #     KeepAlive = true;
-  #
-  #     # not sure where to put these paths and not reference a hard-coded `$HOME`; `/var/log`?
-  #     StandardOutPath = "/Users/jay/.colima/default/daemon/launchd.stdout.log";
-  #     StandardErrorPath = "/Users/jay/.colima/default/daemon/launchd.stderr.log";
-  #
-  #     # not using launchd.agents.<name>.path because colima needs the system ones as well
-  #     EnvironmentVariables = {
-  #       PATH = "${pkgs.colima}/bin:${pkgs.docker}/bin:/usr/bin:/bin:/usr/sbin:/sbin";
-  #     };
-  #   };
-  # };
 
   time.timeZone = "Australia/Melbourne";
 
   programs.direnv = {
     enable = true;
   };
-
-  services.yabai = {
-    enable = true;
-    extraConfig = "
+  services = {
+    openssh.enable = false;
+    yabai = {
+      enable = true;
+      extraConfig = "
       yabai -m rule --add app='System Settings' space=3
       ";
-    config = {
-      menubar_opacity = 1.0;
-      mouse_follows_focus = false;
-      focus_follows_mouse = false;
-      display_arrangement_order = "default";
-      window_origin_display = "default";
-      window_placement = "second_child";
-      window_insertion_point = "focused";
-      window_animation_duration = 0.0;
-      window_animation_easing = "ease_out_circ";
-      window_opacity_duration = 0.0;
-      active_window_opacity = 1.0;
-      normal_window_opacity = 0.9;
-      window_opacity = true;
-      insert_feedback_color = "0xffd75f5f";
-      split_ratio = 0.50;
-      split_type = "auto";
-      auto_balance = true;
-      top_padding = 12;
-      bottom_padding = 12;
-      left_padding = 12;
-      right_padding = 12;
+      config = {
+        menubar_opacity = 1.0;
+        mouse_follows_focus = false;
+        focus_follows_mouse = false;
+        display_arrangement_order = "default";
+        window_origin_display = "default";
+        window_placement = "second_child";
+        window_insertion_point = "focused";
+        window_animation_duration = 0.0;
+        window_animation_easing = "ease_out_circ";
+        window_opacity_duration = 0.0;
+        active_window_opacity = 1.0;
+        normal_window_opacity = 0.9;
+        window_opacity = true;
+        insert_feedback_color = "0xffd75f5f";
+        split_ratio = 0.50;
+        split_type = "auto";
+        auto_balance = true;
+        top_padding = 12;
+        bottom_padding = 12;
+        left_padding = 12;
+        right_padding = 12;
 
-      window_gap = 6;
-      mouse_modifier = "fn";
-      mouse_action1 = "move";
-      mouse_action2 = "resize";
-      mouse_drop_action = "swap";
-      window_zoom_persist = true;
-      window_shadow = true;
-      layout = "bsp";
+        window_gap = 6;
+        mouse_modifier = "fn";
+        mouse_action1 = "move";
+        mouse_action2 = "resize";
+        mouse_drop_action = "swap";
+        window_zoom_persist = true;
+        window_shadow = true;
+        layout = "bsp";
+      };
     };
-  };
-  services.skhd = {
-    enable = true;
-    skhdConfig = ''
-      alt - j : yabai -m window --focus stack.next
-      alt - k : yabai -m window --focus stack.prev
-      cmd + shift - s : open /System/Applications/Utilities/Screenshot.app
-    '';
+    skhd = {
+      enable = true;
+      skhdConfig = ''
+        alt - j : yabai -m window --focus stack.next
+        alt - k : yabai -m window --focus stack.prev
+        cmd + shift - s : open /System/Applications/Utilities/Screenshot.app
+      '';
+    };
   };
 
   programs.zsh.enable = false; # default shell on catalina

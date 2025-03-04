@@ -21,6 +21,9 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     mac-app-util.url = "github:hraban/mac-app-util";
     nvf.url = "github:notashelf/nvf";
+    sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    #inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -28,11 +31,12 @@
     mac-app-util,
     neovim-nightly-overlay,
     nix-darwin,
+    nixpkgs,
     nixpkgs-stable,
     nixvim,
-    nixpkgs,
     nvf,
     self,
+    sops-nix,
   }: let
     gitHash = _: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -57,9 +61,9 @@
         inherit pkgs-unstable pkgs-stable inputs;
       };
       modules = [
-        mac-app-util.darwinModules.default
-        gitHash
         ./configuration.nix
+        gitHash
+        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager
         {
           users.users.jay.home = "/Users/jay";
@@ -70,6 +74,7 @@
               inherit pkgs-stable pkgs-unstable inputs;
             };
             sharedModules = [
+              sops-nix.homeManagerModules.sops
               nvf.homeManagerModules.default
 
               nixvim.homeManagerModules.nixvim
