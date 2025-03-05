@@ -1,6 +1,4 @@
-{config, ...}: let
-  secrets = config.sops.secrets;
-in {
+{config, ...}: {
   imports = [
     ../../modules/fzf
     ../../modules/ghostty
@@ -21,25 +19,16 @@ in {
   sops = {
     defaultSopsFile = ../../secrets/secret.yaml;
     age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
-    secrets.example-key = {};
-  };
-
-  home = {
-    username = "jay";
-    homeDirectory = "/Users/jay";
-    sessionPath = [
-      "/opt/homebrew/bin"
-    ];
-
-    # Please read the comment before changing.
-    stateVersion = "24.11";
-
-    file = {
+    secrets = {
+      example-key = {
+      };
+      email = {};
+    };
+    templates = {
       wtf = {
-        enable = true;
-        text =
+        content =
           /*
-          yml
+          yaml
           */
           ''
             wtf:
@@ -64,8 +53,8 @@ in {
                     height: 1
                     width: 1
                   refreshInterval: 1s
-                  title: ${secrets.example-key}
                   type: "digitalclock"
+                  title: "${config.sops.placeholder.example-key}"
                 clocks:
                   colors:
                     rows:
@@ -129,9 +118,19 @@ in {
                   refreshInterval: 30
                   type: cmdrunner
           '';
-        target = ".config/wtf/config.yml";
+        path = "${config.home.homeDirectory}/.config/wtf/config.yml";
       };
     };
+  };
+
+  home = {
+    username = "jay";
+    homeDirectory = "/Users/jay";
+    sessionPath = [
+      "/opt/homebrew/bin"
+    ];
+    # Please read the comment before changing.
+    stateVersion = "24.11";
   };
 
   programs.home-manager.enable = true;
