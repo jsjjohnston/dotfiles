@@ -4,7 +4,6 @@
     enableCompletion = true;
     enableVteIntegration = true;
     bashrcExtra = ''
-      git config --global user.email $(cat ${config.sops.secrets.email.path})
       `test -z "$TMUX" && (tmux attach || tmux new-session)`
       NIX_PATHS="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:"
       NEWPATH=''${PATH/$NIX_PATHS}

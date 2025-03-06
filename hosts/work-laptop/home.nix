@@ -22,7 +22,10 @@
     secrets = {
       example-key = {
       };
-      email = {};
+      gitConfigEmail = {
+        key = "gitConfigEmail"; # YAML key to decrypt (from secrets.yaml)
+        path = "${config.home.homeDirectory}/.config/sops/secrets/git-email.gitconfig"; # runtime output path (temp dir at activation)&#8203;:contentReference[oaicite:4]{index=4}
+      };
     };
     templates = {
       wtf = {

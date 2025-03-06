@@ -1,7 +1,9 @@
 {config, ...}: {
   programs.git = {
     enable = true;
-    userName = "Jay Johnston";
+    includes = [
+      {path = "${config.home.homeDirectory}/sops/secrets/git-email.gitconfig";}
+    ];
     lfs.enable = true;
     extraConfig = {
       advice = {
