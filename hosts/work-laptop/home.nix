@@ -24,7 +24,7 @@
       };
       gitConfigEmail = {
         key = "gitConfigEmail"; # YAML key to decrypt (from secrets.yaml)
-        path = "${config.home.homeDirectory}/.config/sops/secrets/git-email.gitconfig"; # runtime output path (temp dir at activation)&#8203;:contentReference[oaicite:4]{index=4}
+        path = "${config.home.homeDirectory}/.config/git/git-email.gitconfig";
       };
     };
     templates = {
@@ -132,6 +132,9 @@
     sessionPath = [
       "/opt/homebrew/bin"
     ];
+    sessionVariables = {
+      XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+    };
     # Please read the comment before changing.
     stateVersion = "24.11";
   };

@@ -1,8 +1,10 @@
 {config, ...}: {
   programs.git = {
     enable = true;
+    userName = null;
+    userEmail = null;
     includes = [
-      {path = "${config.home.homeDirectory}/sops/secrets/git-email.gitconfig";}
+      {inherit (config.sops.secrets.gitConfigEmail) path;}
     ];
     lfs.enable = true;
     extraConfig = {
