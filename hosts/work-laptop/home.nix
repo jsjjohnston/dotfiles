@@ -20,6 +20,7 @@
     defaultSopsFile = ../../secrets/secret.yaml;
     age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
     secrets = {
+      weather_api_key = {};
       gitConfigEmail = {
         key = "gitConfigEmail";
         path = "${config.home.homeDirectory}/.config/git/git-email.gitconfig";
@@ -30,6 +31,9 @@
       "jira/email" = {};
       "jira/project" = {};
       "jira/username" = {};
+      "github_b/git_api_key" = {};
+      "github_b/repo" = {};
+      "github_b/username" = {};
     };
     templates = {
       wtf = {
@@ -63,18 +67,35 @@
                     top: 0
                     left: 0
                     height: 1
-                    width: 2
+                    width: 4
                   project: ["${config.sops.placeholder."jira/project"}"]
                   refreshInterval: 15m
                   username: "${config.sops.placeholder."jira/username"}"
                   verifyServerCertificate: true
+                weather:
+                  apiKey: "${config.sops.placeholder.weather_api_key}"
+                  compact: true
+                  cityids:
+                  - 7281807
+                  colors:
+                    current: "lightblue"
+                  enabled: true
+                  language: "EN"
+                  position:
+                    top: 3
+                    left: 3
+                    height: 8
+                    width: 1
+                  refreshInterval: 15m
+                  tempUnit: "C"
+                  useEmoji: true
                 digitalclock:
                   color: orange
                   enabled: true
                   font: bigfont
                   hourFormat: 12
                   position:
-                    top: 0
+                    top: 2
                     left: 2
                     height: 1
                     width: 1
@@ -94,7 +115,7 @@
                     Perth: "Australia/West"
                     Sydney: "Australia/NSW"
                   position:
-                    top: 0
+                    top: 2
                     left: 3
                     height: 1
                     width: 1
@@ -112,6 +133,37 @@
                     width: 2
                   storyType: top
                   refreshInterval: 1h
+                github:
+                  apiKey: "${config.sops.placeholder."github_b/git_api_key"}"
+                  baseURL: ""
+                  customQueries:
+                    othersPRs:
+                      title: "Others Pull Requests"
+                      filter: "is:open is:pr review-requested:@me"
+                  enabled: true
+                  enableStatus: true
+                  showStats: false
+                  position:
+                    top: 1
+                    left: 0
+                    height: 3
+                    width: 2
+                  refreshInterval: 5m
+                  repositories:
+                    - "${config.sops.placeholder."github_b/repo"}"
+                  uploadURL: ""
+                  username: "${config.sops.placeholder."github_b/username"}"
+                resourceusage:
+                  cpuCombined: true
+                  enabled: true
+                  position:
+                    top: 4
+                    left: 1
+                    height: 4
+                    width: 1
+                  refreshInterval: 1s
+                  showCPU: true
+                  showMem: true
                 ipinfo:
                   colors:
                     name: "lightblue"
@@ -126,9 +178,9 @@
                 power:
                   enabled: true
                   position:
-                    top: 4
-                    left: 3
-                    height: 7
+                    top: 3
+                    left: 2
+                    height: 5
                     width: 1
                   refreshInterval: 15
                   title: "⚡️"
