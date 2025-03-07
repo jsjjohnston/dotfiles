@@ -20,12 +20,16 @@
     defaultSopsFile = ../../secrets/secret.yaml;
     age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
     secrets = {
-      example-key = {
-      };
       gitConfigEmail = {
-        key = "gitConfigEmail"; # YAML key to decrypt (from secrets.yaml)
+        key = "gitConfigEmail";
         path = "${config.home.homeDirectory}/.config/git/git-email.gitconfig";
       };
+      "jira/api_key" = {};
+      "jira/domain" = {};
+      "jira/domain" = {};
+      "jira/email" = {};
+      "jira/project" = {};
+      "jira/username" = {};
     };
     templates = {
       wtf = {
@@ -41,10 +45,29 @@
                   focused: orange
                   normal: gray
               grid:
-                columns: [32, 32, 32, 32, 32]
-                rows: [10, 10, 10, 4, 4, 90]
+                columns: [32, 32, 32, 32]
+                rows: [10, 10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
               refreshInterval: 1
               mods:
+                jira:
+                  apiKey: "${config.sops.placeholder."jira/api_key"}"
+                  colors:
+                    rows:
+                      even: "lightblue"
+                      odd: "white"
+                  domain: "${config.sops.placeholder."jira/domain"}"
+                  email: "${config.sops.placeholder."jira/email"}"
+                  enabled: true
+                  jql: "sprint in openSprints()"
+                  position:
+                    top: 0
+                    left: 0
+                    height: 1
+                    width: 2
+                  project: ["${config.sops.placeholder."jira/project"}"]
+                  refreshInterval: 15m
+                  username: "${config.sops.placeholder."jira/username"}"
+                  verifyServerCertificate: true
                 digitalclock:
                   color: orange
                   enabled: true
@@ -52,12 +75,12 @@
                   hourFormat: 12
                   position:
                     top: 0
-                    left: 1
+                    left: 2
                     height: 1
                     width: 1
                   refreshInterval: 1s
                   type: "digitalclock"
-                  title: "${config.sops.placeholder.example-key}"
+                  title: "Time"
                 clocks:
                   colors:
                     rows:
@@ -72,9 +95,9 @@
                     Sydney: "Australia/NSW"
                   position:
                     top: 0
-                    left: 2
+                    left: 3
                     height: 1
-                    width: 2
+                    width: 1
                   refreshInterval: 15
                   sort: "alphabetical"
                   title: "AUS Times"
@@ -83,8 +106,8 @@
                   enabled: true
                   numberOfStories: 10
                   position:
-                    top: 2
-                    left: 1
+                    top: 1
+                    left: 2
                     height: 1
                     width: 2
                   storyType: top
@@ -95,17 +118,17 @@
                     value: "white"
                   enabled: true
                   position:
-                    top: 3
-                    left: 3
-                    height: 2
+                    top: 4
+                    left: 0
+                    height: 7
                     width: 1
                   refreshInterval: 150
                 power:
                   enabled: true
                   position:
-                    top: 3
-                    left: 2
-                    height: 1
+                    top: 4
+                    left: 3
+                    height: 7
                     width: 1
                   refreshInterval: 15
                   title: "⚡️"
@@ -114,9 +137,9 @@
                   cmd: "uptime"
                   enabled: true
                   position:
-                    top: 4
+                    top: 8
                     left: 1
-                    height: 1
+                    height: 3
                     width: 2
                   refreshInterval: 30
                   type: cmdrunner
