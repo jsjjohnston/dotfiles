@@ -1,11 +1,12 @@
-{config, ...}: {
+{ config, ... }:
+{
   programs.git = {
     enable = true;
-    userName = null;
-    userEmail = null;
-    includes = [
-      {inherit (config.sops.secrets.gitConfigEmail) path;}
-    ];
+    userName = "Jay Johnston";
+    userEmail = "jsjjohnston@gmail.com";
+    # includes = [
+    #   {inherit (config.sops.secrets.gitConfigEmail) path;}
+    # ];
     lfs.enable = true;
     extraConfig = {
       advice = {

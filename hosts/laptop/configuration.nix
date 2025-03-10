@@ -18,6 +18,11 @@
   ];
 
   time.hardwareClockInLocalTime = true;
+  
+  programs.hyprland = {
+  enable = true;
+  withUWSM = true;
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,6 +32,11 @@
     dates = "19:00";
     options = "--delete-older-than 14d";
   };
+nix.settings.trusted-users = [
+        "root"
+        "jay"
+        "@wheel"
+      ];
 
   nix.settings = {
     builders-use-substitutes = true;
@@ -34,7 +44,8 @@
     extra-substituters = [
       "https://anyrun.cachix.org"
     ];
-
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   networking.hostName = "jay-nixos";
@@ -61,27 +72,22 @@
     "flakes"
   ];
 
-  # services.xserver.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    # theme = "sddm-sugar-dark";
-  };
-
   services.printing.enable = true;
 
-  hardware = {
+  services = {
     pulseaudio = {
       enable = false;
       package = pkgs.pulseaudioFull;
     };
 
-    graphics.enable = true;
+  };
+  hardware = {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
-  };
+    graphics.enable = true;
+    };
 
   services.blueman.enable = true;
   services.gnome.gnome-keyring.enable = true;
@@ -92,13 +98,9 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable  =true;
   };
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
 
   users.users.jay = {
     isNormalUser = true;
@@ -116,14 +118,9 @@
       waybar
       libnotify
       swww
-      dolphin
       dunst
       mako
-      # sway
-      cliphist
-      wl-clip-persist
       gnome-keyring
-      # kitty
       sddm-sugar-dark
       google-chrome
       lazygit
@@ -131,6 +128,7 @@
       killall
       nil
       xarchiver
+      clipse
     ];
   };
 

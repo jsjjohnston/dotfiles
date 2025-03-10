@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+home.file = {
+cyberdream ={
+
+source = ./themes/cyberdream;
+target = "./config/ghostty/themes/cyberdream";
+};};
   programs.ghostty = {
     enable = true;
     # NOTE: use pack null to support config from macos but still configure until nixpkgs supports macos

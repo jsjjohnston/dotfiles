@@ -2,9 +2,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
-    ../../modules/nixvim
     ../../modules/window-managers/hyprland.nix
     ../../modules/git
     ../../modules/zoxide
@@ -16,6 +16,9 @@
     ../../modules/browsers/firefox.nix
     ../../modules/status-bars/waybar.nix
     ../../modules/terminals/kitty
+    ../../modules/ghostty
+    ../../modules/nvf
+    ../../modules/tmux
   ];
   home = {
     username = "jay";
@@ -23,16 +26,15 @@
 
     stateVersion = "24.11";
 
-    packages = [inputs.hyprland-qtutils.packages.x86_64-linux.default];
     file = {
     };
 
     sessionVariables = {
       EDITOR = "nvim";
+      NIXOS_OZONE_WL = "1";
     };
   };
   programs = {
-    git.userEmail = "jsjjohnston@gmail.com";
     gh = {
       enable = true;
       gitCredentialHelper = {
@@ -42,22 +44,6 @@
           "https://gist.github.com"
         ];
       };
-    };
-    tmux = {
-      enable = true;
-      mouse = true;
-      prefix = "C-Space";
-      terminal = "screen-256color";
-      # shell = "/etc/profiles/per-user/jay/bin/bash";
-      baseIndex = 1;
-      escapeTime = 0;
-      keyMode = "vi";
-      historyLimit = 50000;
-      aggressiveResize = true;
-      focusEvents = true;
-      plugins = with pkgs; [
-        tmuxPlugins.vim-tmux-navigator
-      ];
     };
 
     home-manager.enable = true;

@@ -26,7 +26,7 @@
   ];
   programs = {
     nvf = {
-      enable = !config.programs.nixvim.enable;
+      enable = true;
       settings = {
         vim = {
           notes = {

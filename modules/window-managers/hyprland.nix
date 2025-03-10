@@ -1,13 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
+    exec-once = clipse - listen
   '';
 in
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    systemd = {
+    enable = false;
+    };
     settings = {
       general = {
         gaps_in = 2;
