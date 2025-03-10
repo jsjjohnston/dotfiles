@@ -10,6 +10,7 @@
     ./typescript.nix
     ./lua.nix
     ./css.nix
+    ./yaml.nix
   ];
   programs = {
     nvf = {

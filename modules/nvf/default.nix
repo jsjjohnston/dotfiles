@@ -15,6 +15,7 @@
     ./settings/fzf.nix
     ./settings/git/fugitive.nix
     ./settings/git/gitsigns.nix
+    ./settings/git/git-conflict.nix
     ./settings/languages
     ./settings/lsp.nix
     ./settings/mini.nix
@@ -81,6 +82,19 @@
             illuminate.enable = true;
             modes-nvim.enable = true;
             smartcolumn.enable = true;
+            noice = {
+              enable = true;
+              # setupOpts = {
+              #   routes = {
+              #     notify = {
+              #       filter = {event = "msg_showmode";};
+              #     };
+              #   };
+              # };
+            };
+          };
+          navigation = {
+            harpoon.enable = true;
           };
           utility = {
             icon-picker.enable = true;
@@ -89,6 +103,12 @@
               precognition.enable = true;
             };
             preview.glow.enable = true;
+            yazi-nvim = {
+              enable = true;
+              mappings = {
+                yaziToggle = "<C-k>";
+              };
+            };
           };
           visuals = {
             fidget-nvim.enable = true;

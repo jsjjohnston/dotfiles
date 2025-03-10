@@ -46,8 +46,7 @@ in {
       unixtools.watch
       ffmpeg
       lazycli
-      # colima
-      wtf
+      wtfutil
       sops
     ];
     variables = {

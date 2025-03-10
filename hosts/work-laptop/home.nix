@@ -6,7 +6,6 @@
     ../../modules/github
     ../../modules/java
     ../../modules/lazygit
-    ../../modules/nixvim
     ../../modules/nvf
     ../../modules/oh-my-posh
     ../../modules/shell/bash

@@ -18,6 +18,10 @@
     aggressiveResize = true;
     focusEvents = true;
     newSession = true;
+                extraConfig = ''
+set-window-option -g visual-bell on
+set-window-option -g bell-action other
+                '';
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
