@@ -1,17 +1,19 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     exec-once = clipse - listen
   '';
-in
-{
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     systemd = {
-    enable = false;
+      enable = false;
     };
     settings = {
       general = {
@@ -57,7 +59,7 @@ in
       };
 
       "$mod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "ghostty";
       "$menu" = "rofi -show run";
       "$fileManager" = "yazi";
       "$browser" = "firefox";

@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.file = {
     "cyberdream.tmuxtheme" = {
       source = ../../modules/tmux/themes/catppuccin_cyberdream.tmuxtheme;
-      target = "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme";
+      target = "${config.home.homeDirectory}/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme";
     };
   };
   programs.tmux = {
@@ -18,15 +22,15 @@
     aggressiveResize = true;
     focusEvents = true;
     newSession = true;
-                extraConfig = ''
-set-window-option -g visual-bell on
-set-window-option -g bell-action other
-                '';
+    extraConfig = ''
+      set-window-option -g visual-bell on
+      set-window-option -g bell-action other
+    '';
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
-          source-file "/Users/jay/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme"
+          source-file "${config.home.homeDirectory}/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme"
           set -g @catppuccin_flavour "cyberdream"
         '';
       }

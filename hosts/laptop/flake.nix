@@ -32,55 +32,50 @@
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
   };
 
-  outputs =
-    {
-      hyprland-qtutils,
-      stylix,
-      nixpkgs,
-      catppuccin,
-      home-manager,
-      nvf,
-      sops-nix,
-      nixos-hardware,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-
-        system = system;
-        modules = [
-          ./configuration.nix
-	  nixos-hardware.nixosModules.framework-12th-gen-intel
-          home-manager.nixosModules.home-manager
-          {
-            users.users.jay.home = "/home/jay";
-            home-manager = {
-              useUserPackages = true;
-              extraSpecialArgs = {
-                inherit inputs;
-              };
-              sharedModules = [
-
-                sops-nix.homeManagerModules.sops
-                nvf.homeManagerModules.default
-                stylix.homeManagerModules.stylix
-                catppuccin.homeManagerModules.catppuccin
-                inputs.anyrun.homeManagerModules.default
-              ];
-              users = {
-                jay = {
-                  imports = [
-                    ./home.nix
-                  ];
-                };
-              };
-              backupFileExtension = "backup";
+  outputs = {
+    hyprland-qtutils,
+    stylix,
+    nixpkgs,
+    catppuccin,
+    home-manager,
+    nvf,
+    sops-nix,
+    nixos-hardware,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      system = system;
+      modules = [
+        ./configuration.nix
+        nixos-hardware.nixosModules.framework-12th-gen-intel
+        home-manager.nixosModules.home-manager
+        {
+          users.users.jay.home = "/home/jay";
+          home-manager = {
+            useUserPackages = true;
+            extraSpecialArgs = {
+              inherit inputs;
             };
-          }
-        ];
-      };
+            sharedModules = [
+              sops-nix.homeManagerModules.sops
+              nvf.homeManagerModules.default
+              stylix.homeManagerModules.stylix
+              catppuccin.homeManagerModules.catppuccin
+              inputs.anyrun.homeManagerModules.default
+            ];
+            users = {
+              jay = {
+                imports = [
+                  ./home.nix
+                ];
+              };
+            };
+            backupFileExtension = "bkp";
+          };
+        }
+      ];
     };
+  };
 }
