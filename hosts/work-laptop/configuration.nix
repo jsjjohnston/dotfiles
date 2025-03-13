@@ -48,6 +48,8 @@ in {
       lazycli
       wtfutil
       sops
+      clipse
+      arc-browser
     ];
     variables = {
       EDITOR = "nvim";
@@ -111,18 +113,31 @@ in {
     package = pkgs.nix;
   };
   system = {
-    activationScripts."ssl-ca-cert-fix" = {
-      enable = true;
-      text = ''
-        if [ ! -f /etc/nix/ca_cert.pem ]; then
-            security export -t certs -f pemseq -k /Library/Keychains/System.keychain -o /tmp/certs-system.pem
-            security export -t certs -f pemseq -k /System/Library/Keychains/SystemRootCertificates.keychain -o /tmp/certs-root.pem
-            cat /tmp/certs-root.pem /tmp/certs-system.pem > /tmp/ca_cert.pem
-            sudo mv /tmp/ca_cert.pem /etc/nix/
-        fi
-      '';
+    activationScripts = {
+      "clipse" = {
+        enable = true;
+        text =
+          /*
+          bash
+          */
+          ''
+            clipse -listen
+          '';
+      };
+      "ssl-ca-cert-fix" = {
+        enable = true;
+        text = ''
+          if [ ! -f /etc/nix/ca_cert.pem ]; then
+              security export -t certs -f pemseq -k /Library/Keychains/System.keychain -o /tmp/certs-system.pem
+              security export -t certs -f pemseq -k /System/Library/Keychains/SystemRootCertificates.keychain -o /tmp/certs-root.pem
+              cat /tmp/certs-root.pem /tmp/certs-system.pem > /tmp/ca_cert.pem
+              sudo mv /tmp/ca_cert.pem /etc/nix/
+          fi
+        '';
+      };
     };
     defaults = {
+      screencapture.target = "preview";
       ActivityMonitor = {
         IconType = 5;
         OpenMainWindow = true;
