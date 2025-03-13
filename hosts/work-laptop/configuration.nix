@@ -50,7 +50,10 @@ in {
       sops
       clipse
       arc-browser
+      yq
+      ncdu
     ];
+
     variables = {
       EDITOR = "nvim";
       VISUAL = "nvim";

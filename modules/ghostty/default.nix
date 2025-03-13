@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-home.file = {
-cyberdream ={
-
-source = ./themes/cyberdream;
-target = "./config/ghostty/themes/cyberdream";
-};};
+  home.file = {
+    cyberdream = {
+      source = ./themes/cyberdream;
+      target = "./config/ghostty/themes/cyberdream";
+    };
+  };
   programs.ghostty = {
     enable = true;
     # NOTE: use pack null to support config from macos but still configure until nixpkgs supports macos
@@ -20,6 +20,10 @@ target = "./config/ghostty/themes/cyberdream";
       background-opacity = 0.2;
       background-blur-radius = 10;
       window-padding-x = 10;
+      auto-update = "off";
+      desktop-notifications = true;
+      shell-integration = "bash";
+      confirm-close-surface = false;
     };
   };
 }
