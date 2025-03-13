@@ -2,7 +2,7 @@
   home.file = {
     cyberdream = {
       source = ./themes/cyberdream;
-      target = "./config/ghostty/themes/cyberdream";
+      target = ".config/ghostty/themes/cyberdream";
     };
   };
   programs.ghostty = {
