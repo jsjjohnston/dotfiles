@@ -14,6 +14,7 @@
     ../../modules/zoxide
     ../../modules/starship
     ../../modules/yazi
+    ../../modules/tmuxinator
   ];
   sops = {
     defaultSopsFile = ../../secrets/secret.yaml;

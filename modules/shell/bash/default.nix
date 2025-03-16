@@ -11,6 +11,7 @@
         PATH=$NEWPATH
         NEWPATH=''${NEWPATH/$NIX_PATHS}
       done
+      bind TAB:menu-complete
     '';
     historySize = 100000;
     historyIgnore = [

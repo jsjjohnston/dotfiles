@@ -1,5 +1,13 @@
-{ config, ... }:
-{
+{config, ...}: {
+  home.file.".local/bin/git-worktree-session" = {
+    source = ./scripts/git-worktree-session.sh;
+    executable = true;
+  };
+
+  home.file.".local/bin/git-clone-bare" = {
+    source = ./scripts/git-clone-bare.sh;
+    executable = true;
+  };
   programs.git = {
     enable = true;
     userName = "Jay Johnston";
@@ -30,6 +38,13 @@
       };
       merge = {
         conflictstyle = "zdiff3";
+      };
+
+      alias = {
+        worktree-session = "!sh -c '${config.home.homeDirectory}/.local/bin/git-worktree-session \"$@\"' --";
+
+        # worktree-session = "!sh -c \"${config.home.homeDirectory}/.local/bin/git-worktree-session\"";
+        clone-bare = "!sh -c \"${config.home.homeDirectory}/.local/bin/git-clone-bare\"";
       };
       rebase = {
         autoSquash = true;

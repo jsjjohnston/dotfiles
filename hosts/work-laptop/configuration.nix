@@ -40,7 +40,6 @@ in {
       gdk
       nixd
       nil
-      bash
       slack
       youtube-music
       unixtools.watch
@@ -52,13 +51,13 @@ in {
       arc-browser
       yq
       ncdu
+      tmuxinator
     ];
 
     variables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    pathsToLink = ["/share/bash-completion"];
 
     shellAliases = {
       build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
@@ -117,16 +116,6 @@ in {
   };
   system = {
     activationScripts = {
-      "clipse" = {
-        enable = true;
-        text =
-          /*
-          bash
-          */
-          ''
-            clipse -listen
-          '';
-      };
       "ssl-ca-cert-fix" = {
         enable = true;
         text = ''
@@ -319,9 +308,18 @@ in {
   };
 
   time.timeZone = "Australia/Melbourne";
+  programs = {
+    bash = {
+      enable = true;
+      completion = {
+        enable = true;
+      };
+    };
+    direnv = {
+      enable = true;
+    };
 
-  programs.direnv = {
-    enable = true;
+    zsh.enable = false;
   };
   services = {
     openssh.enable = false;
@@ -371,9 +369,7 @@ in {
         cmd + shift - s : open /System/Applications/Utilities/Screenshot.app
       '';
     };
-  };
-
-  programs.zsh.enable = false; # default shell on catalina
+  }; # default shell on catalina
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 }

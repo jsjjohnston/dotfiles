@@ -22,9 +22,13 @@
     aggressiveResize = true;
     focusEvents = true;
     newSession = true;
+    tmuxinator.enable = true;
     extraConfig = ''
       set-window-option -g visual-bell on
       set-window-option -g bell-action other
+      bind c new-window -c "#{pane_current_path}"
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
     '';
     plugins = with pkgs; [
       {
@@ -33,6 +37,9 @@
           source-file "${config.home.homeDirectory}/.tmux/plugins/tmux/themes/catppuccin_cyberdream.tmuxtheme"
           set -g @catppuccin_flavour "cyberdream"
         '';
+      }
+      {
+        plugin = tmuxPlugins.tmux-fzf;
       }
     ];
   };

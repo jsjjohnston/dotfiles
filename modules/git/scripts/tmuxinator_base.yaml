@@ -1,0 +1,11 @@
+name: __NAME__
+root: __ROOT__
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - cd __ROOT__ && nvim
+  - git:
+      layout: even-horizontal
+      panes:
+        - cd __ROOT__ && lazygit
