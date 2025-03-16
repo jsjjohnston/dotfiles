@@ -52,6 +52,7 @@ in {
       yq
       ncdu
       tmuxinator
+      inotify-tools
     ];
 
     variables = {

@@ -45,6 +45,7 @@ startup_window: audit
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
+enable_pane_titles: true
 
 windows:
   - audit:
