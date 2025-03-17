@@ -1,0 +1,11 @@
+name: fix-DATA-3357
+root: /Users/jay/projects/montu/montu-group-services.git/fix/DATA-3357
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+        - cd /Users/jay/projects/montu/montu-group-services.git/fix/DATA-3357 && nvim
+  - git:
+      layout: even-horizontal
+      panes:
+        - cd /Users/jay/projects/montu/montu-group-services.git/fix/DATA-3357 && lazygit

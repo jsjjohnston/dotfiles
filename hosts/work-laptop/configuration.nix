@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }: let
   gdk = pkgs.google-cloud-sdk.withExtraComponents (
@@ -52,7 +51,8 @@ in {
       yq
       ncdu
       tmuxinator
-      inotify-tools
+      pv
+      parallel-full
     ];
 
     variables = {
