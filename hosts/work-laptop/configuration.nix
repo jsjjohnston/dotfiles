@@ -48,7 +48,7 @@ in {
       sops
       clipse
       arc-browser
-      yq
+      yq-go
       ncdu
       tmuxinator
       pv
