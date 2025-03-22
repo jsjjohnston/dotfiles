@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {url = "github:hyprwm/Hyprland";};
 
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -25,15 +25,52 @@
     };
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     stylix.url = "github:danth/stylix";
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs = {
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
 
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
     nvf.url = "github:notashelf/nvf";
     sops-nix.url = "github:Mic92/sops-nix";
 
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
-    hyprland-qtutils,
     stylix,
     nixpkgs,
     catppuccin,
@@ -46,7 +83,7 @@
     system = "x86_64-linux";
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      system = system;
+      inherit system;
       modules = [
         ./configuration.nix
         nixos-hardware.nixosModules.framework-12th-gen-intel
@@ -63,7 +100,6 @@
               nvf.homeManagerModules.default
               stylix.homeManagerModules.stylix
               catppuccin.homeManagerModules.catppuccin
-              inputs.anyrun.homeManagerModules.default
             ];
             users = {
               jay = {

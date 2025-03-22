@@ -1,11 +1,7 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/window-managers/hyprland
   ];
 
   fonts.packages = with pkgs; [
@@ -18,34 +14,39 @@
   ];
 
   time.hardwareClockInLocalTime = true;
-  
-  programs.hyprland = {
-  enable = true;
-  withUWSM = true;
-  };
+
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = true;
+  # };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  nix.gc = {
-    automatic = true;
-    dates = "19:00";
-    options = "--delete-older-than 14d";
-  };
-nix.settings.trusted-users = [
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "19:00";
+      options = "--delete-older-than 14d";
+    };
+    settings = {
+      trusted-users = [
         "root"
         "jay"
         "@wheel"
       ];
 
-  nix.settings = {
-    builders-use-substitutes = true;
-    # extra substituters to add
-    extra-substituters = [
-      "https://anyrun.cachix.org"
-    ];
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      builders-use-substitutes = true;
+      extra-substituters = [
+        "https://anyrun.cachix.org"
+      ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
   };
 
   networking.hostName = "jay-nixos";
@@ -66,41 +67,33 @@ nix.settings.trusted-users = [
     LC_TELEPHONE = "en_AU.UTF-8";
     LC_TIME = "en_AU.UTF-8";
   };
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  services.printing.enable = true;
-
-  services = {
-    pulseaudio = {
-      enable = false;
-      package = pkgs.pulseaudioFull;
-    };
-
-  };
   hardware = {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
     graphics.enable = true;
+  };
+  services = {
+    printing.enable = true;
+
+    pulseaudio = {
+      enable = false;
+      package = pkgs.pulseaudioFull;
     };
 
-  services.blueman.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable  =true;
+    blueman.enable = true;
+    gnome.gnome-keyring.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
   };
 
+  security.rtkit.enable = true;
 
   users.users.jay = {
     isNormalUser = true;
