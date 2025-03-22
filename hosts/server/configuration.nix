@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../../services/ollama
+    ../../services/home-assistant
   ];
   boot = {
     loader = {
@@ -16,9 +15,7 @@
   };
   networking = {
     networkmanager.enable = true;
-
-    firewall.allowedTCPPorts = [22];
-
+    firewall.allowedTCPPorts = [22 8123];
     hostName = "jay-server";
   };
 
@@ -41,16 +38,8 @@
     openssh = {
       enable = true;
     };
-    printing.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
   };
 
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   users.users.jay = {

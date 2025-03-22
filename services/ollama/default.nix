@@ -1,9 +1,9 @@
-{...}: {
+{
   services.ollama = {
     enable = true;
     acceleration = "cuda";
     openFirewall = true;
-    loadModels = ["llama3.1"];
+    loadModels = ["gemma3"];
     host = "0.0.0.0";
   };
 }
