@@ -11,6 +11,7 @@
     ./lua.nix
     ./css.nix
     ./yaml.nix
+    ./python.nix
   ];
   programs = {
     nvf = {
