@@ -1,4 +1,4 @@
-{...}: {
+{
   programs = {
     nvf = {
       settings = {
@@ -7,6 +7,12 @@
             blink-cmp = {
               enable = true;
               setupOpts.signature.enabled = true;
+              friendly-snippets.enable = true;
+              sourcePlugins = {
+                emoji.enable = true;
+                ripgrep.enable = true;
+                spell.enable = true;
+              };
             };
           };
         };

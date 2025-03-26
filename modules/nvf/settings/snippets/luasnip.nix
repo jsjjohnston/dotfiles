@@ -1,6 +1,6 @@
 {...}: {
   programs.nvf.settings.vim.snippets.luasnip = {
-    enable = true;
+    enable = false;
     setupOpts.enable_autosnippets = true;
   };
 }

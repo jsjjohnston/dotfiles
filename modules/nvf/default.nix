@@ -54,7 +54,6 @@
           withNodeJs = true;
           bell = "on";
           comments.comment-nvim.enable = true;
-          startPlugins = ["base16"];
 
           viAlias = true;
           vimAlias = true;
