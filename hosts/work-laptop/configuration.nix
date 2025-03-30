@@ -53,6 +53,7 @@ in {
       tmuxinator
       pv
       parallel-full
+      drawio
     ];
 
     variables = {

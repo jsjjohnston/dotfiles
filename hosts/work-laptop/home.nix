@@ -200,6 +200,7 @@
       };
     };
   };
+  programs.sioyek.enable = true;
 
   home = {
     username = "jay";
