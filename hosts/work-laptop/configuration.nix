@@ -306,6 +306,9 @@ in {
       {
         name = "docker";
       }
+      {
+        name = "zen-browser";
+      }
     ];
   };
 
