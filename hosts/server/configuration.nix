@@ -3,6 +3,8 @@
     ./hardware-configuration.nix
     ../../services/ollama
     ../../services/home-assistant
+    ../../services/postgresql
+    ../../services/atuin
   ];
   boot = {
     loader = {
@@ -15,7 +17,7 @@
   };
   networking = {
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [22 8123];
+    firewall.allowedTCPPorts = [22 8123 8888];
     hostName = "jay-server";
   };
 
@@ -40,6 +42,8 @@
     };
   };
 
+  services.transmission.enable = true;
+
   security.rtkit.enable = true;
 
   users.users.jay = {
@@ -52,6 +56,9 @@
 
   environment.systemPackages = with pkgs; [
     git
+    bash-preexec
+    bat
+    jq
   ];
 
   system.stateVersion = "24.11";

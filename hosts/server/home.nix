@@ -30,5 +30,17 @@
     stateVersion = "24.11";
   };
 
-  programs.home-manager.enable = true;
+  programs = {
+    atuin = {
+      enable = true;
+      enableBashIntegration = true;
+      settings = {
+        auto_sync = true;
+        sync_frequency = "15s";
+        sync_address = "http://127.0.0.1:8888";
+        search_mode = "prefix";
+      };
+    };
+    home-manager.enable = true;
+  };
 }
