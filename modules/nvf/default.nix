@@ -4,9 +4,9 @@
     ./settings/autocomplete/cmp.nix
     ./settings/binds/whichKey.nix
     ./settings/dashboard/dashboard.nix
-    # ./settings/filetree/neo-tree.nix
+    ./settings/filetree/neo-tree.nix
     # ./settings/filetree/nvimTree.nix
-    ./settings/filetree/oil
+    # ./settings/filetree/oil
     ./settings/fzf.nix
     ./settings/git/fugitive.nix
     ./settings/git/git-conflict.nix

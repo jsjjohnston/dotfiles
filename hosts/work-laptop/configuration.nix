@@ -298,6 +298,12 @@ in {
     };
     casks = [
       {
+        name = "1password";
+      }
+      {
+        name = "1password-cli";
+      }
+      {
         name = "lookaway";
         greedy = true;
       }
@@ -307,9 +313,9 @@ in {
       {
         name = "docker";
       }
-      {
-        name = "zen-browser";
-      }
+      # {
+      #   name = "zen-browser";
+      # }
     ];
   };
 

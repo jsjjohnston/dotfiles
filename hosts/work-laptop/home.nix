@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../../modules/fzf
     ../../modules/ghostty
@@ -200,14 +204,23 @@
       };
     };
   };
-  programs.sioyek.enable = true;
-  programs.atuin.enable = true;
-  programs.atuin.enableBashIntegration = true;
-  programs.atuin.settings = {
-    auto_sync = true;
-    sync_frequency = "30s";
-    sync_address = "http://192.168.1.129:8888";
-    search_mode = "prefix";
+  programs = {
+    sioyek.enable = true;
+    atuin = {
+      enable = true;
+      enableBashIntegration = true;
+      settings = {
+        auto_sync = true;
+        sync_frequency = "30s";
+        sync_address = "http://192.168.1.129:8888";
+        search_mode = "prefix";
+      };
+    };
+    _1password-shell-plugins = {
+      plugins = with pkgs; [gh awscli2 cachix cdk];
+    };
+
+    home-manager.enable = true;
   };
 
   home = {
@@ -222,6 +235,4 @@
     # Please read the comment before changing.
     stateVersion = "24.11";
   };
-
-  programs.home-manager.enable = true;
 }

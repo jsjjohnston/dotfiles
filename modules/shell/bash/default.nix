@@ -12,6 +12,7 @@
         NEWPATH=''${NEWPATH/$NIX_PATHS}
       done
       bind TAB:menu-complete
+      source /Users/jay/.config/op/plugins.sh
     '';
     historySize = 100000;
     historyIgnore = [

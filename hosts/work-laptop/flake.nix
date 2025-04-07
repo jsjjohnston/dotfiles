@@ -17,6 +17,7 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     nvf.url = "github:notashelf/nvf";
     sops-nix.url = "github:Mic92/sops-nix";
+    one-password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs = inputs @ {
@@ -28,6 +29,7 @@
     nvf,
     self,
     sops-nix,
+    one-password-shell-plugins,
   }: let
     gitHash = _: {
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -74,6 +76,7 @@
                 imports = [
                   mac-app-util.homeManagerModules.default
                   ./home.nix
+                  one-password-shell-plugins.hmModules.default
                 ];
               };
             };
