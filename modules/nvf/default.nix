@@ -1,24 +1,21 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./settings/autocomplete/blink-cmp.nix
     ./settings/autocomplete/cmp.nix
     ./settings/binds/whichKey.nix
     ./settings/dashboard/dashboard.nix
-    ./settings/filetree/neo-tree.nix
-    ./settings/filetree/nvimTree.nix
-    ./settings/notes/neorg
-    ./settings/snippets/luasnip.nix
+    # ./settings/filetree/neo-tree.nix
+    # ./settings/filetree/nvimTree.nix
+    ./settings/filetree/oil
     ./settings/fzf.nix
     ./settings/git/fugitive.nix
-    ./settings/git/gitsigns.nix
     ./settings/git/git-conflict.nix
+    ./settings/git/gitsigns.nix
     ./settings/languages
     ./settings/lsp.nix
     ./settings/mini.nix
+    ./settings/notes/neorg
+    ./settings/snippets/luasnip.nix
     ./settings/statusline/lualine.nix
     ./settings/telescope.nix
     ./settings/terminal/toggleterm.nix

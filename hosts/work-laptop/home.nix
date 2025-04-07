@@ -201,6 +201,14 @@
     };
   };
   programs.sioyek.enable = true;
+  programs.atuin.enable = true;
+  programs.atuin.enableBashIntegration = true;
+  programs.atuin.settings = {
+    auto_sync = true;
+    sync_frequency = "30s";
+    sync_address = "http://192.168.1.129:8888";
+    search_mode = "prefix";
+  };
 
   home = {
     username = "jay";

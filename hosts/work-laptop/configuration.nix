@@ -54,6 +54,7 @@ in {
       pv
       parallel-full
       drawio
+      bash-preexec
     ];
 
     variables = {
