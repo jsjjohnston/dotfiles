@@ -99,12 +99,6 @@
               precognition.enable = true;
             };
             preview.glow.enable = true;
-            yazi-nvim = {
-              enable = true;
-              mappings = {
-                yaziToggle = "<C-k>";
-              };
-            };
           };
           visuals = {
             fidget-nvim.enable = true;
