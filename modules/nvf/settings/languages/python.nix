@@ -1,3 +1,19 @@
 {
-  programs.nvf.settings.vim.languages.python.enable = true;
+  programs = {
+    nvf = {
+      settings = {
+        vim = {
+          languages = {
+            python = {
+              enable = true;
+              format.enable = true;
+
+              lsp.enable = true;
+              treesitter.enable = true;
+            };
+          };
+        };
+      };
+    };
+  };
 }

@@ -12,7 +12,6 @@
                 emoji.enable = true;
                 ripgrep.enable = true;
                 spell.enable = true;
-                "cmp-nvim-lsp".enable = true;
               };
             };
           };

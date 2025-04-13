@@ -35,7 +35,6 @@ in {
       delta
       eslint_d
       typescript
-      python39
       gdk
       nixd
       nil
