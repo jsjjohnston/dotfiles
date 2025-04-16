@@ -14,7 +14,11 @@
         useOSProber = true;
       };
     };
+    initrd.services = {
+      lvm.enable = true;
+    };
   };
+
   networking = {
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [22 8123 8888];
