@@ -7,6 +7,6 @@
     otter-nvim.enable = true;
     null-ls.enable = true;
     nvim-docs-view.enable = true;
-    lspsaga.enable = false;
+    trouble.enable = true;
   };
 }
