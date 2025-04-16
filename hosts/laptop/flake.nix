@@ -15,10 +15,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,7 +59,6 @@
               nvf.homeManagerModules.default
               stylix.homeManagerModules.stylix
               catppuccin.homeManagerModules.catppuccin
-              inputs.anyrun.homeManagerModules.default
             ];
             users = {
               jay = {
