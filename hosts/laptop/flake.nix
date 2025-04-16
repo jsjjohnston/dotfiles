@@ -26,6 +26,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     nixos-hardware.url = "github:Nixos/nixos-hardware/master";
+    one-password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs = {
@@ -37,6 +38,7 @@
     nvf,
     sops-nix,
     nixos-hardware,
+    one-password-shell-plugins,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -64,6 +66,7 @@
               jay = {
                 imports = [
                   ./home.nix
+                  one-password-shell-plugins.hmModules.default
                 ];
               };
             };
