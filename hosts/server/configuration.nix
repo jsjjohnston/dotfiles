@@ -49,7 +49,6 @@
   services.transmission.enable = true;
 
   security.rtkit.enable = true;
-
   users.users.jay = {
     isNormalUser = true;
     description = "Jay Johnston";
@@ -63,6 +62,7 @@
     bash-preexec
     bat
     jq
+    gh
   ];
 
   system.stateVersion = "24.11";

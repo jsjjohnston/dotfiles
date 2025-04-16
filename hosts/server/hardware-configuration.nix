@@ -19,10 +19,10 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/data" = {
-    device = "/dev/mapper/pool-data";
-    fsType = "ext4";
-  };
+  # fileSystems."/mnt/data" = {
+  #   device = "/dev/mapper/pool-data";
+  #   fsType = "ext4";
+  # };
 
   swapDevices = [];
 
