@@ -24,6 +24,7 @@
       desktop-notifications = true;
       shell-integration = "bash";
       confirm-close-surface = false;
+      copy-on-select = true;
     };
   };
 }
