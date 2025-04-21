@@ -63,6 +63,8 @@
     bat
     jq
     gh
+    git-credential-manager
+    w3m
   ];
 
   system.stateVersion = "24.11";

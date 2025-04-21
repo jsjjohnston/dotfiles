@@ -76,7 +76,7 @@
       tag.sort = "taggerdate";
       log.date = "iso";
       merge.tool = "nvim";
-      remote.origin.fetch = "+refs/heads/*:refs/remotes/origin/*";
+      # remote.origin.fetch = "+refs/heads/*:refs/remotes/origin/*";
     };
   };
 }

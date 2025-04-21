@@ -14,7 +14,10 @@
     ../../modules/yazi
     ../../modules/tmuxinator
   ];
-
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = "w3m";
+  };
   home = {
     username = "jay";
     homeDirectory = "/home/jay";
