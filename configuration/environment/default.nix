@@ -10,57 +10,60 @@
   );
 in {
   environment = {
-    systemPackages = with pkgs;
-      [
-        bash-preexec
-        bat
-        clipse
-        delta
-        drawio
-        eslint_d
-        ffmpeg
-        git-credential-manager
-        gnome-keyring
-        google-chrome
-        jq
-        killall
-        lazycli
-        lazygit
-        libnotify
-        mako
-        ncdu
-        nil
-        nixd
-        parallel-full
-        pv
-        ripgrep
-        slack
-        sops
-        terraform
-        terraform-ls
-        tmuxinator
-        typescript
-        typescript-language-server
-        unixtools.watch
-        waybar
-        wtfutil
-        xarchiver
-        youtube-music
-        yq-go
-      ]
-      ++ lib.optionals pkgs.stdenv.isDarwin [
-        arc-browser
-        aws-vault
-        awscli2
-        gdk
-      ]
-      ++ lib.optionals (config.programs.hyprland.enable or false) [
-        swww
-        waybar
-        hyprpaper
-        dunst
-        sddm-sugar-dark
-      ];
+    systemPackages =
+      with pkgs;
+        [
+          bash-preexec
+          bat
+          clipse
+          delta
+          drawio
+          eslint_d
+          ffmpeg
+          git-credential-manager
+          # gnome-keyring  TODO: handle Nix darwin
+          google-chrome
+          jq
+          killall
+          lazycli
+          lazygit
+          libnotify
+          # mako  TODO: handle Nix darwin
+          ncdu
+          nil
+          nixd
+          parallel-full
+          pv
+          ripgrep
+          slack
+          sops
+          terraform
+          terraform-ls
+          tmuxinator
+          typescript
+          typescript-language-server
+          unixtools.watch
+          wtfutil
+          xarchiver
+          youtube-music
+          yq-go
+        ]
+        ++ lib.optionals pkgs.stdenv.isDarwin [
+          arc-browser
+          aws-vault
+          awscli2
+          gdk
+        ]
+        ++ lib.optionals (config.programs.hyprland.enable or false) [
+          swww
+          waybar
+          hyprpaper
+          dunst
+          sddm-sugar-dark
+        ]
+      # ++ lib.optionals pkgs.stdenv.isLinux [
+      # ]
+      ;
 
     variables = {
       EDITOR = "nvim";
@@ -75,7 +78,7 @@ in {
         gh-deploy = "gh workflow run --ref=`git branch --show-current`";
       }
       // (pkgs.lib.optionalAttrs pkgs.stdenv.isDarwin {
-        build = "darwin-rebuild switch --flake ~/dotfiles/hosts/work-laptop/#work-laptop";
+        build = "darwin-rebuild switch --flake ~/dotfiles/#work-laptop";
       });
 
     shells = [pkgs.bashInteractive];

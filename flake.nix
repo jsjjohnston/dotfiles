@@ -82,7 +82,7 @@
               ];
               users.jay.imports = [
                 inputs.mac-app-util.homeManagerModules.default
-                .hosts/work-laptop/home.nix
+                ./hosts/work-laptop/home.nix
                 inputs.one-password-shell-plugins.hmModules.default
               ];
             };

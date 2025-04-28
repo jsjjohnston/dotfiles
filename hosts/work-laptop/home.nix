@@ -1,33 +1,26 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   imports = [
+    ../../modules/1password-shell-plugins
+    ../../modules/atuin
     ../../modules/fzf
     ../../modules/ghostty
     ../../modules/git
     ../../modules/github
+    ../../modules/home-manager
     ../../modules/java
     ../../modules/lazygit
     ../../modules/nvf
     ../../modules/oh-my-posh
     ../../modules/shell/bash
     ../../modules/shell/zsh
-    ../../modules/tmux
-    ../../modules/zoxide
-    ../../modules/starship
-    ../../modules/yazi
-    ../../modules/tmuxinator
     ../../modules/sioyek
     ../../modules/sops
-    ../../modules/atuin
-    ../../modules/1password-shell-plugins
+    ../../modules/starship
+    ../../modules/tmux
+    ../../modules/tmuxinator
+    ../../modules/yazi
+    ../../modules/zoxide
   ];
-
-  programs = {
-    home-manager.enable = true;
-  };
 
   home = {
     username = "jay";

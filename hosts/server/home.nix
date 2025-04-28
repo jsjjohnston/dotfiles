@@ -13,10 +13,15 @@
     ../../modules/tmuxinator
     ../../modules/yazi
     ../../modules/zoxide
+    ../../modules/home-manager
   ];
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = "w3m";
+  xdg = {
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "w3m";
+      };
+    };
   };
   home = {
     username = "jay";
@@ -35,6 +40,5 @@
         search_mode = "prefix";
       };
     };
-    home-manager.enable = true;
   };
 }

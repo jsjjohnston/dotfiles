@@ -7,9 +7,10 @@
     inputs.sops-nix.darwinModules.sops
     ../../configuration/environment
     ../../configuration/garbage-collector
-    ../../configuration/optimise
     ../../configuration/experimental-features
     ../../configuration/fonts
+    ../../services/darwin/yabi
+    ../../services/darwin/skhd
   ];
 
   sops = {
@@ -32,6 +33,8 @@
   };
 
   time.timeZone = "Australia/Melbourne";
+  system.activationScripts.checkLaunchDaemons = "";
+  services.nix-daemon.tempDir = "/nix/tmp";
   programs = {
     bash = {
       enable = true;
@@ -47,4 +50,5 @@
   };
 
   nixpkgs.hostPlatform = "aarch64-darwin";
+  system.stateVersion = 6;
 }
