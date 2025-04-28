@@ -12,6 +12,16 @@
     initrd.kernelModules = ["dm-snapshot"];
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/sda";
+        useOSProber = true;
+      };
+    };
+    initrd.services = {
+      lvm.enable = true;
+    };
   };
 
   fileSystems."/" = {
