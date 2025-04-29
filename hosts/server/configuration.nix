@@ -1,21 +1,31 @@
 {
   imports = [
-    ./hardware-configuration.nix
-    ../../services/ollama
-    ../../services/home-assistant
-    ../../services/postgresql
-    ../../services/atuin
     ../../configuration/environment
-    ../../configuration/garbage-collector
     ../../configuration/experimental-features
     ../../configuration/fonts
-    ../../services/transmission
+    ../../configuration/garbage-collector
+    ../../services/atuin
+    ../../services/home-assistant
+    ../../services/nix-serve-ng
+    ../../services/ollama
     ../../services/openssh
+    ../../services/postgresql
+    ../../services/transmission
+    ./hardware-configuration.nix
   ];
   networking = {
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [8123 8888];
     hostName = "jay-server";
+  };
+
+  nix = {
+    settings = {
+      secret-key-files = ["/etc/nix/key.secret"];
+      trusted-public-keys = [
+        "my-cache:ZQiZIzpEmLe22JKUhV8sj02d5mq7HK5UVZXVWDlvhgc="
+      ];
+    };
   };
 
   time.timeZone = "Australia/Melbourne";
