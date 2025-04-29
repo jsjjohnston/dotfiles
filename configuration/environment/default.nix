@@ -24,6 +24,8 @@ in {
           # gnome-keyring  TODO: handle Nix darwin
           google-chrome
           jq
+          btop
+          ncdu
           killall
           lazycli
           lazygit
