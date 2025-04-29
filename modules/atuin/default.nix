@@ -6,7 +6,7 @@
       settings = {
         auto_sync = true;
         sync_frequency = "15s";
-        sync_address = "http://192.168.1.106:8888";
+        sync_address = "http://jay-server.local:8888";
         search_mode = "prefix";
       };
     };

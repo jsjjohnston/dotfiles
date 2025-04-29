@@ -6,6 +6,7 @@
     ../../configuration/optimise
     ../../configuration/experimental-features
     ../../configuration/fonts
+    ../../configuration/substituters
   ];
 
   time.hardwareClockInLocalTime = true;

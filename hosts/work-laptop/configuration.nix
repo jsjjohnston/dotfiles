@@ -8,6 +8,7 @@
     ../../configuration/environment
     ../../configuration/garbage-collector
     ../../configuration/experimental-features
+    ../../configuration/substituters
     ../../configuration/fonts
     ../../services/darwin/yabi
     ../../services/darwin/skhd
@@ -17,9 +18,16 @@
     defaultSopsFile = ../../secrets/secret.yaml;
     age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
   };
-
   nix = {
     settings = {
+      trusted-public-keys = [
+        "my-cache:ZQiZIzpEmLe22JKUhV8sj02d5mq7HK5UVZXVWDlvhgc="
+      ];
+      substituters = [
+        "http://jay-server.local:5000"
+        "https://cache.nixos.org/"
+      ];
+
       trusted-users = [
         "root"
         "jay"
