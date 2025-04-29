@@ -5,6 +5,7 @@
     ../../configuration/fonts
     ../../configuration/garbage-collector
     ../../services/atuin
+    ../../services/avahi
     ../../services/home-assistant
     ../../services/ncps
     ../../services/ollama
