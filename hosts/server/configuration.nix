@@ -4,6 +4,7 @@
     ../../configuration/experimental-features
     ../../configuration/fonts
     ../../configuration/garbage-collector
+    ../../configuration/substituters
     ../../services/atuin
     ../../services/avahi
     ../../services/home-assistant

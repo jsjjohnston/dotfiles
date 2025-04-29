@@ -6,6 +6,7 @@
       ];
       substituters = [
         "http://jay-server.local:5000"
+        "http://localhost:5000"
         "https://cache.nixos.org/"
       ];
     };
