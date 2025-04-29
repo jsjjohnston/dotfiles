@@ -6,7 +6,7 @@
     ../../configuration/garbage-collector
     ../../services/atuin
     ../../services/home-assistant
-    ../../services/nix-serve-ng
+    ../../services/ncps
     ../../services/ollama
     ../../services/openssh
     ../../services/postgresql
@@ -15,17 +15,8 @@
   ];
   networking = {
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [8123 8888];
+    firewall.allowedTCPPorts = [8123 8888 5000];
     hostName = "jay-server";
-  };
-
-  nix = {
-    settings = {
-      secret-key-files = ["/etc/nix/key.secret"];
-      trusted-public-keys = [
-        "my-cache:ZQiZIzpEmLe22JKUhV8sj02d5mq7HK5UVZXVWDlvhgc="
-      ];
-    };
   };
 
   time.timeZone = "Australia/Melbourne";
