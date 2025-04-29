@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../configuration/environment
-    ../../configuration/garbage-collector
     ../../configuration/optimise
     ../../configuration/experimental-features
     ../../configuration/fonts

@@ -52,6 +52,11 @@
       )
       (
         if system == "aarch64-darwin" || system == "x86_64-darwin"
+        then ./configuration/garbage-collector/darwin.nix
+        else ./configuration/garbage-collector/linux.nix
+      )
+      (
+        if system == "aarch64-darwin" || system == "x86_64-darwin"
         then ./configuration/nixpkgs/darwin.nix
         else ./configuration/nixpkgs/linux.nix
       )

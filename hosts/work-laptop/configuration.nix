@@ -6,7 +6,6 @@
   imports = [
     inputs.sops-nix.darwinModules.sops
     ../../configuration/environment
-    ../../configuration/garbage-collector
     ../../configuration/experimental-features
     ../../configuration/substituters
     ../../configuration/fonts
