@@ -9,6 +9,7 @@
     ../../services/home-assistant
     ../../services/ncps
     ../../services/ollama
+    ../../services/adguardhome
     ../../services/openssh
     ../../services/postgresql
     ../../services/transmission
@@ -16,7 +17,8 @@
   ];
   networking = {
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [8123 8888 5000];
+    firewall.allowedTCPPorts = [8123 8888 5000 53];
+    firewall.allowedUDPPorts = [53];
     hostName = "jay-server";
   };
 

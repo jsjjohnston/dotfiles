@@ -15,6 +15,7 @@ in {
         [
           bash-preexec
           bat
+          dig
           clipse
           delta
           drawio
