@@ -1,23 +1,15 @@
 {
   programs.nvf.settings.vim.keymaps = [
     {
-      key = "\\";
+      key = "\\\\";
       mode = "n";
-      silent = true;
-      action =
-        /*
-        lua
-        */
-        ''
-          -- function()
-              -- if vim.bo.filetype == 'oil' then
-                -- require("oil.actions").close.callback()
-              -- else
-                vim.cmd('Oil')
-              -- end
-          -- end
-        '';
+      silent = false;
+      action = "<cmd>lua toggle_oil()<CR>";
+      desc = "Toggle Oil file explorer";
     }
+  ];
+  programs.nvf.settings.vim.extraLuaFiles = [
+    ./toggle-oil.lua
   ];
   programs.nvf.settings.vim.utility.oil-nvim = {
     enable = true;
