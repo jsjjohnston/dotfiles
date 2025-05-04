@@ -9,6 +9,9 @@
           "*.aldarow.dev" = {
             service = "http://localhost:8000";
           };
+          "ssh.aldarow.dev" = {
+            service = "ssh://localhost:22";
+          };
         };
       };
     };
