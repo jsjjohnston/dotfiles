@@ -21,7 +21,7 @@
             enableDAP = true;
             enableExtraDiagnostics = true;
             enableFormat = true;
-            enableLSP = true;
+            enable = true;
             enableTreesitter = true;
           };
         };

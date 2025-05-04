@@ -15,7 +15,7 @@
     enableBashIntegration = true;
     settings = {
       theme = "cyberdream";
-      font-size = 18;
+      font-size = 16;
       font-family = "FiraCode Nerd Font Mono";
       background-opacity = 0.2;
       background-blur-radius = 10;

@@ -8,5 +8,6 @@
     null-ls.enable = true;
     nvim-docs-view.enable = true;
     trouble.enable = true;
+    inlayHints.enable = true;
   };
 }
