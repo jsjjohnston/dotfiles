@@ -6,18 +6,21 @@
     ../../configuration/substituters
     ../../services/atuin
     ../../services/avahi
+    ../../services/caddy
     ../../services/home-assistant
     ../../services/ncps
     ../../services/ollama
     ../../services/adguardhome
     ../../services/openssh
+    ../../services/cloudflared
     ../../services/postgresql
     ../../services/transmission
     ./hardware-configuration.nix
   ];
   networking = {
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [8123 8888 5000 53];
+    firewall.enable = false;
+    firewall.allowedTCPPorts = [8000 8123 8888 5000 53 2019];
     firewall.allowedUDPPorts = [53];
     hostName = "jay-server";
   };

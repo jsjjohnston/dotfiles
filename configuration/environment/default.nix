@@ -17,12 +17,12 @@ in {
           bat
           dig
           clipse
+          cloudflared
           delta
           drawio
           eslint_d
           ffmpeg
           git-credential-manager
-          # gnome-keyring  TODO: handle Nix darwin
           google-chrome
           jq
           btop
@@ -31,7 +31,6 @@ in {
           lazycli
           lazygit
           libnotify
-          # mako  TODO: handle Nix darwin
           ncdu
           nil
           nixd
