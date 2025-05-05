@@ -1,6 +1,6 @@
 {
   services.adguardhome = {
-    enable = true;
+    enable = false;
     openFirewall = true;
     mutableSettings = true;
   };

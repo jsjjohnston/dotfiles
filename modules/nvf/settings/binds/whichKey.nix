@@ -9,7 +9,7 @@
         registers = true;
         spelling = {
           enabled = true;
-          suggestions = 10; # Slightly smaller list, faster to navigate
+          suggestions = 10;
         };
         presets = {
           operators = true;
@@ -21,7 +21,7 @@
           g = true;
         };
       };
-      preset = "helix"; # "classic", "modern", or "helix"
+      preset = "helix";
       replace = {
         key = [
           ["<Space>" "␣"]
@@ -35,7 +35,7 @@
         ];
       };
       win = {
-        border = "single"; # "rounded" is default; "single" feels snappier and more minimal
+        border = "single";
         title = true;
         title_pos = "center";
         padding = [0 1];
@@ -61,9 +61,9 @@
         scroll_up = "<C-u>";
       };
 
-      show_help = false; # Less noise in command area
+      show_help = false;
       show_keys = false;
-      debug = true;
+      debug = false;
     };
   };
 }
