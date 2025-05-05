@@ -42,6 +42,8 @@ in {
           statix
           vale
           shellcheck
+          sqlfluff
+          tree-sitter
           terraform
           terraform-ls
           tmuxinator

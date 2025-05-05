@@ -6,7 +6,7 @@
     linters_by_ft = {
       javascript = ["eslint_d" "biomejs" "cspell" "codespell"];
       typescript = ["eslint_d" "cspell" "codespell"];
-      markdown = ["vale" "cspell" "codespell" "woke" "typos"];
+      markdown = ["vale" "cspell" "codespell" "typos"];
       python = ["bandit" "vulture" "ruff" "cspell" "codespell"];
       nix = ["deadnix" "statix" "cspell" "codespell"];
       bash = ["shellcheck" "cspell" "codespell"];
@@ -17,7 +17,7 @@
       terraform = ["tflint" "tfsec" "cspell" "codespell"];
       hcl = ["tflint" "cspell" "codespell"];
       gitcommit = ["commitlint" "cspell" "codespell"];
-      text = ["woke" "typos"];
+      text = ["typos"];
       sql = ["sqlfluff"];
     };
 
@@ -47,28 +47,15 @@
         stdin = true;
         stream = "stdout";
       };
+
       cspell = {
         cmd = "cspell";
-        args = ["lint" "--no-color" "--stdin" "--language-id" "en"];
+        args = ["lint" "--no-color" "--stdin" "--language-id" "en-AU"];
         stdin = true;
         stream = "stdout";
         required_files = ["cspell.json"];
       };
 
-      # sqlfluff = {
-      #   cmd = "sqlfluff";
-      #   args = ["lint" "-" "--format" "json"];
-      #   stdin = true;
-      #   stream = "stdout";
-      #   required_files = [".sqlfluff"];
-      # };
-
-      woke = {
-        cmd = "woke";
-        args = ["--stdin" "--no-color"];
-        stdin = true;
-        stream = "stdout";
-      };
       typos = {
         cmd = "typos";
         args = ["-"];

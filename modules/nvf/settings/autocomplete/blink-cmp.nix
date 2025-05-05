@@ -6,12 +6,35 @@
           autocomplete = {
             blink-cmp = {
               enable = true;
-              setupOpts.signature.enabled = true;
-              friendly-snippets.enable = true;
+              setupOpts = {
+                signature = {
+                  enabled = true;
+                };
+                completion = {
+                  documentation = {
+                    auto_show = true;
+                    auto_show_delay_ms = 500;
+                  };
+                  ghost_text = {
+                    show_with_menu = false;
+                    enabled = true;
+                  };
+                  menu.auto_show = false;
+                };
+              };
+              friendly-snippets = {
+                enable = true;
+              };
               sourcePlugins = {
-                emoji.enable = true;
-                ripgrep.enable = true;
-                spell.enable = true;
+                spell = {
+                  enable = true;
+                };
+                emoji = {
+                  enable = true;
+                };
+                ripgrep = {
+                  enable = true;
+                };
               };
             };
           };

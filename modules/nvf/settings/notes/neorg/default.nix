@@ -1,11 +1,11 @@
-{...}: {
+{
   programs = {
     nvf = {
       settings = {
         vim = {
           notes = {
             neorg = {
-              enable = true;
+              enable = false;
               setupOpts.load."core.defaults".enable = true;
             };
           };

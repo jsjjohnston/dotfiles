@@ -1,25 +1,50 @@
 {
-  programs.nvf.settings.vim.keymaps = [
-    {
-      key = "\\\\";
-      mode = "n";
-      silent = false;
-      action = "<cmd>lua toggle_oil()<CR>";
-      desc = "Toggle Oil file explorer";
-    }
-  ];
-  programs.nvf.settings.vim.extraLuaFiles = [
-    ./toggle-oil.lua
-  ];
-  programs.nvf.settings.vim.utility.oil-nvim = {
-    enable = true;
-    setupOpts = {
-      columns = [
-        "icon"
-        "permissions"
-        "atime"
-        "size"
-      ];
+  programs = {
+    nvf = {
+      settings = {
+        vim = {
+          keymaps = [
+            {
+              key = "\\\\";
+              mode = "n";
+              silent = false;
+              action = "<cmd>lua toggle_oil()<CR>";
+              desc = "Toggle Oil file explorer";
+            }
+          ];
+          extraLuaFiles = [
+            ./toggle-oil.lua
+          ];
+          utility.oil-nvim = {
+            enable = true;
+            setupOpts = {
+              setupOpts = {
+                columns = [
+                  "icon"
+                  "permissions"
+                  "atime"
+                  "size"
+                ];
+
+                view_options = {
+                  show_hidden = true; # Show dotfiles
+                  natural_order = true; # Human-friendly sort order
+                };
+
+                float = {
+                  padding = 2;
+                  max_width = 80;
+                  max_height = 20;
+                  border = "rounded";
+                  win_options = {
+                    winblend = 10;
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
     };
   };
 }

@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.nvf.settings.vim.languages.ts = {
     enable = true;
     extraDiagnostics.enable = true;
