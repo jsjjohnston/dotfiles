@@ -20,6 +20,7 @@
     ../../modules/tmuxinator
     ../../modules/yazi
     ../../modules/zoxide
+    ../../modules/linters/ruff.nix
   ];
 
   home = {

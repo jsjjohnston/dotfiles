@@ -24,6 +24,7 @@
     ./settings/terminal/toggleterm.nix
     ./settings/theme.nix
     ./settings/treesitter.nix
+    ./settings/diagnostics
   ];
   programs = {
     nvf = {

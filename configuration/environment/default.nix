@@ -39,6 +39,9 @@ in {
           ripgrep
           slack
           sops
+          statix
+          vale
+          shellcheck
           terraform
           terraform-ls
           tmuxinator

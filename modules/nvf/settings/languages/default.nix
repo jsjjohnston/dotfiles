@@ -17,11 +17,11 @@
     nvf = {
       settings = {
         vim = {
+          lsp.enable = true;
           languages = {
             enableDAP = true;
             enableExtraDiagnostics = true;
             enableFormat = true;
-            enable = true;
             enableTreesitter = true;
           };
         };
