@@ -4,6 +4,7 @@
     ../../configuration/experimental-features
     ../../configuration/fonts
     ../../configuration/substituters
+    ../../configuration/settings
     ../../services/atuin
     ../../services/avahi
     ../../services/caddy
@@ -19,9 +20,11 @@
   ];
   networking = {
     networkmanager.enable = true;
-    firewall.enable = false;
-    firewall.allowedTCPPorts = [8000 8123 8888 5000 53 2019];
-    firewall.allowedUDPPorts = [53];
+    firewall = {
+      enable = false;
+      allowedTCPPorts = [8000 8123 8888 5000 53 2019 22];
+      allowedUDPPorts = [53];
+    };
     hostName = "jay-server";
   };
 

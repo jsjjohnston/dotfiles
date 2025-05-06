@@ -2,16 +2,12 @@
   services.cloudflared = {
     enable = true;
     tunnels = {
-      "90a761ed-96cb-4b8d-9be6-da68784001aa" = {
-        credentialsFile = "/home/jay/.cloudflared/90a761ed-96cb-4b8d-9be6-da68784001aa.json";
+      "7dafa20a-474c-44d7-a830-1f3feab323c0" = {
+        credentialsFile = "/home/jay/.cloudflared/7dafa20a-474c-44d7-a830-1f3feab323c0.json";
+        certificateFile = "/home/jay/.cloudflared/cert.pem";
         default = "http_status:404";
         ingress = {
-          "*.aldarow.dev" = {
-            service = "http://localhost:8000";
-          };
-          "ssh.aldarow.dev" = {
-            service = "ssh://localhost:22";
-          };
+          "ssh.aldarow.dev" = "ssh://localhost:22";
         };
       };
     };
