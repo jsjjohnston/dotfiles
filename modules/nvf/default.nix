@@ -25,6 +25,7 @@
     ./settings/theme.nix
     ./settings/treesitter.nix
     ./settings/notifications/notify
+    ./settings/breadcrumbs
   ];
   programs = {
     nvf = {

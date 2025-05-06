@@ -408,3 +408,70 @@ LspDetach(15)
   Trigger(del) Mode(c:15) <C-R>
 new Mode(n:35)
 Trigger(add) Mode(n:35) " ` ' g` g' z= <Space> g ] [ <C-W> z \
+on_key: <Space>
+State(start): Mode(n:0) Node(<Space>) { keys = "<Space>" }
+  update Mode(n:2)
+  continue: <Space> Mode(n:2)
+  getchar
+  on_key: f
+  got: f
+  continue: <Space>f Mode(n:2)
+  getchar
+  on_key: f
+  got: f
+  suspend: Mode(n:2)
+  Trigger(del) Mode(n:2) g` [ z <Space> g \ g' ' " ] ` z= <C-W>
+  feedkeys: Mode(n:2) <Space>ff
+on_key: <Space>ff
+BufNew(45)
+BufNew(46)
+BufNew(47)
+BufNew(48)
+BufNew(49)
+BufNew(50)
+BufEnter(49)
+  new Mode(n:49)
+ModeChanged(n:i)
+  new Mode(i:49)
+  Safe(true)
+Trigger(add) Mode(i:49) <C-R>
+Trigger(add) Mode(n:2) ' ` " g` g' z= <C-W> ] [ g <Space> z \
+Trigger(add) Mode(n:49) ' " ` z= g` g' <C-W> ] [ z <Space> g \
+BufNew(51)
+on_key: w
+BufNew(52)
+on_key: h
+on_key: i
+BufNew(53)
+on_key: <CR>
+BufEnter(2)
+LspAttach(27)
+LspAttach(27)
+BufReadPost(27)
+BufEnter(27)
+  new Mode(i:27)
+ModeChanged(i:n)
+  new Mode(n:27)
+  Safe(true)
+Trigger(add) Mode(n:27) ' ` " g` g' z= <C-W> ] [ g <Space> z \
+Trigger(add) Mode(i:27) <C-R>
+on_key: <C-D>
+on_key: <C-D>
+on_key: <C-D>
+on_key: <C-D>
+on_key: <Esc>
+LspDetach(2)
+  Trigger(del) Mode(n:2) g` [ z <Space> g \ g' ' " ] ` z= <C-W>
+  Trigger(del) Mode(x:2) <C-W> g ] z " [ <Space>
+  Trigger(del) Mode(i:2) <C-R>
+  Trigger(del) Mode(o:2) g ] [
+  Trigger(del) Mode(c:2) <C-R>
+LspDetach(17)
+  Trigger(del) Mode(n:17) \ z <Space> ' ` " g` g' z= <C-W> ] [ g
+  Trigger(del) Mode(c:17) <C-R>
+  Trigger(del) Mode(o:17) g ] [
+  Trigger(del) Mode(i:17) <C-R>
+LspDetach(27)
+  Trigger(del) Mode(n:27) ' ` " g` g' z= <C-W> ] [ g <Space> z \
+  Trigger(del) Mode(i:27) <C-R>
+new Mode(n:27)
