@@ -1,14 +1,20 @@
 {
   services.home-assistant = {
-    enable = true;
+    enable = false;
+    configWritable = false;
+    extraComponents = ["aws"];
     config = {
       homeassistant = {
-        home = "home";
-        lattitude = -63.35;
-        longitude = 103.48;
         unit_system = "metric";
-        time_zone = "UTC";
+        time_zone = "Australia/Melbourne";
+        temperature_unit = "C";
+        name = "Alda row";
       };
+      http.server_host = [
+        "0.0.0.0"
+        "::"
+      ];
+      http.server_port = 8123;
     };
   };
 }

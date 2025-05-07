@@ -3,20 +3,21 @@
     ../../configuration/environment
     ../../configuration/experimental-features
     ../../configuration/fonts
-    ../../configuration/substituters
     ../../configuration/settings
+    ../../configuration/substituters
+    ../../services/adguardhome
     ../../services/atuin
     ../../services/avahi
     ../../services/caddy
+    ../../services/cloudflared
     ../../services/home-assistant
     ../../services/ncps
     ../../services/ollama
-    ../../services/adguardhome
     ../../services/openssh
-    ../../services/cloudflared
     ../../services/postgresql
     ../../services/transmission
     ./hardware-configuration.nix
+    ../../virtualisation/home-assistant
   ];
   networking = {
     networkmanager.enable = true;
