@@ -10,7 +10,7 @@
         "https://cache.nixos.org/"
       ]
       else [
-        "https://ncps.aldarow.org"
+        "https//ncps.aldarow.dev"
         "https://cache.nixos.org/"
       ];
   };
