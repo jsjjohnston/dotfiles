@@ -4,6 +4,8 @@
     host = "0.0.0.0";
     openFirewall = true;
     openRegistration = true;
-    database = {createLocally = true;};
+    database = {
+      createLocally = true;
+    };
   };
 }

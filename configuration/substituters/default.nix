@@ -10,7 +10,7 @@
         "https://cache.nixos.org/"
       ]
       else [
-        "http://jay-server.local:5000"
+        "https://ncps.aldarow.org"
         "https://cache.nixos.org/"
       ];
   };
