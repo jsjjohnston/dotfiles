@@ -27,8 +27,8 @@
                 ];
 
                 view_options = {
-                  show_hidden = true; # Show dotfiles
-                  natural_order = true; # Human-friendly sort order
+                  show_hidden = true;
+                  natural_order = true;
                 };
 
                 float = {

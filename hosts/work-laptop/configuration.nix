@@ -7,53 +7,28 @@
     inputs.sops-nix.darwinModules.sops
     ../../configuration/environment
     ../../configuration/experimental-features
-    ../../configuration/substituters
     ../../configuration/fonts
-    ../../services/darwin/yabi
+    ../../configuration/linux-builder
+    ../../configuration/sops
+    ../../configuration/substituters
+    ../../configuration/timeZone
+    ../../configuration/trusted-public-keys
+    ../../configuration/trusted-users
+    ../../configuration/programs
     ../../services/darwin/skhd
+    ../../services/darwin/yabi
+    ../../services/nix-daemon
   ];
 
-  sops = {
-    defaultSopsFile = ../../secrets/secret.yaml;
-    age.keyFile = "/Users/jay/.config/sops/age/keys.txt";
-  };
   nix = {
     settings = {
-      trusted-public-keys = [
-        "my-cache:ZQiZIzpEmLe22JKUhV8sj02d5mq7HK5UVZXVWDlvhgc="
-      ];
-      substituters = [
-        "http://jay-server.local:5000"
-        "https://cache.nixos.org/"
-      ];
-
       trusted-users = [
         "root"
         "jay"
         "@wheel"
       ];
     };
-    linux-builder.enable = true;
-    linux-builder.systems = ["aarch64-linux"];
-
-    package = pkgs.nix;
-  };
-
-  time.timeZone = "Australia/Melbourne";
-  system.activationScripts.checkLaunchDaemons = "";
-  services.nix-daemon.tempDir = "/nix/tmp";
-  programs = {
-    bash = {
-      enable = true;
-      completion = {
-        enable = true;
-      };
-    };
-    direnv = {
-      enable = true;
-    };
-
-    zsh.enable = true;
+    package = pkgs.nix; # TODO: Do I need this?
   };
 
   nixpkgs.hostPlatform = "aarch64-darwin";

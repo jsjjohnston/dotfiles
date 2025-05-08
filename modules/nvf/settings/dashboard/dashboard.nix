@@ -7,7 +7,6 @@
         week_header = {
           enable = true;
         };
-
         shortcut = [
           {
             icon = "󰈞 ";

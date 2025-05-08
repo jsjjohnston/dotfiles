@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
   nix.optimise = {
     automatic = true;
     interval = {

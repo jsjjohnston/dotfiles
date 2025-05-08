@@ -8,7 +8,7 @@
     config = {
       virtual_text = {
         spacing = 2;
-        prefix = "●"; # Alternatives: "■", "→", "◆"
+        prefix = "●";
         format = lib.generators.mkLuaInline ''
           function(diagnostic)
             return string.format("%s (%s)", diagnostic.message, diagnostic.source or "")
@@ -36,10 +36,4 @@
       };
     };
   };
-  # programs.nvf.settings.vim.diagnostics = {
-  #   enable = true;
-  #   config = {
-  #     virtual_text = true;
-  #   };
-  # };
 }
