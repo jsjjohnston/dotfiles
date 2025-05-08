@@ -8,6 +8,9 @@
         default = "http_status:404";
         ingress = {
           "ssh.aldarow.dev" = "ssh://localhost:22";
+          "home.aldarow.dev" = "ssh://localhost:8123";
+          "atuin.aldarow.dev" = "http://localhost:8888";
+          "ncps.aldarow.dev" = "http://localhost:5000";
         };
       };
     };

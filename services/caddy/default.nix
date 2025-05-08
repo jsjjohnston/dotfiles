@@ -1,6 +1,6 @@
 {
   services.caddy = {
-    enable = true;
+    enable = false;
     email = "jsjjohnston@gmail.com";
     extraConfig = ''
        adhome.alda-row.home {
