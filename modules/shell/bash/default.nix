@@ -19,11 +19,17 @@
       "exit"
     ];
     shellOptions = [
+      "autocd"
       "cdspell"
+      "checkwinsize"
       "complete_fullquote"
       "dirspell"
       "dotglob"
+      "globstar"
+      "histappend"
       "hostcomplete"
+      "interactive_comments"
+      "promptvars"
     ];
   };
 }
