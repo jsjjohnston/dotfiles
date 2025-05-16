@@ -21,6 +21,9 @@
         name = "ghostty";
       }
       {
+        name = "qutebrowser";
+      }
+      {
         name = "docker";
       }
     ];

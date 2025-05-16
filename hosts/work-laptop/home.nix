@@ -21,7 +21,8 @@
     ../../modules/yazi
     ../../modules/zoxide
     ../../modules/linters/ruff.nix
-    ../../modules/browser/qutebrowser.nix
+    # ../../modules/browsers/qutebrowser.nix
+    # ../../modules/browsers/qutebrwoseroverlay.nix
   ];
 
   home = {
