@@ -18,6 +18,7 @@
     ../../services/darwin/skhd
     ../../services/darwin/yabi
     ../../services/nix-daemon
+    ../../services/restic
   ];
 
   nix = {
