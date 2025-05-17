@@ -23,6 +23,7 @@
     ../../modules/linters/ruff.nix
     ../../modules/browsers/qutebrowser.nix
     # ../../modules/browsers/qutebrwoseroverlay.nix
+    ../../services/restic
   ];
 
   home = {
