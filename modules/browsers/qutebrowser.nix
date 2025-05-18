@@ -7,16 +7,16 @@
       settings.greasemonkey = {};
       keyMappings = {};
       loadAutoconfig = false;
-      extraConfig =
-        /*
-        python
-        */
-        ''
-          import os from urllib.request
-          import urlopen
-
-          config.load_autoconfig()
-        '';
+      # extraConfig =
+      #   /*
+      #   python
+      #   */
+      #   ''
+      #     import os from urllib.request
+      #     import urlopen
+      #
+      #     config.load_autoconfig()
+      #   '';
       keyBindings = {
         caret = {
           "$" = "move-to-end-of-line";
@@ -410,16 +410,16 @@
           };
           contextmenu = {
             disabled = {
-              bg = "empty";
-              fg = "empty";
+              # bg = "empty";
+              # fg = "empty";
             };
             menu = {
-              bg = "empty";
-              fg = "empty";
+              # bg = "empty";
+              # fg = "empty";
             };
             selected = {
-              bg = "empty";
-              fg = "empty";
+              # bg = "empty";
+              # fg = "empty";
             };
           };
           downloads = {
@@ -445,7 +445,7 @@
           };
           hints = {
             bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))";
-            fg = "balck";
+            fg = "black";
             match = {
               fg = "green";
             };
@@ -587,8 +587,8 @@
             };
           };
           tooltip = {
-            bg = "empty";
-            fg = "empty";
+            # bg = "empty";
+            # fg = "empty";
           };
 
           webpage = {
@@ -601,13 +601,12 @@
                 images = "smart";
                 page = "smart";
               };
-            };
-            threshold = {
-              background = 0;
-              foreground = 256;
+              threshold = {
+                background = 0;
+                foreground = 256;
+              };
             };
             preferred_color_scheme = "dark";
-            cmd_history_max_items = 100;
           };
         };
         completion = {
