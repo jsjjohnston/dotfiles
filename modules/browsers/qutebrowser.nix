@@ -7,16 +7,6 @@
       settings.greasemonkey = {};
       keyMappings = {};
       loadAutoconfig = false;
-      # extraConfig =
-      #   /*
-      #   python
-      #   */
-      #   ''
-      #     import os from urllib.request
-      #     import urlopen
-      #
-      #     config.load_autoconfig()
-      #   '';
       keyBindings = {
         caret = {
           "$" = "move-to-end-of-line";
@@ -347,14 +337,8 @@
         "<Shift-Return>" = "<Return>";
       };
       quickmarks = {
-        home-manager = "https://nix-community.github.io/home-manager/options.xhtml";
-        nixconfig = "https://nixos.org/manual/nixos/stable/options.html";
         youtube = "https://www.youtube.com/";
-        moviesmod = "https://moviesmod.email/";
         reddit = "https://www.reddit.com/";
-        letstype = "https://monkeytype.com/";
-        letstype2 = "https://www.keybr.com/";
-        whatsapp = "https://web.whatsapp.com/";
       };
       searchEngines = {
         chatgpt = "https://chat.openai.com/?q={}";
@@ -920,8 +904,26 @@
               "[contenteditable]:not([contenteditable=\"false\"])"
               "textarea"
             ];
+            links = [
+              "a[href]"
+              "area[href]"
+              "link[href]"
+
+              "[role=\"link\"][href]"
+            ];
+            media = [
+              "audio"
+              "img"
+              "video"
+            ];
+            url = [
+              "[src]"
+              "[href]"
+            ];
+            uppercase = false;
           };
         };
+        history_gap_interval = 30;
         tabs = {
           background = true;
           favicons.scale = 1.0;
