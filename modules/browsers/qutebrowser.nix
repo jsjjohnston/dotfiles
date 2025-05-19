@@ -526,15 +526,17 @@
               fg = "white";
               hover = {
                 fg = "aqua";
-                success = {
-                  http = {
-                    fg = "white";
-                  };
-                  https = "lime";
+              };
+              success = {
+                http = {
+                  fg = "white";
                 };
-                warn = {
-                  fg = "yellow";
+                https = {
+                  fg = "lime";
                 };
+              };
+              warn = {
+                fg = "yellow";
               };
             };
           };
@@ -636,7 +638,7 @@
             max_items = -1;
           };
         };
-        confirm_quit = "downloads";
+        confirm_quit = ["downloads"];
         content = {
           autoplay = false;
           blocking = {
@@ -664,24 +666,267 @@
                 "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt "
                 "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt "
               ];
-              enabled = true;
-              hosts = {
-                block_subdomains = true;
-                list = [
-                  "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-                ];
-              };
             };
-            downloads.position = "bottom";
+            hosts = {
+              block_subdomains = true;
+              lists = [
+                "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+              ];
+            };
+          };
+          cache = {
+            appcache = true;
+            maximum_pages = 0;
+            size = null;
+          };
+          canvas_reading = true;
+          cookies = {
+            accept = "all";
+            store = true;
+          };
+          default_encoding = "iso-8859-1";
+          desktop_capture = true;
+          dns_prefetch = true;
+          frame_flattening = false;
+          fullscreen = {
+            overlay_timeout = 3000;
+            window = false;
+          };
+          geolocation = true;
+          headers = {
+            accept_language = "en-US";
+            custom = null;
+            do_not_track = true;
+            referer = "same-domain";
+            user_agent = "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version_short} Safari/{webkit_version}";
+          };
+          hyperlink_auditing = false;
+          images = true;
+          javascript = {
+            alert = true;
+            can_close_tabs = false;
+            can_open_tabs_automatically = false;
+            clipboard = "ask";
             enabled = true;
-            method = "both";
-            tabs = {
-              background = true;
-              favicons.scale = 1.0;
+            legacy_touch_events = "never";
+            modal_dialog = false;
+            prompt = true;
+          };
+          local_content_can_access_file_urls = true;
+          local_content_can_access_remote_urls = false;
+          local_storage = true;
+          media = {
+            audio_capture = "ask";
+            audio_video_capture = "ask";
+            video_capture = "ask";
+          };
+          mouse_lock = "ask";
+          mute = false;
+          netrc_file = null;
+          notifications = {
+            enabled = "ask";
+            presenter = "auto";
+            show_origin = true;
+          };
+          pdfjs = false;
+          persistent_storage = "ask";
+          plugins = false;
+          prefers_reduced_motion = false;
+          print_element_backgrounds = true;
+          private_browsing = false;
+          proxy = "system";
+          register_protocol_handler = "ask";
+          site_specific_quirks = {
+            enabled = true;
+            skip = null;
+          };
+          tls = {certificate_errors = "ask";};
+          unknown_url_scheme_policy = "allow-from-user-interaction";
+          user_stylesheets = null;
+          webgl = true;
+          webrtc_ip_handling_policy = "all-interfaces";
+          xss_auditing = false;
+        };
+        downloads = {
+          location = {
+            directory = null;
+            prompt = true;
+            remember = true;
+            suggestion = "path";
+          };
+          open_dispatcher = null;
+          position = "bottom";
+          prevent_mixed_content = true;
+          remove_finished = -1;
+        };
+        editor = {
+          command = [
+            "nvim"
+            "-f"
+            "{file}"
+            "-c"
+            "normal {line}G{column0}l"
+          ];
+          encoding = "utf-8";
+          remove_file = true;
+        };
+        fileselect = {
+          folder = {
+            command = [
+              "xterm"
+              "-e"
+              "ranger"
+              "--choosedir={}"
+            ];
+            handler = "default";
+            multiple_files = {
+              command = [
+                "xterm"
+                "-e"
+                "ranger"
+                "--choosefiles={}"
+              ];
             };
-            window.transparent = true;
+            single_file = {
+              command = [
+                "xterm"
+                "-e"
+                "ranger"
+                "--choosefiles={}"
+              ];
+            };
           };
         };
+        fonts = {
+          completion = {
+            category = "bold default_size default_family";
+            entry = " default_size default_family";
+          };
+          contextmenu = null;
+          debug_console = "default_size default_family";
+          default_family = null;
+          default_size = "10pt";
+          downloads = "default_size default_family";
+          hints = "bold default_size default_family";
+          keyhint = "default_size default_family";
+          messages = {
+            error = "default_size default_family";
+            info = "default_size default_family";
+            warning = "default_size default_family";
+          };
+          prompts = "default_size sans-serif";
+          statusbar = "default_size default_family";
+          tabs = {
+            selected = "default_size default_family";
+            unselected = "default_size default_family";
+          };
+          tooltip = null;
+          web = {
+            family = {
+              cursive = null;
+              fantasy = null;
+              fixed = null;
+              sans_serif = null;
+              serif = null;
+              standard = null;
+            };
+            size = {
+              default = 16;
+              default_fixed = 13;
+              minimum = 0;
+              minimum_logical = 6;
+            };
+          };
+        };
+        hints = {
+          auto_follow = "unique-match";
+          auto_follow_timeout = 0;
+          border = "1px solid #E3BE23";
+          chars = "asdfghjkl";
+          dictionary = "/usr/share/dict/words";
+          find_implementation = "python";
+          hide_unmatched_rapid_hints = true;
+          leave_on_load = false;
+          min_chars = 1;
+          mode = "letter";
+          next_regexes = [
+            "\bnext\b"
+            "\bmore\b"
+            "\bnewer\b"
+            "\b[>→≫]\b"
+            "\b(>>|»)\b"
+            "\bcontinue\b"
+          ];
+          # padding = [];
+          prev_regexes = [
+            "\bprev(ious)?\b"
+            "\bback\b"
+            "\bolder\b"
+            "\b[<←≪]\b"
+            "\b(<<|«)\b"
+          ];
+          radius = 3;
+          scatter = true;
+          selectors = {
+            all = [
+              "a"
+              "area"
+              "textarea"
+              "select"
+              "input:not([type=\"hidden\"])"
+              "button"
+              "frame"
+              "iframe"
+              "img"
+              "link"
+              "summary"
+              "[contenteditable]:not([contenteditable=\"false\"])"
+              "[onclick]"
+              "[onmousedown]"
+              "[role=\"link\"]"
+              "[role=\"option\"]"
+              "[role=\"button\"]"
+              "[role=\"tab\"]"
+              "[role=\"checkbox\"]"
+              "[role=\"switch\"]"
+              "[role=\"menuitem\"]"
+              "[role=\"menuitemcheckbox\"]"
+              "[role=\"menuitemradio\"]"
+              "[role=\"treeitem\"]"
+              "[aria-haspopup]"
+              "[ng-click]"
+              "[ngClick]"
+              "[data-ng-click]"
+              "[x-ng-click]"
+              "[tabindex]:not([tabindex=\"/-1\"])"
+            ];
+            images = [
+              "img"
+            ];
+            inputs = [
+              "input[type=\"text\"]"
+              "input[type=\"date\"]"
+              "input[type=\"datetime-local\"]"
+              "input[type=\"email\"]"
+              "input[type=\"month\"]"
+              "input[type=\"number\"]"
+              "input[type=\"password\"]"
+              "input[type=\"search\"]"
+              "input[type=\"tel\"]"
+              "input[type=\"time\"]"
+              "input[type=\"url\"]"
+              "input[type=\"week\"]"
+              "input:not([type])"
+              "[contenteditable]:not([contenteditable=\"false\"])"
+              "textarea"
+            ];
+          };
+        };
+        tabs = {
+          background = true;
+          favicons.scale = 1.0;
+        };
+        window.transparent = true;
       };
     };
   };
