@@ -1,6 +1,6 @@
 {
   services.yabai = {
-    enable = true;
+    enable = false;
     extraConfig = "
       yabai -m rule --add app='System Settings' space=3
       ";

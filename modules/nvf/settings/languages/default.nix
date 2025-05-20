@@ -17,7 +17,17 @@
     nvf = {
       settings = {
         vim = {
-          lsp.enable = true;
+          lsp = {
+            enable = true;
+            servers = {
+              marksman = {
+                enable = true;
+                capabilities = {
+                  core.title_from_heading = false;
+                };
+              };
+            };
+          };
           languages = {
             enableDAP = true;
             enableExtraDiagnostics = true;
