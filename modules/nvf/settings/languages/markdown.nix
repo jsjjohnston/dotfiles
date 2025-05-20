@@ -1,13 +1,13 @@
 {
   programs.nvf.settings.vim.languages.markdown = {
     enable = true;
-    format.enable = true;
+    format = {
+      enable = true;
+      type = "prettierd";
+    };
+    extraDiagnostics.enable = true;
     extensions = {
-      render-markdown-nvim = {
-        setupOpts.latex = {enabled = false;};
-        setupOpts.html = {enabled = false;};
-        enable = true;
-      };
+      markview-nvim.enable = true;
     };
     lsp.enable = true;
     treesitter.enable = true;
