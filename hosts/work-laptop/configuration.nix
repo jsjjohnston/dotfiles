@@ -15,9 +15,6 @@
     ../../configuration/trusted-public-keys
     ../../configuration/trusted-users
     ../../configuration/programs
-    ../../services/darwin/skhd
-    ../../services/darwin/yabi
-    ../../services/aerospace
     ../../services/nix-daemon
   ];
 
