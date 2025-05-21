@@ -23,30 +23,30 @@
             lightbulb.enable = true;
             lightbulb.autocmd.enable = true;
             lspconfig.enable = true;
-            lspkind.enable = true;
+            # lspkind.enable = true;
             lspsaga.enable = false;
-            nvim-docs-view.enable = true;
+            # nvim-docs-view.enable = true;
             trouble.enable = true;
             servers = {
-              ts_ls = {
-                enable = true;
-                autostart = true;
-
-                cmd = [
-                  "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server"
-                  "--stdio"
-                ];
-
-                filetypes = [
-                  "javascript"
-                  "javascriptreact"
-                  "javascript.jsx"
-                  "typescript"
-                  "typescriptreact"
-                  "typescript.tsx"
-                ];
-                root_markers = ["package.json" "tsconfig.json" ".git"];
-              };
+              # ts_ls = {
+              #   enable = true;
+              #   autostart = true;
+              #
+              #   cmd = [
+              #     "${pkgs.nodePackages.typescript-language-server}/bin/typescript-language-server"
+              #     "--stdio"
+              #   ];
+              #
+              #   filetypes = [
+              #     "javascript"
+              #     "javascriptreact"
+              #     "javascript.jsx"
+              #     "typescript"
+              #     "typescriptreact"
+              #     "typescript.tsx"
+              #   ];
+              #   root_markers = ["package.json" "tsconfig.json" ".git"];
+              # };
               vtsls = {
                 enable = false;
                 cmd = ["${pkgs.vtsls}/bin/vtsls" "--stdio"];
