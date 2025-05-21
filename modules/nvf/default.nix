@@ -31,6 +31,14 @@
       enable = true;
       settings = {
         vim = {
+          lazy = {
+            enable = true;
+            plugins = {
+              none-ls-nvim = {
+                enable = true;
+              };
+            };
+          };
           enableLuaLoader = true;
           luaConfigRC.yanking =
             pkgs.lib.mkAfter
