@@ -36,6 +36,7 @@ in {
         sops
         statix
         vale
+        vtsls
         shellcheck
         sqlfluff
         tree-sitter

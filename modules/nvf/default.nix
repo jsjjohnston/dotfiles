@@ -14,7 +14,6 @@
     ./settings/git/git-conflict.nix
     ./settings/git/gitsigns.nix
     ./settings/languages
-    ./settings/lsp.nix
     ./settings/mini.nix
     ./settings/notes/neorg
     ./settings/notes/todo
