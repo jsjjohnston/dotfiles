@@ -1,7 +1,7 @@
 {
   programs.nvf.settings.vim.git.gitsigns = {
     enable = true;
-    codeActions.enable = true;
+    codeActions.enable = false;
     mappings = {
       blameLine = "<leader>hb";
       diffProject = "<leader>hD";

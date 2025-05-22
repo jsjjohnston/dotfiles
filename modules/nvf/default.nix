@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  cfg,
+  ...
+}: {
   imports = [
     ./settings/autocomplete/blink-cmp.nix
     ./settings/autocomplete/cmp.nix
@@ -34,8 +38,21 @@
           lazy = {
             enable = true;
             plugins = {
-              none-ls-nvim = {
-                enable = true;
+              toggleterm-nvim = {
+                package = "toggleterm-nvim";
+                setupModule = "toggleterm";
+
+                after = "require('toggleterm').do_something()";
+                cmd = ["ToggleTerm"];
+              };
+
+              ${pkgs.vimPlugins.none-ls-nvim.pname} = {
+                package = pkgs.vimPlugins.none-ls-nvim;
+                setupOpts = {
+                  sources = [
+                    "${pkgs.vimPlugins.none-ls-nvim.builtins.formatting.stylua}"
+                  ];
+                };
               };
             };
           };

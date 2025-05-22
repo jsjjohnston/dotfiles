@@ -1,6 +1,6 @@
 {
   programs.nvf.settings.vim.languages.ts = {
-    enable = false;
+    enable = true;
     extraDiagnostics.enable = true;
     lsp.server = "ts_ls";
     format = {

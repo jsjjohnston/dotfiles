@@ -18,13 +18,13 @@
           bind TAB:menu-complete
           source /Users/jay/.config/op/plugins.sh
 
-        sudo() {
-          if command sudo -l | grep -q "timestamp_timeout=0"; then
-            command sudo visudo
-          else
-            command sudo "$@"
-          fi
-        }
+        # sudo() {
+        #   if command sudo -l | grep -q "timestamp_timeout=0"; then
+        #     command sudo visudo
+        #   else
+        #     command sudo "$@"
+        #   fi
+        # }
 
       '';
     historySize = 100000;
