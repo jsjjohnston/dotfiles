@@ -17,13 +17,13 @@
     ../../services/postgresql
     ../../services/transmission
     ./hardware-configuration.nix
-    ../../virtualisation/home-assistant
+    # ../../virtualisation/home-assistant
   ];
   networking = {
     networkmanager.enable = true;
     firewall = {
       enable = false;
-      allowedTCPPorts = [8000 8123 8888 5000 53 2019 22];
+      allowedTCPPorts = [8000 8123 8888 5000 53 2019 22 9091];
       allowedUDPPorts = [53];
     };
     hostName = "jay-server";

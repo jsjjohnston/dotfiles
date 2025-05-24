@@ -1,7 +1,7 @@
 {
   services.home-assistant = {
     enable = false;
-    configWritable = false;
+    configWritable = true;
     extraComponents = ["aws"];
     config = {
       homeassistant = {
