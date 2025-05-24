@@ -15,6 +15,7 @@
     ../../configuration/trusted-public-keys
     ../../configuration/trusted-users
     ../../configuration/programs
+    ../../configuration/darwin
     ../../services/nix-daemon
   ];
 
@@ -30,6 +31,8 @@
   };
 
   nixpkgs.hostPlatform = "aarch64-darwin";
-  system.stateVersion = 6;
-  system.primaryUser = "jay";
+  system = {
+    stateVersion = 6;
+    primaryUser = "jay";
+  };
 }

@@ -53,6 +53,9 @@
     description = "Jay Johnston";
     extraGroups = ["networkmanager" "wheel"];
   };
-
-  system.stateVersion = "24.11";
+  system = {
+    autoUpgrade.enable = true;
+    autoUpgrade.allowReboot = true;
+    stateVersion = "24.11";
+  };
 }

@@ -924,6 +924,74 @@
           };
         };
         history_gap_interval = 30;
+        input = {
+          escape_quits_reporter = true;
+          forward_unbound_keys = "auto";
+          insert_mode = {
+            auto_enter = true;
+            auto_leave = true;
+            auto_load = true;
+            leave_on_load = true;
+            plugins = false;
+          };
+          links_included_in_focus_chain = true;
+          match_counts = true;
+          media_keys = true;
+          mode_override = null;
+          mouse = {
+            back_forward_buttons = true;
+            rocker_gestures = false;
+          };
+          partial_timeout = 0;
+          spatial_navigation = false;
+        };
+        keyhint = {
+          blacklist = null;
+          delay = 500;
+          radius = 6;
+        };
+        logging = {
+          level = {
+            console = "info";
+            ram = "info";
+          };
+        };
+        messages.timeout = 3000;
+        new_instance_open_target = "tab";
+        new_instance_open_target_window = "last-focused";
+        prompt = {
+          filebrowser = true;
+          radius = 8;
+        };
+        qt = {
+          args = null;
+          chromium = {
+            experimental_web_platform_features = "auto";
+            low_end_device_mode = "auto";
+            process_model = "process-per-site-instance";
+            sandboxing = "enable-all";
+          };
+          environ = null;
+          force_platform = null;
+          force_platformtheme = null;
+          force_software_rendering = "none";
+          highdpi = false;
+          workarounds = {
+            disable_accelerated_2d_canvas = "auto";
+            disable_hangouts_extension = false;
+            locale = false;
+            remove_service_workers = false;
+          };
+        };
+        scrolling = {
+          bar = "overlay";
+          smooth = false;
+          ignore_case = "smart";
+          incremental = true;
+          wrap = true;
+          wrap_messages = true;
+        };
+        session = {};
         tabs = {
           background = true;
           favicons.scale = 1.0;
