@@ -991,12 +991,147 @@
           wrap = true;
           wrap_messages = true;
         };
-        session = {};
+        search = {
+          ignore_case = "smart";
+          incremental = true;
+          wrap = true;
+          wrap_messages = true;
+        };
+        session = {
+          wrap_messages = null;
+          lazy_restore = false;
+        };
+        spellcheck = {
+          languages = [
+            "en-AU"
+          ];
+        };
+        statusbar = {
+          padding = {
+            bottom = 1;
+            left = 0;
+            right = 0;
+            top = 1;
+          };
+          position = "bottom";
+          show = "always";
+          widgets = [
+            "keypress"
+            "search_match"
+            "url"
+            "scroll"
+            "history"
+            "tabs"
+            "progress"
+          ];
+        };
         tabs = {
           background = true;
-          favicons.scale = 1.0;
+          close_mouse_button = "middle";
+          close_mouse_button_on_bar = "new-tab";
+          favicons = {
+            scale = 1.0;
+            show = "always";
+          };
+          focus_stack_size = 10;
+          indicator = {
+            padding = {
+              bottom = 2;
+              left = 0;
+              right = 4;
+              top = 2;
+            };
+
+            indicator = {
+              width = 3;
+            };
+          };
+          last_close = "ignore";
+          max_width = -1;
+          min_width = -1;
+          mode_on_change = "normal";
+          mousewheel_switching = true;
+          new_position = {
+            related = "next";
+            stacking = true;
+            unrelated = "last";
+          };
+          padding = {
+            bottom = 0;
+            left = 5;
+            right = 5;
+            top = 0;
+          };
+          pinned = {
+            frozen = true;
+            shrink = true;
+          };
+          position = "top";
+          select_on_remove = "next";
+          show = "always";
+          show_switching_delay = 800;
+          tabs_are_windows = false;
+          title = {
+            alignment = "left";
+            elide = "right";
+            format = "{audio}{index}: {current_title}";
+            format_pinned = "{index}";
+          };
+          tooltips = true;
+          undo_stack_size = 100;
+          width = "15%";
+          wrap = true;
         };
-        window.transparent = true;
+        url = {
+          auto_search = "naive";
+          default_page = "https://start.duckduckgo.com/";
+          incdec_segments = [
+            "path"
+            "query"
+          ];
+          open_base_url = false;
+          searchengines = {
+            DEFAULT = "https://duckduckgo.com/?q={}";
+          };
+          start_pages = ["https://start.duckduckgo.com"];
+          yank_ignored_parameters = [
+            "ref"
+            "utm_source"
+            "utm_medium"
+            "utm_campaign"
+            "utm_term"
+            "utm_content"
+            "utm_name"
+          ];
+        };
+        window = {
+          hide_decoration = false;
+          title_format = "{perc}{current_title}{title_sep}qutebrowser";
+          transparent = false;
+        };
+        zoom = {
+          default = "100%";
+          levels = [
+            "25%"
+            "33%"
+            "50%"
+            "67%"
+            "75%"
+            "90%"
+            "100%"
+            "110%"
+            "125%"
+            "150%"
+            "175%"
+            "200%"
+            "250%"
+            "300%"
+            "400%"
+            "500%"
+          ];
+          mouse_divider = 512;
+          text_only = false;
+        };
       };
     };
   };

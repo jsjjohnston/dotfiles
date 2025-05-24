@@ -54,6 +54,7 @@ in {
         wikiman
         rsync
         most
+        qutebrowser
       ]
       ++ lib.optionals pkgs.stdenv.isDarwin [
         arc-browser
