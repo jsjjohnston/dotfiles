@@ -12,6 +12,7 @@ in {
         bat
         dig
         clipse
+        uutils-coreutils
         cloudflared
         delta
         drawio
@@ -19,6 +20,7 @@ in {
         ffmpeg
         git-credential-manager
         google-chrome
+        gawkInteractive
         jq
         btop
         ncdu
