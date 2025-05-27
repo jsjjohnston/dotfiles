@@ -26,7 +26,7 @@
       };
 
       underline = true;
-      virtual_lines = false;
+      virtual_lines = true;
       severity_sort = true;
       update_in_insert = false;
 
