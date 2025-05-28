@@ -57,6 +57,7 @@ in {
         rsync
         most
         qutebrowser
+        proselint
       ]
       ++ lib.optionals pkgs.stdenv.isDarwin [
         arc-browser
