@@ -56,8 +56,9 @@ in {
         wikiman
         rsync
         most
-        qutebrowser
         proselint
+        python3
+        python312Packages.pyqtwebengine
       ]
       ++ lib.optionals pkgs.stdenv.isDarwin [
         arc-browser
