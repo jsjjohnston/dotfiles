@@ -355,246 +355,246 @@
         };
         backend = "webengine";
         changelog_after_upgrade = "major";
-        colors = {
-          completion = {
-            category = {
-              bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 888888, stop:1 505050)";
-              border = {
-                bottom = "black";
-                top = "black";
-              };
-              fg = "white";
-            };
-            even = {
-              bg = "333333";
-            };
-            item = {
-              selected = {
-                bg = "e8c000";
-                border = {
-                  bottom = "bbbb00";
-                  top = "bbbb00";
-                };
-                fg = "black";
-                match = {
-                  fg = "ff4444";
-                };
-              };
-            };
-            match = {
-              fg = "ff4444";
-            };
-            odd = {
-              bg = "444444";
-            };
-            scrollbar = {
-              bg = "333333";
-              fg = "white";
-            };
-          };
-          contextmenu = {
-            disabled = {
-              bg = "empty";
-              fg = "empty";
-            };
-            menu = {
-              bg = "empty";
-              fg = "empty";
-            };
-            selected = {
-              bg = "empty";
-              fg = "empty";
-            };
-          };
-          downloads = {
-            bar = {
-              bg = "black";
-            };
-            error = {
-              bg = "black";
-              fg = "red";
-            };
-            start = {
-              bg = "0000aa";
-              fg = "white";
-            };
-            stop = {
-              bg = "00aa00";
-              fg = "white";
-            };
-            system = {
-              bg = "rgb";
-              fg = "rgb";
-            };
-          };
-          hints = {
-            bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))";
-            fg = "black";
-            match = {
-              fg = "green";
-            };
-          };
-          keyhint = {
-            bg = "rgba(0, 0, 0, 80%)";
-            fg = "FFFFFF";
-            suffix = {
-              fg = "FFFF00";
-            };
-          };
-          messages = {
-            error = {
-              bg = "red";
-              border = "bb0000";
-              fg = "white";
-            };
-            info = {
-              bg = "black";
-              fg = "white";
-              border = "333333";
-            };
-            warning = {
-              bg = "darkorange";
-              border = "d47300";
-              fg = "black";
-            };
-          };
-          prompts = {
-            bg = "black";
-            border = "1px solid gray";
-            fg = "444444";
-            selected = {
-              bg = "grey";
-              fg = "white";
-            };
-          };
-          statusbar = {
-            caret = {
-              bg = "purple";
-              fg = "white";
-              selection = {
-                bg = "a12dff";
-                fg = "white";
-              };
-            };
-            command = {
-              bg = "black";
-              fg = "white";
-              private = {
-                bg = "darkslategray";
-                fg = "white";
-              };
-            };
-            insert = {
-              bg = "darkgreen";
-              fg = "white";
-            };
-            normal = {
-              bg = "black";
-              fg = "white";
-            };
-            passthrough = {
-              bg = "darkblue";
-              fg = "white";
-            };
-            private = {
-              bg = "666666";
-              fg = "white";
-            };
-            progress = {
-              bg = "white";
-            };
-            url = {
-              error = {
-                fg = "orange";
-              };
-              fg = "white";
-              hover = {
-                fg = "aqua";
-              };
-              success = {
-                http = {
-                  fg = "white";
-                };
-                https = {
-                  fg = "lime";
-                };
-              };
-              warn = {
-                fg = "yellow";
-              };
-            };
-          };
-          tabs = {
-            bar = {
-              bg = "555555";
-            };
-            even = {
-              bg = "darkgrey";
-              fg = "white";
-            };
-            indicator = {
-              error = "ff0000";
-              start = "0000aa";
-              stop = "00aa00";
-              system = "rgb";
-            };
-            odd = {
-              bg = "grey";
-              fg = "white";
-            };
-            pinned = {
-              even = {
-                bg = "darkseagreen";
-                fg = "white";
-              };
-              odd = {
-                bg = "seagreen";
-                fg = "white";
-              };
-              selected = {
-                even = {
-                  bg = "black";
-                  fg = "white";
-                };
-                odd = {
-                  bg = "black";
-                  fg = "white";
-                };
-              };
-            };
-            selected = {
-              even = {
-                fg = "white";
-              };
-              odd = {
-                bg = "black";
-                fg = "white";
-              };
-            };
-          };
-          tooltip = {
-            bg = "empty";
-            fg = "empty";
-          };
-
-          webpage = {
-            bg = "white";
-            darkmode = {
-              algorithm = "lightness-cielab";
-              contrast = 0.0;
-              enabled = true;
-              policy = {
-                images = "smart";
-                page = "smart";
-              };
-              threshold = {
-                background = 0;
-                foreground = 256;
-              };
-            };
-            preferred_color_scheme = "dark";
-          };
-        };
+        # colors = {
+        #   completion = {
+        #     category = {
+        #       bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 888888, stop:1 505050)";
+        #       border = {
+        #         bottom = "black";
+        #         top = "black";
+        #       };
+        #       fg = "white";
+        #     };
+        #     even = {
+        #       bg = "333333";
+        #     };
+        #     item = {
+        #       selected = {
+        #         bg = "e8c000";
+        #         border = {
+        #           bottom = "bbbb00";
+        #           top = "bbbb00";
+        #         };
+        #         fg = "black";
+        #         match = {
+        #           fg = "ff4444";
+        #         };
+        #       };
+        #     };
+        #     match = {
+        #       fg = "ff4444";
+        #     };
+        #     odd = {
+        #       bg = "444444";
+        #     };
+        #     scrollbar = {
+        #       bg = "333333";
+        #       fg = "white";
+        #     };
+        #   };
+        #   contextmenu = {
+        #     disabled = {
+        #       bg = "empty";
+        #       fg = "empty";
+        #     };
+        #     menu = {
+        #       bg = "empty";
+        #       fg = "empty";
+        #     };
+        #     selected = {
+        #       bg = "empty";
+        #       fg = "empty";
+        #     };
+        #   };
+        #   downloads = {
+        #     bar = {
+        #       bg = "black";
+        #     };
+        #     error = {
+        #       bg = "black";
+        #       fg = "red";
+        #     };
+        #     start = {
+        #       bg = "0000aa";
+        #       fg = "white";
+        #     };
+        #     stop = {
+        #       bg = "00aa00";
+        #       fg = "white";
+        #     };
+        #     system = {
+        #       bg = "rgb";
+        #       fg = "rgb";
+        #     };
+        #   };
+        #   hints = {
+        #     bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))";
+        #     fg = "black";
+        #     match = {
+        #       fg = "green";
+        #     };
+        #   };
+        #   keyhint = {
+        #     bg = "rgba(0, 0, 0, 80%)";
+        #     fg = "FFFFFF";
+        #     suffix = {
+        #       fg = "FFFF00";
+        #     };
+        #   };
+        #   messages = {
+        #     error = {
+        #       bg = "red";
+        #       border = "bb0000";
+        #       fg = "white";
+        #     };
+        #     info = {
+        #       bg = "black";
+        #       fg = "white";
+        #       border = "333333";
+        #     };
+        #     warning = {
+        #       bg = "darkorange";
+        #       border = "d47300";
+        #       fg = "black";
+        #     };
+        #   };
+        #   prompts = {
+        #     bg = "black";
+        #     border = "1px solid gray";
+        #     fg = "444444";
+        #     selected = {
+        #       bg = "grey";
+        #       fg = "white";
+        #     };
+        #   };
+        #   statusbar = {
+        #     caret = {
+        #       bg = "purple";
+        #       fg = "white";
+        #       selection = {
+        #         bg = "a12dff";
+        #         fg = "white";
+        #       };
+        #     };
+        #     command = {
+        #       bg = "black";
+        #       fg = "white";
+        #       private = {
+        #         bg = "darkslategray";
+        #         fg = "white";
+        #       };
+        #     };
+        #     insert = {
+        #       bg = "darkgreen";
+        #       fg = "white";
+        #     };
+        #     normal = {
+        #       bg = "black";
+        #       fg = "white";
+        #     };
+        #     passthrough = {
+        #       bg = "darkblue";
+        #       fg = "white";
+        #     };
+        #     private = {
+        #       bg = "666666";
+        #       fg = "white";
+        #     };
+        #     progress = {
+        #       bg = "white";
+        #     };
+        #     url = {
+        #       error = {
+        #         fg = "orange";
+        #       };
+        #       fg = "white";
+        #       hover = {
+        #         fg = "aqua";
+        #       };
+        #       success = {
+        #         http = {
+        #           fg = "white";
+        #         };
+        #         https = {
+        #           fg = "lime";
+        #         };
+        #       };
+        #       warn = {
+        #         fg = "yellow";
+        #       };
+        #     };
+        #   };
+        #   tabs = {
+        #     bar = {
+        #       bg = "555555";
+        #     };
+        #     even = {
+        #       bg = "darkgrey";
+        #       fg = "white";
+        #     };
+        #     indicator = {
+        #       error = "ff0000";
+        #       start = "0000aa";
+        #       stop = "00aa00";
+        #       system = "rgb";
+        #     };
+        #     odd = {
+        #       bg = "grey";
+        #       fg = "white";
+        #     };
+        #     pinned = {
+        #       even = {
+        #         bg = "darkseagreen";
+        #         fg = "white";
+        #       };
+        #       odd = {
+        #         bg = "seagreen";
+        #         fg = "white";
+        #       };
+        #       selected = {
+        #         even = {
+        #           bg = "black";
+        #           fg = "white";
+        #         };
+        #         odd = {
+        #           bg = "black";
+        #           fg = "white";
+        #         };
+        #       };
+        #     };
+        #     selected = {
+        #       even = {
+        #         fg = "white";
+        #       };
+        #       odd = {
+        #         bg = "black";
+        #         fg = "white";
+        #       };
+        #     };
+        #   };
+        #   tooltip = {
+        #     bg = "empty";
+        #     fg = "empty";
+        #   };
+        #
+        #   webpage = {
+        #     bg = "white";
+        #     darkmode = {
+        #       algorithm = "lightness-cielab";
+        #       contrast = 0.0;
+        #       enabled = true;
+        #       policy = {
+        #         images = "smart";
+        #         page = "smart";
+        #       };
+        #       threshold = {
+        #         background = 0;
+        #         foreground = 256;
+        #       };
+        #     };
+        #     preferred_color_scheme = "dark";
+        #   };
+        # };
         completion = {
           cmd_history_max_items = 100;
           delay = 0;
@@ -754,33 +754,33 @@
           encoding = "utf-8";
           remove_file = true;
         };
-        fileselect = {
-          folder = {
-            command = [
-              "xterm"
-              "-e"
-              "ranger"
-              "--choosedir={}"
-            ];
-            handler = "default";
-            multiple_files = {
-              command = [
-                "xterm"
-                "-e"
-                "ranger"
-                "--choosefiles={}"
-              ];
-            };
-            single_file = {
-              command = [
-                "xterm"
-                "-e"
-                "ranger"
-                "--choosefiles={}"
-              ];
-            };
-          };
-        };
+        # fileselect = {
+        #   folder = {
+        #     command = [
+        #       "xterm"
+        #       "-e"
+        #       "ranger"
+        #       "--choosedir={}"
+        #     ];
+        #     handler = "default";
+        #     multiple_files = {
+        #       command = [
+        #         "xterm"
+        #         "-e"
+        #         "ranger"
+        #         "--choosefiles={}"
+        #       ];
+        #     };
+        #     single_file = {
+        #       command = [
+        #         "xterm"
+        #         "-e"
+        #         "ranger"
+        #         "--choosefiles={}"
+        #       ];
+        #     };
+        #   };
+        # };
         fonts = {
           completion = {
             category = "bold default_size default_family";
@@ -822,107 +822,107 @@
             };
           };
         };
-        hints = {
-          auto_follow = "unique-match";
-          auto_follow_timeout = 0;
-          border = "1px solid E3BE23";
-          chars = "asdfghjkl";
-          dictionary = "/usr/share/dict/words";
-          find_implementation = "python";
-          hide_unmatched_rapid_hints = true;
-          leave_on_load = false;
-          min_chars = 1;
-          mode = "letter";
-          next_regexes = [
-            "\bnext\b"
-            "\bmore\b"
-            "\bnewer\b"
-            "\b[>→≫]\b"
-            "\b(>>|»)\b"
-            "\bcontinue\b"
-          ];
-          padding = [];
-          prev_regexes = [
-            "\bprev(ious)?\b"
-            "\bback\b"
-            "\bolder\b"
-            "\b[<←≪]\b"
-            "\b(<<|«)\b"
-          ];
-          radius = 3;
-          scatter = true;
-          selectors = {
-            all = [
-              "a"
-              "area"
-              "textarea"
-              "select"
-              "input:not([type=\"hidden\"])"
-              "button"
-              "frame"
-              "iframe"
-              "img"
-              "link"
-              "summary"
-              "[contenteditable]:not([contenteditable=\"false\"])"
-              "[onclick]"
-              "[onmousedown]"
-              "[role=\"link\"]"
-              "[role=\"option\"]"
-              "[role=\"button\"]"
-              "[role=\"tab\"]"
-              "[role=\"checkbox\"]"
-              "[role=\"switch\"]"
-              "[role=\"menuitem\"]"
-              "[role=\"menuitemcheckbox\"]"
-              "[role=\"menuitemradio\"]"
-              "[role=\"treeitem\"]"
-              "[aria-haspopup]"
-              "[ng-click]"
-              "[ngClick]"
-              "[data-ng-click]"
-              "[x-ng-click]"
-              "[tabindex]:not([tabindex=\"/-1\"])"
-            ];
-            images = [
-              "img"
-            ];
-            inputs = [
-              "input[type=\"text\"]"
-              "input[type=\"date\"]"
-              "input[type=\"datetime-local\"]"
-              "input[type=\"email\"]"
-              "input[type=\"month\"]"
-              "input[type=\"number\"]"
-              "input[type=\"password\"]"
-              "input[type=\"search\"]"
-              "input[type=\"tel\"]"
-              "input[type=\"time\"]"
-              "input[type=\"url\"]"
-              "input[type=\"week\"]"
-              "input:not([type])"
-              "[contenteditable]:not([contenteditable=\"false\"])"
-              "textarea"
-            ];
-            links = [
-              "a[href]"
-              "area[href]"
-              "link[href]"
-
-              "[role=\"link\"][href]"
-            ];
-            media = [
-              "audio"
-              "img"
-              "video"
-            ];
-            url = [
-              "[src]"
-              "[href]"
-            ];
-            uppercase = false;
-          };
-        };
+        # hints = {
+        #   auto_follow = "unique-match";
+        #   auto_follow_timeout = 0;
+        #   border = "1px solid E3BE23";
+        #   chars = "asdfghjkl";
+        #   dictionary = "/usr/share/dict/words";
+        #   find_implementation = "python";
+        #   hide_unmatched_rapid_hints = true;
+        #   leave_on_load = false;
+        #   min_chars = 1;
+        #   mode = "letter";
+        #   next_regexes = [
+        #     "\bnext\b"
+        #     "\bmore\b"
+        #     "\bnewer\b"
+        #     "\b[>→≫]\b"
+        #     "\b(>>|»)\b"
+        #     "\bcontinue\b"
+        #   ];
+        #   padding = [];
+        #   prev_regexes = [
+        #     "\bprev(ious)?\b"
+        #     "\bback\b"
+        #     "\bolder\b"
+        #     "\b[<←≪]\b"
+        #     "\b(<<|«)\b"
+        #   ];
+        #   radius = 3;
+        #   scatter = true;
+        #   # selectors = {
+        #   #   all = [
+        #   #     "a"
+        #   #     "area"
+        #   #     "textarea"
+        #   #     "select"
+        #   #     "input:not([type=\"hidden\"])"
+        #   #     "button"
+        #   #     "frame"
+        #   #     "iframe"
+        #   #     "img"
+        #   #     "link"
+        #   #     "summary"
+        #   #     "[contenteditable]:not([contenteditable=\"false\"])"
+        #   #     "[onclick]"
+        #   #     "[onmousedown]"
+        #   #     "[role=\"link\"]"
+        #   #     "[role=\"option\"]"
+        #   #     "[role=\"button\"]"
+        #   #     "[role=\"tab\"]"
+        #   #     "[role=\"checkbox\"]"
+        #   #     "[role=\"switch\"]"
+        #   #     "[role=\"menuitem\"]"
+        #   #     "[role=\"menuitemcheckbox\"]"
+        #   #     "[role=\"menuitemradio\"]"
+        #   #     "[role=\"treeitem\"]"
+        #   #     "[aria-haspopup]"
+        #   #     "[ng-click]"
+        #   #     "[ngClick]"
+        #   #     "[data-ng-click]"
+        #   #     "[x-ng-click]"
+        #   #     # "[tabindex]:not([tabindex=\"/-1\"])"
+        #   #   ];
+        #   #   images = [
+        #   #     "img"
+        #   #   ];
+        #   #   inputs = [
+        #   #     "input[type=\"text\"]"
+        #   #     "input[type=\"date\"]"
+        #   #     "input[type=\"datetime-local\"]"
+        #   #     "input[type=\"email\"]"
+        #   #     "input[type=\"month\"]"
+        #   #     "input[type=\"number\"]"
+        #   #     "input[type=\"password\"]"
+        #   #     "input[type=\"search\"]"
+        #   #     "input[type=\"tel\"]"
+        #   #     "input[type=\"time\"]"
+        #   #     "input[type=\"url\"]"
+        #   #     "input[type=\"week\"]"
+        #   #     "input:not([type])"
+        #   #     "[contenteditable]:not([contenteditable=\"false\"])"
+        #   #     "textarea"
+        #   #   ];
+        #   #   links = [
+        #   #     "a[href]"
+        #   #     "area[href]"
+        #   #     "link[href]"
+        #   #
+        #   #     "[role=\"link\"][href]"
+        #   #   ];
+        #   #   media = [
+        #   #     "audio"
+        #   #     "img"
+        #   #     "video"
+        #   #   ];
+        #   #   url = [
+        #   #     "[src]"
+        #   #     "[href]"
+        #   #   ];
+        #   #   uppercase = false;
+        #   # };
+        # };
         history_gap_interval = 30;
         input = {
           escape_quits_reporter = true;
@@ -983,14 +983,14 @@
             remove_service_workers = false;
           };
         };
-        scrolling = {
-          bar = "overlay";
-          smooth = false;
-          ignore_case = "smart";
-          incremental = true;
-          wrap = true;
-          wrap_messages = true;
-        };
+        # scrolling = {
+        #   bar = "overlay";
+        #   smooth = false;
+        #   ignore_case = "smart";
+        #   incremental = true;
+        #   wrap = true;
+        #   wrap_messages = true;
+        # };
         search = {
           ignore_case = "smart";
           incremental = true;
@@ -998,7 +998,7 @@
           wrap_messages = true;
         };
         session = {
-          wrap_messages = null;
+          # wrap_messages = null;
           lazy_restore = false;
         };
         spellcheck = {
@@ -1006,82 +1006,82 @@
             "en-AU"
           ];
         };
-        statusbar = {
-          padding = {
-            bottom = 1;
-            left = 0;
-            right = 0;
-            top = 1;
-          };
-          position = "bottom";
-          show = "always";
-          widgets = [
-            "keypress"
-            "search_match"
-            "url"
-            "scroll"
-            "history"
-            "tabs"
-            "progress"
-          ];
-        };
-        tabs = {
-          background = true;
-          close_mouse_button = "middle";
-          close_mouse_button_on_bar = "new-tab";
-          favicons = {
-            scale = 1.0;
-            show = "always";
-          };
-          focus_stack_size = 10;
-          indicator = {
-            padding = {
-              bottom = 2;
-              left = 0;
-              right = 4;
-              top = 2;
-            };
-
-            indicator = {
-              width = 3;
-            };
-          };
-          last_close = "ignore";
-          max_width = -1;
-          min_width = -1;
-          mode_on_change = "normal";
-          mousewheel_switching = true;
-          new_position = {
-            related = "next";
-            stacking = true;
-            unrelated = "last";
-          };
-          padding = {
-            bottom = 0;
-            left = 5;
-            right = 5;
-            top = 0;
-          };
-          pinned = {
-            frozen = true;
-            shrink = true;
-          };
-          position = "top";
-          select_on_remove = "next";
-          show = "always";
-          show_switching_delay = 800;
-          tabs_are_windows = false;
-          title = {
-            alignment = "left";
-            elide = "right";
-            format = "{audio}{index}: {current_title}";
-            format_pinned = "{index}";
-          };
-          tooltips = true;
-          undo_stack_size = 100;
-          width = "15%";
-          wrap = true;
-        };
+        # statusbar = {
+        #   padding = {
+        #     bottom = 1;
+        #     left = 0;
+        #     right = 0;
+        #     top = 1;
+        #   };
+        #   position = "bottom";
+        #   show = "always";
+        #   widgets = [
+        #     "keypress"
+        #     "search_match"
+        #     "url"
+        #     "scroll"
+        #     "history"
+        #     "tabs"
+        #     "progress"
+        #   ];
+        # };
+        # tabs = {
+        #   background = true;
+        #   close_mouse_button = "middle";
+        #   close_mouse_button_on_bar = "new-tab";
+        #   favicons = {
+        #     scale = 1.0;
+        #     show = "always";
+        #   };
+        #   focus_stack_size = 10;
+        #   indicator = {
+        #     padding = {
+        #       bottom = 2;
+        #       left = 0;
+        #       right = 4;
+        #       top = 2;
+        #     };
+        #
+        #     indicator = {
+        #       width = 3;
+        #     };
+        #   };
+        #   last_close = "ignore";
+        #   max_width = -1;
+        #   min_width = -1;
+        #   mode_on_change = "normal";
+        #   mousewheel_switching = true;
+        #   new_position = {
+        #     related = "next";
+        #     stacking = true;
+        #     unrelated = "last";
+        #   };
+        #   padding = {
+        #     bottom = 0;
+        #     left = 5;
+        #     right = 5;
+        #     top = 0;
+        #   };
+        #   pinned = {
+        #     frozen = true;
+        #     shrink = true;
+        #   };
+        #   position = "top";
+        #   select_on_remove = "next";
+        #   show = "always";
+        #   show_switching_delay = 800;
+        #   tabs_are_windows = false;
+        #   title = {
+        #     alignment = "left";
+        #     elide = "right";
+        #     format = "{audio}{index}: {current_title}";
+        #     format_pinned = "{index}";
+        #   };
+        #   tooltips = true;
+        #   undo_stack_size = 100;
+        #   width = "15%";
+        #   wrap = true;
+        # };
         url = {
           auto_search = "naive";
           default_page = "https://start.duckduckgo.com/";
@@ -1090,9 +1090,9 @@
             "query"
           ];
           open_base_url = false;
-          searchengines = {
-            DEFAULT = "https://duckduckgo.com/?q={}";
-          };
+          # searchengines = {
+          #   DEFAULT = "https://duckduckgo.com/?q={}";
+          # };
           start_pages = ["https://start.duckduckgo.com"];
           yank_ignored_parameters = [
             "ref"

@@ -1,50 +1,70 @@
 
-AWS_CA_BUNDLE is already set.
-
-curl exists. Configuring curl for Netskope
-AWS_CA_BUNDLE is already set.
-
 
 -----------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
 
-curl exists. Configuring curl for Netskope
 aws exists. Configuring aws for Netskope
-CURL_CA_BUNDLE is already set.
 
-openssl exists. Configuring openssl for Netskope
-CURL_CA_BUNDLE is already set.
+-----------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
 
-openssl exists. Configuring openssl for Netskope
+aws exists. Configuring aws for Netskope
+
+-----------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
+
+aws exists. Configuring aws for Netskope
 AWS_CA_BUNDLE is already set.
 
 curl exists. Configuring curl for Netskope
-SSL_CERT_FILE is already set.
+AWS_CA_BUNDLE is already set.
 
-git exists. Configuring git for Netskope
-SSL_CERT_FILE is already set.
+curl exists. Configuring curl for Netskope
+AWS_CA_BUNDLE is already set.
 
-git exists. Configuring git for Netskope
+curl exists. Configuring curl for Netskope
 CURL_CA_BUNDLE is already set.
 
 openssl exists. Configuring openssl for Netskope
-GIT_SSL_CAPATH is already set.
+CURL_CA_BUNDLE is already set.
 
-python3 exists. Configuring python3 for Netskope
-GIT_SSL_CAPATH is already set.
+openssl exists. Configuring openssl for Netskope
+CURL_CA_BUNDLE is already set.
 
-python3 exists. Configuring python3 for Netskope
+openssl exists. Configuring openssl for Netskope
 SSL_CERT_FILE is already set.
 
 git exists. Configuring git for Netskope
-REQUESTS_CA_BUNDLE is already set.
+SSL_CERT_FILE is already set.
 
-gcloud exists. Configuring gcloud for Netskope
-REQUESTS_CA_BUNDLE is already set.
+git exists. Configuring git for Netskope
+SSL_CERT_FILE is already set.
 
-gcloud exists. Configuring gcloud for Netskope
+git exists. Configuring git for Netskope
+GIT_SSL_CAPATH is already set.
+
+python3 exists. Configuring python3 for Netskope
+GIT_SSL_CAPATH is already set.
+
+python3 exists. Configuring python3 for Netskope
 GIT_SSL_CAPATH is already set.
 
 python3 exists. Configuring python3 for Netskope
 REQUESTS_CA_BUNDLE is already set.
 
 gcloud exists. Configuring gcloud for Netskope
+REQUESTS_CA_BUNDLE is already set.
+
+gcloud exists. Configuring gcloud for Netskope
+REQUESTS_CA_BUNDLE is already set.
+
+gcloud exists. Configuring gcloud for Netskope
+
+
+
+
+----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
+
+
+----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
+
+
+----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
+
