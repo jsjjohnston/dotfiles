@@ -1,0 +1,47 @@
+
+
+-----------------Starting CLI certificate update on 2025-05-30 at 19:15:07-----------------
+
+aws exists. Configuring aws for Netskope
+CURL_CA_BUNDLE is already set.
+
+openssl exists. Configuring openssl for Netskope
+AWS_CA_BUNDLE is already set.
+
+curl exists. Configuring curl for Netskope
+AWS_CA_BUNDLE is already set.
+
+curl exists. Configuring curl for Netskope
+SSL_CERT_FILE is already set.
+
+git exists. Configuring git for Netskope
+CURL_CA_BUNDLE is already set.
+
+openssl exists. Configuring openssl for Netskope
+GIT_SSL_CAPATH is already set.
+
+python3 exists. Configuring python3 for Netskope
+CURL_CA_BUNDLE is already set.
+
+openssl exists. Configuring openssl for Netskope
+SSL_CERT_FILE is already set.
+
+git exists. Configuring git for Netskope
+REQUESTS_CA_BUNDLE is already set.
+
+gcloud exists. Configuring gcloud for Netskope
+SSL_CERT_FILE is already set.
+
+git exists. Configuring git for Netskope
+GIT_SSL_CAPATH is already set.
+
+python3 exists. Configuring python3 for Netskope
+GIT_SSL_CAPATH is already set.
+
+python3 exists. Configuring python3 for Netskope
+REQUESTS_CA_BUNDLE is already set.
+
+gcloud exists. Configuring gcloud for Netskope
+REQUESTS_CA_BUNDLE is already set.
+
+gcloud exists. Configuring gcloud for Netskope
