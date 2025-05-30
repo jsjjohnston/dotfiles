@@ -57,8 +57,7 @@ in {
         rsync
         most
         proselint
-        python3
-        python312Packages.pyqtwebengine
+        # qutebrowser
       ]
       ++ lib.optionals pkgs.stdenv.isDarwin [
         arc-browser

@@ -20,9 +20,9 @@
       {
         name = "ghostty";
       }
-      # {
-      #   name = "qutebrowser";
-      # }
+      {
+        name = "qutebrowser";
+      }
       {
         name = "docker";
       }

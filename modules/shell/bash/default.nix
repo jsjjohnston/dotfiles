@@ -44,5 +44,7 @@
       "interactive_comments"
       "promptvars"
     ];
+
+    profileExtra = "source /opt/montu-kandji/netskope-cli-certificate-fix.sh";
   };
 }

@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   programs = {
     qutebrowser = {
-      enable = true;
+      enable = false;
       # aliases = {};
       # enableDefaultBindings = true;
       # settings.greasemonkey = {};
       # keyMappings = {};
-      loadAutoconfig = true;
+      loadAutoconfig = false;
       # keyBindings = {
       #   caret = {
       #     "$" = "move-to-end-of-line";
