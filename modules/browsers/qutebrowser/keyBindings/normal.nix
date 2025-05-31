@@ -1,0 +1,3 @@
+{
+  programs.qutebrowser.keyBindings.normal = {};
+}

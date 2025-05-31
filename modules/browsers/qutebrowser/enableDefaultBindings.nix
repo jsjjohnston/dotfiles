@@ -1,0 +1,7 @@
+{
+  programs = {
+    qutebrowser = {
+      enableDefaultBindings = true;
+    };
+  };
+}
