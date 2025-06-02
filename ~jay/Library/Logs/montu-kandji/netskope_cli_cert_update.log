@@ -1,70 +1,24 @@
 
 
------------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
+-----------------Starting CLI certificate update on 2025-06-01 at 20:08:30-----------------
 
 aws exists. Configuring aws for Netskope
-
------------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
-
-aws exists. Configuring aws for Netskope
-
------------------Starting CLI certificate update on 2025-05-30 at 19:29:30-----------------
-
-aws exists. Configuring aws for Netskope
-AWS_CA_BUNDLE is already set.
-
-curl exists. Configuring curl for Netskope
-AWS_CA_BUNDLE is already set.
-
-curl exists. Configuring curl for Netskope
 AWS_CA_BUNDLE is already set.
 
 curl exists. Configuring curl for Netskope
 CURL_CA_BUNDLE is already set.
 
 openssl exists. Configuring openssl for Netskope
-CURL_CA_BUNDLE is already set.
-
-openssl exists. Configuring openssl for Netskope
-CURL_CA_BUNDLE is already set.
-
-openssl exists. Configuring openssl for Netskope
-SSL_CERT_FILE is already set.
-
-git exists. Configuring git for Netskope
-SSL_CERT_FILE is already set.
-
-git exists. Configuring git for Netskope
 SSL_CERT_FILE is already set.
 
 git exists. Configuring git for Netskope
 GIT_SSL_CAPATH is already set.
 
 python3 exists. Configuring python3 for Netskope
-GIT_SSL_CAPATH is already set.
-
-python3 exists. Configuring python3 for Netskope
-GIT_SSL_CAPATH is already set.
-
-python3 exists. Configuring python3 for Netskope
-REQUESTS_CA_BUNDLE is already set.
-
-gcloud exists. Configuring gcloud for Netskope
-REQUESTS_CA_BUNDLE is already set.
-
-gcloud exists. Configuring gcloud for Netskope
 REQUESTS_CA_BUNDLE is already set.
 
 gcloud exists. Configuring gcloud for Netskope
 
 
-
-
-----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
-
-
-----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
-
-
-----------CLI certificate update completed on 2025-05-30 19:29:31 - End of netskope_cli_cert_update.log----------
+----------CLI certificate update completed on 2025-06-01 20:08:30 - End of netskope_cli_cert_update.log----------
 
