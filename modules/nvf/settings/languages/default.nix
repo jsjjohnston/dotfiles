@@ -16,9 +16,21 @@ in {
   ];
 
   programs = {
+    # vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {buffer=bufnr, noremap=true, silent=true, desc='Code action'})
+
     nvf = {
       settings = {
         vim = {
+          keymaps = [
+            {
+              key = "<leader>la";
+              mode = "v";
+              silent = true;
+              action = "vim.lsp.buf.code_action";
+              desc = "Code acation";
+              lua = true;
+            }
+          ];
           lsp = {
             formatOnSave = true;
             enable = true;

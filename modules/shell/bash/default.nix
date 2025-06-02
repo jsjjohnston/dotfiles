@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -8,24 +8,16 @@
       bash
       */
       ''
-          `test -z "$TMUX" && (tmux attach || tmux new-session)`
-          NIX_PATHS="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:"
-          NEWPATH=''${PATH/$NIX_PATHS}
-          while [[ $NEWPATH =~ $NIX_PATHS ]]; do
-            PATH=$NEWPATH
-            NEWPATH=''${NEWPATH/$NIX_PATHS}
-          done
-          bind TAB:menu-complete
-          source /Users/jay/.config/op/plugins.sh
-
-        # sudo() {
-        #   if command sudo -l | grep -q "timestamp_timeout=0"; then
-        #     command sudo visudo
-        #   else
-        #     command sudo "$@"
-        #   fi
-        # }
-
+        export NODE_EXTRA_CA_CERTS="$HOME/certs/combined-ca-bundle.crt"
+        `test -z "$TMUX" && (tmux attach || tmux new-session)`
+        NIX_PATHS="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:"
+        NEWPATH=''${PATH/$NIX_PATHS}
+        while [[ $NEWPATH =~ $NIX_PATHS ]]; do
+          PATH=$NEWPATH
+          NEWPATH=''${NEWPATH/$NIX_PATHS}
+        done
+        bind TAB:menu-complete
+        source /Users/jay/.config/op/plugins.sh
       '';
     historySize = 100000;
     historyIgnore = [
