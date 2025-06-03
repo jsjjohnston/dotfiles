@@ -10,7 +10,7 @@
         "https://cache.nixos.org/"
       ]
       else [
-        "https//ncps.aldarow.dev"
+        "https://ncps.aldarow.dev"
         "http://192.168.1.106:5000"
         "https://cache.nixos.org/"
       ];
