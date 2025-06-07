@@ -17,6 +17,7 @@
     ../../configuration/programs
     ../../configuration/darwin
     ../../services/nix-daemon
+    ../../services/aerospace
   ];
 
   nix = {
