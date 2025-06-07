@@ -8,56 +8,58 @@ in {
   environment = {
     systemPackages = with pkgs;
       [
+        # qutebrowser
+        astroterm
         bash-preexec
         bat
-        dig
+        btop
+        caligula
         clipse
-        uutils-coreutils
         cloudflared
         delta
+        dig
         drawio
         eslint_d
         ffmpeg
         git-credential-manager
         google-chrome
-        gawkInteractive
         jq
-        btop
-        ncdu
         killall
         lazycli
         lazygit
         libnotify
+        most
         ncdu
         nil
         nixd
         parallel-full
+        pastel
+        proselint
         pv
         ripgrep
+        rsync
+        shellcheck
         slack
         sops
-        statix
-        vale
-        vtsls
-        shellcheck
         sqlfluff
-        tree-sitter
+        statix
+        tealdeer
         terraform
         terraform-ls
         tmuxinator
+        tree-sitter
         typescript
         typescript-language-server
         unixtools.watch
+        uutils-coreutils
+        vale
+        vtsls
+        wikiman
         wtfutil
         xarchiver
+        xh
         youtube-music
         yq-go
-        tealdeer
-        wikiman
-        rsync
-        most
-        proselint
-        # qutebrowser
       ]
       ++ lib.optionals pkgs.stdenv.isDarwin [
         arc-browser
