@@ -22,6 +22,7 @@
     ../../modules/zoxide
     ../../modules/linters/ruff.nix
     ../../modules/browsers/qutebrowser
+    ../../modules/aerospace
     ../../services/restic
   ];
 
