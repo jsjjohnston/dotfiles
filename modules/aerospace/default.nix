@@ -1,13 +1,45 @@
 {
+  programs.sketchybar = {
+    enable = true;
+    config = ''
+      # Define colors
+      export COLOR_BLACK="0xff181926"
+      export COLOR_WHITE="0xffcad3f5"
+
+      # Configure bar
+      sketchybar --bar height=32 \
+                      position=top \
+                      padding_left=10 \
+                      padding_right=10 \
+                      color=$COLOR_BLACK
+
+      # Configure default values
+      sketchybar --default icon.font="SF Pro:Bold:14.0" \
+                          icon.color=$COLOR_WHITE \
+                          label.font="SF Pro:Bold:14.0" \
+                          label.color=$COLOR_WHITE
+
+      # Add items to the bar
+      sketchybar --add item clock right \
+                --set clock script="date '+%H:%M'" \
+                            update_freq=10
+
+      # Update the bar
+      sketchybar --update
+    '';
+  };
   programs.aerospace = {
     enable = true;
     userSettings = {
       after-login-command = [];
+      exec-on-workspace-change = [
+        "/bin/bash"
+        "-c"
+        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+        "exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0"
+      ];
       after-startup-command = [
-        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Gmail.app'"
-        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Google Calendar.app'"
-        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Jira.app'"
-        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Google Meets.app'"
+        "exec-and-forget sketchybar"
       ];
       start-at-login = true;
       enable-normalization-flatten-containers = true;
