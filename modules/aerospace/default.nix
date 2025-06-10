@@ -3,7 +3,12 @@
     enable = true;
     userSettings = {
       after-login-command = [];
-      after-startup-command = [];
+      after-startup-command = [
+        "exec-and-forget open -n ~/Applications/Chrome Apps.localized/Gmail.app"
+        "exec-and-forget open -n ~/Applications/Chrome Apps.localized/Google Calendar.app"
+        "exec-and-forget open -n ~/Applications/Chrome Apps.localized/Jira.app"
+        "exec-and-forget open -n ~/Applications/Chrome Apps.localized/Google Meets.app"
+      ];
       start-at-login = true;
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
@@ -55,6 +60,16 @@
             "move-node-to-workspace M"
           ];
         }
+        # BrewFather
+        {
+          "if" = {
+            app-id = "com.google.Chrome.app.jgclhcifjnkepcjdfhcnfjgojgddndpj";
+          };
+          check-further-callbacks = true;
+          run = [
+            "move-node-to-workspace B"
+          ];
+        }
         # YouTube
         {
           "if" = {
@@ -62,7 +77,7 @@
           };
           check-further-callbacks = true;
           run = [
-            "move-node-to-workspace M"
+            "move-node-to-workspace U"
           ];
         }
         # Jira
@@ -122,7 +137,7 @@
         outer = {
           left = 0;
           bottom = 0;
-          top = 10;
+          top = 0;
           right = 0;
         };
       };
@@ -130,6 +145,7 @@
       mode.main.binding = {
         cmd-h = [];
         cmd-alt-h = [];
+        cmd-tab = [];
         alt-slash = "layout tiles horizontal vertical";
         alt-comma = "layout accordion horizontal vertical";
         alt-h = "focus left";
@@ -161,17 +177,17 @@
         alt-m = "workspace M";
         alt-n = "workspace N";
         alt-o = "workspace O";
-        alt-p = "workspace P";
-        alt-q = "workspace Q";
-        alt-r = "workspace R";
+        # alt-p = "workspace P";
+        # alt-q = "workspace Q";
+        # alt-r = "workspace R";
         alt-s = "workspace S";
         alt-t = "workspace T";
         alt-u = "workspace U";
-        alt-v = "workspace V";
-        alt-w = "workspace W";
-        alt-x = "workspace X";
+        # alt-v = "workspace V";
+        # alt-w = "workspace W";
+        # alt-x = "workspace X";
         alt-y = "workspace Y";
-        alt-z = "workspace Z";
+        # alt-z = "workspace Z";
         alt-shift-1 = "move-node-to-workspace 1";
         alt-shift-2 = "move-node-to-workspace 2";
         alt-shift-3 = "move-node-to-workspace 3";
