@@ -4,10 +4,10 @@
     userSettings = {
       after-login-command = [];
       after-startup-command = [
-        "exec-and-forget open -n ~/Applications/Chrome\ Apps.localized/Gmail.app"
-        "exec-and-forget open -n ~/Applications/Chrome\ Apps.localized/Google\ Calendar.app"
-        "exec-and-forget open -n ~/Applications/Chrome\ Apps.localized/Jira.app"
-        "exec-and-forget open -n ~/Applications/Chrome\ Apps.localized/Google\ Meets.app"
+        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Gmail.app'"
+        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Google Calendar.app'"
+        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Jira.app'"
+        "exec-and-forget open -n '~/Applications/Chrome Apps.localized/Google Meets.app'"
       ];
       start-at-login = true;
       enable-normalization-flatten-containers = true;
