@@ -39,12 +39,13 @@
       merge = {
         conflictstyle = "zdiff3";
       };
+      mergetool = {
+        keepBackup = false;
+        prompt = false;
+        nvim.cmd = "nvim -d -c 'wincmd l' -c 'norm ]c' \"$LOCAL\" \"$MERGED\" \"$REMOTE\"";
+      };
 
       alias = {
-        worktree-session = "!sh -c '${config.home.homeDirectory}/.local/bin/git-worktree-session \"$@\"' --";
-
-        # worktree-session = "!sh -c \"${config.home.homeDirectory}/.local/bin/git-worktree-session\"";
-        clone-bare = "!sh -c \"${config.home.homeDirectory}/.local/bin/git-clone-bare\"";
       };
       rebase = {
         autoSquash = true;

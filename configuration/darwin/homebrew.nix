@@ -6,6 +6,14 @@
       cleanup = "uninstall";
       upgrade = true;
     };
+    brews = [
+      {
+        name = "cdktf";
+      }
+      {
+        name = "node";
+      }
+    ];
     casks = [
       {
         name = "1password";
