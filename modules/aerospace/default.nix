@@ -1,11 +1,4 @@
 {
-  programs.sketchybar = {
-    enable = true;
-    config = {
-      source = ./config;
-      recursive = true;
-    };
-  };
   programs.aerospace = {
     enable = true;
     userSettings = {
@@ -187,17 +180,10 @@
         alt-m = "workspace M";
         alt-n = "workspace N";
         alt-o = "workspace O";
-        # alt-p = "workspace P";
-        # alt-q = "workspace Q";
-        # alt-r = "workspace R";
         alt-s = "workspace S";
         alt-t = "workspace T";
         alt-u = "workspace U";
-        # alt-v = "workspace V";
-        # alt-w = "workspace W";
-        # alt-x = "workspace X";
         alt-y = "workspace Y";
-        # alt-z = "workspace Z";
         alt-shift-1 = "move-node-to-workspace 1";
         alt-shift-2 = "move-node-to-workspace 2";
         alt-shift-3 = "move-node-to-workspace 3";
@@ -207,7 +193,6 @@
         alt-shift-7 = "move-node-to-workspace 7";
         alt-shift-8 = "move-node-to-workspace 8";
         alt-shift-9 = "move-node-to-workspace 9";
-
         alt-tab = "workspace-back-and-forth";
         alt-shift-semicolon = "mode service";
         alt-enter = "exec-and-forget open -n /Applications/Ghostty.app";

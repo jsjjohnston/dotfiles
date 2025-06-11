@@ -23,6 +23,7 @@
     ../../modules/linters/ruff.nix
     ../../modules/browsers/qutebrowser
     ../../modules/aerospace
+    ../../modules/sketchybar
     ../../services/restic
   ];
 

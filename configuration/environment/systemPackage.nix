@@ -11,6 +11,8 @@ in {
         # qutebrowser
         astroterm
         bash-preexec
+        mtr
+        fd
         bat
         btop
         caligula
