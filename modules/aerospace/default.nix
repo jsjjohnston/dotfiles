@@ -140,7 +140,7 @@
         outer = {
           left = 0;
           bottom = 0;
-          top = 32;
+          top = 0;
           right = 0;
         };
       };
