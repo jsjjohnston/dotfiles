@@ -16,6 +16,9 @@
     ];
     casks = [
       {
+        name = "sol";
+      }
+      {
         name = "1password";
       }
       {

@@ -10,6 +10,7 @@ in {
       [
         # qutebrowser
         astroterm
+        yarn
         bash-preexec
         mtr
         fd
