@@ -9,8 +9,8 @@ sketchybar --bar \
         color=0x00000000 \
         margin=0 \
         sticky=on \
-        padding_left=0 \
-        padding_right=23 \
+        padding_left=5 \
+        padding_right=0 \
         notch_width=188 \
         display=main
 
@@ -25,7 +25,7 @@ sketchybar --default \
         label.font="$FONT_FACE:Medium:12.0" \
         label.color=0xffcad3f5 \
         label.y_offset=0 \
-        label.padding_left=0 \
+        label.padding_left=5 \
         label.padding_right=5
 
 sketchybar --add item current_space left \
@@ -63,17 +63,6 @@ sketchybar --add item front_app left \
         icon.drawing=off \
         label.font="$FONT_FACE:Bold:12.0" \
         label.drawing=yes
-
-sketchybar --add item weather.moon q \
-        --set weather.moon \
-        background.color=0x667dc4e4 \
-        background.padding_right=-1 \
-        icon.color=0xff181926 \
-        icon.font="$FONT_FACE:Bold:22.0" \
-        icon.padding_left=4 \
-        icon.padding_right=3 \
-        label.drawing=off \
-        --subscribe weather.moon mouse.clicked
 
 sketchybar --add item weather q \
         --set weather \
