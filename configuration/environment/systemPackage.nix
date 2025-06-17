@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}: let
   gdk = pkgs.google-cloud-sdk.withExtraComponents (
     with pkgs.google-cloud-sdk.components; [
       gke-gcloud-auth-plugin
@@ -8,7 +12,6 @@ in {
   environment = {
     systemPackages = with pkgs;
       [
-        # qutebrowser
         astroterm
         yarn
         bash-preexec
@@ -47,8 +50,8 @@ in {
         sqlfluff
         statix
         tealdeer
-        terraform
-        terraform-ls
+        pkgs-stable.terraform
+        pkgs-stable.terraform-ls
         tmuxinator
         tree-sitter
         typescript

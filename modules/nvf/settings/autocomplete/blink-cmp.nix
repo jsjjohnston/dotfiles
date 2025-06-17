@@ -5,7 +5,7 @@
         vim = {
           autocomplete = {
             blink-cmp = {
-              enable = true;
+              enable = false; # TODO: Latest not building
               setupOpts = {
                 signature = {
                   enabled = true;
