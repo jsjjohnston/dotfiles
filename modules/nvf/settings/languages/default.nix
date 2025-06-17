@@ -14,6 +14,10 @@ in {
     ./typescript.nix
     ./yaml.nix
   ];
+  programs.sqls.enable = true;
+  programs.sqls.settings = {
+    lowercaseKeywords = true;
+  };
 
   programs = {
     # vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, {buffer=bufnr, noremap=true, silent=true, desc='Code action'})
