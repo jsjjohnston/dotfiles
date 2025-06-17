@@ -73,6 +73,13 @@ sketchybar --add item weather q \
         script="$PLUGIN_SHARED_DIR/weather.sh" \
         --subscribe weather system_woke
 
+sketchybar --add item git e \
+        --set git \
+        icon= \
+        icon.font="$FONT_FACE:Bold:15.0" \
+        update_freq=1800 \
+        script="$PLUGIN_SHARED_DIR/gh_status_summary.sh"
+
 sketchybar --add bracket front_app_bracket \
         front_app \
         front_app.separator \
