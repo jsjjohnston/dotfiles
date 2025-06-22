@@ -1,16 +1,17 @@
 {
   programs.qutebrowser.settings.colors = {
+    fg = "#cdd6f4";
     completion = {
       category = {
-        bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 888888, stop:1 505050)";
+        fg = "#ffffff";
+        bg = "#2b2d42";
         border = {
-          bottom = "black";
-          top = "black";
+          bottom = "#2b2d42";
+          top = "#2b2d42";
         };
-        fg = "white";
       };
       even = {
-        bg = "333333";
+        bg = "#1a1a2e";
       };
       item = {
         selected = {
@@ -26,14 +27,14 @@
         };
       };
       match = {
-        fg = "ff4444";
+        fg = "#89b4fa";
       };
       odd = {
-        bg = "444444";
+        bg = "#1e1e2e";
       };
       scrollbar = {
-        bg = "333333";
-        fg = "white";
+        bg = "#1e1e2e";
+        fg = "#89b4fa";
       };
     };
     contextmenu = {
@@ -52,19 +53,19 @@
     };
     downloads = {
       bar = {
-        bg = "black";
+        bg = "#1e1e2e";
       };
       error = {
-        bg = "black";
+        bg = "#f38ba8";
         fg = "red";
       };
       start = {
-        bg = "0000aa";
-        fg = "white";
+        bg = "#89b4fa";
+        fg = "#000000";
       };
       stop = {
-        bg = "00aa00";
-        fg = "white";
+        bg = "#94e2d5";
+        fg = "#000000";
       };
       system = {
         bg = "rgb";
@@ -72,10 +73,10 @@
       };
     };
     hints = {
-      bg = "qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))";
-      fg = "black";
+      bg = "#2b2d42";
+      fg = "#ffffff";
       match = {
-        fg = "green";
+        fg = "#89b4fa";
       };
     };
     keyhint = {
@@ -87,25 +88,25 @@
     };
     messages = {
       error = {
-        bg = "red";
+        bg = "#f38ba8";
         border = "bb0000";
         fg = "white";
       };
       info = {
-        bg = "black";
-        fg = "white";
+        bg = "#1e1e2e";
+        fg = "#cdd6f4";
         border = "333333";
       };
       warning = {
-        bg = "darkorange";
+        bg = "#f9e2af";
         border = "d47300";
         fg = "black";
       };
     };
     prompts = {
-      bg = "black";
-      border = "1px solid gray";
-      fg = "444444";
+      bg = "#1e1e2e";
+      border = "1px solid #89b4fa";
+      fg = "#cdd6f4";
       selected = {
         bg = "grey";
         fg = "white";
@@ -121,20 +122,20 @@
         };
       };
       command = {
-        bg = "black";
-        fg = "white";
+        bg = "#1a1a2e";
+        fg = "#89b4fa";
         private = {
           bg = "darkslategray";
           fg = "white";
         };
       };
       insert = {
-        bg = "darkgreen";
-        fg = "white";
+        bg = "#2b2d42";
+        fg = "#ffffff";
       };
       normal = {
-        bg = "black";
-        fg = "white";
+        bg = "#1e1e2e";
+        fg = "#cdd6f4";
       };
       passthrough = {
         bg = "darkblue";
@@ -149,18 +150,18 @@
       };
       url = {
         error = {
-          fg = "orange";
+          fg = "#f38ba8";
         };
-        fg = "white";
+        fg = "#89b4fa";
         hover = {
           fg = "aqua";
         };
         success = {
           http = {
-            fg = "white";
+            fg = "#a6e3a1";
           };
           https = {
-            fg = "lime";
+            fg = "#94e2d5";
           };
         };
         warn = {
@@ -169,11 +170,12 @@
       };
     };
     tabs = {
+      fg = "#cdd6f4";
       bar = {
-        bg = "555555";
+        bg = "#1e1e2e";
       };
       even = {
-        bg = "darkgrey";
+        bg = "#1e1e2e";
         fg = "white";
       };
       indicator = {
@@ -183,7 +185,7 @@
         system = "rgb";
       };
       odd = {
-        bg = "grey";
+        bg = "#1a1a2e";
         fg = "white";
       };
       pinned = {
@@ -197,12 +199,12 @@
         };
         selected = {
           even = {
-            bg = "black";
-            fg = "white";
+            bg = "#2b2d42";
+            fg = "#ffffff";
           };
           odd = {
-            bg = "black";
-            fg = "white";
+            bg = "#2b2d42";
+            fg = "#ffffff";
           };
         };
       };
@@ -222,7 +224,7 @@
     };
 
     webpage = {
-      bg = "white";
+      bg = "#0f0f1a";
       darkmode = {
         algorithm = "lightness-cielab";
         contrast = 0.0;

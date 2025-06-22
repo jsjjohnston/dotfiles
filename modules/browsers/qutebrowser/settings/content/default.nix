@@ -4,7 +4,6 @@
     blocking = {
       enabled = true;
       method = "auto";
-      # whitelist = {};
       adblock = {
         lists = [
           "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt"
@@ -38,7 +37,7 @@
       };
     };
     cache = {
-      appcache = true;
+      appcache = false;
       maximum_pages = 0;
       size = null;
     };
@@ -79,9 +78,9 @@
     local_content_can_access_remote_urls = false;
     local_storage = true;
     media = {
-      audio_capture = "allow";
-      audio_video_capture = "allow";
-      video_capture = "allow";
+      audio_capture = true;
+      audio_video_capture = true;
+      video_capture = true;
     };
     mouse_lock = "ask";
     mute = true;

@@ -112,6 +112,7 @@
             harpoon.enable = true;
           };
           utility = {
+            smart-splits.enable = true;
             icon-picker.enable = true;
             motion = {
               precognition.enable = true;

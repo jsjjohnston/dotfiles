@@ -4,7 +4,10 @@
     wa = "https://wiki.archlinux.org/?search={}";
     yt = "https://www.youtube.com/results?search_query={}";
     mynixos = "https://mynixos.com/search?q={}";
-    nixpackages = "https://search.nixos.org/packages?query={}";
-    nixoptions = "https://search.nixos.org/options?query={}";
+    nixpkgs = "https://search.nixos.org/packages?query={}";
+    nixopts = "https://search.nixos.org/options?query={}";
+    hm = "https://mipmip.github.io/home-manager-option-search/?query={}";
+
+    gh = "https://github.com/search?q={}";
   };
 }

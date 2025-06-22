@@ -13,33 +13,34 @@ in {
     systemPackages = with pkgs;
       [
         astroterm
-        yarn
         bash-preexec
-        mtr
-        fd
         bat
         btop
         caligula
+        chatgpt
         clipse
         cloudflared
         delta
         dig
         drawio
         eslint_d
+        fd
         ffmpeg
         git-credential-manager
-        google-chrome
         jq
         killall
         lazycli
         lazygit
         libnotify
         most
+        mtr
         ncdu
         nil
         nixd
         parallel-full
         pastel
+        pkgs-stable.terraform
+        pkgs-stable.terraform-ls
         proselint
         pv
         ripgrep
@@ -50,8 +51,6 @@ in {
         sqlfluff
         statix
         tealdeer
-        pkgs-stable.terraform
-        pkgs-stable.terraform-ls
         tmuxinator
         tree-sitter
         typescript
@@ -64,6 +63,7 @@ in {
         wtfutil
         xarchiver
         xh
+        yarn
         youtube-music
         yq-go
       ]
