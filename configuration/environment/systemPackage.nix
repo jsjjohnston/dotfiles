@@ -44,6 +44,7 @@ in {
         proselint
         pv
         ripgrep
+        rpg-cli
         rsync
         shellcheck
         slack

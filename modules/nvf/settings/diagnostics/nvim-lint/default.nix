@@ -84,7 +84,7 @@
     actionlint
 
     bandit
-    python313Packages.vulture
+    # python313Packages.vulture
     ruff
     sqlfluff
 
