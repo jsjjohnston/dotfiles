@@ -7,7 +7,6 @@
     nixpkgs = "https://search.nixos.org/packages?query={}";
     nixopts = "https://search.nixos.org/options?query={}";
     hm = "https://mipmip.github.io/home-manager-option-search/?query={}";
-
     gh = "https://github.com/search?q={}";
   };
 }

@@ -3,7 +3,7 @@
     cmd_history_max_items = -1;
     delay = 0;
     favorite_paths = [];
-    height = "75%";
+    height = "50%";
     min_chars = 1;
     open_categories = [
       "searchengines"

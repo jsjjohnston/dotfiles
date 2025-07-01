@@ -68,7 +68,7 @@
       alert = true;
       can_close_tabs = false;
       can_open_tabs_automatically = false;
-      clipboard = "access-paste";
+      clipboard = "ask";
       enabled = true;
       legacy_touch_events = "never";
       modal_dialog = false;
