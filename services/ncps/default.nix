@@ -5,8 +5,8 @@
 
     upstream = {
       caches = [
-        "https://cache.nixos.org"
         "https://nix-community.cachix.org"
+        "https://cache.nixos.org"
       ];
       publicKeys = [
         "cache.nixos.org-1:"

@@ -17,7 +17,6 @@ in {
         bat
         btop
         caligula
-        chatgpt
         clipse
         cloudflared
         delta
@@ -72,6 +71,7 @@ in {
         arc-browser
         aws-vault
         awscli2
+        chatgpt
         gdk
       ]
       ++ lib.optionals (config.programs.hyprland.enable or false) [

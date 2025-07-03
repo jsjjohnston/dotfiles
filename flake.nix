@@ -114,7 +114,6 @@
               sharedModules = [
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nvf.homeManagerModules.default
-                inputs.catppuccin.homeManagerModules.catppuccin
               ];
               users.jay.imports = [./hosts/server/home.nix];
             };
