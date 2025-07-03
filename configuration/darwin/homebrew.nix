@@ -34,9 +34,6 @@
       {
         name = "qutebrowser";
       }
-      {
-        name = "docker";
-      }
     ];
   };
 }

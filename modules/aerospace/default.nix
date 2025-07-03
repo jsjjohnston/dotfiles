@@ -143,6 +143,26 @@
             "move-node-to-workspace E"
           ];
         }
+        # hibob
+        {
+          "if" = {
+            app-id = "com.google.Chrome.app.jpefkpadpnjgdcefajmaoloahncpfmjj";
+          };
+          check-further-callbacks = true;
+          run = [
+            "move-node-to-workspace R"
+          ];
+        }
+        # 15Five
+        {
+          "if" = {
+            app-id = "com.google.Chrome.app.knjnfgbnacbnngoeagpklmabnkgpgijj";
+          };
+          check-further-callbacks = true;
+          run = [
+            "move-node-to-workspace 5"
+          ];
+        }
       ];
 
       # run = 'move-node-to-workspace T'";
@@ -167,8 +187,8 @@
 
       mode.main.binding = {
         alt-1 = "exec-and-forget open -a '1Password.app'; workspace 1";
+        alt-5 = "exec-and-forget open -a '15Five.app'; workspace 5";
         alt-a = "exec-and-forget open -a 'Arc.app'; workspace A";
-        alt-shift-a = "exec-and-forget open -a 'qutebrowser.app'; workspace A";
         alt-b = "exec-and-forget open -a 'Brewfather.app'; workspace B";
         alt-c = "exec-and-forget open -a 'Google Calendar.app'; workspace C";
         alt-comma = "layout accordion horizontal vertical";
@@ -185,7 +205,9 @@
         alt-minus = "resize smart -50";
         alt-p = "exec-and-forget open -a 'GCP.app'; workspace P";
         alt-q = "exec-and-forget open -a /Applications/Ghostty.app; workspace Q";
+        alt-r = "exec-and-forget open -a 'hibob.app'; workspace R";
         alt-s = "exec-and-forget open -a /Applications/Slack.app; workspace S";
+        alt-shift-a = "exec-and-forget open -a 'qutebrowser.app'; workspace A";
         alt-shift-h = "move left";
         alt-shift-j = "move down";
         alt-shift-k = "move up";
