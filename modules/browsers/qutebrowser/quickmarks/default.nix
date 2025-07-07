@@ -1,6 +1,6 @@
 {
   programs.qutebrowser.quickmarks = {
-    youtube = "https://www.youtube.com/";
-    reddit = "https://www.reddit.com/";
+    yt = "https://www.youtube.com/";
+    rd = "https://www.reddit.com/";
   };
 }

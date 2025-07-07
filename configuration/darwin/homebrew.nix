@@ -1,9 +1,11 @@
 {
   homebrew = {
     enable = true;
+    global.brewfile = false;
+
     onActivation = {
       autoUpdate = true;
-      cleanup = "uninstall";
+      cleanup = "none";
       upgrade = true;
     };
     brews = [
@@ -31,9 +33,9 @@
       {
         name = "ghostty";
       }
-      {
-        name = "qutebrowser";
-      }
+      # {
+      #   name = "qutebrowser";
+      # }
     ];
   };
 }

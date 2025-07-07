@@ -10,6 +10,7 @@
         search_mode = "fuzzy";
         dialect = "uk";
         inline_height = 10;
+        filter_mode = "host";
       };
     };
   };

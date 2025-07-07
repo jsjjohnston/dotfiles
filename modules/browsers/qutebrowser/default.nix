@@ -9,7 +9,10 @@
     ./settings
   ];
   programs = {
-    qutebrowser.enable = true;
-    qutebrowser.loadAutoconfig = true;
+    qutebrowser = {
+      enable = true;
+      package = null;
+      loadAutoconfig = true;
+    };
   };
 }

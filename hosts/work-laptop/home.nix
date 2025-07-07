@@ -25,6 +25,7 @@
     ../../modules/aerospace
     ../../modules/sketchybar
     ../../services/restic
+    ../../modules/sesh
   ];
 
   home = {
