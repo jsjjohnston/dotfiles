@@ -194,6 +194,7 @@
 
       mode.main.binding = {
         alt-1 = "exec-and-forget open -a '1Password.app'; workspace 1";
+        alt-2 = "workspace 2";
         alt-5 = "exec-and-forget open -a '15Five.app'; workspace 5";
         alt-a = "exec-and-forget open -a 'qutebrowser.app'; workspace A";
         alt-b = "exec-and-forget open -a 'Brewfather.app'; workspace B";
