@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -9,7 +9,7 @@
       */
       ''
         export NODE_EXTRA_CA_CERTS="$HOME/certs/combined-ca-bundle.crt"
-        `test -z "$TMUX" && (tmux attach || tmux new-session)`
+        `test -z "$TMUX" && sesh cn dotfiles`
         NIX_PATHS="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:"
         NEWPATH=''${PATH/$NIX_PATHS}
         while [[ $NEWPATH =~ $NIX_PATHS ]]; do

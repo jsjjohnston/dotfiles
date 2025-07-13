@@ -18,6 +18,9 @@
     ];
     casks = [
       {
+        name = "raycast";
+      }
+      {
         name = "sol";
       }
       {
