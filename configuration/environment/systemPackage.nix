@@ -26,6 +26,7 @@ in {
         fd
         ffmpeg
         git-credential-manager
+        handlr-regex
         jq
         killall
         lazycli
