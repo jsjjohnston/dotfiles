@@ -43,6 +43,11 @@
           ];
         }
         {
+          name = "Server";
+          path = "~/";
+          startup_command = "ssh jay@ssh.aldarow.dev";
+        }
+        {
           name = "Downloads";
           path = "~/Downloads";
           startup_command = "yazi";
