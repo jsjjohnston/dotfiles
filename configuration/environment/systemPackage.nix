@@ -14,8 +14,8 @@ in {
       [
         astroterm
         bash-preexec
-        bat
-        btop
+        # bat
+        # btop
         caligula
         clipse
         cloudflared
@@ -23,11 +23,11 @@ in {
         dig
         drawio
         eslint_d
-        fd
+        # fd
         ffmpeg
         git-credential-manager
-        handlr-regex
-        jq
+        # handlr-regex
+        # jq
         killall
         lazycli
         lazygit

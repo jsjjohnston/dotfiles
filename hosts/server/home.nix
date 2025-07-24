@@ -1,10 +1,16 @@
 {
   imports = [
+    ../../modules/bat
+    ../../modules/btop
+    ../../modules/fd
     ../../modules/fzf
     ../../modules/ghostty
     ../../modules/git
+    ../../modules/home-manager
     ../../modules/java
+    ../../modules/jq
     ../../modules/lazygit
+    ../../modules/k9s
     ../../modules/nvf
     ../../modules/shell/bash
     ../../modules/shell/zsh
@@ -13,7 +19,6 @@
     ../../modules/tmuxinator
     ../../modules/yazi
     ../../modules/zoxide
-    ../../modules/home-manager
   ];
   xdg = {
     mimeApps = {

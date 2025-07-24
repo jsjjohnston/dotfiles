@@ -1,24 +1,29 @@
 {config, ...}: {
   imports = [
+    # ../../modules/sops
+    ../../modules/1password-shell-plugins
+    ../../modules/atuin
+    ../../modules/bat
+    ../../modules/btop
+    ../../modules/fd
     ../../modules/fzf
     ../../modules/ghostty
     ../../modules/git
     ../../modules/github
     ../../modules/java
+    ../../modules/jq
+    ../../modules/k9s
     ../../modules/lazygit
     ../../modules/nvf
     ../../modules/oh-my-posh
     ../../modules/shell/bash
     ../../modules/shell/zsh
-    ../../modules/tmux
-    ../../modules/zoxide
-    ../../modules/starship
-    ../../modules/yazi
-    ../../modules/window-managers/hyprland.nix
     ../../modules/sioyek
-    # ../../modules/sops
-    ../../modules/atuin
-    ../../modules/1password-shell-plugins
+    ../../modules/starship
+    ../../modules/tmux
+    ../../modules/window-managers/hyprland.nix
+    ../../modules/yazi
+    ../../modules/zoxide
   ];
 
   home = {
