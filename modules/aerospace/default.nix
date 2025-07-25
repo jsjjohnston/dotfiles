@@ -204,6 +204,7 @@
         alt-e = "exec-and-forget open -a 'Gmail.app'; workspace E";
         alt-equal = "resize smart +50";
         alt-f = "fullscreen on  --no-outer-gaps --fail-if-noop";
+        alt-shift-f = "fullscreen off";
         alt-g = "exec-and-forget open -a 'GitHub.app'; workspace G";
         alt-h = "focus left";
         alt-i = "exec-and-forget open -a 'Jira.app'; workspace I";

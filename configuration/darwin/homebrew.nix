@@ -36,9 +36,9 @@
       {
         name = "ghostty";
       }
-      # {
-      #   name = "qutebrowser";
-      # }
+      {
+        name = "karabiner-elements";
+      }
     ];
   };
 }
